@@ -1384,6 +1384,7 @@ function imageState(images, axes, scale, shape, dtype, omero = [], labels = []) 
   let xi = axes.findIndex((a) => a.name === "x");
   let yi = axes.findIndex((a) => a.name === "y");
   if (xi < 0 || yi < 0) [yi, xi] = [axes.length - 2, axes.length - 1];
+  const scrolled = axes.find((a, i) => i !== xi && i !== yi && a.name !== "c" && shape[i] > 1);
   const dimensions = {};
   axes.forEach((a, i) => {
     if (a.name === "c") return;
@@ -1402,7 +1403,7 @@ function imageState(images, axes, scale, shape, dtype, omero = [], labels = []) 
   const view = {
     dimensions,
     position,
-    displayDimensions: [axes[xi].name, axes[yi].name],
+    displayDimensions: [axes[xi].name, axes[yi].name, ...scrolled ? [scrolled.name] : []],
     // With the coordinate space declared, this counts full-resolution voxels
     // per screen pixel.
     crossSectionScale: Math.max(shape[yi] / 600, shape[xi] / 850),
