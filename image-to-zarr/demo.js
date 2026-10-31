@@ -1,5 +1,5 @@
 // <define:__REFKV_PROFILES__>
-var define_REFKV_PROFILES_default = [{ name: "czi", title: "CZI", uuid: "7a0733c7-d4be-4482-a64f-6904d9354ea5", version: 0, kind: "file", sniff: 50, chosen_by: null, suffixes: [".czi"], reference: 20, source: "Zeiss CZI", inputs: "Zeiss CZI files (ZISRAW, file version 1), with uncompressed, JPEG, JPEG XR and Zstd subblocks, mosaics and pyramids", for: "Zeiss CZI files" }, { name: "dicom", title: "DICOM", uuid: "acf17198-e5a5-48d3-8187-22ec4bb40ea5", version: 0, kind: "file", sniff: 10, chosen_by: null, suffixes: [".dcm"], reference: 25, source: "DICOM", inputs: "DICOM Part 10 files with native, JPEG, lossless JPEG or JPEG 2000 pixel data, including whole-slide images", for: "DICOM files, including whole-slide images" }, { name: "fits", title: "FITS", uuid: "4b0d3a7e-1c52-4f6a-9b8e-2d7f0c6a1e93", version: 0, kind: "file", sniff: 110, chosen_by: null, suffixes: [".fits", ".fz"], reference: null, source: "FITS", inputs: "FITS files: images, multi-extension files, binary and ASCII tables", for: "FITS images and tables (`.fits`, `.fz`)" }, { name: "flac", title: "FLAC", uuid: "e9108d07-b24b-432f-a8ce-09d80c8073b4", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".flac"], reference: null, source: "FLAC (Free Lossless Audio Codec)", inputs: "FLAC files (`.flac`) of a fixed block size, with their metadata blocks and ID3v2 and ID3v1 tags; one sharded array of integer samples, not an image", for: "FLAC audio files, as a sharded array of samples (`.flac`)" }, { name: "hdf5", title: "HDF5", uuid: "6c006834-424b-451b-b786-f8c502ec32af", version: 0, kind: "file", sniff: 70, chosen_by: null, suffixes: [".h5", ".nwb"], reference: null, source: "HDF5, NWB", inputs: "HDF5 files, NWB files first among them: every group, dataset, attribute, link and object reference the profile can present, in hdmf-zarr's Zarr v3 form", for: "HDF5 files (`.h5`, `.hdf5`), and NWB files (`.nwb`), which pynwb's `NWBZarrIO` opens" }, { name: "ims", title: "IMS", uuid: "5067a535-8261-4b25-a93c-1985ed333bde", version: 0, kind: "file", sniff: null, chosen_by: "hdf5", suffixes: [".ims"], reference: 25, source: "Imaris IMS", inputs: "Imaris IMS files (HDF5)", for: "Imaris `.ims` files" }, { name: "lif", title: "LIF", uuid: "b099ab1f-f9d4-4276-9006-9ff1193a34b2", version: 0, kind: "file", sniff: 55, chosen_by: null, suffixes: [".lif"], reference: null, source: "Leica LIF", inputs: "Leica LIF files (LAS X and LAS AF, versions 1 and 2): every image of the file's element tree, with interleaved or planar channels, z-stacks, time series and mosaics, uncompressed", for: "Leica LIF files (`.lif`)" }, { name: "mp3", title: "MP3", uuid: "b6cb0047-9448-4fdc-b03e-10dd3d6aa829", version: 0, kind: "file", sniff: 100, chosen_by: null, suffixes: [".mp3"], reference: null, source: "MP3 (MPEG Layer III audio)", inputs: "MPEG-1, MPEG-2 and MPEG-2.5 Layer III audio files (`.mp3`), with their ID3v2, ID3v1 and APE tags; one array of samples, not an image", for: "MP3 audio files, as an array of samples (`.mp3`)" }, { name: "mp4", title: "MP4", uuid: "bbe3f6b9-488d-4d8d-85ce-60a1649dd27e", version: 0, kind: "file", sniff: 85, chosen_by: null, suffixes: [".mp4", ".mov"], reference: null, source: "MP4 and QuickTime (H.264 and HEVC video, AAC and MP3 audio)", inputs: "MP4 and QuickTime files (`.mp4`, `.m4a`, `.mov`) with H.264 or HEVC video and AAC or MP3 audio tracks; a group per track, not an image", for: "MP4 and QuickTime video and audio, as arrays of planes and samples (`.mp4`, `.mov`)" }, { name: "mrc", title: "MRC", uuid: "2aacd010-2ed1-4748-bc3c-5dd5e840bbce", version: 0, kind: "file", sniff: 90, chosen_by: null, suffixes: [".mrc"], reference: null, source: "MRC2014", inputs: "MRC2014 files (CCP4 maps, image stacks, volumes and volume stacks)", for: "MRC2014 maps, image stacks, volumes and volume stacks (`.mrc`, `.map`)" }, { name: "mrc-dataset", title: "MRC dataset", uuid: "f139bf4e-7bab-4c3c-9b2d-66ba747f9b93", version: 0, kind: "layout", sniff: null, chosen_by: null, suffixes: [], reference: null, source: "MRC2014, as a dataset", inputs: "", for: "" }, { name: "n5", title: "N5", uuid: "ad5d4c39-c69e-48f7-a3ef-4cc8c607d416", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "N5", inputs: "N5 containers, default-mode blocks", for: "N5 containers on S3" }, { name: "nd2", title: "ND2", uuid: "59612f14-e314-4207-ba00-8f422ba71490", version: 0, kind: "file", sniff: 20, chosen_by: null, suffixes: [".nd2"], reference: 20, source: "Nikon ND2", inputs: "Nikon ND2, format version 3 and later", for: "Nikon NIS-Elements ND2 files" }, { name: "ndpi", title: "NDPI", uuid: "6cac71ef-dbb2-4acd-b60c-00389aa4238a", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".ndpi"], reference: 25, source: "Hamamatsu NDPI", inputs: "Hamamatsu NDPI slides, a TIFF variant with 64-bit offsets", for: "Hamamatsu NDPI whole-slide images" }, { name: "nifti", title: "NIfTI", uuid: "06e5809d-4d54-4b72-afd0-6bf61a7b4c85", version: 0, kind: "file", sniff: 60, chosen_by: null, suffixes: [".nii"], reference: 25, source: "NIfTI-1 and NIfTI-2", inputs: "NIfTI-1 and NIfTI-2 single files (`.nii`)", for: "NIfTI-1 and NIfTI-2 volumes (`.nii`)" }, { name: "npy", title: "NumPy", uuid: "62b1d1ba-8eb3-465c-a333-75e096fce519", version: 0, kind: "file", sniff: 75, chosen_by: null, suffixes: [".npy", ".npz"], reference: null, source: "NumPy NPY and NPZ (NEP 1)", inputs: "NumPy `.npy` files, and `.npz` archives of them (`np.savez`, `np.savez_compressed`), whose stored and deflated members it presents", for: "NumPy arrays: `.npy` files, and the arrays of `.npz` archives, stored or deflated" }, { name: "nrrd", title: "NRRD", uuid: "23e0c600-8da6-40f1-81e7-ab246e948e88", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".nhdr", ".nrrd"], reference: null, source: "NRRD (Teem)", inputs: "NRRD files (`.nrrd`) and detached headers with one data file (`.nhdr`), raw or gzip-encoded", for: "NRRD volumes, attached or detached, raw or gzip (`.nrrd`, `.nhdr`)" }, { name: "ome-zarr", title: "OME-Zarr", uuid: "b74ea302-65bb-49ae-b81f-f9bb52cd4eed", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "OME-Zarr 0.4", inputs: "OME-Zarr 0.4 hierarchies on Zarr v2, migrated to OME-Zarr 0.5", for: "OME-Zarr 0.4 hierarchies, migrated to OME-Zarr 0.5 in place" }, { name: "qptiff", title: "QPTIFF", uuid: "329ea136-2f55-4c27-b6f4-8e60ca2109b8", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".qptiff"], reference: null, source: "Akoya QPTIFF", inputs: "Akoya (PerkinElmer) Vectra QPTIFF slides and inForm component data, a TIFF with an XML description per image, in LZW, JPEG or uncompressed tiles or strips", for: "Akoya (PerkinElmer) Vectra multiplex scans and inForm component data" }, { name: "safe", title: "Sentinel-2 SAFE", uuid: "ef81346c-19e8-42ad-93b0-a279ccaf44c1", version: 0, kind: "both", sniff: 80, chosen_by: null, suffixes: [".zip"], reference: 25, source: "Sentinel-2 SAFE (Level-1C, Level-2A)", inputs: "Sentinel-2 Level-1C and Level-2A products: a `.SAFE` directory (a store) or a `.SAFE.zip` file", for: "Sentinel-2 Level-1C and Level-2A products, as a `.SAFE` directory or a `.SAFE.zip`" }, { name: "tiff", title: "TIFF", uuid: "48e9ac4e-1156-4a62-955e-20467d9c2700", version: 0, kind: "file", sniff: 40, chosen_by: null, suffixes: [".tif"], reference: 20, source: "TIFF, OME-TIFF, Aperio SVS", inputs: "TIFF and BigTIFF, including OME-TIFF and JPEG-tiled slides such as Aperio SVS", for: "OME-TIFF, plain TIFF (tiled or in strips), and JPEG-tiled slides such as Aperio SVS" }, { name: "vsi", title: "VSI", uuid: "c0a1d4e6-5b7f-4f3a-9c2d-8e1f6a7b3c45", version: 0, kind: "file", sniff: 30, chosen_by: null, suffixes: [".vsi"], reference: null, source: "Olympus VSI", inputs: "Olympus cellSens VSI slides: a `.vsi` file and the tile files beside it, probed by key (uncompressed, JPEG, JPEG 2000 and lossless JPEG tiles)", for: "Olympus cellSens whole-slide images (`.vsi` with its tile files)" }, { name: "zarr2", title: "Zarr v2", uuid: "8e792619-d671-4687-ab51-752885dd3ee6", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "Zarr v2", inputs: "Zarr v2 hierarchies", for: "Zarr v2 hierarchies on S3" }];
+var define_REFKV_PROFILES_default = [{ name: "czi", title: "CZI", uuid: "7a0733c7-d4be-4482-a64f-6904d9354ea5", version: 0, kind: "file", sniff: 50, chosen_by: null, suffixes: [".czi"], reference: 20, source: "Zeiss CZI", inputs: "Zeiss CZI files (ZISRAW, file version 1), with uncompressed, JPEG, JPEG XR and Zstd subblocks, mosaics and pyramids", for: "Zeiss CZI files" }, { name: "dicom", title: "DICOM", uuid: "acf17198-e5a5-48d3-8187-22ec4bb40ea5", version: 0, kind: "file", sniff: 10, chosen_by: null, suffixes: [".dcm"], reference: 25, source: "DICOM", inputs: "DICOM Part 10 files with native, JPEG, lossless JPEG or JPEG 2000 pixel data, including whole-slide images", for: "DICOM files, including whole-slide images" }, { name: "fits", title: "FITS", uuid: "4b0d3a7e-1c52-4f6a-9b8e-2d7f0c6a1e93", version: 0, kind: "file", sniff: 110, chosen_by: null, suffixes: [".fits", ".fz"], reference: null, source: "FITS", inputs: "FITS files: images, multi-extension files, binary and ASCII tables", for: "FITS images and tables (`.fits`, `.fz`)" }, { name: "flac", title: "FLAC", uuid: "e9108d07-b24b-432f-a8ce-09d80c8073b4", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".flac"], reference: null, source: "FLAC (Free Lossless Audio Codec)", inputs: "FLAC files (`.flac`) of a fixed block size, with their metadata blocks and ID3v2 and ID3v1 tags; one sharded array of integer samples, not an image", for: "FLAC audio files, as a sharded array of samples (`.flac`)" }, { name: "grib", title: "GRIB", uuid: "c9bbe039-8dfa-49f9-a655-756f822a42d6", version: 0, kind: "file", sniff: 65, chosen_by: null, suffixes: [".grib2", ".grb2"], reference: null, source: "WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2)", inputs: "GRIB edition 2 files of gridded fields, such as NOAA's and ECMWF's forecasts, whose regular latitude/longitude and Lambert conformal fields it presents", for: "GRIB2 files of gridded weather and climate fields (`.grib2`), as labeled arrays with CF coordinates" }, { name: "hdf5", title: "HDF5", uuid: "6c006834-424b-451b-b786-f8c502ec32af", version: 0, kind: "file", sniff: 70, chosen_by: null, suffixes: [".h5", ".nwb"], reference: null, source: "HDF5, NWB", inputs: "HDF5 files, NWB files first among them: every group, dataset, attribute, link and object reference the profile can present, in hdmf-zarr's Zarr v3 form", for: "HDF5 files (`.h5`, `.hdf5`), and NWB files (`.nwb`), which pynwb's `NWBZarrIO` opens" }, { name: "ims", title: "IMS", uuid: "5067a535-8261-4b25-a93c-1985ed333bde", version: 0, kind: "file", sniff: null, chosen_by: "hdf5", suffixes: [".ims"], reference: 25, source: "Imaris IMS", inputs: "Imaris IMS files (HDF5)", for: "Imaris `.ims` files" }, { name: "lif", title: "LIF", uuid: "b099ab1f-f9d4-4276-9006-9ff1193a34b2", version: 0, kind: "file", sniff: 55, chosen_by: null, suffixes: [".lif"], reference: null, source: "Leica LIF", inputs: "Leica LIF files (LAS X and LAS AF, versions 1 and 2): every image of the file's element tree, with interleaved or planar channels, z-stacks, time series and mosaics, uncompressed", for: "Leica LIF files (`.lif`)" }, { name: "mp3", title: "MP3", uuid: "b6cb0047-9448-4fdc-b03e-10dd3d6aa829", version: 0, kind: "file", sniff: 100, chosen_by: null, suffixes: [".mp3"], reference: null, source: "MP3 (MPEG Layer III audio)", inputs: "MPEG-1, MPEG-2 and MPEG-2.5 Layer III audio files (`.mp3`), with their ID3v2, ID3v1 and APE tags; one array of samples, not an image", for: "MP3 audio files, as an array of samples (`.mp3`)" }, { name: "mp4", title: "MP4", uuid: "bbe3f6b9-488d-4d8d-85ce-60a1649dd27e", version: 0, kind: "file", sniff: 85, chosen_by: null, suffixes: [".mp4", ".mov"], reference: null, source: "MP4 and QuickTime (H.264 and HEVC video, AAC and MP3 audio)", inputs: "MP4 and QuickTime files (`.mp4`, `.m4a`, `.mov`) with H.264 or HEVC video and AAC or MP3 audio tracks; a group per track, not an image", for: "MP4 and QuickTime video and audio, as arrays of planes and samples (`.mp4`, `.mov`)" }, { name: "mrc", title: "MRC", uuid: "2aacd010-2ed1-4748-bc3c-5dd5e840bbce", version: 0, kind: "file", sniff: 90, chosen_by: null, suffixes: [".mrc"], reference: null, source: "MRC2014", inputs: "MRC2014 files (CCP4 maps, image stacks, volumes and volume stacks)", for: "MRC2014 maps, image stacks, volumes and volume stacks (`.mrc`, `.map`)" }, { name: "mrc-dataset", title: "MRC dataset", uuid: "f139bf4e-7bab-4c3c-9b2d-66ba747f9b93", version: 0, kind: "layout", sniff: null, chosen_by: null, suffixes: [], reference: null, source: "MRC2014, as a dataset", inputs: "", for: "" }, { name: "n5", title: "N5", uuid: "ad5d4c39-c69e-48f7-a3ef-4cc8c607d416", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "N5", inputs: "N5 containers, default-mode blocks", for: "N5 containers on S3" }, { name: "nd2", title: "ND2", uuid: "59612f14-e314-4207-ba00-8f422ba71490", version: 0, kind: "file", sniff: 20, chosen_by: null, suffixes: [".nd2"], reference: 20, source: "Nikon ND2", inputs: "Nikon ND2, format version 3 and later", for: "Nikon NIS-Elements ND2 files" }, { name: "ndpi", title: "NDPI", uuid: "6cac71ef-dbb2-4acd-b60c-00389aa4238a", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".ndpi"], reference: 25, source: "Hamamatsu NDPI", inputs: "Hamamatsu NDPI slides, a TIFF variant with 64-bit offsets", for: "Hamamatsu NDPI whole-slide images" }, { name: "nifti", title: "NIfTI", uuid: "06e5809d-4d54-4b72-afd0-6bf61a7b4c85", version: 0, kind: "file", sniff: 60, chosen_by: null, suffixes: [".nii"], reference: 25, source: "NIfTI-1 and NIfTI-2", inputs: "NIfTI-1 and NIfTI-2 single files (`.nii`)", for: "NIfTI-1 and NIfTI-2 volumes (`.nii`)" }, { name: "npy", title: "NumPy", uuid: "62b1d1ba-8eb3-465c-a333-75e096fce519", version: 0, kind: "file", sniff: 75, chosen_by: null, suffixes: [".npy", ".npz"], reference: null, source: "NumPy NPY and NPZ (NEP 1)", inputs: "NumPy `.npy` files, and `.npz` archives of them (`np.savez`, `np.savez_compressed`), whose stored and deflated members it presents", for: "NumPy arrays: `.npy` files, and the arrays of `.npz` archives, stored or deflated" }, { name: "nrrd", title: "NRRD", uuid: "23e0c600-8da6-40f1-81e7-ab246e948e88", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".nhdr", ".nrrd"], reference: null, source: "NRRD (Teem)", inputs: "NRRD files (`.nrrd`) and detached headers with one data file (`.nhdr`), raw or gzip-encoded", for: "NRRD volumes, attached or detached, raw or gzip (`.nrrd`, `.nhdr`)" }, { name: "ome-zarr", title: "OME-Zarr", uuid: "b74ea302-65bb-49ae-b81f-f9bb52cd4eed", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "OME-Zarr 0.4", inputs: "OME-Zarr 0.4 hierarchies on Zarr v2, migrated to OME-Zarr 0.5", for: "OME-Zarr 0.4 hierarchies, migrated to OME-Zarr 0.5 in place" }, { name: "qptiff", title: "QPTIFF", uuid: "329ea136-2f55-4c27-b6f4-8e60ca2109b8", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".qptiff"], reference: null, source: "Akoya QPTIFF", inputs: "Akoya (PerkinElmer) Vectra QPTIFF slides and inForm component data, a TIFF with an XML description per image, in LZW, JPEG or uncompressed tiles or strips", for: "Akoya (PerkinElmer) Vectra multiplex scans and inForm component data" }, { name: "safe", title: "Sentinel-2 SAFE", uuid: "ef81346c-19e8-42ad-93b0-a279ccaf44c1", version: 0, kind: "both", sniff: 80, chosen_by: null, suffixes: [".zip"], reference: 25, source: "Sentinel-2 SAFE (Level-1C, Level-2A)", inputs: "Sentinel-2 Level-1C and Level-2A products: a `.SAFE` directory (a store) or a `.SAFE.zip` file", for: "Sentinel-2 Level-1C and Level-2A products, as a `.SAFE` directory or a `.SAFE.zip`" }, { name: "tiff", title: "TIFF", uuid: "48e9ac4e-1156-4a62-955e-20467d9c2700", version: 0, kind: "file", sniff: 40, chosen_by: null, suffixes: [".tif"], reference: 20, source: "TIFF, OME-TIFF, Aperio SVS", inputs: "TIFF and BigTIFF, including OME-TIFF and JPEG-tiled slides such as Aperio SVS", for: "OME-TIFF, plain TIFF (tiled or in strips), and JPEG-tiled slides such as Aperio SVS" }, { name: "vsi", title: "VSI", uuid: "c0a1d4e6-5b7f-4f3a-9c2d-8e1f6a7b3c45", version: 0, kind: "file", sniff: 30, chosen_by: null, suffixes: [".vsi"], reference: null, source: "Olympus VSI", inputs: "Olympus cellSens VSI slides: a `.vsi` file and the tile files beside it, probed by key (uncompressed, JPEG, JPEG 2000 and lossless JPEG tiles)", for: "Olympus cellSens whole-slide images (`.vsi` with its tile files)" }, { name: "zarr2", title: "Zarr v2", uuid: "8e792619-d671-4687-ab51-752885dd3ee6", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "Zarr v2", inputs: "Zarr v2 hierarchies", for: "Zarr v2 hierarchies on S3" }];
 
 // src/deflate.ts
 var CRC_TABLE = (() => {
@@ -172,21 +172,21 @@ function resolveReference(base, ref) {
     fragment: r.fragment
   });
 }
-function getScheme(url) {
-  return split(url).scheme?.toLowerCase();
+function getScheme(url2) {
+  return split(url2).scheme?.toLowerCase();
 }
-function checkHttpUrl(url) {
-  const { authority } = split(url);
+function checkHttpUrl(url2) {
+  const { authority } = split(url2);
   if (authority === void 0 || authority === "") {
-    throw new Error(`${url}: empty or absent host`);
+    throw new Error(`${url2}: empty or absent host`);
   }
-  if (authority.includes("@")) throw new Error(`${url}: userinfo in URL`);
+  if (authority.includes("@")) throw new Error(`${url2}: userinfo in URL`);
   const hostPort = authority.match(/^(\[[^\]]*\]|[^:]*)(?::(.*))?$/);
-  if (hostPort[1] === "") throw new Error(`${url}: empty host`);
+  if (hostPort[1] === "") throw new Error(`${url2}: empty host`);
   const port = hostPort[2];
   if (port !== void 0 && port !== "") {
     if (!/^[0-9]+$/.test(port) || Number(port) > 65535) {
-      throw new Error(`${url}: invalid port ${JSON.stringify(port)}`);
+      throw new Error(`${url2}: invalid port ${JSON.stringify(port)}`);
     }
   }
 }
@@ -244,17 +244,17 @@ function inBrowser() {
   const g = globalThis;
   return g.document !== void 0 || g.WorkerGlobalScope !== void 0;
 }
-function fetchFailed(url, e, browser = inBrowser()) {
-  const message = `${url}: ${e.message}`;
+function fetchFailed(url2, e, browser = inBrowser()) {
+  const message = `${url2}: ${e.message}`;
   if (!browser || !(e instanceof TypeError)) return message;
   return `${message}. A browser reports this for a server that does not allow cross-origin reads (no Access-Control-Allow-Origin header for this page) as well as for one it cannot reach`;
 }
 function single(headers, name) {
   return headers.get(name);
 }
-async function readHttpRange(url, start, end, pins, signal, options = {}) {
+async function readHttpRange(url2, start, end, pins, signal, options = {}) {
   try {
-    checkHttpUrl(url);
+    checkHttpUrl(url2);
   } catch (e) {
     throw new HttpResolutionError(e.message);
   }
@@ -273,13 +273,13 @@ async function readHttpRange(url, start, end, pins, signal, options = {}) {
   }
   let response;
   try {
-    response = options.fetch ? await options.fetch(url, { headers, signal }, options.allow) : await fetch(url, { headers, signal, redirect: "follow", cache: "no-store" });
+    response = options.fetch ? await options.fetch(url2, { headers, signal }, options.allow) : await fetch(url2, { headers, signal, redirect: "follow", cache: "no-store" });
   } catch (e) {
     signal?.throwIfAborted();
-    throw new HttpResolutionError(fetchFailed(url, e));
+    throw new HttpResolutionError(fetchFailed(url2, e));
   }
   const fail = (message) => {
-    throw new HttpResolutionError(`${url}: ${message}`);
+    throw new HttpResolutionError(`${url2}: ${message}`);
   };
   if (response.redirected) {
     try {
@@ -569,16 +569,16 @@ var DEFAULT_POLICY = {
   maxFormatEntry: 256 << 20,
   unverifiablePins: false
 };
-function schemeOf(url) {
-  const i = url.indexOf(":");
-  const s = i < 0 ? "" : url.slice(0, i).toLowerCase();
+function schemeOf(url2) {
+  const i = url2.indexOf(":");
+  const s = i < 0 ? "" : url2.slice(0, i).toLowerCase();
   return s === "https" ? "http" : s;
 }
-function matchesPrefix(url, prefix2) {
-  if (!url.startsWith(prefix2)) return false;
-  const rest = url.slice(prefix2.length);
+function matchesPrefix(url2, prefix2) {
+  if (!url2.startsWith(prefix2)) return false;
+  const rest = url2.slice(prefix2.length);
   if (!(prefix2.endsWith("/") || rest === "" || "/?#".includes(rest[0]))) return false;
-  const path = url.split(/[?#]/, 1)[0];
+  const path = url2.split(/[?#]/, 1)[0];
   return !/%(2[eEfF]|5[cC])/.test(path);
 }
 function parseIPv4(s) {
@@ -666,10 +666,10 @@ function addressClass(address) {
   const v6 = address.includes(":") ? parseIPv6(address) : void 0;
   return v6 === void 0 ? void 0 : classOf(v6, 6);
 }
-function hostClass(url) {
+function hostClass(url2) {
   let host;
   try {
-    host = new URL(url).hostname.toLowerCase().replace(/\.$/, "");
+    host = new URL(url2).hostname.toLowerCase().replace(/\.$/, "");
   } catch {
     return void 0;
   }
@@ -684,37 +684,37 @@ function validatePolicy(policy) {
     );
   }
 }
-function checkPolicy(policy, base, url) {
+function checkPolicy(policy, base, url2) {
   validatePolicy(policy);
   const local = schemeOf(base) === "file";
-  const scheme = schemeOf(url);
+  const scheme = schemeOf(url2);
   if (policy.prefixes !== void 0) {
-    if (!policy.prefixes.some((p) => matchesPrefix(url, p))) {
-      throw new RefkvError("resolution", `${url}: not under an allowed URL prefix (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
+    if (!policy.prefixes.some((p) => matchesPrefix(url2, p))) {
+      throw new RefkvError("resolution", `${url2}: not under an allowed URL prefix (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
     }
   } else if (scheme === "file") {
     if (!local && !policy.allowFilesFromRemoteArchives) {
-      throw new RefkvError("resolution", `${url}: an archive opened from a URL may not read local files (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
+      throw new RefkvError("resolution", `${url2}: an archive opened from a URL may not read local files (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
     }
   } else if (scheme !== "http" && !(policy.schemes ?? []).some((s) => schemeOf(`${s}:`) === scheme)) {
-    throw new RefkvError("resolution", `${url}: the scheme '${scheme}' is not allowed (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
+    throw new RefkvError("resolution", `${url2}: the scheme '${scheme}' is not allowed (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
   }
   if (scheme !== "http") return;
-  const c = hostClass(url);
-  if (c !== void 0) checkClass(policy, url, c);
+  const c = hostClass(url2);
+  if (c !== void 0) checkClass(policy, url2, c);
 }
-function checkClass(policy, url, c, address) {
+function checkClass(policy, url2, c, address) {
   if (c === "public" || policy.allowPrivateHosts) return;
   const at = address === void 0 ? "" : ` (at ${address})`;
   throw new RefkvError(
     "resolution",
-    `${url}: the host${at} is a ${c} address, which the reader does not reach without allowPrivateHosts: true (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`
+    `${url2}: the host${at} is a ${c} address, which the reader does not reach without allowPrivateHosts: true (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`
   );
 }
-function checkAddress(policy, url, address) {
+function checkAddress(policy, url2, address) {
   const c = addressClass(address);
-  if (c === void 0) throw new RefkvError("resolution", `${url}: ${address} is not an IP address`);
-  checkClass(policy, url, c, address);
+  if (c === void 0) throw new RefkvError("resolution", `${url2}: ${address} is not an IP address`);
+  checkClass(policy, url2, c, address);
 }
 var MERGE_GAP = 1 << 16;
 var U32_ALL = 4294967295;
@@ -760,7 +760,7 @@ var Archive = class _Archive {
     this.fetchRange = fetchRange;
     this.policy = policy;
     this.revision = revision;
-    this.netFetch = policy.allowPrivateHosts ? void 0 : checkedFetch((url, address) => checkAddress(policy, url, address), policy);
+    this.netFetch = policy.allowPrivateHosts ? void 0 : checkedFetch((url2, address) => checkAddress(policy, url2, address), policy);
   }
   /**
    * Opens an archive (spec §6.1
@@ -771,7 +771,7 @@ var Archive = class _Archive {
    * sources on public hosts, and for a local archive also `file` sources and
    * loopback and private hosts.
    */
-  static async open(bytes, baseUrl, fetchRange = (url, start, end, pins, options) => readHttpRange(url, start, end, pins, void 0, options), policy = {}) {
+  static async open(bytes, baseUrl, fetchRange = (url2, start, end, pins, options) => readHttpRange(url2, start, end, pins, void 0, options), policy = {}) {
     validatePolicy(policy);
     const rules = { ...DEFAULT_POLICY, ...policy };
     const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
@@ -973,18 +973,18 @@ var Archive = class _Archive {
       if (end > BigInt(value.length)) fail("range past the end of the key's value");
       return value.subarray(Number(start), Number(end));
     }
-    let url;
+    let url2;
     try {
-      url = resolveReference(this.baseUrl, s.url);
+      url2 = resolveReference(this.baseUrl, s.url);
     } catch (e) {
       return fail(e.message);
     }
-    checkPolicy(this.policy, this.baseUrl, url);
-    const scheme = getScheme(url);
-    if (scheme !== "http" && scheme !== "https") fail(`unsupported scheme in ${url}`);
+    checkPolicy(this.policy, this.baseUrl, url2);
+    const scheme = getScheme(url2);
+    if (scheme !== "http" && scheme !== "https") fail(`unsupported scheme in ${url2}`);
     try {
       const { data, size, hidden } = await this.fetchRange(
-        url,
+        url2,
         safe(start, "offset"),
         safe(end, "end"),
         s,
@@ -997,7 +997,7 @@ var Archive = class _Archive {
       const unseen = size === void 0 && hidden === true && this.policy.unverifiablePins;
       if (s.size !== void 0 && !unseen && BigInt(size ?? -1) !== s.size) {
         fail(
-          size === void 0 ? `${url}: the archive pins the size ${s.size}, which the response does not give` : `${url}: the source is ${size} bytes, but the archive pins ${s.size}: the source changed since the archive was written`
+          size === void 0 ? `${url2}: the archive pins the size ${s.size}, which the response does not give` : `${url2}: the source is ${size} bytes, but the archive pins ${s.size}: the source changed since the archive was written`
         );
       }
       return data;
@@ -1125,6 +1125,40 @@ var SMALL_PADDING = 2 ** 10;
 var MAX_TOTAL_PADDING = 2 ** 20;
 var RAGGED_CHUNK = 2 ** 20;
 
+// src/zarrify/ir/wasm_browser.ts
+var url;
+var given;
+async function compileIr() {
+  if (given !== void 0) return given;
+  const at = url ?? new URL("refkv_ir.wasm", globalThis.location?.href);
+  const response = await fetch(at);
+  if (!response.ok) throw new Error(`cannot fetch the IR core's wasm module ${String(at)}: HTTP ${response.status}`);
+  if ((response.headers.get("Content-Type") ?? "").split(";")[0].trim() === "application/wasm") {
+    return WebAssembly.compileStreaming(response);
+  }
+  return WebAssembly.compile(await response.arrayBuffer());
+}
+
+// src/zarrify/ir/wasm.ts
+var instance;
+function ir() {
+  instance ??= (async () => {
+    const module3 = await compileIr();
+    const { exports } = await WebAssembly.instantiate(module3, {});
+    return exports;
+  })();
+  instance.catch(() => instance = void 0);
+  return instance;
+}
+function put(w, bytes) {
+  const p = w.vz_alloc(bytes.length) >>> 0;
+  new Uint8Array(w.memory.buffer, p, bytes.length).set(bytes);
+  return p;
+}
+function out(w, n) {
+  return new Uint8Array(w.memory.buffer, w.vz_out() >>> 0, n).slice();
+}
+
 // src/zarrify/ir/run.ts
 var utf83 = new TextEncoder();
 
@@ -1145,9 +1179,9 @@ var utf85 = new TextEncoder();
 // src/server.ts
 var ARCHIVE_KEY = "__vz__/archive.vzip";
 var WORKER_HEADER = "X-Vzip-Worker";
-function encodeId(url) {
+function encodeId(url2) {
   let s = "";
-  for (const b of new TextEncoder().encode(url)) s += String.fromCharCode(b);
+  for (const b of new TextEncoder().encode(url2)) s += String.fromCharCode(b);
   return btoa(s).replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/, "");
 }
 
@@ -1179,21 +1213,44 @@ async function registerVzipWorker(scriptUrl = "vzip-sw.js", timeoutMs = 1e4) {
   }
   return new URL("vz/", registration.scope).href;
 }
-function imageZarrUrl(prefix2, url) {
-  return `${prefix2}image/${encodeId(new URL(url).href)}/`;
+function imageZarrUrl(prefix2, url2) {
+  return `${prefix2}image/${encodeId(new URL(url2).href)}/`;
 }
-function archiveZarrUrl(prefix2, url) {
-  return `${prefix2}archive/${encodeId(new URL(url).href)}/`;
+function archiveZarrUrl(prefix2, url2) {
+  return `${prefix2}archive/${encodeId(new URL(url2).href)}/`;
 }
 function archiveDownloadUrl(zarrUrl) {
   return zarrUrl + ARCHIVE_KEY;
 }
 
+// src/embed.ts
+async function decodeGrib(chunk, configuration, shape, dataType = "float64") {
+  const w = await ir();
+  const config = new TextEncoder().encode(JSON.stringify(configuration ?? {}));
+  const dims = new Uint8Array(shape.length * 8);
+  shape.forEach((n, i) => new DataView(dims.buffer).setBigUint64(i * 8, BigInt(n), true));
+  const pc = put(w, chunk);
+  const pg = put(w, config);
+  const ps = put(w, dims);
+  try {
+    const n = Number(w.vz_grib_decode(pc, chunk.length, pg, config.length, ps, shape.length));
+    if (n < 0) throw new Error(new TextDecoder().decode(out(w, -n)));
+    const bytes = out(w, n);
+    const values = new Float64Array(n / 8);
+    new Uint8Array(values.buffer).set(bytes);
+    return dataType === "float32" ? Float32Array.from(values) : values;
+  } finally {
+    w.vz_free(pc, chunk.length);
+    w.vz_free(pg, config.length);
+    w.vz_free(ps, dims.length);
+  }
+}
+
 // ../demo/map/jpeg2k_decoder.ts
 var HEADER = 16;
 var module;
-function getModule(url) {
-  module ??= WebAssembly.instantiateStreaming(fetch(url), {}).then(
+function getModule(url2) {
+  module ??= WebAssembly.instantiateStreaming(fetch(url2), {}).then(
     (r) => r.instance.exports
   );
   return module;
@@ -1237,8 +1294,8 @@ var env = {
   __syscall_readlinkat: () => -ENOSYS
 };
 var module2;
-function getModule2(url) {
-  module2 ??= WebAssembly.instantiateStreaming(fetch(url), { env, wasi_snapshot_preview1: env }).then((r) => {
+function getModule2(url2) {
+  module2 ??= WebAssembly.instantiateStreaming(fetch(url2), { env, wasi_snapshot_preview1: env }).then((r) => {
     const e = r.instance.exports;
     e._initialize();
     return e;
@@ -1309,6 +1366,10 @@ async function decodeChunk(meta, encoded) {
       const d = await decodeJpegXr(JPEGXR_WASM, bytes);
       return d.bytesPerSample === size ? [d.data, true] : void 0;
     }
+    case "refkv.grib": {
+      const values = await decodeGrib(bytes, first.configuration, meta.chunk_grid.configuration.chunk_shape, meta.data_type);
+      return [new Uint8Array(values.buffer), true];
+    }
   }
   return void 0;
 }
@@ -1320,18 +1381,18 @@ function percentiles(bytes, le, dataType, fill) {
   const values = [];
   for (let i = 0; i < n; i += step) {
     const v = get(view, i * size, le);
-    if (v !== fill) values.push(v);
+    if (v !== fill && !Number.isNaN(v)) values.push(v);
   }
   if (values.length === 0) return void 0;
   values.sort((x, y) => x - y);
   const lo = values[Math.floor(values.length * 0.05)], hi = values[Math.min(values.length - 1, Math.floor(values.length * 0.999))];
   return lo < hi ? [lo, hi] : void 0;
 }
-async function sampleRanges(url, meta, axes, chunks, channels) {
+async function sampleRanges(url2, meta, axes, chunks, channels, start) {
   if (!TYPES[meta.data_type] || meta.chunk_grid.name !== "regular") return channels?.map(() => void 0) ?? [void 0];
   const c = axes.findIndex((a) => a.name === "c");
   if (channels !== void 0 && (c < 0 || chunks[c] !== 1)) return channels.map(() => void 0);
-  const index = meta.shape.map((n, i) => axes[i]?.name === "t" ? 0 : Math.floor(Math.floor(n / 2) / chunks[i]));
+  const index = meta.shape.map((n, i) => Math.floor((start?.[i] ?? (axes[i]?.name === "t" ? 0 : Math.floor(n / 2))) / chunks[i]));
   const enc = meta.chunk_key_encoding ?? { name: "default" };
   const sep = enc.configuration?.separator ?? (enc.name === "v2" ? "." : "/");
   const one = async (k) => {
@@ -1339,7 +1400,7 @@ async function sampleRanges(url, meta, axes, chunks, channels) {
     if (k !== void 0) at[c] = k;
     const key = enc.name === "v2" ? at.join(sep) || "0" : ["c", ...at].join(sep);
     try {
-      const r = await fetch(`${url}${key}`);
+      const r = await fetch(`${url2}${key}`);
       if (!r.ok) return void 0;
       const decoded = await decodeChunk(meta, new Uint8Array(await r.arrayBuffer()));
       return decoded && percentiles(decoded[0], decoded[1], meta.data_type, meta.fill_value);
@@ -1350,6 +1411,65 @@ async function sampleRanges(url, meta, axes, chunks, channels) {
   return Promise.all(channels === void 0 ? [one()] : channels.map(one));
 }
 
+// ../demo/python.ts
+var MEDIA = ["mp3", "flac", "mp4"];
+function stem(url2) {
+  const segments = new URL(url2).pathname.split("/").filter((s) => s !== "" && s !== "content");
+  let last = segments.at(-1) ?? "input";
+  try {
+    last = decodeURIComponent(last);
+  } catch {
+  }
+  return last.replace(/\.(vzip|zarr|n5|zip|safe)$/i, "").replace(/\.[^.]*$/, "").replace(/[^\w.-]+/g, "_") || "input";
+}
+function pythonScript(url2, isArchive, profile, release) {
+  const extra = MEDIA.includes(profile ?? "") ? "media" : "images";
+  const requirement = `refkv[${extra}]${release ? `>=${release}` : ""}`;
+  const name = stem(url2);
+  const header = [
+    "# /// script",
+    '# requires-python = ">=3.12"',
+    `# dependencies = [${JSON.stringify(requirement)}]`,
+    "# ///",
+    ""
+  ];
+  const open = isArchive ? [
+    `"""Open the vzip archive ${name}.vzip with zarr-python."""`,
+    "",
+    "import zarr",
+    "import refkv.zarr",
+    "",
+    "# The archive holds the hierarchy's metadata and references to the original's bytes,",
+    "# which are read only when an array's chunks are.",
+    `store = refkv.zarr.open(${JSON.stringify(url2)})  # a read-only zarr store`
+  ] : [
+    `"""Zarrify ${name} and open its Zarr hierarchy with zarr-python."""`,
+    "",
+    "import zarr",
+    "import refkv.zarr",
+    "from refkv.zarrify import zarrify",
+    "",
+    "# Reads the input's structure (its headers and indexes), not its data, which stays where",
+    "# it is and is read only when an array's chunks are.",
+    `reference = zarrify(${JSON.stringify(url2)})`,
+    "store = refkv.zarr.store(reference)  # a read-only zarr store"
+  ];
+  const save = isArchive ? [] : [
+    "",
+    "# The vzip archive this page downloads: the hierarchy, in one file that refers to the",
+    "# input's bytes. Host it, and refkv.zarr.open(url) reads it anywhere.",
+    `# reference.save(${JSON.stringify(`${name}.vzip`)})`
+  ];
+  return [
+    ...header,
+    ...open,
+    'root = zarr.open(store, mode="r")',
+    "print(root.tree() if isinstance(root, zarr.Group) else root.info)",
+    ...save,
+    ""
+  ].join("\n");
+}
+
 // ../demo/demo.ts
 var $ = (id) => document.getElementById(id);
 var input = $("url");
@@ -1358,8 +1478,8 @@ var setStatus = (text, error = false) => {
   status.textContent = text;
   status.classList.toggle("error", error);
 };
-async function getJson(url) {
-  const r = await fetch(url);
+async function getJson(url2) {
+  const r = await fetch(url2);
   if (r.headers.get(WORKER_HEADER) === null) {
     throw new Error(
       `the refkv service worker did not answer this request (HTTP ${r.status} from the network); reload the page and try again`
@@ -1380,7 +1500,7 @@ var METERS = {
   inch: 0.0254,
   foot: 0.3048
 };
-function imageState(images, axes, scale, shape, dtype, omero = [], labels = []) {
+function imageState(images, axes, scale, shape, dtype, omero = [], labels = [], flipY = false, start) {
   let xi = axes.findIndex((a) => a.name === "x");
   let yi = axes.findIndex((a) => a.name === "y");
   if (xi < 0 || yi < 0) [yi, xi] = [axes.length - 2, axes.length - 1];
@@ -1397,6 +1517,7 @@ function imageState(images, axes, scale, shape, dtype, omero = [], labels = []) 
   const position = axes.flatMap((a, i) => {
     if (a.name === "c") return [];
     const at = offset(images[0], i);
+    if (start !== void 0 && i !== xi && i !== yi) return [at + start[i]];
     if (a.name === "t" || a.name === "time") return [at];
     return [at + (a.name === "z" ? Math.floor(shape[i] / 2) : shape[i] / 2)];
   });
@@ -1407,6 +1528,8 @@ function imageState(images, axes, scale, shape, dtype, omero = [], labels = []) 
     // With the coordinate space declared, this counts full-resolution voxels
     // per screen pixel.
     crossSectionScale: Math.max(shape[yi] / 600, shape[xi] / 850),
+    // half a turn about x, which reverses y
+    ...flipY ? { crossSectionOrientation: [1, 0, 0, 0] } : {},
     layout: "xy"
   };
   const many = images.length > 1;
@@ -1488,31 +1611,31 @@ function chunkShapeOf(a) {
     (lengths) => typeof lengths === "number" ? lengths : Math.max(...lengths.map((l) => Array.isArray(l) ? l[0] : l))
   );
 }
-async function omeView(url, ms, label, withLabels = false) {
+async function omeView(url2, ms, label, withLabels = false) {
   const levels = await Promise.all(
     ms.datasets.map(async (d) => ({
       path: d.path,
-      url: `${url}${d.path}/`,
-      meta: await getJson(`${url}${d.path}/zarr.json`)
+      url: `${url2}${d.path}/`,
+      meta: await getJson(`${url2}${d.path}/zarr.json`)
     }))
   );
   const scale = ms.datasets[0].coordinateTransformations?.find(
     (t) => t.type === "scale"
   )?.scale ?? levels[0].meta.shape.map(() => 1);
-  const group = await getJson(`${url}zarr.json`);
+  const group = await getJson(`${url2}zarr.json`);
   let labels = [];
   if (withLabels) {
     try {
-      const names = (await getJson(`${url}labels/zarr.json`)).attributes?.ome?.labels ?? [];
-      labels = names.map((n) => ({ name: n, url: `${url}labels/${n}/` }));
+      const names = (await getJson(`${url2}labels/zarr.json`)).attributes?.ome?.labels ?? [];
+      labels = names.map((n) => ({ name: n, url: `${url2}labels/${n}/` }));
     } catch {
     }
   }
   return {
     label,
     name: ms.name ?? label,
-    url,
-    images: [{ url, name: ms.name ?? label, translation: translationOf(ms) }],
+    url: url2,
+    images: [{ url: url2, name: ms.name ?? label, translation: translationOf(ms) }],
     axes: ms.axes,
     scale,
     levels,
@@ -1520,17 +1643,17 @@ async function omeView(url, ms, label, withLabels = false) {
     labels
   };
 }
-function arrayView(url, path, meta) {
+function arrayView(url2, path, meta) {
   const axes = meta.shape.map((_, i) => ({ name: meta.dimension_names?.[i] ?? `dim_${i}` }));
   const label = path === "" ? "the array" : path;
   return {
     label,
     name: label,
-    url,
-    images: [{ url, name: path || "array" }],
+    url: url2,
+    images: [{ url: url2, name: path || "array" }],
     axes,
     scale: axes.map(() => 1),
-    levels: [{ path: path || "/", url, meta }],
+    levels: [{ path: path || "/", url: url2, meta }],
     omero: [],
     labels: []
   };
@@ -1551,29 +1674,56 @@ var DECODED_CODECS = [
   "imagecodecs_jpegxr",
   "imagecodecs_lzw",
   "refkv.fits_tiles",
+  "refkv.grib",
   "refkv.stream"
 ];
+var FLOAT64_CODECS = ["refkv.grib"];
 var codecNames = (codecs) => codecs.flatMap((c) => [c.name, ...codecNames(c.configuration?.codecs ?? []), ...codecNames(c.configuration?.index_codecs ?? [])]);
-var showable = (meta) => meta.shape.length >= 2 && SHOWN_TYPES.includes(meta.data_type) && codecNames(meta.codecs).every((n) => DECODED_CODECS.includes(n));
+var showable = (meta) => meta.shape.length >= 2 && (SHOWN_TYPES.includes(meta.data_type) || meta.data_type === "float64" && meta.codecs.some((c) => FLOAT64_CODECS.includes(c.name))) && codecNames(meta.codecs).every((n) => DECODED_CODECS.includes(n));
 var AUDIO = ["mp3", "flac"];
 var DECODED_VIDEO = ["avc1", "hvc1", "hev1"];
 async function videoViews(zarrUrl, mp4) {
   const video = (mp4.tracks ?? []).filter((t) => t.path !== null && t.handler === "vide");
   const planes = await Promise.all(video.map(async (t) => {
-    const url = `${zarrUrl}${t.path}/y/`;
-    return { t, url, meta: DECODED_VIDEO.includes(t.codec) ? await getJson(`${url}zarr.json`) : void 0 };
+    const url2 = `${zarrUrl}${t.path}/y/`;
+    return { t, url: url2, meta: DECODED_VIDEO.includes(t.codec) ? await getJson(`${url2}zarr.json`) : void 0 };
   }));
   const shown2 = planes.filter((p) => p.meta?.data_type === "uint8");
   const others = planes.filter((p) => p.meta?.data_type !== "uint8").map(({ t, meta }) => `${t.path} (${t.codec}${meta === void 0 ? "" : ", 10-bit"})`);
   if (shown2.length === 0 && others.length > 0) {
     throw new Error(`no 8-bit H.264 or HEVC track to show: Neuroglancer does not decode ${others.join(", ")}, which the archive holds`);
   }
-  return shown2.map(({ t, url, meta }) => {
-    const view = arrayView(url, `${t.path}/y`, meta);
+  return shown2.map(({ t, url: url2, meta }) => {
+    const view = arrayView(url2, `${t.path}/y`, meta);
     view.label = `${t.path} (luma)`;
     if (others.length > 0) view.note = `Not shown: ${others.join(", ")}, which Neuroglancer does not decode.`;
     return view;
   });
+}
+var before = (a, b) => {
+  const i = a.findIndex((x, k) => x !== b[k]);
+  return i >= 0 && a[i] < b[i];
+};
+var GRIB_FIRST = ["t_heightAboveGround", "t_surface", "t_isobaric"];
+async function gribViews(zarrUrl) {
+  const keys = await archiveKeys(zarrUrl);
+  const arrays = (await listArrays(zarrUrl, keys)).filter(({ path, meta }) => path.includes("/") && showable(meta));
+  const grids = /* @__PURE__ */ new Map();
+  const views2 = await Promise.all(arrays.map(async ({ path, meta }) => {
+    const grid = path.slice(0, path.indexOf("/"));
+    if (!grids.has(grid)) grids.set(grid, getJson(`${zarrUrl}${grid}/zarr.json`));
+    const transform2 = (await grids.get(grid)).attributes?.["spatial:transform"];
+    const view = arrayView(`${zarrUrl}${path}/`, path, meta);
+    view.flipY = (transform2?.[4] ?? 0) > 0;
+    const fields2 = keys.filter((k) => k.startsWith(`${path}/c/`)).map((k) => k.slice(path.length + 3).split("/").map(Number));
+    view.start = fields2.reduce((a, b) => before(b, a) ? b : a, fields2[0]);
+    return view;
+  }));
+  const rank = (v) => {
+    const k = GRIB_FIRST.indexOf(v.label.slice(v.label.indexOf("/") + 1));
+    return k < 0 ? GRIB_FIRST.length : k;
+  };
+  return views2.sort((a, b) => rank(a) - rank(b));
 }
 async function seriesViews(zarrUrl) {
   const series = (await getJson(`${zarrUrl}OME/zarr.json`)).attributes?.ome?.series ?? [];
@@ -1603,13 +1753,17 @@ async function seriesViews(zarrUrl) {
   };
   return [all, ...views2];
 }
-async function listArrays(zarrUrl) {
+async function archiveKeys(zarrUrl) {
   const r = await fetch(archiveDownloadUrl(zarrUrl));
   if (!r.ok) throw new Error(`${r.status}: ${await r.text()}`);
   const archive = await Archive.open(new Uint8Array(await r.arrayBuffer()), zarrUrl, () => {
     throw new Error("not read");
   });
-  const paths = archive.keys().filter((k) => (k === "zarr.json" || k.endsWith("/zarr.json")) && !k.startsWith("refkv_source/")).map((k) => k.slice(0, -"zarr.json".length).replace(/\/$/, ""));
+  return archive.keys();
+}
+async function listArrays(zarrUrl, keys) {
+  keys ??= await archiveKeys(zarrUrl);
+  const paths = keys.filter((k) => (k === "zarr.json" || k.endsWith("/zarr.json")) && !k.startsWith("refkv_source/")).map((k) => k.slice(0, -"zarr.json".length).replace(/\/$/, ""));
   const nodes = await Promise.all(paths.map(async (path) => ({
     path,
     meta: await getJson(`${zarrUrl}${path === "" ? "" : `${path}/`}zarr.json`)
@@ -1618,10 +1772,10 @@ async function listArrays(zarrUrl) {
 }
 var prefix;
 var views = [];
-function neuroglancerSource(shown2, url) {
-  if (!shown2.isArchive) return `${url}|zarr3:`;
-  if (!url.startsWith(shown2.zarrUrl)) throw new Error(`${url} is not under ${shown2.zarrUrl}`);
-  const path = url.slice(shown2.zarrUrl.length).split("/").map(encodeURIComponent).join("/");
+function neuroglancerSource(shown2, url2) {
+  if (!shown2.isArchive) return `${url2}|zarr3:`;
+  if (!url2.startsWith(shown2.zarrUrl)) throw new Error(`${url2} is not under ${shown2.zarrUrl}`);
+  const path = url2.slice(shown2.zarrUrl.length).split("/").map(encodeURIComponent).join("/");
   return `${shown2.url}|vzip:${path}|zarr3:`;
 }
 function showLevels(rows) {
@@ -1646,7 +1800,7 @@ function showLevels(rows) {
 var shown;
 async function showView(view) {
   shown = view;
-  const source = (url) => neuroglancerSource(view.input, url);
+  const source = (url2) => neuroglancerSource(view.input, url2);
   $("share-local").hidden = view.input.isArchive;
   $("share-archive").hidden = !view.input.isArchive;
   $("name").textContent = view.name;
@@ -1656,7 +1810,7 @@ async function showView(view) {
   const level0 = view.levels[0].meta;
   const dataType = level0.data_type;
   const coarsest = view.levels[view.levels.length - 1];
-  const sample = (channels) => sampleRanges(coarsest.url, coarsest.meta, view.axes, chunkShapeOf(coarsest.meta), channels);
+  const sample = (channels) => sampleRanges(coarsest.url, coarsest.meta, view.axes, chunkShapeOf(coarsest.meta), channels, view.start);
   let omero = view.omero;
   const c = view.axes.findIndex((a) => a.name === "c");
   const nc = c >= 0 ? level0.shape[c] : 0;
@@ -1678,7 +1832,9 @@ async function showView(view) {
     level0.shape,
     dataType,
     omero,
-    view.labels.map((l) => ({ ...l, url: source(l.url) }))
+    view.labels.map((l) => ({ ...l, url: source(l.url) })),
+    view.flipY,
+    view.start
   );
   const plain = state.layers.filter((l) => l.type === "image" && !("shader" in l));
   if (plain.length > 0 && dataType !== "uint8") {
@@ -1698,17 +1854,29 @@ void main() {
   ng.hidden = false;
   ng.href = new URL(`neuroglancer/#!${encodeURIComponent(JSON.stringify(state))}`, location.href).href;
 }
-async function zarrify(url) {
+var pythonUrl;
+function showPython(input2, profile) {
+  const script = pythonScript(input2.url, input2.isArchive, profile, "0.2.0");
+  const file = `${input2.isArchive ? "open" : "zarrify"}_${stem(input2.url)}.py`;
+  $("python-code").textContent = script;
+  $("python-run").textContent = `uv run ${file}`;
+  if (pythonUrl) URL.revokeObjectURL(pythonUrl);
+  pythonUrl = URL.createObjectURL(new Blob([script], { type: "text/x-python" }));
+  const save = $("python-save");
+  save.href = pythonUrl;
+  save.download = file;
+}
+async function zarrify(url2) {
   $("result").hidden = true;
   const here = new URL(location.href);
-  here.searchParams.set("url", url);
+  here.searchParams.set("url", url2);
   history.replaceState(null, "", here);
   setStatus("Starting the service worker\u2026");
   prefix ??= registerVzipWorker(new URL("vzip-sw.js", location.href));
   const p = await prefix;
-  const isArchive = /\.vzip(?:[?#]|$)/i.test(url);
-  const zarrUrl = isArchive ? archiveZarrUrl(p, url) : imageZarrUrl(p, url);
-  const opened = { url, zarrUrl, isArchive };
+  const isArchive = /\.vzip(?:[?#]|$)/i.test(url2);
+  const zarrUrl = isArchive ? archiveZarrUrl(p, url2) : imageZarrUrl(p, url2);
+  const opened = { url: url2, zarrUrl, isArchive };
   setStatus(isArchive ? "Opening the archive\u2026" : "Reading the file's structure\u2026");
   const t0 = performance.now();
   const root = await getJson(`${zarrUrl}zarr.json`);
@@ -1721,7 +1889,7 @@ async function zarrify(url) {
   if (attrs.refkv_zarrified?.profile === "safe") {
     const safe2 = attrs.refkv_zarrified.safe ?? {};
     views = [];
-    $("name").textContent = `${safe2.PRODUCT_URI ?? url.split("/").pop()} (${safe2.PROCESSING_LEVEL ?? "Sentinel-2"})`;
+    $("name").textContent = `${safe2.PRODUCT_URI ?? url2.split("/").pop()} (${safe2.PROCESSING_LEVEL ?? "Sentinel-2"})`;
     $("zarr-url").textContent = neuroglancerSource(opened, zarrUrl);
     $("view-note").textContent = `${safe2.SENSING_TIME ?? ""} ${attrs["proj:code"] ?? ""}`;
     showLevels(await listArrays(zarrUrl));
@@ -1729,11 +1897,11 @@ async function zarrify(url) {
     $("share-local").hidden = true;
     $("share-archive").hidden = true;
     map.hidden = false;
-    map.href = new URL(`map.html?url=${encodeURIComponent(url)}`, location.href).href;
+    map.href = new URL(`map.html?url=${encodeURIComponent(url2)}`, location.href).href;
   } else if (AUDIO.includes(attrs.refkv_zarrified?.profile)) {
     const info = attrs.refkv_zarrified[attrs.refkv_zarrified.profile] ?? {};
     views = [];
-    const file = url.split("?")[0].split("/").pop();
+    const file = url2.split("?")[0].split("/").pop();
     try {
       $("name").textContent = decodeURIComponent(file);
     } catch {
@@ -1758,6 +1926,9 @@ async function zarrify(url) {
       found = [await omeView(zarrUrl, ms0, ms0.name ?? "image", attrs.refkv_zarrified?.profile === "ome-zarr")];
     } else if (attrs.ome?.["bioformats2raw.layout"] !== void 0) {
       found = await seriesViews(zarrUrl);
+    } else if (attrs.refkv_zarrified?.profile === "grib") {
+      found = await gribViews(zarrUrl);
+      if (found.length === 0) throw new Error("no GRIB variable to show");
     } else {
       const arrays = (await listArrays(zarrUrl)).filter(({ meta }) => showable(meta));
       if (attrs.refkv_zarrified?.profile === "hdf5") {
@@ -1782,9 +1953,17 @@ async function zarrify(url) {
     await showView(views[0]);
   }
   $("download").href = archiveDownloadUrl(zarrUrl);
+  showPython(opened, attrs.refkv_zarrified?.profile);
   $("result").hidden = false;
   setStatus(`Ready in ${ms} ms.`);
 }
+$("python-copy").addEventListener("click", () => {
+  navigator.clipboard.writeText($("python-code").textContent ?? "").then(
+    () => $("python-copy").textContent = "Copied",
+    () => $("python-copy").textContent = "Copy failed"
+  );
+  setTimeout(() => $("python-copy").textContent = "Copy", 2e3);
+});
 $("view").addEventListener("change", () => {
   showView(views[Number($("view").value)]).catch((e) => setStatus(String(e.message ?? e), true));
 });
