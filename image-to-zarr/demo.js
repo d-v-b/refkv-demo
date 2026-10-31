@@ -2266,15 +2266,53 @@ function formatImfFixdate(seconds) {
 
 // src/http.ts
 var HttpResolutionError = class extends Error {
+  /** Whether the object is not the one the pins name: it changed since they were taken. */
+  sourceChanged;
+  /** Why the request got no response, where a browser could tell. */
+  noResponse;
+  constructor(message, sourceChanged = false, noResponse2) {
+    super(message);
+    this.sourceChanged = sourceChanged;
+    this.noResponse = noResponse2;
+  }
 };
 function inBrowser() {
   const g = globalThis;
   return g.document !== void 0 || g.WorkerGlobalScope !== void 0;
 }
-function fetchFailed(url2, e, browser = inBrowser()) {
+async function answers(url2) {
+  const abort = new AbortController();
+  try {
+    await fetch(url2, { mode: "no-cors", cache: "no-store", signal: abort.signal });
+    return true;
+  } catch {
+    return false;
+  } finally {
+    abort.abort();
+  }
+}
+async function noResponse(url2, e, browser = inBrowser(), probe = answers, page = globalThis.location?.protocol) {
   const message = `${url2}: ${e.message}`;
-  if (!browser || !(e instanceof TypeError)) return message;
-  return `${message}. A browser reports this for a server that does not allow cross-origin reads (no Access-Control-Allow-Origin header for this page) as well as for one it cannot reach`;
+  if (!browser || !(e instanceof TypeError)) return new HttpResolutionError(message);
+  if (page === "https:" && new URL(url2).protocol === "http:") {
+    return new HttpResolutionError(
+      `${message}: this https:// page cannot read an http:// URL (mixed content)`,
+      false,
+      "mixed-content"
+    );
+  }
+  if (await probe(url2)) {
+    return new HttpResolutionError(
+      `${message}: the server answered, but its CORS headers do not let this site read the response (it sends no Access-Control-Allow-Origin for this site, or refuses the preflight of a range request)`,
+      false,
+      "cors"
+    );
+  }
+  return new HttpResolutionError(
+    `${message}: the server could not be reached (the host may not exist, or it refused or dropped the connection)`,
+    false,
+    "unreachable"
+  );
 }
 function single(headers, name) {
   return headers.get(name);
@@ -2303,10 +2341,10 @@ async function readHttpRange(url2, start, end, pins, signal, options = {}) {
     response = options.fetch ? await options.fetch(url2, { headers, signal }, options.allow) : await fetch(url2, { headers, signal, redirect: "follow", cache: "no-store" });
   } catch (e) {
     signal?.throwIfAborted();
-    throw new HttpResolutionError(fetchFailed(url2, e));
+    throw await noResponse(url2, e);
   }
-  const fail = (message) => {
-    throw new HttpResolutionError(`${url2}: ${message}`);
+  const fail = (message, sourceChanged = false) => {
+    throw new HttpResolutionError(`${url2}: ${message}`, sourceChanged);
   };
   if (response.redirected) {
     try {
@@ -2317,9 +2355,9 @@ async function readHttpRange(url2, start, end, pins, signal, options = {}) {
       fail(e.message);
     }
   }
-  if (response.status === 412) fail("a pin failed (412)");
+  if (response.status === 412) fail("a pin failed (412)", true);
   if (response.status === 416)
-    fail("the object is shorter than the range (416)");
+    fail("the object is shorter than the range (416)", true);
   if (response.status !== 200 && response.status !== 206) {
     fail(`HTTP ${response.status}`);
   }
@@ -2339,7 +2377,8 @@ async function readHttpRange(url2, start, end, pins, signal, options = {}) {
   const skip = (header) => header === null && response.type === "cors" && options.unverifiablePins === true;
   if (pins.etag !== void 0 && etag !== pins.etag && !skip(etag)) {
     fail(
-      `the ETag is ${JSON.stringify(etag)}, but the archive pins ${pins.etag}: the source changed since the archive was written, or its server does not send the ETag`
+      `the ETag is ${JSON.stringify(etag)}, but the archive pins ${pins.etag}: the source changed since the archive was written, or its server does not send the ETag`,
+      true
     );
   }
   if (pins.modifiedNotAfter !== void 0 && !skip(lastModified)) {
@@ -2350,7 +2389,7 @@ async function readHttpRange(url2, start, end, pins, signal, options = {}) {
       );
     }
     if (BigInt(t) > pins.modifiedNotAfter)
-      fail("Last-Modified is after the pin");
+      fail("Last-Modified is after the pin", true);
   }
   const body = new Uint8Array(await response.arrayBuffer());
   if (response.status === 200) {
@@ -2583,9 +2622,16 @@ var utf82 = new TextEncoder();
 // src/archive.ts
 var RefkvError = class extends Error {
   errorClass;
-  constructor(errorClass, message) {
+  /**
+   * Whether a source is not the one the archive pins (spec §5.1
+   * <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#51-pins>): a pin or a range checksum
+   * failed, so the source changed since the archive was written.
+   */
+  sourceChanged;
+  constructor(errorClass, message, sourceChanged = false) {
     super(`refkv ${errorClass} error: ${message}`);
     this.errorClass = errorClass;
+    this.sourceChanged = sourceChanged;
   }
 };
 var DEFAULT_POLICY = {
@@ -2986,8 +3032,8 @@ var Archive = class _Archive {
     const s = this.sources[r.source];
     const start = r.offset;
     const end = r.offset + r.length;
-    const fail = (m) => {
-      throw new RefkvError("resolution", `source ${r.source}: ${m}`);
+    const fail = (m, sourceChanged = false) => {
+      throw new RefkvError("resolution", `source ${r.source}: ${m}`, sourceChanged);
     };
     if (s.data !== void 0) {
       if (end > BigInt(s.data.length)) fail("range past the end of the data");
@@ -3026,12 +3072,13 @@ var Archive = class _Archive {
       const unseen = size === void 0 && hidden === true && this.policy.unverifiablePins;
       if (s.size !== void 0 && !unseen && BigInt(size ?? -1) !== s.size) {
         fail(
-          size === void 0 ? `${url2}: the archive pins the size ${s.size}, which the response does not give` : `${url2}: the source is ${size} bytes, but the archive pins ${s.size}: the source changed since the archive was written`
+          size === void 0 ? `${url2}: the archive pins the size ${s.size}, which the response does not give` : `${url2}: the source is ${size} bytes, but the archive pins ${s.size}: the source changed since the archive was written`,
+          size !== void 0
         );
       }
       return data;
     } catch (e) {
-      if (e instanceof HttpResolutionError) fail(e.message);
+      if (e instanceof HttpResolutionError) fail(e.message, e.sourceChanged);
       throw e;
     }
   }
@@ -3110,7 +3157,8 @@ var Archive = class _Archive {
       if (crc !== void 0 && crc32c(data) !== crc) {
         throw new RefkvError(
           "resolution",
-          `the bytes read do not match the range's crc32c ${crc} (got ${crc32c(data)}): the source changed since the archive was written`
+          `the bytes read do not match the range's crc32c ${crc} (got ${crc32c(data)}): the source changed since the archive was written`,
+          true
         );
       }
       return data.subarray(lo, hi);
@@ -3239,6 +3287,9 @@ init_define_REFKV_PROFILES();
 // src/server.ts
 var ARCHIVE_KEY = "__vz__/archive.vzip";
 var WORKER_HEADER = "X-Vzip-Worker";
+var ERROR_HEADER = "X-Vzip-Error";
+var PENDING_HEADER = "X-Vzip-Pending";
+var PENDING = Symbol("pending");
 function encodeId(url2) {
   let s = "";
   for (const b of new TextEncoder().encode(url2)) s += String.fromCharCode(b);
@@ -3272,6 +3323,13 @@ async function registerVzipWorker(scriptUrl = "vzip-sw.js", timeoutMs = 1e4) {
     });
   }
   return new URL("vz/", registration.scope).href;
+}
+async function fetchWorker(url2, init) {
+  for (; ; ) {
+    const r = await fetch(url2, init);
+    if (r.status !== 503 || r.headers.get(PENDING_HEADER) === null) return r;
+    await r.body?.cancel();
+  }
 }
 function imageZarrUrl(prefix2, url2) {
   return `${prefix2}image/${encodeId(new URL(url2).href)}/`;
@@ -3542,18 +3600,53 @@ core_default.registerLanguage("python", python);
 var $ = (id) => document.getElementById(id);
 var input = $("url");
 var status = $("status");
-var setStatus = (text, error = false) => {
-  status.textContent = text;
-  status.classList.toggle("error", error);
+var setStatus = (text) => {
+  status.replaceChildren(text);
+  status.classList.remove("error");
 };
+var WorkerError = class extends Error {
+  status;
+  reason;
+  constructor(status2, message, reason) {
+    super(message);
+    this.status = status2;
+    this.reason = reason ?? void 0;
+  }
+};
+function helpFor(e) {
+  if (!(e instanceof WorkerError)) return "";
+  switch (e.reason) {
+    case "cors":
+      return "The file's server does not let other sites read it from a browser. Its owner can allow it with CORS headers: Access-Control-Allow-Origin, and Access-Control-Expose-Headers for Content-Range, Content-Length and ETag. Python is not restricted by CORS: the script below zarrifies the file on your machine.";
+    case "unreachable":
+      return "Check the URL: the browser got no answer from its server.";
+    case "mixed-content":
+      return "Use the file's https:// URL, if its server has one.";
+  }
+  if (e.status === 422) return "The input was read, but it is not a format, or a form of one, that this page zarrifies.";
+  if (e.status === 507) return "The store is larger than this page lists in a browser; the Python package has no such limit.";
+  return "";
+}
+function showError(e) {
+  const message = String(e.message ?? e);
+  const title = document.createElement("strong");
+  title.textContent = "Could not zarrify this input";
+  const detail = document.createElement("p");
+  detail.textContent = message;
+  const help = document.createElement("p");
+  help.className = "help";
+  help.textContent = helpFor(e);
+  status.replaceChildren(title, detail, ...help.textContent ? [help] : []);
+  status.classList.add("error");
+}
 async function getJson(url2) {
-  const r = await fetch(url2);
+  const r = await fetchWorker(url2);
   if (r.headers.get(WORKER_HEADER) === null) {
     throw new Error(
       `the refkv service worker did not answer this request (HTTP ${r.status} from the network); reload the page and try again`
     );
   }
-  if (!r.ok) throw new Error(`${r.status}: ${await r.text()}`);
+  if (!r.ok) throw new WorkerError(r.status, await r.text(), r.headers.get(ERROR_HEADER));
   return r.json();
 }
 var SECONDS = { second: 1, millisecond: 1e-3, minute: 60, hour: 3600 };
@@ -3822,7 +3915,7 @@ async function seriesViews(zarrUrl) {
   return [all, ...views2];
 }
 async function archiveKeys(zarrUrl) {
-  const r = await fetch(archiveDownloadUrl(zarrUrl));
+  const r = await fetchWorker(archiveDownloadUrl(zarrUrl));
   if (!r.ok) throw new Error(`${r.status}: ${await r.text()}`);
   const archive = await Archive.open(new Uint8Array(await r.arrayBuffer()), zarrUrl, () => {
     throw new Error("not read");
@@ -3923,6 +4016,10 @@ void main() {
   ng.href = new URL(`neuroglancer/#!${encodeURIComponent(JSON.stringify(state))}`, location.href).href;
 }
 var pythonUrl;
+function mediaProfile(url2) {
+  const ext = new URL(url2).pathname.toLowerCase().match(/\.(\w+)$/)?.[1];
+  return ext === "mp3" ? "mp3" : ext === "flac" ? "flac" : ext && ["mp4", "mov", "m4a", "m4v"].includes(ext) ? "mp4" : void 0;
+}
 function showPython(input2, profile) {
   const script = pythonScript(input2.url, input2.isArchive, profile, "0.2.0");
   const file = `${input2.isArchive ? "open" : "zarrify"}_${stem(input2.url)}.py`;
@@ -3936,10 +4033,12 @@ function showPython(input2, profile) {
 }
 async function zarrify(url2) {
   $("result").hidden = true;
+  $("python").hidden = true;
   const here = new URL(location.href);
   here.searchParams.set("url", url2);
   history.replaceState(null, "", here);
   setStatus("Starting the service worker\u2026");
+  status.scrollIntoView({ block: "nearest", behavior: "smooth" });
   prefix ??= registerVzipWorker(new URL("vzip-sw.js", location.href));
   const p = await prefix;
   const isArchive = /\.vzip(?:[?#]|$)/i.test(url2);
@@ -4023,6 +4122,7 @@ async function zarrify(url2) {
   $("download").href = archiveDownloadUrl(zarrUrl);
   showPython(opened, attrs.refkv_zarrified?.profile);
   $("result").hidden = false;
+  $("python").hidden = false;
   setStatus(`Ready in ${ms} ms.`);
 }
 $("python-copy").addEventListener("click", () => {
@@ -4033,11 +4133,18 @@ $("python-copy").addEventListener("click", () => {
   setTimeout(() => $("python-copy").textContent = "Copy", 2e3);
 });
 $("view").addEventListener("change", () => {
-  showView(views[Number($("view").value)]).catch((e) => setStatus(String(e.message ?? e), true));
+  showView(views[Number($("view").value)]).catch(showError);
 });
 $("form").addEventListener("submit", (event) => {
   event.preventDefault();
-  zarrify(input.value.trim()).catch((e) => setStatus(String(e.message ?? e), true));
+  const url2 = input.value.trim();
+  zarrify(url2).catch((e) => {
+    showError(e);
+    if (e instanceof WorkerError && e.reason === "cors") {
+      showPython({ url: url2, zarrUrl: "", isArchive: /\.vzip(?:[?#]|$)/i.test(url2) }, mediaProfile(url2));
+      $("python").hidden = false;
+    }
+  });
 });
 for (const link of document.querySelectorAll("a[data-url]")) {
   link.addEventListener("click", (event) => {

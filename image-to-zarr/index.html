@@ -20,7 +20,9 @@
   body { background: var(--bg); color: var(--fg); margin: 0; line-height: 1.5; }
   main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
   h1 { font-size: 1.6rem; margin: 0 0 4px; }
-  p.lede { color: var(--muted); margin: 0 0 24px; }
+  p.lede { color: var(--muted); margin: 0 0 20px; }
+  h2.part { font-size: 1.05rem; margin: 32px 0 4px; }
+  p.about { color: var(--muted); font-size: 0.9rem; margin: 0; }
   form { display: flex; gap: 8px; flex-wrap: wrap; }
   select { font: inherit; padding: 2px 4px; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--fg); }
   input { flex: 1 1 420px; min-width: 0; padding: 8px 10px; font: inherit; font-size: 0.9rem;
@@ -29,12 +31,15 @@
     background: var(--accent); color: var(--bg); cursor: pointer; text-decoration: none; display: inline-block; }
   a.button.secondary { background: transparent; color: var(--accent); }
   #status { margin: 16px 0; color: var(--muted); min-height: 1.5em; }
-  #status.error { color: var(--error); }
+  #status.error { color: var(--error); border: 1px solid var(--error); border-radius: 8px; padding: 12px 16px; }
+  #status.error p { margin: 6px 0 0; color: var(--fg); }
+  #status.error p.help { color: var(--muted); }
   section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-top: 16px; }
   code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.85rem; word-break: break-all; }
   table { border-collapse: collapse; width: 100%; font-size: 0.9rem; margin: 8px 0 16px; }
   th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--line); }
   th { color: var(--muted); font-weight: 500; }
+  td:last-child { overflow-wrap: anywhere; }
   .actions { display: flex; gap: 8px; flex-wrap: wrap; }
   .examples { font-size: 0.9rem; color: var(--muted); margin: 12px 0 0; padding: 0; list-style: none;
     display: grid; grid-template-columns: max-content 1fr; gap: 8px 12px; }
@@ -46,13 +51,16 @@
   .fmt { display: inline-block; min-width: 6.6em; box-sizing: border-box; text-align: center; padding: 1px 7px; border-radius: 4px;
     background: var(--fmt); color: #fff; font: 600 0.75rem/1.5 ui-monospace, "SF Mono", Menlo, monospace;
     letter-spacing: 0.02em; }
-  @media (max-width: 560px) { .examples { grid-template-columns: 1fr; gap: 2px 12px; } .examples dd { margin-bottom: 8px; } }
+  @media (max-width: 560px) {
+    .examples { grid-template-columns: 1fr; gap: 2px 12px; } .examples dd { margin-bottom: 8px; }
+    table { font-size: 0.8rem; } th, td { padding: 4px; }
+  }
   [hidden] { display: none !important; }
   .table { overflow-x: auto; }
   #view-row { margin: 4px 0; }
   #view-note { color: var(--muted); }
   p.share { color: var(--muted); font-size: 0.9rem; margin: 12px 0 0; }
-  #python h2 { font-size: 1rem; margin: 20px 0 4px; }
+  #python h2 { font-size: 1rem; margin: 0 0 4px; }
   #python p { color: var(--muted); font-size: 0.9rem; margin: 0 0 8px; }
   #python p a { color: var(--accent); }
   #python pre { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 12px;
@@ -72,19 +80,48 @@
 <body>
 <main>
   <h1>Image files to Zarr in the browser</h1>
-  <p class="lede">Paste the URL of an image file, a Zarr or N5 store, or a .vzip archive.
-    Zeiss CZI, DICOM, FITS, FLAC (Free Lossless Audio Codec), WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2), HDF5, NWB, Imaris IMS, Leica LIF, MP3 (MPEG Layer III audio), MP4 and QuickTime (H.264 and HEVC video, AAC and MP3 audio), MRC2014, Nikon ND2, Hamamatsu NDPI, NIfTI-1 and NIfTI-2, NumPy NPY and NPZ (NEP 1), NRRD (Teem), Akoya QPTIFF, TIFF, OME-TIFF, Aperio SVS and Olympus VSI files, N5, OME-Zarr 0.4 and Zarr v2 stores, and Sentinel-2 SAFE (Level-1C, Level-2A) products are supported;
-    the format is detected from the file's
-    first bytes, or the store's metadata. A service worker reads the input's structure with a few range
-    requests, writes a vzip archive in memory (by <a href="https://github.com/d-v-b/refkv/blob/main/spec/zarrify.md">spec/zarrify.md</a>),
-    and serves it as plain Zarr at a local URL that any Zarr viewer on this site can open: Neuroglancer, or
-    for Sentinel-2 a map. Pixel data is read from the original only when a viewer asks for it.
-    That link works only here; download the archive and host it, and the Neuroglancer link to its URL
-    opens in any deployment of the viewer, with no service worker.</p>
+  <p class="lede">Paste the URL of an image file, a Zarr or N5 store, or a .vzip archive. Your browser
+    reads its structure, presents it as Zarr without copying its data, and opens it in Neuroglancer
+    (or, for a Sentinel-2 product, on a map).</p>
   <form id="form">
-    <input id="url" type="url" required aria-label="image file or refkv URL">
+    <input id="url" type="url" required aria-label="image file or refkv URL"
+      placeholder="https://… an image file, a Zarr or N5 store, or a .vzip archive">
     <button type="submit">Zarrify</button>
   </form>
+  <div id="status" role="status"></div>
+  <section id="result" hidden>
+    <div><strong id="name"></strong></div>
+    <div id="view-row" hidden><label>Show <select id="view" aria-label="what to show"></select></label></div>
+    <div id="view-note"></div>
+    <div>Neuroglancer source: <code id="zarr-url"></code></div>
+    <div class="table"><table><thead><tr><th>array</th><th>shape</th><th>chunk</th><th>data type</th><th>codecs</th></tr></thead>
+      <tbody id="levels"></tbody></table></div>
+    <div class="actions">
+      <a class="button" id="open-ng" target="_blank" rel="noopener">Open in Neuroglancer</a>
+      <a class="button" id="open-map" target="_blank" rel="noopener" hidden>View on a map</a>
+      <a class="button secondary" id="download">Download .vzip</a>
+    </div>
+    <p class="share" id="share-local">This Neuroglancer link opens only on this site, in a browser where this page
+      has zarrified the file: the page's service worker answers its reads. To share a link, download the .vzip,
+      put it on a server that allows cross-origin reads (CORS), and open its URL here. The link then names the
+      archive (<code>&lt;archive url&gt;|vzip:&lt;path&gt;|zarr3:</code>), which any deployment of the Neuroglancer fork opens.
+      The archive refers to the original's bytes by URL, so it stays small, and pins each source's size.</p>
+    <p class="share" id="share-archive" hidden>This Neuroglancer link names the archive itself
+      (<code>&lt;archive url&gt;|vzip:&lt;path&gt;|zarr3:</code>): share it, and any deployment of the Neuroglancer
+      fork opens it, with no service worker.</p>
+  </section>
+  <section id="python" hidden>
+    <h2>In Python</h2>
+    <p>This script builds the same Zarr hierarchy with refkv and opens it with zarr-python. Its header
+      declares its dependencies (<a href="https://peps.python.org/pep-0723/">PEP 723</a>), so
+      <code id="python-run"></code> runs it, with <a href="https://docs.astral.sh/uv/">uv</a>.</p>
+    <pre><code id="python-code"></code></pre>
+    <div class="actions">
+      <button type="button" class="secondary" id="python-copy">Copy</button>
+      <a class="button secondary" id="python-save">Download script</a>
+    </div>
+  </section>
+  <h2 class="part">Or try an example</h2>
   <!-- The blocks between `profiles:` markers are filled by js/build.mjs from the profile registry
        (spec/zarrify/profiles/) and each format's demo/examples/<format>.html, with its
        examples' sources and licenses. -->
@@ -169,39 +206,15 @@
     <dt><span class="fmt" style="--fmt: #006d77">Zarr v2</span> <a class="spec" href="https://github.com/d-v-b/refkv/blob/main/spec/zarrify/zarr2.md" title="how refkv zarrifies Zarr v2">spec</a></dt>
     <dd><a href="#" id="example-zarr2" data-url="https://janelia-cosem-datasets.s3.amazonaws.com/jrc_hela-2/jrc_hela-2.zarr/recon-1/em/fibsem-uint8/s4/">OpenOrganelle jrc_hela-2, FIB-SEM array (16 MB)</a></dd>
   </dl>
-  <div id="status" role="status"></div>
-  <section id="result" hidden>
-    <div><strong id="name"></strong></div>
-    <div id="view-row" hidden><label>Show <select id="view" aria-label="what to show"></select></label></div>
-    <div id="view-note"></div>
-    <div>Neuroglancer source: <code id="zarr-url"></code></div>
-    <div class="table"><table><thead><tr><th>array</th><th>shape</th><th>chunk</th><th>data type</th><th>codecs</th></tr></thead>
-      <tbody id="levels"></tbody></table></div>
-    <div class="actions">
-      <a class="button" id="open-ng" target="_blank" rel="noopener">Open in Neuroglancer</a>
-      <a class="button" id="open-map" target="_blank" rel="noopener" hidden>View on a map</a>
-      <a class="button secondary" id="download">Download .vzip</a>
-    </div>
-    <p class="share" id="share-local">This Neuroglancer link opens only on this site, in a browser where this page
-      has zarrified the file: the page's service worker answers its reads. To share a link, download the .vzip,
-      put it on a server that allows cross-origin reads (CORS), and open its URL here. The link then names the
-      archive (<code>&lt;archive url&gt;|vzip:&lt;path&gt;|zarr3:</code>), which any deployment of the Neuroglancer fork opens.
-      The archive refers to the original's bytes by URL, so it stays small, and pins each source's size.</p>
-    <p class="share" id="share-archive" hidden>This Neuroglancer link names the archive itself
-      (<code>&lt;archive url&gt;|vzip:&lt;path&gt;|zarr3:</code>): share it, and any deployment of the Neuroglancer
-      fork opens it, with no service worker.</p>
-    <div id="python">
-      <h2>In Python</h2>
-      <p>This script builds the same Zarr hierarchy with refkv and opens it with zarr-python. Its header
-        declares its dependencies (<a href="https://peps.python.org/pep-0723/">PEP 723</a>), so
-        <code id="python-run"></code> runs it, with <a href="https://docs.astral.sh/uv/">uv</a>.</p>
-      <pre><code id="python-code"></code></pre>
-      <div class="actions">
-        <button type="button" class="secondary" id="python-copy">Copy</button>
-        <a class="button secondary" id="python-save">Download script</a>
-      </div>
-    </div>
-  </section>
+  <h2 class="part">How it works</h2>
+  <p class="about">Zeiss CZI, DICOM, FITS, FLAC (Free Lossless Audio Codec), WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2), HDF5, NWB, Imaris IMS, Leica LIF, MP3 (MPEG Layer III audio), MP4 and QuickTime (H.264 and HEVC video, AAC and MP3 audio), MRC2014, Nikon ND2, Hamamatsu NDPI, NIfTI-1 and NIfTI-2, NumPy NPY and NPZ (NEP 1), NRRD (Teem), Akoya QPTIFF, TIFF, OME-TIFF, Aperio SVS and Olympus VSI files, N5, OME-Zarr 0.4 and Zarr v2 stores, and Sentinel-2 SAFE (Level-1C, Level-2A) products are supported;
+    the format is detected from the file's first bytes, or the store's metadata. A service worker reads
+    the input's structure with a few range requests, writes a vzip archive in memory (by
+    <a href="https://github.com/d-v-b/refkv/blob/main/spec/zarrify.md">spec/zarrify.md</a>), keeps it
+    in the browser's cache, and serves it as plain Zarr at a local URL that any Zarr viewer on this site
+    can open. Pixel data is read from the original only when a viewer asks for it. That link works only
+    here; download the archive and host it, and the Neuroglancer link to its URL opens in any deployment
+    of the viewer, with no service worker.</p>
   <footer>Part of <a href="https://github.com/d-v-b/refkv">refkv</a>, reference semantics for key-value storage: specification, implementations and the source of this demo.
     The Python script is highlighted by <a href="https://highlightjs.org/">highlight.js</a> (BSD-3-Clause).
     Viewers: a fork of <a href="https://github.com/google/neuroglancer">Neuroglancer</a> (Apache-2.0) with

@@ -249,15 +249,53 @@
 
   // src/http.ts
   var HttpResolutionError = class extends Error {
+    /** Whether the object is not the one the pins name: it changed since they were taken. */
+    sourceChanged;
+    /** Why the request got no response, where a browser could tell. */
+    noResponse;
+    constructor(message, sourceChanged = false, noResponse2) {
+      super(message);
+      this.sourceChanged = sourceChanged;
+      this.noResponse = noResponse2;
+    }
   };
   function inBrowser() {
     const g = globalThis;
     return g.document !== void 0 || g.WorkerGlobalScope !== void 0;
   }
-  function fetchFailed(url2, e, browser = inBrowser()) {
+  async function answers(url2) {
+    const abort = new AbortController();
+    try {
+      await fetch(url2, { mode: "no-cors", cache: "no-store", signal: abort.signal });
+      return true;
+    } catch {
+      return false;
+    } finally {
+      abort.abort();
+    }
+  }
+  async function noResponse(url2, e, browser = inBrowser(), probe = answers, page = globalThis.location?.protocol) {
     const message = `${url2}: ${e.message}`;
-    if (!browser || !(e instanceof TypeError)) return message;
-    return `${message}. A browser reports this for a server that does not allow cross-origin reads (no Access-Control-Allow-Origin header for this page) as well as for one it cannot reach`;
+    if (!browser || !(e instanceof TypeError)) return new HttpResolutionError(message);
+    if (page === "https:" && new URL(url2).protocol === "http:") {
+      return new HttpResolutionError(
+        `${message}: this https:// page cannot read an http:// URL (mixed content)`,
+        false,
+        "mixed-content"
+      );
+    }
+    if (await probe(url2)) {
+      return new HttpResolutionError(
+        `${message}: the server answered, but its CORS headers do not let this site read the response (it sends no Access-Control-Allow-Origin for this site, or refuses the preflight of a range request)`,
+        false,
+        "cors"
+      );
+    }
+    return new HttpResolutionError(
+      `${message}: the server could not be reached (the host may not exist, or it refused or dropped the connection)`,
+      false,
+      "unreachable"
+    );
   }
   function single(headers, name) {
     return headers.get(name);
@@ -286,10 +324,10 @@
       response2 = options.fetch ? await options.fetch(url2, { headers, signal }, options.allow) : await fetch(url2, { headers, signal, redirect: "follow", cache: "no-store" });
     } catch (e) {
       signal?.throwIfAborted();
-      throw new HttpResolutionError(fetchFailed(url2, e));
+      throw await noResponse(url2, e);
     }
-    const fail = (message) => {
-      throw new HttpResolutionError(`${url2}: ${message}`);
+    const fail = (message, sourceChanged = false) => {
+      throw new HttpResolutionError(`${url2}: ${message}`, sourceChanged);
     };
     if (response2.redirected) {
       try {
@@ -300,9 +338,9 @@
         fail(e.message);
       }
     }
-    if (response2.status === 412) fail("a pin failed (412)");
+    if (response2.status === 412) fail("a pin failed (412)", true);
     if (response2.status === 416)
-      fail("the object is shorter than the range (416)");
+      fail("the object is shorter than the range (416)", true);
     if (response2.status !== 200 && response2.status !== 206) {
       fail(`HTTP ${response2.status}`);
     }
@@ -322,7 +360,8 @@
     const skip = (header) => header === null && response2.type === "cors" && options.unverifiablePins === true;
     if (pins.etag !== void 0 && etag !== pins.etag && !skip(etag)) {
       fail(
-        `the ETag is ${JSON.stringify(etag)}, but the archive pins ${pins.etag}: the source changed since the archive was written, or its server does not send the ETag`
+        `the ETag is ${JSON.stringify(etag)}, but the archive pins ${pins.etag}: the source changed since the archive was written, or its server does not send the ETag`,
+        true
       );
     }
     if (pins.modifiedNotAfter !== void 0 && !skip(lastModified)) {
@@ -333,7 +372,7 @@
         );
       }
       if (BigInt(t) > pins.modifiedNotAfter)
-        fail("Last-Modified is after the pin");
+        fail("Last-Modified is after the pin", true);
     }
     const body = new Uint8Array(await response2.arrayBuffer());
     if (response2.status === 200) {
@@ -915,9 +954,16 @@
   // src/archive.ts
   var RefkvError = class extends Error {
     errorClass;
-    constructor(errorClass, message) {
+    /**
+     * Whether a source is not the one the archive pins (spec §5.1
+     * <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#51-pins>): a pin or a range checksum
+     * failed, so the source changed since the archive was written.
+     */
+    sourceChanged;
+    constructor(errorClass, message, sourceChanged = false) {
       super(`refkv ${errorClass} error: ${message}`);
       this.errorClass = errorClass;
+      this.sourceChanged = sourceChanged;
     }
   };
   var DEFAULT_POLICY = {
@@ -1318,8 +1364,8 @@
       const s = this.sources[r.source];
       const start = r.offset;
       const end = r.offset + r.length;
-      const fail = (m) => {
-        throw new RefkvError("resolution", `source ${r.source}: ${m}`);
+      const fail = (m, sourceChanged = false) => {
+        throw new RefkvError("resolution", `source ${r.source}: ${m}`, sourceChanged);
       };
       if (s.data !== void 0) {
         if (end > BigInt(s.data.length)) fail("range past the end of the data");
@@ -1358,12 +1404,13 @@
         const unseen = size === void 0 && hidden === true && this.policy.unverifiablePins;
         if (s.size !== void 0 && !unseen && BigInt(size ?? -1) !== s.size) {
           fail(
-            size === void 0 ? `${url2}: the archive pins the size ${s.size}, which the response does not give` : `${url2}: the source is ${size} bytes, but the archive pins ${s.size}: the source changed since the archive was written`
+            size === void 0 ? `${url2}: the archive pins the size ${s.size}, which the response does not give` : `${url2}: the source is ${size} bytes, but the archive pins ${s.size}: the source changed since the archive was written`,
+            size !== void 0
           );
         }
         return data;
       } catch (e) {
-        if (e instanceof HttpResolutionError) fail(e.message);
+        if (e instanceof HttpResolutionError) fail(e.message, e.sourceChanged);
         throw e;
       }
     }
@@ -1442,7 +1489,8 @@
         if (crc !== void 0 && crc32c(data) !== crc) {
           throw new RefkvError(
             "resolution",
-            `the bytes read do not match the range's crc32c ${crc} (got ${crc32c(data)}): the source changed since the archive was written`
+            `the bytes read do not match the range's crc32c ${crc} (got ${crc32c(data)}): the source changed since the archive was written`,
+            true
           );
         }
         return data.subarray(lo, hi);
@@ -1877,27 +1925,31 @@
       return new Uint8Array(await response2.arrayBuffer());
     }
     async retry(f) {
-      for (let attempt = 0; ; attempt++) {
+      for (let attempt2 = 0; ; attempt2++) {
         try {
           return await f();
         } catch (e) {
           if (e instanceof RefkvError || e instanceof HttpResolutionError || e.name === "AbortError") throw e;
-          const last = attempt >= this.attempts - 1;
+          const last = attempt2 >= this.attempts - 1;
           if (e instanceof Transient) {
             if (last) throw new HttpResolutionError(`${this.url}: HTTP ${e.status} after ${this.attempts} attempts`);
-            await this.wait(attempt, e.retryAfter);
+            await this.wait(attempt2, e.retryAfter);
           } else {
             if (last) {
-              if (e instanceof NoResponse) throw new HttpResolutionError(`${fetchFailed(this.url, e.error)}${causeOf(e.error)}`);
+              if (e instanceof NoResponse) {
+                const failed = await noResponse(this.url, e.error);
+                failed.message += causeOf(e.error);
+                throw failed;
+              }
               throw new HttpResolutionError(`${this.url}: ${e.message}${causeOf(e)}`);
             }
-            await this.wait(attempt, null);
+            await this.wait(attempt2, null);
           }
         }
       }
     }
-    async wait(attempt, retryAfter) {
-      let delay = this.baseDelay * 2 ** attempt * (0.5 + Math.random());
+    async wait(attempt2, retryAfter) {
+      let delay = this.baseDelay * 2 ** attempt2 * (0.5 + Math.random());
       if (retryAfter !== null) {
         const s = retryAfter.trim();
         if (/^\d+$/.test(s)) delay = Math.max(delay, Number(s));
@@ -2761,6 +2813,23 @@
   };
   var ARCHIVE_KEY = "__vz__/archive.vzip";
   var WORKER_HEADER = "X-Vzip-Worker";
+  var ERROR_HEADER = "X-Vzip-Error";
+  var PENDING_HEADER = "X-Vzip-Pending";
+  var PENDING = Symbol("pending");
+  async function within2(p, ms) {
+    if (ms === void 0) return p;
+    let timer;
+    try {
+      return await Promise.race([p, new Promise((r) => timer = setTimeout(() => r(PENDING), ms))]);
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  function encodeId(url2) {
+    let s = "";
+    for (const b of new TextEncoder().encode(url2)) s += String.fromCharCode(b);
+    return btoa(s).replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/, "");
+  }
   function decodeId(id) {
     if (!/^[A-Za-z0-9_-]+$/.test(id)) throw new Error(`invalid id ${id}`);
     const s = atob(id.replaceAll("-", "+").replaceAll("_", "/"));
@@ -2768,12 +2837,19 @@
       Uint8Array.from(s, (c) => c.charCodeAt(0))
     );
   }
+  async function attempt(f) {
+    try {
+      return await f();
+    } catch {
+      return void 0;
+    }
+  }
   function response(status, body, headers = {}) {
     return new Response(body, {
       status,
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Expose-Headers": `Content-Range, Content-Length, ${WORKER_HEADER}`,
+        "Access-Control-Expose-Headers": `Content-Range, Content-Length, ${WORKER_HEADER}, ${ERROR_HEADER}, ${PENDING_HEADER}`,
         [WORKER_HEADER]: "1",
         ...typeof body === "string" ? { "Content-Type": "text/plain; charset=utf-8" } : {},
         ...headers
@@ -2799,19 +2875,22 @@
       fetchStore,
       fetchRange = (url2, start, end, pins, options2) => readHttpRange(url2, start, end, pins, void 0, options2),
       policy = {},
+      pendingAfter,
+      saved: saved2,
       openSource = options.openFile ? async (url2) => {
         const file = await options.openFile(url2);
         return readerSource(file.read, file.size, file.etag ? { etag: file.etag } : {});
       } : (url2) => openHttpSource(url2, { policy }),
       fetchArchive = async (url2) => {
-        const r = await fetch(url2);
+        const r = await fetch(url2).catch(async (e) => {
+          throw await noResponse(url2, e);
+        });
         if (!r.ok) throw new HttpResolutionError(`${url2}: HTTP ${r.status}`);
         return new Uint8Array(await r.arrayBuffer());
       }
     } = options;
     const opened = /* @__PURE__ */ new Map();
-    function open(kind, url2) {
-      const name = `${kind}/${url2}`;
+    function open(name, kind, url2) {
       let p = opened.get(name);
       if (p === void 0) {
         p = (async () => {
@@ -2820,6 +2899,14 @@
           const stem = decodeURIComponent(trimmed.slice(trimmed.lastIndexOf("/") + 1)) || "archive";
           if (kind === "archive") {
             return { archive: await Archive.open(await fetchArchive(url2), url2, fetchRange, policy), filename: stem };
+          }
+          const filename = `${stem.replace(/\.(ome\.tiff?|tiff?|nd2|n5|zarr)$/i, "")}.vzip`;
+          const read = (bytes2) => Archive.open(bytes2, url2, fetchRange, { ...policy, unverifiablePins: true });
+          const kept = saved2 && await attempt(() => saved2.get(name));
+          if (kept !== void 0) {
+            const archive2 = await attempt(() => read(kept));
+            if (archive2 !== void 0) return { archive: archive2, filename };
+            await attempt(() => saved2.delete(name));
           }
           let virtual;
           if (kind === "image" && isStoreUrl(url2)) {
@@ -2835,13 +2922,13 @@
             }
           }
           const bytes = await writeVzip(virtual);
-          return {
-            archive: await Archive.open(bytes, url2, fetchRange, { ...policy, unverifiablePins: true }),
-            filename: `${stem.replace(/\.(ome\.tiff?|tiff?|nd2|n5|zarr)$/i, "")}.vzip`
-          };
+          const archive = await read(bytes);
+          if (saved2) await attempt(() => saved2.put(name, bytes));
+          return { archive, filename };
         })();
         opened.set(name, p);
-        p.catch(() => opened.delete(name));
+        p.catch(() => {
+        });
       }
       return p;
     }
@@ -2863,8 +2950,17 @@
         return response(400, "invalid URL");
       }
       const head = request.method === "HEAD";
+      const name = `${kind}/${url2}`;
+      const opening = open(name, kind, url2);
       try {
-        const { archive, filename } = await open(kind, url2);
+        const built = await within2(opening, pendingAfter).catch((e) => {
+          if (opened.get(name) === opening) opened.delete(name);
+          throw e;
+        });
+        if (built === PENDING) {
+          return response(503, "still zarrifying; ask again", { "Retry-After": "0", [PENDING_HEADER]: "1" });
+        }
+        const { archive, filename } = built;
         if (key === ARCHIVE_KEY) {
           return response(200, head ? null : archive.bytes, {
             "Content-Type": "application/zip",
@@ -2893,6 +2989,10 @@
         });
       } catch (e) {
         const message = e.message;
+        if (e instanceof RefkvError && e.sourceChanged && opened.get(name) === opening) {
+          opened.delete(name);
+          if (saved2) await attempt(() => saved2.delete(name));
+        }
         if (e instanceof RefkvError) {
           const status = e.errorClass === "request" ? 416 : e.errorClass === "resolution" ? 502 : 500;
           return response(status, message);
@@ -2905,17 +3005,51 @@
         if (e instanceof ImageError) return response(422, message);
         if (e instanceof StoreLimitError) return response(507, message);
         if (e instanceof StoreReadError) return response(502, message);
-        if (e instanceof HttpResolutionError) return response(502, message);
+        if (e instanceof HttpResolutionError) {
+          return response(502, message, e.noResponse ? { [ERROR_HEADER]: e.noResponse } : {});
+        }
         return response(500, message);
       }
     };
   }
 
   // src/sw.ts
+  var CACHE_PREFIX = "refkv-archives-";
+  var CACHE = CACHE_PREFIX + "20f46c9580c7515f5a81899f1b4c06855b5a27fc-t1793470964899";
+  var MAX_ARCHIVES = 16;
+  var MAX_BYTES = 2 ** 30;
+  var savedUrl = (name) => new URL(`refkv-archives/${encodeId(name)}`, self.registration.scope).href;
+  var saved = {
+    async get(name) {
+      const r = await (await caches.open(CACHE)).match(savedUrl(name));
+      return r && new Uint8Array(await r.arrayBuffer());
+    },
+    async put(name, bytes) {
+      const cache = await caches.open(CACHE);
+      await cache.put(
+        savedUrl(name),
+        new Response(bytes, { headers: { "Content-Length": String(bytes.length) } })
+      );
+      const keys = [...await cache.keys()].reverse();
+      let total = 0;
+      for (const [i, key] of keys.entries()) {
+        total += Number((await cache.match(key))?.headers.get("Content-Length") ?? 0);
+        if (i >= MAX_ARCHIVES || total > MAX_BYTES) await cache.delete(key);
+      }
+    },
+    async delete(name) {
+      await (await caches.open(CACHE)).delete(savedUrl(name));
+    }
+  };
   var prefix = new URL("vz/", self.registration.scope).href;
-  var handle = makeHandler({ prefix });
+  var handle = makeHandler({ prefix, saved, pendingAfter: 6e4 });
+  async function dropOlderBuilds() {
+    for (const name of await caches.keys()) {
+      if (name.startsWith(CACHE_PREFIX) && name !== CACHE) await caches.delete(name);
+    }
+  }
   self.addEventListener("install", (event) => event.waitUntil(self.skipWaiting()));
-  self.addEventListener("activate", (event) => event.waitUntil(self.clients.claim()));
+  self.addEventListener("activate", (event) => event.waitUntil(Promise.all([self.clients.claim(), dropOlderBuilds()])));
   self.addEventListener("message", (event) => {
     if (event.data === "claim") event.waitUntil(self.clients.claim());
   });

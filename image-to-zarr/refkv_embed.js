@@ -347,15 +347,53 @@ function checkHttpUrl(url2) {
 
 // src/http.ts
 var HttpResolutionError = class extends Error {
+  /** Whether the object is not the one the pins name: it changed since they were taken. */
+  sourceChanged;
+  /** Why the request got no response, where a browser could tell. */
+  noResponse;
+  constructor(message, sourceChanged = false, noResponse2) {
+    super(message);
+    this.sourceChanged = sourceChanged;
+    this.noResponse = noResponse2;
+  }
 };
 function inBrowser() {
   const g = globalThis;
   return g.document !== void 0 || g.WorkerGlobalScope !== void 0;
 }
-function fetchFailed(url2, e, browser = inBrowser()) {
+async function answers(url2) {
+  const abort = new AbortController();
+  try {
+    await fetch(url2, { mode: "no-cors", cache: "no-store", signal: abort.signal });
+    return true;
+  } catch {
+    return false;
+  } finally {
+    abort.abort();
+  }
+}
+async function noResponse(url2, e, browser = inBrowser(), probe = answers, page = globalThis.location?.protocol) {
   const message = `${url2}: ${e.message}`;
-  if (!browser || !(e instanceof TypeError)) return message;
-  return `${message}. A browser reports this for a server that does not allow cross-origin reads (no Access-Control-Allow-Origin header for this page) as well as for one it cannot reach`;
+  if (!browser || !(e instanceof TypeError)) return new HttpResolutionError(message);
+  if (page === "https:" && new URL(url2).protocol === "http:") {
+    return new HttpResolutionError(
+      `${message}: this https:// page cannot read an http:// URL (mixed content)`,
+      false,
+      "mixed-content"
+    );
+  }
+  if (await probe(url2)) {
+    return new HttpResolutionError(
+      `${message}: the server answered, but its CORS headers do not let this site read the response (it sends no Access-Control-Allow-Origin for this site, or refuses the preflight of a range request)`,
+      false,
+      "cors"
+    );
+  }
+  return new HttpResolutionError(
+    `${message}: the server could not be reached (the host may not exist, or it refused or dropped the connection)`,
+    false,
+    "unreachable"
+  );
 }
 var STRONG_ETAG = /^"[\x21\x23-\x7e]*"$/;
 var EtagLog = class {
@@ -723,9 +761,16 @@ async function writeVzip(desc) {
 // src/archive.ts
 var RefkvError = class extends Error {
   errorClass;
-  constructor(errorClass, message) {
+  /**
+   * Whether a source is not the one the archive pins (spec §5.1
+   * <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#51-pins>): a pin or a range checksum
+   * failed, so the source changed since the archive was written.
+   */
+  sourceChanged;
+  constructor(errorClass, message, sourceChanged = false) {
     super(`refkv ${errorClass} error: ${message}`);
     this.errorClass = errorClass;
+    this.sourceChanged = sourceChanged;
   }
 };
 var DEFAULT_POLICY = {
@@ -1071,7 +1116,11 @@ var HttpSource = class {
           await this.wait(attempt, e.retryAfter);
         } else {
           if (last) {
-            if (e instanceof NoResponse) throw new HttpResolutionError(`${fetchFailed(this.url, e.error)}${causeOf(e.error)}`);
+            if (e instanceof NoResponse) {
+              const failed = await noResponse(this.url, e.error);
+              failed.message += causeOf(e.error);
+              throw failed;
+            }
             throw new HttpResolutionError(`${this.url}: ${e.message}${causeOf(e)}`);
           }
           await this.wait(attempt, null);
