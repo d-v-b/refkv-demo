@@ -31,13 +31,13 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 var define_REFKV_PROFILES_default;
 var init_define_REFKV_PROFILES = __esm({
   "<define:__REFKV_PROFILES__>"() {
-    define_REFKV_PROFILES_default = [{ name: "czi", title: "CZI", uuid: "7a0733c7-d4be-4482-a64f-6904d9354ea5", version: 0, kind: "file", sniff: 50, chosen_by: null, suffixes: [".czi"], reference: 20, source: "Zeiss CZI", inputs: "Zeiss CZI files (ZISRAW, file version 1), with uncompressed, JPEG, JPEG XR and Zstd subblocks, mosaics and pyramids", for: "Zeiss CZI files" }, { name: "dicom", title: "DICOM", uuid: "acf17198-e5a5-48d3-8187-22ec4bb40ea5", version: 0, kind: "file", sniff: 10, chosen_by: null, suffixes: [".dcm"], reference: 25, source: "DICOM", inputs: "DICOM Part 10 files with native, JPEG, lossless JPEG or JPEG 2000 pixel data, including whole-slide images", for: "DICOM files, including whole-slide images" }, { name: "fits", title: "FITS", uuid: "4b0d3a7e-1c52-4f6a-9b8e-2d7f0c6a1e93", version: 0, kind: "file", sniff: 110, chosen_by: null, suffixes: [".fits", ".fz"], reference: null, source: "FITS", inputs: "FITS files: images, multi-extension files, binary and ASCII tables", for: "FITS images and tables (`.fits`, `.fz`)" }, { name: "flac", title: "FLAC", uuid: "e9108d07-b24b-432f-a8ce-09d80c8073b4", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".flac"], reference: null, source: "FLAC (Free Lossless Audio Codec)", inputs: "FLAC files (`.flac`) of a fixed block size, with their metadata blocks and ID3v2 and ID3v1 tags; one sharded array of integer samples, not an image", for: "FLAC audio files, as a sharded array of samples (`.flac`)" }, { name: "grib", title: "GRIB", uuid: "c9bbe039-8dfa-49f9-a655-756f822a42d6", version: 0, kind: "file", sniff: 65, chosen_by: null, suffixes: [".grib2", ".grb2"], reference: null, source: "WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2)", inputs: "GRIB edition 2 files of gridded fields, such as NOAA's and ECMWF's forecasts, whose regular latitude/longitude and Lambert conformal fields it presents", for: "GRIB2 files of gridded weather and climate fields (`.grib2`), as labeled arrays with CF coordinates" }, { name: "hdf5", title: "HDF5", uuid: "6c006834-424b-451b-b786-f8c502ec32af", version: 0, kind: "file", sniff: 70, chosen_by: null, suffixes: [".h5", ".nwb"], reference: null, source: "HDF5, NWB", inputs: "HDF5 files, NWB files first among them: every group, dataset, attribute, link and object reference the profile can present, in hdmf-zarr's Zarr v3 form", for: "HDF5 files (`.h5`, `.hdf5`), and NWB files (`.nwb`), which pynwb's `NWBZarrIO` opens" }, { name: "ims", title: "IMS", uuid: "5067a535-8261-4b25-a93c-1985ed333bde", version: 0, kind: "file", sniff: null, chosen_by: "hdf5", suffixes: [".ims"], reference: 25, source: "Imaris IMS", inputs: "Imaris IMS files (HDF5)", for: "Imaris `.ims` files" }, { name: "lif", title: "LIF", uuid: "b099ab1f-f9d4-4276-9006-9ff1193a34b2", version: 0, kind: "file", sniff: 55, chosen_by: null, suffixes: [".lif"], reference: null, source: "Leica LIF", inputs: "Leica LIF files (LAS X and LAS AF, versions 1 and 2): every image of the file's element tree, with interleaved or planar channels, z-stacks, time series and mosaics, uncompressed", for: "Leica LIF files (`.lif`)" }, { name: "mp3", title: "MP3", uuid: "b6cb0047-9448-4fdc-b03e-10dd3d6aa829", version: 0, kind: "file", sniff: 100, chosen_by: null, suffixes: [".mp3"], reference: null, source: "MP3 (MPEG Layer III audio)", inputs: "MPEG-1, MPEG-2 and MPEG-2.5 Layer III audio files (`.mp3`), with their ID3v2, ID3v1 and APE tags; one array of samples, not an image", for: "MP3 audio files, as an array of samples (`.mp3`)" }, { name: "mp4", title: "MP4", uuid: "bbe3f6b9-488d-4d8d-85ce-60a1649dd27e", version: 0, kind: "file", sniff: 85, chosen_by: null, suffixes: [".mp4", ".mov"], reference: null, source: "MP4 and QuickTime (H.264 and HEVC video, AAC and MP3 audio)", inputs: "MP4 and QuickTime files (`.mp4`, `.m4a`, `.mov`) with H.264 or HEVC video and AAC or MP3 audio tracks; a group per track, not an image", for: "MP4 and QuickTime video and audio, as arrays of planes and samples (`.mp4`, `.mov`)" }, { name: "mrc", title: "MRC", uuid: "2aacd010-2ed1-4748-bc3c-5dd5e840bbce", version: 0, kind: "file", sniff: 90, chosen_by: null, suffixes: [".mrc"], reference: null, source: "MRC2014", inputs: "MRC2014 files (CCP4 maps, image stacks, volumes and volume stacks)", for: "MRC2014 maps, image stacks, volumes and volume stacks (`.mrc`, `.map`)" }, { name: "mrc-dataset", title: "MRC dataset", uuid: "f139bf4e-7bab-4c3c-9b2d-66ba747f9b93", version: 0, kind: "layout", sniff: null, chosen_by: null, suffixes: [], reference: null, source: "MRC2014, as a dataset", inputs: "", for: "" }, { name: "n5", title: "N5", uuid: "ad5d4c39-c69e-48f7-a3ef-4cc8c607d416", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "N5", inputs: "N5 containers, default-mode blocks", for: "N5 containers on S3" }, { name: "nd2", title: "ND2", uuid: "59612f14-e314-4207-ba00-8f422ba71490", version: 0, kind: "file", sniff: 20, chosen_by: null, suffixes: [".nd2"], reference: 20, source: "Nikon ND2", inputs: "Nikon ND2, format version 3 and later", for: "Nikon NIS-Elements ND2 files" }, { name: "ndpi", title: "NDPI", uuid: "6cac71ef-dbb2-4acd-b60c-00389aa4238a", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".ndpi"], reference: 25, source: "Hamamatsu NDPI", inputs: "Hamamatsu NDPI slides, a TIFF variant with 64-bit offsets", for: "Hamamatsu NDPI whole-slide images" }, { name: "nifti", title: "NIfTI", uuid: "06e5809d-4d54-4b72-afd0-6bf61a7b4c85", version: 0, kind: "file", sniff: 60, chosen_by: null, suffixes: [".nii"], reference: 25, source: "NIfTI-1 and NIfTI-2", inputs: "NIfTI-1 and NIfTI-2 single files (`.nii`)", for: "NIfTI-1 and NIfTI-2 volumes (`.nii`)" }, { name: "npy", title: "NumPy", uuid: "62b1d1ba-8eb3-465c-a333-75e096fce519", version: 0, kind: "file", sniff: 75, chosen_by: null, suffixes: [".npy", ".npz"], reference: null, source: "NumPy NPY and NPZ (NEP 1)", inputs: "NumPy `.npy` files, and `.npz` archives of them (`np.savez`, `np.savez_compressed`), whose stored and deflated members it presents", for: "NumPy arrays: `.npy` files, and the arrays of `.npz` archives, stored or deflated" }, { name: "nrrd", title: "NRRD", uuid: "23e0c600-8da6-40f1-81e7-ab246e948e88", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".nhdr", ".nrrd"], reference: null, source: "NRRD (Teem)", inputs: "NRRD files (`.nrrd`) and detached headers with one data file (`.nhdr`), raw or gzip-encoded", for: "NRRD volumes, attached or detached, raw or gzip (`.nrrd`, `.nhdr`)" }, { name: "ome-zarr", title: "OME-Zarr", uuid: "b74ea302-65bb-49ae-b81f-f9bb52cd4eed", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "OME-Zarr 0.4", inputs: "OME-Zarr 0.4 hierarchies on Zarr v2, migrated to OME-Zarr 0.5", for: "OME-Zarr 0.4 hierarchies, migrated to OME-Zarr 0.5 in place" }, { name: "qptiff", title: "QPTIFF", uuid: "329ea136-2f55-4c27-b6f4-8e60ca2109b8", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".qptiff"], reference: null, source: "Akoya QPTIFF", inputs: "Akoya (PerkinElmer) Vectra QPTIFF slides and inForm component data, a TIFF with an XML description per image, in LZW, JPEG or uncompressed tiles or strips", for: "Akoya (PerkinElmer) Vectra multiplex scans and inForm component data" }, { name: "safe", title: "Sentinel-2 SAFE", uuid: "ef81346c-19e8-42ad-93b0-a279ccaf44c1", version: 0, kind: "both", sniff: 80, chosen_by: null, suffixes: [".zip"], reference: 25, source: "Sentinel-2 SAFE (Level-1C, Level-2A)", inputs: "Sentinel-2 Level-1C and Level-2A products: a `.SAFE` directory (a store) or a `.SAFE.zip` file", for: "Sentinel-2 Level-1C and Level-2A products, as a `.SAFE` directory or a `.SAFE.zip`" }, { name: "tiff", title: "TIFF", uuid: "48e9ac4e-1156-4a62-955e-20467d9c2700", version: 0, kind: "file", sniff: 40, chosen_by: null, suffixes: [".tif"], reference: 20, source: "TIFF, OME-TIFF, Aperio SVS", inputs: "TIFF and BigTIFF, including OME-TIFF and JPEG-tiled slides such as Aperio SVS", for: "OME-TIFF, plain TIFF (tiled or in strips), and JPEG-tiled slides such as Aperio SVS" }, { name: "vsi", title: "VSI", uuid: "c0a1d4e6-5b7f-4f3a-9c2d-8e1f6a7b3c45", version: 0, kind: "file", sniff: 30, chosen_by: null, suffixes: [".vsi"], reference: null, source: "Olympus VSI", inputs: "Olympus cellSens VSI slides: a `.vsi` file and the tile files beside it, probed by key (uncompressed, JPEG, JPEG 2000 and lossless JPEG tiles)", for: "Olympus cellSens whole-slide images (`.vsi` with its tile files)" }, { name: "zarr2", title: "Zarr v2", uuid: "8e792619-d671-4687-ab51-752885dd3ee6", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "Zarr v2", inputs: "Zarr v2 hierarchies", for: "Zarr v2 hierarchies on S3" }];
+    define_REFKV_PROFILES_default = [{ name: "czi", title: "CZI", uuid: "7a0733c7-d4be-4482-a64f-6904d9354ea5", version: 0, kind: "file", store_run: { form: "on_demand", named: "CZI file", section: "79-several-files" }, sniff: 50, chosen_by: null, suffixes: [".czi"], reference: 20, source: "Zeiss CZI", inputs: "Zeiss CZI files (ZISRAW, file version 1), with uncompressed, JPEG, JPEG XR and Zstd subblocks, mosaics and pyramids, in one file or across numbered files", for: "Zeiss CZI files" }, { name: "dicom", title: "DICOM", uuid: "acf17198-e5a5-48d3-8187-22ec4bb40ea5", version: 0, kind: "file", store_run: null, sniff: 10, chosen_by: null, suffixes: [".dcm"], reference: 25, source: "DICOM", inputs: "DICOM Part 10 files with native, JPEG, lossless JPEG, JPEG-LS, RLE, JPEG 2000 or HTJ2K pixel data, including whole-slide images", for: "DICOM files, including whole-slide images" }, { name: "fits", title: "FITS", uuid: "4b0d3a7e-1c52-4f6a-9b8e-2d7f0c6a1e93", version: 0, kind: "file", store_run: null, sniff: 110, chosen_by: null, suffixes: [".fits", ".fz"], reference: null, source: "FITS", inputs: "FITS files: images, multi-extension files, binary and ASCII tables", for: "FITS images and tables (`.fits`, `.fz`)" }, { name: "flac", title: "FLAC", uuid: "e9108d07-b24b-432f-a8ce-09d80c8073b4", version: 0, kind: "file", store_run: null, sniff: 95, chosen_by: null, suffixes: [".flac"], reference: null, source: "FLAC (Free Lossless Audio Codec)", inputs: "FLAC files (`.flac`) of a fixed block size, with their metadata blocks and ID3v2 and ID3v1 tags; one sharded array of integer samples, not an image", for: "FLAC audio files, as a sharded array of samples (`.flac`)" }, { name: "grib", title: "GRIB", uuid: "c9bbe039-8dfa-49f9-a655-756f822a42d6", version: 0, kind: "file", store_run: { form: "always", named: "GRIB file", section: "8-grib-profile" }, sniff: 65, chosen_by: null, suffixes: [".grib2", ".grb2"], reference: null, source: "WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2)", inputs: "GRIB edition 2 files of gridded fields, such as NOAA's and ECMWF's forecasts, whose fields on latitude/longitude, Gaussian, rotated, Lambert conformal, polar stereographic, Mercator, reduced and unstructured grids it presents", for: "GRIB2 files of gridded weather and climate fields (`.grib2`), as labeled arrays with CF coordinates" }, { name: "h5j", title: "H5J", uuid: "5bd31fac-d92d-452b-bcb6-15ca89c0f931", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "hdf5", suffixes: [".h5j"], reference: null, source: "Janelia H5J", inputs: "Janelia H5J files (HDF5 whose channels are MP4 files of monochrome HEVC): a confocal stack an image a channel", for: "Janelia's H5J confocal stacks (`.h5j`), as FlyLight and the Janelia Workstation publish them" }, { name: "hdf4", title: "HDF4", uuid: "af66c29e-fc1a-44a4-bb71-1055ad5fdb0a", version: 0, kind: "file", store_run: null, sniff: 68, chosen_by: null, suffixes: [".hdf", ".hdf4", ".h4"], reference: null, source: "HDF4 (the HDF Group's Hierarchical Data Format 4)", inputs: "HDF4 files, HDF-EOS2 ones among them: the scientific datasets of numbers and text the SD interface wrote, plain, linked, deflated or chunked, the writer's Vdata tables, their attributes, and the writer's Vgroups", for: "HDF4 and HDF-EOS2 files (`.hdf`) of NASA's EOS-era archives, such as MODIS, SeaWiFS and AIRS products, as labeled arrays" }, { name: "hdf5", title: "HDF5", uuid: "6c006834-424b-451b-b786-f8c502ec32af", version: 0, kind: "file", store_run: { form: "on_demand", named: "HDF5 file", section: "86-external-files" }, sniff: 70, chosen_by: null, suffixes: [".h5", ".nwb"], reference: null, source: "HDF5, NWB", inputs: "HDF5 files, NWB files first among them: every group, dataset, attribute, link and object reference the profile can present, in hdmf-zarr's Zarr v3 form", for: "HDF5 files (`.h5`, `.hdf5`), and NWB files (`.nwb`), which pynwb's `NWBZarrIO` opens" }, { name: "ims", title: "IMS", uuid: "5067a535-8261-4b25-a93c-1985ed333bde", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "hdf5", suffixes: [".ims"], reference: 25, source: "Imaris IMS", inputs: "Imaris IMS files (HDF5)", for: "Imaris `.ims` files" }, { name: "lif", title: "LIF", uuid: "b099ab1f-f9d4-4276-9006-9ff1193a34b2", version: 0, kind: "file", store_run: { form: "on_demand", named: "named document", section: "8-las-x-documents", case: true }, sniff: 55, chosen_by: null, suffixes: [".lif", ".lifext", ".lof", ".xlcf", ".xlef", ".xlif", ".xllf"], reference: null, source: "Leica LIF", inputs: "Leica LIF files (LAS X and LAS AF, versions 1 and 2), its object files (LOF) and extension files (LIFEXT), and LAS X projects of XLEF, XLCF, XLIF and XLLF documents and LOFs: every image of the element tree, with interleaved or planar channels, z-stacks, time series and mosaics, uncompressed", for: "Leica LIF, LOF and LIFEXT files, and LAS X projects (`.lif`, `.lof`, `.lifext`, `.xlef`, `.xlcf`, `.xlif`, `.xllf`)" }, { name: "mp3", title: "MP3", uuid: "b6cb0047-9448-4fdc-b03e-10dd3d6aa829", version: 0, kind: "file", store_run: null, sniff: 100, chosen_by: null, suffixes: [".mp3"], reference: null, source: "MP3 (MPEG Layer III audio)", inputs: "MPEG-1, MPEG-2 and MPEG-2.5 Layer III audio files (`.mp3`), with their ID3v2, ID3v1 and APE tags; one array of samples, not an image", for: "MP3 audio files, as an array of samples (`.mp3`)" }, { name: "mp4", title: "MP4", uuid: "bbe3f6b9-488d-4d8d-85ce-60a1649dd27e", version: 0, kind: "file", store_run: null, sniff: 85, chosen_by: null, suffixes: [".mp4", ".mov"], reference: null, source: "MP4 and QuickTime (H.264, HEVC, AV1, VP9 and Motion JPEG video, AAC, HE-AAC, MP3 and PCM audio)", inputs: "MP4 and QuickTime files (`.mp4`, `.m4a`, `.m4v`, `.mov`) with H.264, HEVC, AV1, VP9 or Motion JPEG video and AAC, HE-AAC, MP3 or PCM audio tracks; a group per track, not an image", for: "MP4 and QuickTime video and audio, as arrays of planes and samples (`.mp4`, `.m4a`, `.m4v`, `.mov`)" }, { name: "mrc", title: "MRC", uuid: "2aacd010-2ed1-4748-bc3c-5dd5e840bbce", version: 0, kind: "file", store_run: null, sniff: 90, chosen_by: null, suffixes: [".mrc", ".map.gz", ".mrc.gz"], reference: null, source: "MRC2014", inputs: "MRC2014 files (CCP4 maps, image stacks, volumes and volume stacks), gzipped or not", for: "MRC2014 maps, image stacks, volumes and volume stacks (`.mrc`, `.map`, gzipped or not)" }, { name: "mrc-dataset", title: "MRC dataset", uuid: "f139bf4e-7bab-4c3c-9b2d-66ba747f9b93", version: 0, kind: "layout", store_run: null, sniff: null, chosen_by: null, suffixes: [], reference: null, source: "MRC2014, as a dataset", inputs: "", for: "" }, { name: "n5", title: "N5", uuid: "ad5d4c39-c69e-48f7-a3ef-4cc8c607d416", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "N5", inputs: "N5 containers, default-mode blocks", for: "N5 containers on S3" }, { name: "nd2", title: "ND2", uuid: "59612f14-e314-4207-ba00-8f422ba71490", version: 0, kind: "file", store_run: null, sniff: 20, chosen_by: null, suffixes: [".nd2"], reference: 20, source: "Nikon ND2", inputs: "Nikon ND2, format version 3 and later", for: "Nikon NIS-Elements ND2 files" }, { name: "ndpi", title: "NDPI", uuid: "6cac71ef-dbb2-4acd-b60c-00389aa4238a", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "tiff", suffixes: [".ndpi"], reference: 25, source: "Hamamatsu NDPI", inputs: "Hamamatsu NDPI slides, a TIFF variant with 64-bit offsets", for: "Hamamatsu NDPI whole-slide images" }, { name: "nifti", title: "NIfTI", uuid: "06e5809d-4d54-4b72-afd0-6bf61a7b4c85", version: 0, kind: "file", store_run: { form: "on_demand", named: "header file", section: "75-header-and-image-pairs" }, sniff: 60, chosen_by: null, suffixes: [".nii", ".nii.gz", ".hdr", ".HDR"], reference: 25, source: "NIfTI-1 and NIfTI-2", inputs: "NIfTI-1 and NIfTI-2 single files (`.nii`, `.nii.gz`) and header-and-image pairs (`.hdr`, `.img`)", for: "NIfTI-1 and NIfTI-2 volumes (`.nii`, `.nii.gz`, `.hdr` and `.img`)" }, { name: "npy", title: "NumPy", uuid: "62b1d1ba-8eb3-465c-a333-75e096fce519", version: 0, kind: "file", store_run: null, sniff: 75, chosen_by: null, suffixes: [".npy", ".npz"], reference: null, source: "NumPy NPY and NPZ (NEP 1)", inputs: "NumPy `.npy` files, and `.npz` archives of them (`np.savez`, `np.savez_compressed`), whose stored and deflated members it presents", for: "NumPy arrays: `.npy` files, and the arrays of `.npz` archives, stored or deflated" }, { name: "nrrd", title: "NRRD", uuid: "23e0c600-8da6-40f1-81e7-ab246e948e88", version: 0, kind: "file", store_run: { form: "always", named: "header file", section: "8-nrrd-profile" }, sniff: 95, chosen_by: null, suffixes: [".nhdr", ".nrrd"], reference: null, source: "NRRD (Teem)", inputs: "NRRD files (`.nrrd`) and detached headers with one data file (`.nhdr`), raw or gzip-encoded", for: "NRRD volumes, attached or detached, raw or gzip (`.nrrd`, `.nhdr`)" }, { name: "ome-zarr", title: "OME-Zarr", uuid: "b74ea302-65bb-49ae-b81f-f9bb52cd4eed", version: 0, kind: "store", store_run: null, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "OME-Zarr 0.4", inputs: "OME-Zarr 0.4 hierarchies on Zarr v2, migrated to OME-Zarr 0.5", for: "OME-Zarr 0.4 hierarchies, migrated to OME-Zarr 0.5 in place" }, { name: "precomputed", title: "Neuroglancer precomputed", uuid: "c499987a-9518-4b2b-a804-a70a8de1a911", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: null, source: "Neuroglancer precomputed", inputs: "Neuroglancer precomputed volumes, unsharded or with identity-hashed shards", for: "connectomics volumes in Neuroglancer's precomputed format, including shards too many to scan" }, { name: "qptiff", title: "QPTIFF", uuid: "329ea136-2f55-4c27-b6f4-8e60ca2109b8", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "tiff", suffixes: [".qptiff"], reference: null, source: "Akoya QPTIFF", inputs: "Akoya (PerkinElmer) Vectra QPTIFF slides and inForm component data, a TIFF with an XML description per image, in LZW, JPEG or uncompressed tiles or strips", for: "Akoya (PerkinElmer) Vectra multiplex scans and inForm component data" }, { name: "safe", title: "Sentinel-2 SAFE", uuid: "ef81346c-19e8-42ad-93b0-a279ccaf44c1", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 80, chosen_by: null, suffixes: [".zip"], reference: 25, source: "Sentinel-2 SAFE (Level-1C, Level-2A)", inputs: "Sentinel-2 Level-1C and Level-2A products: a `.SAFE` directory (a store) or a `.SAFE.zip` file", for: "Sentinel-2 Level-1C and Level-2A products, as a `.SAFE` directory or a `.SAFE.zip`" }, { name: "safetensors", title: "safetensors", uuid: "15e7ce39-d4ca-4514-8144-6e19d2a0341b", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 35, chosen_by: null, suffixes: [".safetensors"], reference: null, source: "safetensors (Hugging Face)", inputs: "safetensors files of a model's tensors (`model.safetensors`), in every data type the library defines, `BF16`, `F8_*`, `F4` and `F6_*` included; and stores of them, such as a model's repository of shards with its index", for: "machine learning model weights in safetensors files (`.safetensors`), each tensor an array, and a model's shards as one group" }, { name: "tiff", title: "TIFF", uuid: "48e9ac4e-1156-4a62-955e-20467d9c2700", version: 0, kind: "file", store_run: { form: "on_demand", named: "TIFF file", section: "74-several-files" }, sniff: 40, chosen_by: null, suffixes: [".tif"], reference: 20, source: "TIFF, OME-TIFF, Aperio SVS", inputs: "TIFF and BigTIFF, including OME-TIFF across files, Micro-Manager stacks and JPEG-tiled slides such as Aperio SVS", for: "OME-TIFF, plain TIFF (tiled or in strips), and JPEG-tiled slides such as Aperio SVS" }, { name: "vsi", title: "VSI", uuid: "c0a1d4e6-5b7f-4f3a-9c2d-8e1f6a7b3c45", version: 0, kind: "file", store_run: { form: "always", named: ".vsi file", section: "9-vsi-profile" }, sniff: 30, chosen_by: null, suffixes: [".vsi"], reference: null, source: "Olympus VSI", inputs: "Olympus cellSens VSI slides: a `.vsi` file and the tile files beside it, probed by key (uncompressed, JPEG, JPEG 2000, lossless JPEG, PNG and BMP tiles)", for: "Olympus cellSens whole-slide images (`.vsi` with its tile files)" }, { name: "zarr2", title: "Zarr v2", uuid: "8e792619-d671-4687-ab51-752885dd3ee6", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "Zarr v2", inputs: "Zarr v2 hierarchies", for: "Zarr v2 hierarchies on S3" }, { name: "zarr3", title: "Zarr v3", uuid: "95203d0a-6586-426a-b920-3db2f4f1e97e", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 78, chosen_by: null, suffixes: [".zip"], reference: null, source: "Zarr v3", inputs: "Zarr v3 hierarchies: a store (a URL or a directory) or a zipped store (`.zip`)", for: "Zarr v3 hierarchies, listed or zipped, as references to their own chunks" }];
   }
 });
 
 // node_modules/highlight.js/lib/core.js
 var require_core = __commonJS({
-  "node_modules/highlight.js/lib/core.js"(exports, module3) {
+  "node_modules/highlight.js/lib/core.js"(exports, module4) {
     init_define_REFKV_PROFILES();
     function deepFreeze(obj) {
       if (obj instanceof Map) {
@@ -1584,7 +1584,7 @@ var require_core = __commonJS({
     };
     var highlight = HLJS({});
     highlight.newInstance = () => HLJS({});
-    module3.exports = highlight;
+    module4.exports = highlight;
     highlight.HighlightJS = highlight;
     highlight.default = highlight;
   }
@@ -2019,6 +2019,12 @@ function python(hljs) {
   };
 }
 
+// src/client.ts
+init_define_REFKV_PROFILES();
+
+// src/server.ts
+init_define_REFKV_PROFILES();
+
 // src/archive.ts
 init_define_REFKV_PROFILES();
 
@@ -2268,7 +2274,10 @@ function formatImfFixdate(seconds) {
 var HttpResolutionError = class extends Error {
   /** Whether the object is not the one the pins name: it changed since they were taken. */
   sourceChanged;
-  /** Why the request got no response, where a browser could tell. */
+  /**
+   * Why the request got no response, where a browser could tell (`noResponse`): undefined for a
+   * response that failed, or a request outside a browser.
+   */
   noResponse;
   constructor(message, sourceChanged = false, noResponse2) {
     super(message);
@@ -2325,7 +2334,7 @@ async function readHttpRange(url2, start, end, pins, signal, options = {}) {
   }
   const headers = {
     Range: `bytes=${start}-${end - 1}`,
-    // Ignored by browsers (forbidden header); honoured elsewhere.
+    // Ignored by browsers (forbidden header); honored elsewhere.
     "Accept-Encoding": "identity"
   };
   if (pins.etag !== void 0) headers["If-Match"] = pins.etag;
@@ -2338,12 +2347,18 @@ async function readHttpRange(url2, start, end, pins, signal, options = {}) {
   }
   let response;
   try {
-    response = options.fetch ? await options.fetch(url2, { headers, signal }, options.allow) : await fetch(url2, { headers, signal, redirect: "follow", cache: "no-store" });
+    response = options.fetch ? await options.fetch(url2, { headers, signal }, options.allow) : await fetch(url2, {
+      headers,
+      signal,
+      redirect: "follow",
+      cache: "no-store",
+      credentials: options.sendCredentials ? "same-origin" : "omit"
+    });
   } catch (e) {
     signal?.throwIfAborted();
     throw await noResponse(url2, e);
   }
-  const fail = (message, sourceChanged = false) => {
+  const fail2 = (message, sourceChanged = false) => {
     throw new HttpResolutionError(`${url2}: ${message}`, sourceChanged);
   };
   if (response.redirected) {
@@ -2352,31 +2367,31 @@ async function readHttpRange(url2, start, end, pins, signal, options = {}) {
       options.allow?.(response.url);
     } catch (e) {
       await response.body?.cancel();
-      fail(e.message);
+      fail2(e.message);
     }
   }
-  if (response.status === 412) fail("a pin failed (412)", true);
+  if (response.status === 412) fail2("a pin failed (412)", true);
   if (response.status === 416)
-    fail("the object is shorter than the range (416)", true);
+    fail2("the object is shorter than the range (416)", true);
   if (response.status !== 200 && response.status !== 206) {
-    fail(`HTTP ${response.status}`);
+    fail2(`HTTP ${response.status}`);
   }
   const encoding = response.headers.get("Content-Encoding");
   if (encoding !== null) {
     const values = encoding.split(",").map((v) => v.trim().toLowerCase());
     if (values.length !== 1 || values[0] !== "identity") {
-      fail(`response has Content-Encoding ${JSON.stringify(encoding)}`);
+      fail2(`response has Content-Encoding ${JSON.stringify(encoding)}`);
     }
   }
   const etag = single(response.headers, "ETag");
-  if (etag !== null && etag.includes(",")) fail("more than one ETag field");
+  if (etag !== null && etag.includes(",")) fail2("more than one ETag field");
   const lastModified = single(response.headers, "Last-Modified");
   if (lastModified !== null && lastModified.split(",").length > 2) {
-    fail("more than one Last-Modified field");
+    fail2("more than one Last-Modified field");
   }
   const skip = (header) => header === null && response.type === "cors" && options.unverifiablePins === true;
   if (pins.etag !== void 0 && etag !== pins.etag && !skip(etag)) {
-    fail(
+    fail2(
       `the ETag is ${JSON.stringify(etag)}, but the archive pins ${pins.etag}: the source changed since the archive was written, or its server does not send the ETag`,
       true
     );
@@ -2384,33 +2399,33 @@ async function readHttpRange(url2, start, end, pins, signal, options = {}) {
   if (pins.modifiedNotAfter !== void 0 && !skip(lastModified)) {
     const t = parseImfFixdate(lastModified);
     if (t === void 0) {
-      fail(
+      fail2(
         `Last-Modified ${JSON.stringify(lastModified)} is not an IMF-fixdate`
       );
     }
     if (BigInt(t) > pins.modifiedNotAfter)
-      fail("Last-Modified is after the pin", true);
+      fail2("Last-Modified is after the pin", true);
   }
   const body = new Uint8Array(await response.arrayBuffer());
   if (response.status === 200) {
-    if (body.length < end) fail(`object is shorter than ${end} bytes`);
+    if (body.length < end) fail2(`object is shorter than ${end} bytes`);
     return { data: body.slice(start, end), size: body.length, ...etag !== null ? { etag } : {} };
   }
   const contentRange = single(response.headers, "Content-Range");
   if (contentRange === null && response.type === "cors") {
     if (body.length !== end - start) {
-      fail(`206 of ${body.length} bytes for [${start}, ${end})`);
+      fail2(`206 of ${body.length} bytes for [${start}, ${end})`);
     }
     return { data: body, size: void 0, hidden: true, ...etag !== null ? { etag } : {} };
   }
-  if (contentRange === null) fail("206 without Content-Range");
+  if (contentRange === null) fail2("206 without Content-Range");
   const m = contentRange.trim().match(/^bytes (\d+)-(\d+)\/(\d+|\*)$/i);
-  if (m === null) fail(`invalid Content-Range ${JSON.stringify(contentRange)}`);
+  if (m === null) fail2(`invalid Content-Range ${JSON.stringify(contentRange)}`);
   const a = Number(m[1]);
   const z = Number(m[2]);
   const total = m[3] === "*" ? void 0 : Number(m[3]);
   if (a !== start || z !== end - 1 || body.length !== z - a + 1 || total !== void 0 && z >= total) {
-    fail(
+    fail2(
       `server returned ${JSON.stringify(contentRange)} (${body.length} bytes) for [${start}, ${end})`
     );
   }
@@ -2427,7 +2442,7 @@ var utf8 = new TextEncoder();
 var strictUtf8 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
 function* fields(buf) {
   let pos = 0;
-  const varint = () => {
+  const varint3 = () => {
     let v = 0n;
     for (let i = 0; i < 10; i++) {
       if (pos >= buf.length) throw new MalformedError("truncated varint");
@@ -2441,7 +2456,7 @@ function* fields(buf) {
     throw new MalformedError("varint longer than 10 bytes");
   };
   while (pos < buf.length) {
-    const key = varint();
+    const key = varint3();
     const field = Number(key >> 3n);
     const wireType = Number(key & 7n);
     if (key >> 3n === 0n || key >> 3n > (1n << 29n) - 1n) {
@@ -2450,7 +2465,7 @@ function* fields(buf) {
     let value;
     switch (wireType) {
       case 0:
-        value = varint();
+        value = varint3();
         break;
       case 1:
       case 5: {
@@ -2461,7 +2476,7 @@ function* fields(buf) {
         break;
       }
       case 2: {
-        const n = varint();
+        const n = varint3();
         if (BigInt(pos) + n > BigInt(buf.length)) {
           throw new MalformedError("LEN field extends past the message");
         }
@@ -2534,9 +2549,9 @@ function decodeRange(buf, numSources) {
 function rangeSize(r) {
   return "data" in r ? BigInt(r.data.length) : r.length;
 }
-function decodeReference(headerId, payload, numSources) {
-  if (payload.length > 65519) {
-    throw new MalformedError("reference payload exceeds 65519 bytes");
+function decodeReference(headerId, payload, numSources, maxPayload = 65519) {
+  if (payload.length > maxPayload) {
+    throw new MalformedError(`reference payload exceeds ${maxPayload} bytes`);
   }
   let parts;
   if (headerId === 31350) {
@@ -2614,6 +2629,8 @@ function decodeTable(buf) {
 
 // src/writer.ts
 init_define_REFKV_PROFILES();
+var SOURCES_KEY = "__vz__/sources";
+var INDEX_KEY = "__vz__/index";
 var RANGE_ID = 31350;
 var CONCAT_ID = 31351;
 var U64_MAX2 = (1n << 64n) - 1n;
@@ -2621,6 +2638,7 @@ var utf82 = new TextEncoder();
 
 // src/archive.ts
 var RefkvError = class extends Error {
+  /** The error's class, as spec §6.5 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#65-error-reporting> has readers report it. */
   errorClass;
   /**
    * Whether a source is not the one the archive pins (spec §5.1
@@ -2636,13 +2654,16 @@ var RefkvError = class extends Error {
 };
 var DEFAULT_POLICY = {
   schemes: [],
-  allowFilesFromRemoteArchives: false,
   allowPrivateHosts: false,
   allowUncheckedProxy: false,
   maxSources: 1 << 22,
   maxReads: 1024,
+  maxGetBytes: 2 ** 31,
+  maxReadAmplification: 4,
+  maxCoalesceGap: 1 << 16,
   maxFormatEntry: 256 << 20,
-  unverifiablePins: false
+  unverifiablePins: false,
+  allowSourceCredentials: false
 };
 function schemeOf(url2) {
   const i = url2.indexOf(":");
@@ -2755,22 +2776,29 @@ function hostClass(url2) {
 function validatePolicy(policy) {
   if ((policy.schemes ?? []).some((s) => s.toLowerCase() === "file")) {
     throw new TypeError(
-      "Policy.schemes may not name 'file': a local archive reads files already, and a remote one needs the unsafe allowFilesFromRemoteArchives: true"
+      "Policy.schemes may not name 'file': this reader reads only http(s) sources"
     );
   }
+  for (const name of ["maxSources", "maxReads", "maxGetBytes", "maxCoalesceGap", "maxFormatEntry"]) {
+    const v = policy[name];
+    if (name in policy && !(Number.isSafeInteger(v) && v >= 0)) {
+      throw new TypeError(`Policy.${name} is a natural number, not ${String(v)}`);
+    }
+  }
+  const a = policy.maxReadAmplification;
+  if ("maxReadAmplification" in policy && !(typeof a === "number" && Number.isFinite(a) && a >= 0)) {
+    throw new TypeError(`Policy.maxReadAmplification is a finite number of at least 0, not ${String(a)}`);
+  }
 }
-function checkPolicy(policy, base, url2) {
+function checkPolicy(policy, _base, url2) {
   validatePolicy(policy);
-  const local = schemeOf(base) === "file";
   const scheme = schemeOf(url2);
   if (policy.prefixes !== void 0) {
     if (!policy.prefixes.some((p) => matchesPrefix(url2, p))) {
       throw new RefkvError("resolution", `${url2}: not under an allowed URL prefix (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
     }
   } else if (scheme === "file") {
-    if (!local && !policy.allowFilesFromRemoteArchives) {
-      throw new RefkvError("resolution", `${url2}: an archive opened from a URL may not read local files (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
-    }
+    throw new RefkvError("resolution", `${url2}: this reader reads no local file (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
   } else if (scheme !== "http" && !(policy.schemes ?? []).some((s) => schemeOf(`${s}:`) === scheme)) {
     throw new RefkvError("resolution", `${url2}: the scheme '${scheme}' is not allowed (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
   }
@@ -2792,6 +2820,70 @@ function checkAddress(policy, url2, address) {
   checkClass(policy, url2, c, address);
 }
 var MERGE_GAP = 1 << 16;
+var MERGE_CONNECTIONS = 8;
+var MERGE_MIN_RUN = 1 << 20;
+var MERGE_MAX_RUN = 32 << 20;
+var MERGE_WINDOW = 2;
+var MERGE_MAX_WAIT = 1e3;
+var MERGE_BUSY = 16;
+function coalescedRuns(reads, gap, budget) {
+  const sorted = [...reads].sort((x, y) => x.source - y.source || (x.offset < y.offset ? -1 : x.offset > y.offset ? 1 : 0));
+  const runs = [];
+  for (const r of sorted) {
+    const last = runs[runs.length - 1];
+    if (last && last.source === r.source && r.offset <= last.end) {
+      if (r.end > last.end) last.end = r.end;
+    } else {
+      runs.push({ ...r });
+    }
+  }
+  let fetched = runs.reduce((n, run) => n + Number(run.end - run.offset), 0);
+  const gaps = [];
+  for (let i = 0; i + 1 < runs.length; i++) {
+    const width = Number(runs[i + 1].offset - runs[i].end);
+    if (runs[i].source === runs[i + 1].source && width <= gap) gaps.push([width, i]);
+  }
+  gaps.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
+  const closed = /* @__PURE__ */ new Set();
+  for (const [width, i] of gaps) {
+    if (fetched + width > budget) break;
+    fetched += width;
+    closed.add(i);
+  }
+  const out2 = [];
+  runs.forEach((run, i) => {
+    if (closed.has(i - 1)) out2[out2.length - 1].end = run.end;
+    else out2.push({ ...run });
+  });
+  return out2;
+}
+function mergedRuns(reads, longest, amplification = DEFAULT_POLICY.maxReadAmplification, gap = DEFAULT_POLICY.maxCoalesceGap) {
+  const big = (v, w) => v > w ? v : w;
+  const sorted = [...reads].sort((x, y) => x.offset < y.offset ? -1 : x.offset > y.offset ? 1 : x.end < y.end ? -1 : x.end > y.end ? 1 : 0);
+  const runs = [];
+  let start = 0n;
+  let end = 0n;
+  let asked = 0n;
+  let owners = /* @__PURE__ */ new Map();
+  for (const read of sorted) {
+    const fresh = big(read.end - big(read.offset, end), 0n);
+    const span = big(end, read.end) - start;
+    const own = read.owner === void 0 ? void 0 : owners.get(read.owner);
+    if (runs.length > 0 && (own === void 0 || read.offset <= end || read.offset - own > BigInt(gap)) && read.offset - end <= BigInt(gap) && span <= longest && Number(span - BigInt(gap)) <= amplification * Number(asked + fresh)) {
+      runs[runs.length - 1].push(read);
+      asked += fresh;
+      end = big(end, read.end);
+    } else {
+      runs.push([read]);
+      owners = /* @__PURE__ */ new Map();
+      start = read.offset;
+      end = read.end;
+      asked = read.end - read.offset;
+    }
+    if (read.owner !== void 0) owners.set(read.owner, big(owners.get(read.owner) ?? 0n, read.end));
+  }
+  return runs;
+}
 var U32_ALL = 4294967295;
 var strictUtf82 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
 function safe(v, what) {
@@ -2824,9 +2916,18 @@ var Archive = class _Archive {
    */
   revision;
   policy;
+  /** The largest reference payload the binding allows (a ZIP extra field's, here). */
+  maxPayload = 65519;
   fetchRange;
   /** Sends this archive's requests, checking addresses (rule 3), where the platform allows. */
   netFetch;
+  /** The reads of url sources waiting to merge, by source. */
+  waiting = /* @__PURE__ */ new Map();
+  /** The requests in flight, by source. */
+  serving = /* @__PURE__ */ new Map();
+  flushPending = false;
+  /** Set while some reads whose window has ended wait for a request to end. */
+  release;
   constructor(bytes, baseUrl, sources, entries, fetchRange, policy, revision) {
     this.bytes = bytes;
     this.baseUrl = baseUrl;
@@ -2843,8 +2944,10 @@ var Archive = class _Archive {
    * relative `url` sources.
    * `policy` (spec §6.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)
    * defaults to `DEFAULT_POLICY`, which allows http(s)
-   * sources on public hosts, and for a local archive also `file` sources and
-   * loopback and private hosts.
+   * sources on public hosts, and for a local archive (a `file:` `baseUrl`) also `file`
+   * sources. Loopback and private hosts are refused for every archive, local or not,
+   * unless the policy has `allowPrivateHosts: true`. Throws a `RefkvError` of class
+   * "archive" for an archive opening refuses.
    */
   static async open(bytes, baseUrl, fetchRange = (url2, start, end, pins, options) => readHttpRange(url2, start, end, pins, void 0, options), policy = {}) {
     validatePolicy(policy);
@@ -2976,11 +3079,19 @@ var Archive = class _Archive {
    */
   lookup(key) {
     if (key.startsWith("__vz__/")) return void 0;
-    const entry = this.entries.get(key);
+    const entry = this.entryFor(key);
     if (entry?.error !== void 0) {
       throw new RefkvError("entry", `${JSON.stringify(key)}: ${entry.error}`);
     }
     return entry;
+  }
+  /** Whether `key` names a format entry, which no `key` source may name: vzip's (spec/bindings/vzip.md). */
+  namesFormatEntry(key) {
+    return key === SOURCES_KEY || key === INDEX_KEY;
+  }
+  /** The entry of `key` as the container has it, hidden or not: a binding finds keys here. */
+  entryFor(key) {
+    return this.entries.get(key);
   }
   /** Visible keys, in UTF-8 order. */
   keys() {
@@ -2991,7 +3102,8 @@ var Archive = class _Archive {
       return decodeReference(
         entry.reference.headerId,
         entry.reference.payload,
-        this.sources.length
+        this.sources.length,
+        this.maxPayload
       );
     } catch (e) {
       if (!(e instanceof MalformedError)) throw e;
@@ -3026,37 +3138,55 @@ var Archive = class _Archive {
     if (body.length !== entry.size) {
       throw new RefkvError("body", `${entry.key}: inflates to ${body.length} bytes`);
     }
+    if (entry.crc32c !== void 0 && crc32c(body) !== entry.crc32c) {
+      throw new RefkvError("body", `${entry.key}: the value does not match its crc32c`);
+    }
     return body;
   }
-  async source(r) {
+  /**
+   * The bytes of `r`. A `key` source's value is read whole, once a read: `keyValues` holds the
+   * values one read has read (spec §5 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#5-source-table>).
+   */
+  async source(r, keyValues = /* @__PURE__ */ new Map()) {
     const s = this.sources[r.source];
     const start = r.offset;
     const end = r.offset + r.length;
-    const fail = (m, sourceChanged = false) => {
+    const fail2 = (m, sourceChanged = false) => {
       throw new RefkvError("resolution", `source ${r.source}: ${m}`, sourceChanged);
     };
     if (s.data !== void 0) {
-      if (end > BigInt(s.data.length)) fail("range past the end of the data");
+      if (end > BigInt(s.data.length)) fail2("range past the end of the data");
       return s.data.subarray(Number(start), Number(end));
     }
     if (s.key !== void 0) {
-      const target = this.entries.get(s.key);
+      if (this.namesFormatEntry(s.key)) fail2(`key ${JSON.stringify(s.key)} names a format entry`);
+      const target = this.entryFor(s.key);
       if (target === void 0 || target.reference !== void 0 || target.error) {
-        fail(`key ${JSON.stringify(s.key)} is not a bytes entry`);
+        fail2(`key ${JSON.stringify(s.key)} is not a bytes entry`);
       }
-      const value = await this.body(target);
-      if (end > BigInt(value.length)) fail("range past the end of the key's value");
+      let pending = keyValues.get(s.key);
+      if (pending === void 0) {
+        pending = this.body(target);
+        keyValues.set(s.key, pending);
+      }
+      let value;
+      try {
+        value = await pending;
+      } catch (e) {
+        return fail2(`key ${JSON.stringify(s.key)}: ${e.message}`);
+      }
+      if (end > BigInt(value.length)) fail2("range past the end of the key's value");
       return value.subarray(Number(start), Number(end));
     }
     let url2;
     try {
       url2 = resolveReference(this.baseUrl, s.url);
     } catch (e) {
-      return fail(e.message);
+      return fail2(e.message);
     }
     checkPolicy(this.policy, this.baseUrl, url2);
     const scheme = getScheme(url2);
-    if (scheme !== "http" && scheme !== "https") fail(`unsupported scheme in ${url2}`);
+    if (scheme !== "http" && scheme !== "https") fail2(`unsupported scheme in ${url2}`);
     try {
       const { data, size, hidden } = await this.fetchRange(
         url2,
@@ -3066,20 +3196,122 @@ var Archive = class _Archive {
         {
           allow: (u) => checkPolicy(this.policy, this.baseUrl, u),
           unverifiablePins: this.policy.unverifiablePins,
+          sendCredentials: this.policy.allowSourceCredentials,
           ...this.netFetch ? { fetch: this.netFetch } : {}
         }
       );
       const unseen = size === void 0 && hidden === true && this.policy.unverifiablePins;
       if (s.size !== void 0 && !unseen && BigInt(size ?? -1) !== s.size) {
-        fail(
+        fail2(
           size === void 0 ? `${url2}: the archive pins the size ${s.size}, which the response does not give` : `${url2}: the source is ${size} bytes, but the archive pins ${s.size}: the source changed since the archive was written`,
           size !== void 0
         );
       }
       return data;
     } catch (e) {
-      if (e instanceof HttpResolutionError) fail(e.message, e.sourceChanged);
+      if (e instanceof HttpResolutionError) fail2(e.message, e.sourceChanged);
       throw e;
+    }
+  }
+  /**
+   * Bytes of a url source, read with the reads of other values waiting at the same time (spec §6.3
+   * <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#63-resolving-a-reference>).
+   */
+  sharedRead(source, offset, end, owner) {
+    return new Promise((resolve, reject) => {
+      if (!this.flushPending) {
+        this.flushPending = true;
+        setTimeout(() => {
+          this.flushPending = false;
+          this.flush();
+        }, MERGE_WINDOW);
+      }
+      const reads = this.waiting.get(source);
+      const read = { offset, end, resolve, reject, since: Date.now(), owner };
+      if (reads) reads.push(read);
+      else this.waiting.set(source, [read]);
+    });
+  }
+  /**
+   * Starts the requests that serve the reads waiting. While its source is busy (`MERGE_BUSY`), a
+   * read near a request in flight waits for a request to end, up to `MERGE_MAX_WAIT`, and merges
+   * with the reads that come meanwhile: a client that starts its next chunks as the last ones
+   * finish starts them a few at a time, and those are the chunks beside them. Reads far from any
+   * request do not wait, so reads that cannot merge are as concurrent as they were. A read inside a
+   * request in flight joins it, since its bytes are on their way.
+   */
+  flush() {
+    const now = Date.now();
+    clearTimeout(this.release);
+    this.release = void 0;
+    let oldest = Infinity;
+    for (const [source, waiting] of [...this.waiting]) {
+      const serving = [...this.serving.get(source) ?? []];
+      const reads = waiting.filter((r) => !_Archive.join(r, serving));
+      const bytes = reads.reduce((n, r) => n + (r.end - r.offset), 0n);
+      const share = bytes / BigInt(MERGE_CONNECTIONS);
+      const floor = BigInt(MERGE_MIN_RUN);
+      const ceiling = BigInt(MERGE_MAX_RUN);
+      const clamped = share < floor ? floor : share > ceiling ? ceiling : share;
+      const budget = BigInt(this.policy.maxGetBytes);
+      const longest = clamped < budget ? clamped : budget;
+      const gap = BigInt(this.policy.maxCoalesceGap);
+      const held = [];
+      for (const run of mergedRuns(reads, longest, this.policy.maxReadAmplification, this.policy.maxCoalesceGap)) {
+        const offset = run[0].offset;
+        const end = run.reduce((e, r) => r.end > e ? r.end : e, offset);
+        const near = serving.some((s) => s.offset - end <= gap && offset - s.end <= gap);
+        const since = run.reduce((t, r) => Math.min(t, r.since), now);
+        if (near && serving.length >= MERGE_BUSY && now - since < MERGE_MAX_WAIT) {
+          held.push(...run);
+          oldest = Math.min(oldest, since);
+        } else {
+          void this.serve(source, run);
+        }
+      }
+      if (held.length > 0) this.waiting.set(source, held);
+      else this.waiting.delete(source);
+    }
+    if (oldest < Infinity) {
+      this.release = setTimeout(() => this.flush(), oldest + MERGE_MAX_WAIT - now);
+    }
+  }
+  /** Adds `read` to a request in flight that covers it, if there is one. */
+  static join(read, serving) {
+    const request = serving.find((s) => s.offset <= read.offset && read.end <= s.end);
+    request?.reads.push(read);
+    return request !== void 0;
+  }
+  /**
+   * Reads `run` in one request, and gives each read its bytes. A run ends where its last read
+   * ends, so it may fail where that read alone would; the others must not fail with it, so each
+   * read of a run that fails is read on its own, and gets its own result.
+   */
+  async serve(source, run) {
+    const offset = run[0].offset;
+    const end = run.reduce((e, r) => r.end > e ? r.end : e, offset);
+    const serving = this.serving.get(source) ?? /* @__PURE__ */ new Set();
+    this.serving.set(source, serving);
+    const request = { offset, end, reads: run };
+    serving.add(request);
+    const finished = () => {
+      serving.delete(request);
+      if (serving.size === 0) this.serving.delete(source);
+      if (this.release !== void 0) this.flush();
+    };
+    let data;
+    try {
+      data = await this.source({ source, offset, length: end - offset });
+    } catch (e) {
+      finished();
+      if (run.length > 1) await Promise.all(run.map((r) => this.serve(source, [r])));
+      else run[0].reject(e);
+      return;
+    }
+    finished();
+    for (const r of run) {
+      const from = Number(r.offset - offset);
+      r.resolve(data.subarray(from, from + Number(r.end - r.offset)));
     }
   }
   /** Bytes `[start, end)` of a visible key's value, or undefined if absent. */
@@ -3097,7 +3329,10 @@ var Archive = class _Archive {
     const parts = [];
     const cuts = [];
     let at = 0;
+    let taken = 0;
+    const held = /* @__PURE__ */ new Map();
     for (const r of this.ranges(entry)) {
+      if (taken > this.policy.maxGetBytes) break;
       const n = Number(rangeSize(r));
       const a = Math.max(start, at);
       const b = Math.min(end, at + n);
@@ -3105,6 +3340,7 @@ var Archive = class _Archive {
         if ("data" in r) {
           parts.push(Promise.resolve(r.data.subarray(a - at, b - at)));
           cuts.push({ lo: 0, hi: b - a });
+          taken += b - a;
         } else {
           let read;
           if (r.crc32c === void 0) {
@@ -3114,46 +3350,68 @@ var Archive = class _Archive {
             read = { source: r.source, offset: r.offset, length: r.length };
             cuts.push({ lo: a - at, hi: b - at, crc: r.crc32c });
           }
-          parts.push(this.sources[r.source].url !== void 0 ? read : this.source(read));
+          taken += Number(read.length);
+          const key2 = this.sources[r.source].key;
+          if (key2 !== void 0 && !held.has(key2)) {
+            let target;
+            try {
+              target = this.entryFor(key2);
+            } catch (e) {
+              throw new RefkvError("resolution", `key ${JSON.stringify(key2)}: ${e.message}`);
+            }
+            const whole2 = target !== void 0 && target.reference === void 0 && !target.error && !this.namesFormatEntry(key2);
+            held.set(key2, whole2 ? Math.max(target.size, target.csize) : 0);
+          }
+          if (taken > this.policy.maxGetBytes) break;
+          parts.push(this.sources[r.source].url !== void 0 ? read : { local: read });
         }
       }
       at += n;
     }
-    const reads = parts.filter((p) => !(p instanceof Promise));
-    const sorted = [...reads].sort((x, y) => x.source - y.source || (x.offset < y.offset ? -1 : x.offset > y.offset ? 1 : 0));
-    const runs = [];
+    const reads = parts.filter((p) => !(p instanceof Promise) && !("local" in p));
+    let heldBytes = 0;
+    for (const n of held.values()) heldBytes += n;
+    const runs = coalescedRuns(
+      reads.map((r) => ({ source: r.source, offset: r.offset, end: r.offset + r.length })),
+      this.policy.maxCoalesceGap,
+      Math.max(this.policy.maxGetBytes - heldBytes, 0)
+    );
     const runOf = /* @__PURE__ */ new Map();
-    for (const read of sorted) {
-      const last = runs[runs.length - 1];
-      const readEnd = read.offset + read.length;
-      if (last && last.source === read.source && read.offset - last.end <= BigInt(MERGE_GAP)) {
-        if (readEnd > last.end) last.end = readEnd;
-      } else {
-        runs.push({ source: read.source, offset: read.offset, end: readEnd });
-      }
-      runOf.set(read, runs[runs.length - 1]);
+    const ordered = [...reads].sort((x, y) => x.source - y.source || (x.offset < y.offset ? -1 : x.offset > y.offset ? 1 : 0));
+    let k = 0;
+    for (const read of ordered) {
+      while (runs[k].source !== read.source || runs[k].end < read.offset + read.length) k++;
+      runOf.set(read, runs[k]);
+    }
+    const fetched = runs.reduce((n, run) => n + Number(run.end - run.offset), heldBytes);
+    if (Math.max(taken, fetched) > this.policy.maxGetBytes) {
+      throw new RefkvError(
+        "request",
+        `the value needs more than ${this.policy.maxGetBytes} bytes; this reader allows ${this.policy.maxGetBytes} (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`
+      );
     }
     if (runs.length > this.policy.maxReads) {
-      for (const p of parts) if (p instanceof Promise) p.catch(() => {
-      });
       throw new RefkvError(
         "request",
         `the value needs ${runs.length} reads; this reader allows ${this.policy.maxReads} (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`
       );
     }
+    const owner = {};
+    const keyValues = /* @__PURE__ */ new Map();
     for (const run of runs) {
-      run.data = this.source({ source: run.source, offset: run.offset, length: run.end - run.offset });
+      run.data = this.sharedRead(run.source, run.offset, run.end, owner);
     }
     const whole = await Promise.all(
       parts.map(async (p) => {
         if (p instanceof Promise) return p;
+        if ("local" in p) return this.source(p.local, keyValues);
         const run = runOf.get(p);
         const from = Number(p.offset - run.offset);
         return (await run.data).subarray(from, from + Number(p.length));
       })
     );
     const chunks = whole.map((data, i) => {
-      const { lo, hi, crc } = cuts[i];
+      const { lo: lo2, hi: hi2, crc } = cuts[i];
       if (crc !== void 0 && crc32c(data) !== crc) {
         throw new RefkvError(
           "resolution",
@@ -3161,7 +3419,7 @@ var Archive = class _Archive {
           true
         );
       }
-      return data.subarray(lo, hi);
+      return data.subarray(lo2, hi2);
     });
     const out2 = new Uint8Array(end - start);
     let o = 0;
@@ -3181,12 +3439,6 @@ function compareUtf8(a, b) {
   }
   return x.length - y.length;
 }
-
-// src/client.ts
-init_define_REFKV_PROFILES();
-
-// src/server.ts
-init_define_REFKV_PROFILES();
 
 // src/zarrify/common.ts
 init_define_REFKV_PROFILES();
@@ -3243,8 +3495,8 @@ async function compileIr() {
 var instance;
 function ir() {
   instance ??= (async () => {
-    const module3 = await compileIr();
-    const { exports } = await WebAssembly.instantiate(module3, {});
+    const module4 = await compileIr();
+    const { exports } = await WebAssembly.instantiate(module4, {});
     return exports;
   })();
   instance.catch(() => instance = void 0);
@@ -3264,28 +3516,520 @@ var utf83 = new TextEncoder();
 
 // src/zarrify/ir/source.ts
 init_define_REFKV_PROFILES();
-var OPEN = 1 << 16;
-var isNode = typeof process !== "undefined" && process.versions?.node !== void 0;
-
-// src/zarrify/ir/store.ts
-init_define_REFKV_PROFILES();
 
 // src/zarrify/store.ts
 init_define_REFKV_PROFILES();
 var MAX_SAFE = Number.MAX_SAFE_INTEGER;
 var MAX_DOCUMENT = 1 << 24;
 var utf84 = new TextEncoder();
+var utf8Fatal = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
 var PREFETCH_BYTES = 64 << 20;
 var MAX_BLOCK = 2 ** 31 - 1;
 
+// src/zarrify/ir/source.ts
+var OPEN = 1 << 16;
+var isNode = typeof process !== "undefined" && process.versions?.node !== void 0;
+
 // src/zarrify/ir/store.ts
+init_define_REFKV_PROFILES();
 var utf85 = new TextEncoder();
 
 // src/zarrify/ir/vsi.ts
 init_define_REFKV_PROFILES();
+var BESIDE = Object.fromEntries(
+  REGISTRY2.filter((e) => e.store_run !== null && e.store_run.form !== "listed").map((e) => [e.name, e.title])
+);
+var ON_DEMAND = new Set(
+  REGISTRY2.filter((e) => e.store_run?.form === "on_demand").map((e) => e.name)
+);
+
+// src/phkv.ts
+init_define_REFKV_PROFILES();
+
+// src/ptrhash.ts
+init_define_REFKV_PROFILES();
+
+// src/xxh64.ts
+init_define_REFKV_PROFILES();
+var MASK = (1n << 64n) - 1n;
+var P1 = 0x9e3779b185ebca87n;
+var P2 = 0xc2b2ae3d27d4eb4fn;
+var P3 = 0x165667b19e3779f9n;
+var P4 = 0x85ebca77c2b2ae63n;
+var P5 = 0x27d4eb2f165667c5n;
+var rotl = (x, r) => (x << r | x >> 64n - r) & MASK;
+var round = (acc, input2) => rotl(acc + input2 * P2 & MASK, 31n) * P1 & MASK;
+var merge = (h, v) => ((h ^ round(0n, v)) * P1 & MASK) + P4 & MASK;
+function xxh64(data, seed = 0n) {
+  const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
+  const n = data.length;
+  let at = 0;
+  let h;
+  if (n >= 32) {
+    let v1 = seed + P1 + P2 & MASK;
+    let v2 = seed + P2 & MASK;
+    let v3 = seed & MASK;
+    let v4 = seed - P1 & MASK;
+    for (; at + 32 <= n; at += 32) {
+      v1 = round(v1, view.getBigUint64(at, true));
+      v2 = round(v2, view.getBigUint64(at + 8, true));
+      v3 = round(v3, view.getBigUint64(at + 16, true));
+      v4 = round(v4, view.getBigUint64(at + 24, true));
+    }
+    h = rotl(v1, 1n) + rotl(v2, 7n) + rotl(v3, 12n) + rotl(v4, 18n) & MASK;
+    h = merge(h, v1);
+    h = merge(h, v2);
+    h = merge(h, v3);
+    h = merge(h, v4);
+  } else {
+    h = seed + P5 & MASK;
+  }
+  h = h + BigInt(n) & MASK;
+  for (; at + 8 <= n; at += 8) {
+    h ^= round(0n, view.getBigUint64(at, true));
+    h = (rotl(h, 27n) * P1 & MASK) + P4 & MASK;
+  }
+  if (at + 4 <= n) {
+    h ^= BigInt(view.getUint32(at, true)) * P1 & MASK;
+    h = (rotl(h, 23n) * P2 & MASK) + P3 & MASK;
+    at += 4;
+  }
+  for (; at < n; at++) {
+    h ^= BigInt(data[at]) * P5 & MASK;
+    h = rotl(h, 11n) * P1 & MASK;
+  }
+  h ^= h >> 33n;
+  h = h * P2 & MASK;
+  h ^= h >> 29n;
+  h = h * P3 & MASK;
+  h ^= h >> 32n;
+  return h;
+}
+
+// src/ptrhash.ts
+var PART_KEYS = 1 << 16;
+var TWO32 = 4294967296;
+var PILOT_HI = 1367130551;
+var PILOT_LO = 656542357;
+var C1_HI = 4283543511;
+var C1_LO = 3981806797;
+var C2_HI = 3301882366;
+var C2_LO = 444984403;
+var H = 0;
+var OH = 0;
+var OL = 0;
+function mul32(a, b) {
+  const a0 = a & 65535;
+  const a1 = a >>> 16;
+  const b0 = b & 65535;
+  const b1 = b >>> 16;
+  const mid = a0 * b1 + a1 * b0;
+  const lo2 = a0 * b0 + mid % 65536 * 65536;
+  H = a1 * b1 + Math.floor(mid / 65536) + Math.floor(lo2 / TWO32);
+  return lo2 >>> 0;
+}
+function mulWrap(xh, xl, ch, cl) {
+  const lo2 = mul32(xl, cl);
+  OL = lo2;
+  OH = H + Math.imul(xh, cl) + Math.imul(xl, ch) >>> 0;
+}
+function fmix(xh, xl) {
+  xl = (xl ^ xh >>> 1) >>> 0;
+  mulWrap(xh, xl, C1_HI, C1_LO);
+  xh = OH;
+  xl = (OL ^ xh >>> 1) >>> 0;
+  mulWrap(xh, xl, C2_HI, C2_LO);
+  xh = OH;
+  OL = (OL ^ xh >>> 1) >>> 0;
+}
+function mulhi(xh, xl, m) {
+  mul32(xl, m);
+  const p1h = H;
+  const p2l = mul32(xh, m);
+  return H + (p2l + p1h >= TWO32 ? 1 : 0);
+}
+function mulSmallWrap(xh, xl, m) {
+  const lo2 = mul32(xl, m);
+  const p1h = H;
+  const p2l = mul32(xh, m);
+  OL = lo2;
+  OH = p1h + p2l >>> 0;
+}
+var PILOT_HIS = new Uint32Array(256);
+var PILOT_LOS = new Uint32Array(256);
+for (let p = 0; p < 256; p++) {
+  mulWrap(0, p, PILOT_HI, PILOT_LO);
+  PILOT_HIS[p] = OH;
+  PILOT_LOS[p] = OL;
+}
+var hi = (h) => Number(h >> 32n);
+var lo = (h) => Number(h & 0xffffffffn);
+function bucket(params, hh, hl) {
+  const p = mulhi(hh, hl, params.parts);
+  mulSmallWrap(hh, hl, params.parts);
+  return p * params.buckets + mulhi(OH, OL, params.buckets);
+}
+function slotInPart(params, hh, hl, pilot) {
+  fmix((hh ^ PILOT_HIS[pilot]) >>> 0, (hl ^ PILOT_LOS[pilot]) >>> 0);
+  return mulhi(OH, OL, params.slots);
+}
+function slot(params, pilots, h) {
+  const hh = hi(h);
+  const hl = lo(h);
+  const p = mulhi(hh, hl, params.parts);
+  const b = bucket(params, hh, hl);
+  return p * params.slots + slotInPart(params, hh, hl, pilots[b]);
+}
+var hash = (key, seed) => xxh64(key, seed);
+
+// src/phkv.ts
+var MAGIC = "PHKV";
+var SUPERBLOCK_SIZE = 64;
+var DIR_ENTRY_SIZE = 40;
+var SLOT_SIZE = 12;
+var SLOT_LENGTH_MAX = 4294967295;
+var MAX_PAYLOAD = 1 << 24;
+var SECTION = { SOURCES: 1, RECORDS: 2, PAGES: 3, PTRHASH: 4, SLOTS: 5, PROPERTY: 6, METADATA: 7 };
+var KIND_BYTES = 0;
+var KIND_RANGE = 1;
+var KIND_CONCAT = 2;
+var REC_INLINE = 1;
+var REC_CRC32C = 2;
+var REC_HIDDEN = 4;
+var utf86 = new TextEncoder();
+var strictUtf83 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
+var probeDistances = () => [0, ...Array.from({ length: 21 }, (_, k) => 2 ** (10 + k))];
+var compareBytes = (a, b) => {
+  const n = Math.min(a.length, b.length);
+  for (let i = 0; i < n; i++) if (a[i] !== b[i]) return a[i] - b[i];
+  return a.length - b.length;
+};
+var fail = (errorClass, message) => {
+  throw new RefkvError(errorClass, message);
+};
+var safe2 = (v, what) => v > BigInt(Number.MAX_SAFE_INTEGER) ? fail("archive", `${what} is too large for this reader`) : Number(v);
+var hasMagic = (bytes, at) => [...MAGIC].every((c, i) => bytes[at + i] === c.charCodeAt(0));
+function findSuperblock(bytes) {
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  for (const d of probeDistances()) {
+    const at = bytes.length - d - SUPERBLOCK_SIZE;
+    if (at < 0) break;
+    if (!hasMagic(bytes, at) || view.getUint32(at + 60, true) !== crc32c(bytes.subarray(at, at + 60)) || view.getBigUint64(at + 8, true) !== BigInt(d)) {
+      continue;
+    }
+    return {
+      version: view.getUint16(at + 4, true),
+      flags: view.getUint16(at + 6, true),
+      distance: d,
+      keyCount: safe2(view.getBigUint64(at + 16, true), "the key count"),
+      directoryOffset: safe2(view.getBigUint64(at + 24, true), "the directory offset"),
+      directoryLength: safe2(view.getBigUint64(at + 32, true), "the directory length"),
+      directoryCrc: view.getUint32(at + 56, true)
+    };
+  }
+  return void 0;
+}
+function isPhkv(bytes) {
+  try {
+    return findSuperblock(bytes) !== void 0;
+  } catch {
+    return false;
+  }
+}
+function varint(b, at) {
+  let v = 0;
+  let scale = 1;
+  for (let i = 0; i < 10; i++) {
+    if (at >= b.length) return fail("entry", "a truncated varint");
+    const byte = b[at++];
+    v += (byte & 127) * scale;
+    if (v > Number.MAX_SAFE_INTEGER) return fail("entry", "a varint too large for this reader");
+    if (!(byte & 128)) return [v, at];
+    scale *= 128;
+  }
+  return fail("entry", "an overlong varint");
+}
+var PhkvArchive = class _PhkvArchive extends Archive {
+  maxPayload = MAX_PAYLOAD;
+  params;
+  pilots;
+  slots;
+  records;
+  recordsStart;
+  keyCount;
+  pages = [];
+  listed;
+  /**
+   * Opens a standalone phkv store held in memory (spec §22.1
+   * <https://github.com/d-v-b/refkv/blob/main/spec/bindings/phkv.md#221-opening>): `baseUrl`
+   * resolves relative `url` sources, as `Archive.open`'s does, and `policy` is the reader policy.
+   * Throws a `RefkvError` of class "archive" for a store that opening refuses.
+   */
+  static async openStore(bytes, baseUrl, fetchRange, policy = {}) {
+    validatePolicy(policy);
+    const rules = { ...DEFAULT_POLICY, ...policy };
+    const sb = findSuperblock(bytes);
+    if (sb === void 0) return fail("archive", "not a phkv store");
+    if (sb.version !== 0) return fail("archive", `unsupported phkv version ${sb.version}`);
+    if (sb.flags & 1) return fail("archive", "a hybrid phkv store: this reader opens standalone stores only");
+    if (sb.flags !== 0) return fail("archive", `unsupported phkv flags ${sb.flags}`);
+    const n = bytes.length;
+    if (sb.directoryLength % DIR_ENTRY_SIZE !== 0 || sb.directoryOffset + sb.directoryLength > n) {
+      return fail("archive", "the section directory lies outside the file or has a partial entry");
+    }
+    const directory = bytes.subarray(sb.directoryOffset, sb.directoryOffset + sb.directoryLength);
+    if (crc32c(directory) !== sb.directoryCrc) return fail("archive", "the section directory does not match its crc32c");
+    const dir = [];
+    for (let at = 0; at < directory.length; at += DIR_ENTRY_SIZE) {
+      const d = new DataView(directory.buffer, directory.byteOffset + at, DIR_ENTRY_SIZE);
+      if (d.getUint16(6, true) !== 0 || d.getUint32(36, true) !== 0) {
+        return fail("archive", "a directory entry's reserved fields are not 0");
+      }
+      const flags = directory[at + 5];
+      if (flags & ~1) return fail("archive", `a directory entry has unknown flags ${flags}`);
+      const entry = {
+        type: d.getUint32(0, true),
+        codec: directory[at + 4],
+        flags,
+        offset: safe2(d.getBigUint64(8, true), "a section offset"),
+        length: safe2(d.getBigUint64(16, true), "a section length"),
+        size: safe2(d.getBigUint64(24, true), "a section size"),
+        crc: d.getUint32(32, true)
+      };
+      if (entry.offset + entry.length > n) return fail("archive", `section ${entry.type} lies outside the file`);
+      const known = Object.values(SECTION).includes(entry.type);
+      if (!known && entry.flags & 1) return fail("archive", `unknown section ${entry.type} must be understood`);
+      if (known) dir.push(entry);
+    }
+    const one = (type, required) => {
+      const found = dir.filter((d) => d.type === type);
+      if (found.length > 1) return fail("archive", `more than one section of type ${type}`);
+      if (found.length === 0 && required) return fail("archive", `no section of type ${type}`);
+      return found[0];
+    };
+    const sourcesDir = one(SECTION.SOURCES, true);
+    const records = one(SECTION.RECORDS, sb.keyCount > 0);
+    const pagesDir = one(SECTION.PAGES, sb.keyCount > 0);
+    const ptrhashDir = one(SECTION.PTRHASH, sb.keyCount > 0);
+    const slotsDir = one(SECTION.SLOTS, sb.keyCount > 0);
+    const metadata = one(SECTION.METADATA, false);
+    if (sb.keyCount === 0 && (records || pagesDir || ptrhashDir || slotsDir)) {
+      return fail("archive", "a store with no keys has sections that need keys");
+    }
+    for (const d of [records, slotsDir]) if (d !== void 0 && d.codec !== 0) fail("archive", `section ${d.type} has codec ${d.codec}`);
+    const whole = async (d) => {
+      const stored = bytes.subarray(d.offset, d.offset + d.length);
+      if (crc32c(stored) !== d.crc) return fail("archive", `section ${d.type} does not match its crc32c`);
+      let body;
+      if (d.codec === 0) body = stored;
+      else if (d.codec === 1) {
+        try {
+          body = await inflateRaw(stored, Math.min(d.size, rules.maxFormatEntry));
+        } catch (e) {
+          return fail("archive", `section ${d.type}: ${e.message}`);
+        }
+      } else if (d.codec === 2) {
+        return fail(
+          "archive",
+          `section ${d.type} is compressed with Zstandard, which this reader does not decode yet (it reads codecs 0 and 1)`
+        );
+      } else return fail("archive", `section ${d.type} has codec ${d.codec}, which the format does not define`);
+      if (body.length !== d.size) return fail("archive", `section ${d.type} decodes to ${body.length} bytes, not ${d.size}`);
+      if (d.size > rules.maxFormatEntry) return fail("archive", `section ${d.type} is larger than this reader allows`);
+      return body;
+    };
+    let table;
+    try {
+      table = decodeTable(await whole(sourcesDir));
+    } catch (e) {
+      throw e instanceof RefkvError ? e : new RefkvError("archive", `source table: ${e.message}`);
+    }
+    if (table.sources.length > rules.maxSources) {
+      return fail("archive", `the source table has ${table.sources.length} sources; this reader allows ${rules.maxSources}`);
+    }
+    if (metadata !== void 0) await whole(metadata);
+    const store = new _PhkvArchive(bytes, baseUrl, table.sources, /* @__PURE__ */ new Map(), fetchRange ?? defaultFetch, rules, table.revision);
+    store.keyCount = sb.keyCount;
+    if (sb.keyCount > 0) {
+      store.recordsStart = records.offset;
+      store.records = bytes.subarray(records.offset, records.offset + records.length);
+      const ph = await whole(ptrhashDir);
+      if (ph.length < 40 || ph[0] !== 1 || ph.subarray(1, 8).some((b) => b !== 0)) {
+        return fail("archive", "the PTRHASH section is malformed");
+      }
+      const pv = new DataView(ph.buffer, ph.byteOffset, ph.byteLength);
+      const params = {
+        seed: pv.getBigUint64(8, true),
+        parts: safe2(pv.getBigUint64(16, true), "the part count"),
+        slots: safe2(pv.getBigUint64(24, true), "the slots per part"),
+        buckets: safe2(pv.getBigUint64(32, true), "the buckets per part")
+      };
+      if (params.parts === 0 || params.slots === 0 || params.buckets === 0 || params.parts * params.slots < sb.keyCount || params.parts * params.slots >= 2 ** 32 || params.slots >= 2 ** 32 || params.buckets >= 2 ** 32 || params.parts >= 2 ** 32 || ph.length !== 40 + params.parts * params.buckets) {
+        return fail("archive", "the PTRHASH section is malformed");
+      }
+      store.params = params;
+      store.pilots = ph.subarray(40);
+      if (slotsDir.length !== SLOT_SIZE * params.parts * params.slots) {
+        return fail("archive", "the SLOTS section is not 12 bytes per slot");
+      }
+      store.slots = bytes.subarray(slotsDir.offset, slotsDir.offset + slotsDir.length);
+      const pagesBytes = await whole(pagesDir);
+      let at = 0;
+      let next = 0;
+      let previous;
+      try {
+        while (at < pagesBytes.length) {
+          let len;
+          [len, at] = varint(pagesBytes, at);
+          if (len === 0 || at + len > pagesBytes.length) throw new Error("a page with a bad first_key");
+          const first = pagesBytes.subarray(at, at + len);
+          at += len;
+          let offset;
+          let length;
+          [offset, at] = varint(pagesBytes, at);
+          [length, at] = varint(pagesBytes, at);
+          if (length === 0 || offset !== records.offset + next) throw new Error("the pages are not contiguous over RECORDS");
+          if (previous !== void 0 && compareBytes(previous, first) >= 0) throw new Error("page keys are not increasing");
+          previous = first;
+          next += length;
+          store.pages.push({ key: strictUtf83.decode(first), offset: offset - records.offset, length });
+        }
+        if (next !== records.length) throw new Error("the pages do not fill RECORDS");
+      } catch (e) {
+        return fail("archive", `the page index: ${e.message}`);
+      }
+    }
+    return store;
+  }
+  /** A standalone phkv store reserves no names (spec/bindings/phkv.md). */
+  namesFormatEntry() {
+    return false;
+  }
+  /** The record of `key`, found through the perfect hash (spec §19.5 <https://github.com/d-v-b/refkv/blob/main/spec/bindings/phkv.md#195-lookup>), as an entry. */
+  entryFor(key) {
+    const known = this.entries.get(key);
+    if (known !== void 0 || this.keyCount === 0) return known;
+    const want = utf86.encode(key);
+    if (want.length === 0) return void 0;
+    const s = slot(this.params, this.pilots, hash(want, this.params.seed));
+    const view = new DataView(this.slots.buffer, this.slots.byteOffset + s * SLOT_SIZE, SLOT_SIZE);
+    const length = view.getUint32(8, true);
+    if (length === 0) return void 0;
+    const at = safe2(view.getBigUint64(0, true), "a record offset");
+    const entry = this.record(at, length === SLOT_LENGTH_MAX ? void 0 : length, key);
+    if (entry !== void 0) this.entries.set(key, entry);
+    return entry;
+  }
+  /**
+   * The record at `at` of RECORDS, as an entry, or undefined if its key is not `key`. A malformed
+   * record is an entry error (spec §19.5 <https://github.com/d-v-b/refkv/blob/main/spec/bindings/phkv.md#195-lookup> step 3). `length` is the slot's, if it gave one.
+   */
+  record(at, length, key) {
+    const bad = (m) => fail("entry", `${JSON.stringify(key)}: ${m}`);
+    const b = this.records;
+    if (at >= b.length || length !== void 0 && (length < 6 || at + length > b.length)) bad("its slot is outside RECORDS");
+    const end = length === void 0 ? b.length : at + length;
+    const body = b.subarray(0, end);
+    let p = at;
+    let keyLength;
+    [keyLength, p] = varint(body, p);
+    if (keyLength === 0 || p + 2 > end) bad("a malformed record");
+    const kind = body[p++];
+    const flags = body[p++];
+    if (kind > KIND_CONCAT || flags & ~(REC_INLINE | REC_CRC32C | REC_HIDDEN)) bad("a malformed record");
+    let rank;
+    [rank, p] = varint(body, p);
+    void rank;
+    const entry = { key, method: 0, csize: 0, size: 0, bodyOffset: 0 };
+    let dataLength = 0;
+    let offset = 0;
+    if (kind === KIND_BYTES) {
+      if (p >= end) bad("a malformed record");
+      const codec = body[p++];
+      if (codec > 2) bad("a malformed record");
+      if (!(flags & REC_INLINE)) [offset, p] = varint(body, p);
+      [entry.csize, p] = varint(body, p);
+      [entry.size, p] = varint(body, p);
+      if (flags & REC_CRC32C) {
+        if (p + 4 > end) bad("a malformed record");
+        entry.crc32c = new DataView(body.buffer, body.byteOffset + p, 4).getUint32(0, true);
+        p += 4;
+      }
+      entry.method = codec === 0 ? 0 : codec === 1 ? 8 : -1;
+      if (codec === 2) entry.error = "Zstandard values are not supported by this reader";
+      dataLength = flags & REC_INLINE ? entry.csize : 0;
+    } else {
+      if (flags & (REC_INLINE | REC_CRC32C)) bad("a malformed reference record");
+      [dataLength, p] = varint(body, p);
+      if (dataLength > MAX_PAYLOAD) bad("a reference payload over 2^24 bytes");
+    }
+    if (p + keyLength + dataLength > end) bad("a record that extends past its end");
+    let name;
+    try {
+      name = strictUtf83.decode(body.subarray(p, p + keyLength));
+    } catch {
+      return bad("a key that is not UTF-8");
+    }
+    if (name !== key) return void 0;
+    p += keyLength;
+    if (kind === KIND_BYTES) {
+      entry.bodyOffset = flags & REC_INLINE ? this.recordsStart + p : offset;
+    } else {
+      entry.reference = { headerId: kind === KIND_RANGE ? RANGE_ID : CONCAT_ID, payload: body.slice(p, p + dataLength) };
+    }
+    return entry;
+  }
+  /** A phkv store reserves no names (spec §16 <https://github.com/d-v-b/refkv/blob/main/spec/bindings/phkv.md#16-what-the-phkv-binding-defines>): every key is visible. */
+  lookup(key) {
+    const entry = this.entryFor(key);
+    if (entry?.error !== void 0) throw new RefkvError("entry", `${JSON.stringify(key)}: ${entry.error}`);
+    return entry;
+  }
+  /** The keys, in UTF-8 order, from the page index. */
+  keys() {
+    if (this.listed === void 0) {
+      const keys = [];
+      for (const page of this.pages) {
+        let p = page.offset;
+        const end = page.offset + page.length;
+        while (p < end) {
+          let keyLength;
+          const start = p;
+          [keyLength, p] = varint(this.records, p);
+          const kind = this.records[p];
+          const flags = this.records[p + 1];
+          p += 2;
+          [, p] = varint(this.records, p);
+          let dataLength;
+          if (kind === KIND_BYTES) {
+            p++;
+            if (!(flags & REC_INLINE)) [, p] = varint(this.records, p);
+            let stored;
+            [stored, p] = varint(this.records, p);
+            [, p] = varint(this.records, p);
+            if (flags & REC_CRC32C) p += 4;
+            dataLength = flags & REC_INLINE ? stored : 0;
+          } else {
+            [dataLength, p] = varint(this.records, p);
+          }
+          if (p + keyLength + dataLength > end) fail("entry", `a page that cannot be parsed, at ${start}`);
+          if (!(flags & REC_HIDDEN)) keys.push(strictUtf83.decode(this.records.subarray(p, p + keyLength)));
+          p += keyLength + dataLength;
+        }
+      }
+      this.listed = keys;
+    }
+    return this.listed;
+  }
+};
+var defaultFetch = (url2, start, end, pins, options) => readHttpRange(url2, start, end, pins, void 0, options);
+function openArchive(bytes, baseUrl, fetchRange, policy = {}) {
+  return isPhkv(bytes) ? PhkvArchive.openStore(bytes, baseUrl, fetchRange, policy) : Archive.open(bytes, baseUrl, fetchRange, policy);
+}
 
 // src/server.ts
 var ARCHIVE_KEY = "__vz__/archive.vzip";
+var PHKV_ARCHIVE_KEY = "__vz__/archive.phkv";
 var WORKER_HEADER = "X-Vzip-Worker";
 var ERROR_HEADER = "X-Vzip-Error";
 var PENDING_HEADER = "X-Vzip-Pending";
@@ -3337,9 +4081,11 @@ function imageZarrUrl(prefix2, url2) {
 function archiveZarrUrl(prefix2, url2) {
   return `${prefix2}archive/${encodeId(new URL(url2).href)}/`;
 }
-function archiveDownloadUrl(zarrUrl) {
-  return zarrUrl + ARCHIVE_KEY;
+function archiveDownloadUrl(zarrUrl, format = "vzip") {
+  return zarrUrl + (format === "phkv" ? PHKV_ARCHIVE_KEY : ARCHIVE_KEY);
 }
+var isArchiveUrl = (url2) => /\.(?:vzip|phkv)(?:[?#]|$)/i.test(url2);
+var isVzipUrl = (url2) => /\.vzip(?:[?#]|$)/i.test(url2);
 
 // ../demo/contrast.ts
 init_define_REFKV_PROFILES();
@@ -3447,9 +4193,133 @@ async function decodeJpegXr(wasmUrl, buffer) {
   }
 }
 
+// ../demo/hevc_decoder.ts
+init_define_REFKV_PROFILES();
+var ENOSYS2 = 52;
+var env2 = {
+  emscripten_notify_memory_growth: () => {
+  },
+  fd_write: () => ENOSYS2,
+  fd_close: () => ENOSYS2,
+  fd_seek: () => ENOSYS2
+};
+var IMAGE_BUFFER_FULL = 9;
+var WAITING_FOR_INPUT_DATA = 13;
+var module3;
+function getModule3(url2) {
+  module3 ??= WebAssembly.instantiateStreaming(fetch(url2), { env: env2, wasi_snapshot_preview1: env2 }).then((r) => {
+    const e = r.instance.exports;
+    e._initialize();
+    return e;
+  });
+  return module3;
+}
+function varint2(b, at) {
+  let v = 0;
+  for (let scale = 1; at < b.length; scale *= 128) {
+    const c = b[at++];
+    v += (c & 127) * scale;
+    if (c < 128) return [v, at];
+  }
+  throw new Error("hevc: a chunk's header ends inside a varint");
+}
+function frames(chunk) {
+  let [n, at] = varint2(chunk, 0);
+  const sizes = [];
+  let position = -1;
+  for (let i = 0; i < n; ++i) {
+    let size, z;
+    [size, at] = varint2(chunk, at);
+    [z, at] = varint2(chunk, at);
+    position += z % 2 === 0 ? z / 2 : -(z + 1) / 2;
+    sizes.push([size, position >= 0]);
+  }
+  return sizes.map(([size, shown2]) => {
+    const data = chunk.subarray(at, at + size);
+    at += size;
+    return { data, shown: shown2 };
+  });
+}
+function parameterSets(hvcc) {
+  const nals = [];
+  let at = 23;
+  for (let a = 0; a < hvcc[22]; ++a) {
+    const count = hvcc[at + 1] << 8 | hvcc[at + 2];
+    at += 3;
+    for (let k = 0; k < count; ++k) {
+      const length = hvcc[at] << 8 | hvcc[at + 1];
+      nals.push(hvcc.subarray(at + 2, at + 2 + length));
+      at += 2 + length;
+    }
+  }
+  return [nals, (hvcc[21] & 3) + 1];
+}
+async function decodeHevcPlane(wasmUrl, setup, chunk, plane) {
+  const m = await getModule3(wasmUrl);
+  const [sets, lengthSize] = parameterSets(setup);
+  const units = frames(chunk);
+  const total = sets.reduce((n, s) => n + s.length, 0) + units.reduce((n, u) => n + u.data.length, 0);
+  const input2 = m.malloc(total + 48);
+  if (input2 === 0) throw new Error("hevc: out of memory");
+  const scratch = input2 + total + (4 - total % 4) % 4;
+  const ctx = m.hevc_new();
+  const out2 = [];
+  try {
+    let at2 = input2;
+    const push = (nal, pts) => {
+      new Uint8Array(m.memory.buffer).set(nal, at2);
+      if (m.hevc_push_nal(ctx, at2, nal.length, pts) !== 0) throw new Error("hevc: a NAL unit is refused");
+      at2 += nal.length;
+    };
+    for (const s of sets) push(s, -1);
+    units.forEach(({ data }, k) => {
+      for (let i = 0; i < data.length; ) {
+        let length = 0;
+        for (let j = 0; j < lengthSize; ++j) length = length * 256 + data[i + j];
+        i += lengthSize;
+        if (i + length > data.length) throw new Error("hevc: a NAL unit overruns its frame");
+        push(data.subarray(i, i + length), k);
+        i += length;
+      }
+    });
+    m.hevc_flush(ctx);
+    for (; ; ) {
+      const error = m.hevc_decode(ctx, scratch);
+      const more = new Int32Array(m.memory.buffer, scratch, 1)[0];
+      let pictures = 0;
+      for (let img; (img = m.hevc_next_picture(ctx)) !== 0; ++pictures) {
+        m.hevc_picture_info(img, scratch + 4);
+        if (!units[new Int32Array(m.memory.buffer, scratch + 4, 1)[0]]?.shown) continue;
+        const ptr = m.hevc_plane(img, plane, scratch + 24);
+        if (ptr === 0) continue;
+        const [w, h, stride, bits] = new Int32Array(m.memory.buffer, scratch + 24, 4);
+        const row = bits > 8 ? 2 * w : w;
+        const samples = new Uint8Array(row * h);
+        for (let r = 0; r < h; ++r) samples.set(new Uint8Array(m.memory.buffer, ptr + r * stride, row), r * row);
+        out2.push(samples);
+      }
+      if (error === IMAGE_BUFFER_FULL && pictures > 0) continue;
+      if (error === WAITING_FOR_INPUT_DATA) break;
+      if (error !== 0) throw new Error(`hevc: libde265's error ${error}`);
+      if (!more) break;
+    }
+  } finally {
+    if (ctx !== 0) m.hevc_free(ctx);
+    m.free(input2);
+  }
+  const bytes = new Uint8Array(out2.reduce((n, p) => n + p.length, 0));
+  let at = 0;
+  for (const p of out2) {
+    bytes.set(p, at);
+    at += p.length;
+  }
+  return bytes;
+}
+
 // ../demo/contrast.ts
 var JPEG2K_WASM = new URL("jpeg2000_decoder.wasm", location.href);
 var JPEGXR_WASM = new URL("jpegxr.wasm", location.href);
+var HEVC_WASM = new URL("libde265.wasm", location.href);
 var TYPES = {
   uint8: [1, (v, i) => v.getUint8(i)],
   int8: [1, (v, i) => v.getInt8(i)],
@@ -3490,6 +4360,12 @@ async function decodeChunk(meta, encoded) {
       const d = await decodeJpegXr(JPEGXR_WASM, bytes);
       return d.bytesPerSample === size ? [d.data, true] : void 0;
     }
+    case "refkv.stream": {
+      const { format, setup, plane } = first.configuration ?? {};
+      if (format !== "hevc" || size !== 1 && size !== 2) return void 0;
+      const setupBytes = Uint8Array.from(atob(setup), (c) => c.charCodeAt(0));
+      return [await decodeHevcPlane(HEVC_WASM, setupBytes, bytes, ["y", "u", "v"].indexOf(plane ?? "y")), true];
+    }
     case "refkv.grib": {
       const values = await decodeGrib(bytes, first.configuration, meta.chunk_grid.configuration.chunk_shape, meta.data_type);
       return [new Uint8Array(values.buffer), true];
@@ -3509,14 +4385,30 @@ function percentiles(bytes, le, dataType, fill) {
   }
   if (values.length === 0) return void 0;
   values.sort((x, y) => x - y);
-  const lo = values[Math.floor(values.length * 0.05)], hi = values[Math.min(values.length - 1, Math.floor(values.length * 0.999))];
-  return lo < hi ? [lo, hi] : void 0;
+  const lo2 = values[Math.floor(values.length * 0.05)], hi2 = values[Math.min(values.length - 1, Math.floor(values.length * 0.999))];
+  return lo2 < hi2 ? [lo2, hi2] : void 0;
+}
+function chunkIndex(grid, chunks, i, at) {
+  const lengths = grid.name === "rectilinear" ? grid.configuration.chunk_shapes[i] : chunks[i];
+  if (typeof lengths === "number") return Math.floor(at / lengths);
+  let k = 0;
+  let from = 0;
+  for (const run of lengths) {
+    const [length, count] = Array.isArray(run) ? run : [run, 1];
+    if (at < from + length * count) return k + Math.floor((at - from) / length);
+    from += length * count;
+    k += count;
+  }
+  return k - 1;
 }
 async function sampleRanges(url2, meta, axes, chunks, channels, start) {
-  if (!TYPES[meta.data_type] || meta.chunk_grid.name !== "regular") return channels?.map(() => void 0) ?? [void 0];
+  const grid = meta.chunk_grid;
+  if (!TYPES[meta.data_type] || !["regular", "rectilinear"].includes(grid.name) || meta.codecs[0]?.name === "sharding_indexed") {
+    return channels?.map(() => void 0) ?? [void 0];
+  }
   const c = axes.findIndex((a) => a.name === "c");
   if (channels !== void 0 && (c < 0 || chunks[c] !== 1)) return channels.map(() => void 0);
-  const index = meta.shape.map((n, i) => Math.floor((start?.[i] ?? (axes[i]?.name === "t" ? 0 : Math.floor(n / 2))) / chunks[i]));
+  const index = meta.shape.map((n, i) => chunkIndex(grid, chunks, i, start?.[i] ?? (axes[i]?.name === "t" ? 0 : Math.floor(n / 2))));
   const enc = meta.chunk_key_encoding ?? { name: "default" };
   const sep = enc.configuration?.separator ?? (enc.name === "v2" ? "." : "/");
   const one = async (k) => {
@@ -3537,7 +4429,7 @@ async function sampleRanges(url2, meta, axes, chunks, channels, start) {
 
 // ../demo/python.ts
 init_define_REFKV_PROFILES();
-var MEDIA = ["mp3", "flac", "mp4"];
+var MEDIA = ["mp3", "flac", "mp4", "h5j"];
 function stem(url2) {
   const segments = new URL(url2).pathname.split("/").filter((s) => s !== "" && s !== "content");
   let last = segments.at(-1) ?? "input";
@@ -3583,7 +4475,7 @@ function pythonScript(url2, isArchive, profile, release) {
     "",
     "# The vzip archive this page downloads: the hierarchy, in one file that refers to the",
     "# input's bytes. Host it, and refkv.zarr.open(url) reads it anywhere.",
-    `# reference.save(${JSON.stringify(`${name}.vzip`)})`
+    `# reference.save_vzip(${JSON.stringify(`${name}.vzip`)})`
   ];
   return [
     ...header,
@@ -3827,32 +4719,44 @@ var DECODED_CODECS = [
   "blosc",
   "zstd",
   "gzip",
+  "zlib",
+  "numcodecs.zlib",
+  "numcodecs.bz2",
   "sharding_indexed",
   "numcodecs.shuffle",
   "n5_default",
+  "imagecodecs_delta",
   "imagecodecs_jpeg",
   "imagecodecs_jpeg2k",
   "imagecodecs_jpegxr",
+  "imagecodecs_ljpeg",
   "imagecodecs_lzw",
   "refkv.fits_tiles",
   "refkv.grib",
-  "refkv.stream"
+  "refkv.skip",
+  "refkv.stream",
+  "refkv.tiff_lzw",
+  "numcodecs.lz4",
+  "numcodecs.fixedscaleoffset",
+  "numcodecs.quantize"
 ];
-var FLOAT64_CODECS = ["refkv.grib"];
+var FLOAT64_CODECS = ["refkv.grib", "numcodecs.fixedscaleoffset"];
 var codecNames = (codecs) => codecs.flatMap((c) => [c.name, ...codecNames(c.configuration?.codecs ?? []), ...codecNames(c.configuration?.index_codecs ?? [])]);
 var showable = (meta) => meta.shape.length >= 2 && (SHOWN_TYPES.includes(meta.data_type) || meta.data_type === "float64" && meta.codecs.some((c) => FLOAT64_CODECS.includes(c.name))) && codecNames(meta.codecs).every((n) => DECODED_CODECS.includes(n));
 var AUDIO = ["mp3", "flac"];
-var DECODED_VIDEO = ["avc1", "hvc1", "hev1"];
+var DECODED_VIDEO = ["avc1", "hvc1", "hev1", "av01", "vp09"];
 async function videoViews(zarrUrl, mp4) {
   const video = (mp4.tracks ?? []).filter((t) => t.path !== null && t.handler === "vide");
   const planes = await Promise.all(video.map(async (t) => {
     const url2 = `${zarrUrl}${t.path}/y/`;
     return { t, url: url2, meta: DECODED_VIDEO.includes(t.codec) ? await getJson(`${url2}zarr.json`) : void 0 };
   }));
-  const shown2 = planes.filter((p) => p.meta?.data_type === "uint8");
-  const others = planes.filter((p) => p.meta?.data_type !== "uint8").map(({ t, meta }) => `${t.path} (${t.codec}${meta === void 0 ? "" : ", 10-bit"})`);
+  const hevc = (codec) => codec === "hvc1" || codec === "hev1";
+  const isShown = (p) => p.meta !== void 0 && (p.meta.data_type === "uint8" || hevc(p.t.codec));
+  const shown2 = planes.filter(isShown);
+  const others = planes.filter((p) => !isShown(p)).map(({ t, meta }) => `${t.path} (${t.codec}${meta === void 0 ? "" : ", more than 8 bits"})`);
   if (shown2.length === 0 && others.length > 0) {
-    throw new Error(`no 8-bit H.264 or HEVC track to show: Neuroglancer does not decode ${others.join(", ")}, which the archive holds`);
+    throw new Error(`no HEVC or 8-bit H.264, AV1 or VP9 track to show: Neuroglancer does not decode ${others.join(", ")}, which the archive holds`);
   }
   return shown2.map(({ t, url: url2, meta }) => {
     const view = arrayView(url2, `${t.path}/y`, meta);
@@ -3886,6 +4790,51 @@ async function gribViews(zarrUrl) {
   };
   return views2.sort((a, b) => rank(a) - rank(b));
 }
+function nominalRange(meta) {
+  const c = meta.codecs.find((x) => x.name === "refkv.stream")?.configuration;
+  if (c?.format !== "hevc" || typeof c.setup !== "string") return void 0;
+  const hvcc = atob(c.setup);
+  return hvcc.length > 17 ? [0, 2 ** ((hvcc.charCodeAt(17) & 7) + 8) - 1] : void 0;
+}
+var H5J_COLORS = { signal: "#00ff00", reference: "#ff00ff" };
+var OTHER_COLORS = ["#00ffff", "#ffff00", "#ff8000", "#8080ff", "#ff4040", "#ffffff"];
+async function h5jViews(zarrUrl, h5j) {
+  const channels = (h5j.channels ?? []).filter((c) => c.path !== null);
+  const views2 = await Promise.all(channels.map(async (c) => {
+    const url2 = `${zarrUrl}${c.path}/`;
+    const ms = (await getJson(`${url2}zarr.json`)).attributes?.ome?.multiscales?.[0];
+    const view = await omeView(url2, ms, c.name);
+    const label = view.omero[0]?.label;
+    if (label) view.label = `${c.name} (${label})`;
+    return view;
+  }));
+  if (views2.length < 2) return views2;
+  const distinct = new Set(views2.map((v) => v.omero[0]?.color?.toLowerCase())).size === views2.length;
+  const used = /* @__PURE__ */ new Set();
+  let shown2 = 0;
+  const color = (v) => {
+    const own = H5J_COLORS[v.omero[0]?.label ?? ""];
+    const c = distinct && v.omero[0]?.color ? `#${v.omero[0].color}` : own !== void 0 && !used.has(own) ? own : OTHER_COLORS.find((o) => !used.has(o)) ?? OTHER_COLORS[shown2 % OTHER_COLORS.length];
+    used.add(c);
+    shown2 += 1;
+    return c;
+  };
+  const all = {
+    ...views2[0],
+    label: `all ${views2.length} channels`,
+    name: `all ${views2.length} channels`,
+    url: zarrUrl,
+    images: views2.map((v) => ({
+      ...v.images[0],
+      name: v.label,
+      channel: { level: v.levels[v.levels.length - 1], color: color(v), window: v.omero[0]?.window }
+    })),
+    omero: [],
+    labels: [],
+    note: `${views2.length} channels, each an image of its own, shown in its color and added together.`
+  };
+  return [all, ...views2];
+}
 async function seriesViews(zarrUrl) {
   const series = (await getJson(`${zarrUrl}OME/zarr.json`)).attributes?.ome?.series ?? [];
   const groups = await Promise.all(series.map((s) => getJson(`${zarrUrl}${s}/zarr.json`)));
@@ -3915,9 +4864,9 @@ async function seriesViews(zarrUrl) {
   return [all, ...views2];
 }
 async function archiveKeys(zarrUrl) {
-  const r = await fetchWorker(archiveDownloadUrl(zarrUrl));
+  const r = await fetchWorker(archiveDownloadUrl(zarrUrl, "vzip"));
   if (!r.ok) throw new Error(`${r.status}: ${await r.text()}`);
-  const archive = await Archive.open(new Uint8Array(await r.arrayBuffer()), zarrUrl, () => {
+  const archive = await openArchive(new Uint8Array(await r.arrayBuffer()), zarrUrl, () => {
     throw new Error("not read");
   });
   return archive.keys();
@@ -3934,7 +4883,7 @@ async function listArrays(zarrUrl, keys) {
 var prefix;
 var views = [];
 function neuroglancerSource(shown2, url2) {
-  if (!shown2.isArchive) return `${url2}|zarr3:`;
+  if (!shown2.isArchive || !isVzipUrl(shown2.url)) return `${url2}|zarr3:`;
   if (!url2.startsWith(shown2.zarrUrl)) throw new Error(`${url2} is not under ${shown2.zarrUrl}`);
   const path = url2.slice(shown2.zarrUrl.length).split("/").map(encodeURIComponent).join("/");
   return `${shown2.url}|vzip:${path}|zarr3:`;
@@ -3962,8 +4911,9 @@ var shown;
 async function showView(view) {
   shown = view;
   const source = (url2) => neuroglancerSource(view.input, url2);
-  $("share-local").hidden = view.input.isArchive;
-  $("share-archive").hidden = !view.input.isArchive;
+  const linkable = view.input.isArchive && isVzipUrl(view.input.url);
+  $("share-local").hidden = linkable;
+  $("share-archive").hidden = !linkable;
   $("name").textContent = view.name;
   $("zarr-url").textContent = source(view.url);
   $("view-note").textContent = view.note ?? "";
@@ -3971,7 +4921,7 @@ async function showView(view) {
   const level0 = view.levels[0].meta;
   const dataType = level0.data_type;
   const coarsest = view.levels[view.levels.length - 1];
-  const sample = (channels) => sampleRanges(coarsest.url, coarsest.meta, view.axes, chunkShapeOf(coarsest.meta), channels, view.start);
+  const sample = (channels2) => sampleRanges(coarsest.url, coarsest.meta, view.axes, chunkShapeOf(coarsest.meta), channels2, view.start);
   let omero = view.omero;
   const c = view.axes.findIndex((a) => a.name === "c");
   const nc = c >= 0 ? level0.shape[c] : 0;
@@ -3998,8 +4948,29 @@ async function showView(view) {
     view.start
   );
   const plain = state.layers.filter((l) => l.type === "image" && !("shader" in l));
-  if (plain.length > 0 && dataType !== "uint8") {
-    const [range] = await sample();
+  const channels = view.images.map((img) => img.channel);
+  if (plain.length === channels.length && channels.every((ch) => ch !== void 0)) {
+    const ranges = await Promise.all(channels.map(async ({ level, window: window2 }) => {
+      if (dataType === "uint8") return void 0;
+      const [r] = await sampleRanges(level.url, level.meta, view.axes, chunkShapeOf(level.meta), void 0, view.start);
+      return r ?? (window2 && !tooNarrow(window2, dataType) ? [window2.start, window2.end] : nominalRange(level.meta));
+    }));
+    Object.assign(state, { crossSectionBackgroundColor: "#000000" });
+    plain.forEach((l, i) => {
+      const range = ranges[i] ? `(range=[${ranges[i][0]}, ${ranges[i][1]}])` : "";
+      Object.assign(l, {
+        blend: "additive",
+        opacity: 1,
+        shader: `#uicontrol vec3 color color(default="${channels[i].color}")
+#uicontrol invlerp normalized${range}
+void main() {
+  emitRGB(color * normalized());
+}
+`
+      });
+    });
+  } else if (plain.length > 0 && dataType !== "uint8") {
+    const [range] = (await sample()).map((r) => r ?? nominalRange(coarsest.meta));
     if (range !== void 0) {
       for (const l of plain) {
         Object.assign(l, { shader: `#uicontrol invlerp normalized(range=[${range[0]}, ${range[1]}])
@@ -4018,7 +4989,7 @@ void main() {
 var pythonUrl;
 function mediaProfile(url2) {
   const ext = new URL(url2).pathname.toLowerCase().match(/\.(\w+)$/)?.[1];
-  return ext === "mp3" ? "mp3" : ext === "flac" ? "flac" : ext && ["mp4", "mov", "m4a", "m4v"].includes(ext) ? "mp4" : void 0;
+  return ext === "mp3" ? "mp3" : ext === "flac" ? "flac" : ext === "h5j" ? "h5j" : ext && ["mp4", "mov", "m4a", "m4v"].includes(ext) ? "mp4" : void 0;
 }
 function showPython(input2, profile) {
   const script = pythonScript(input2.url, input2.isArchive, profile, "0.2.0");
@@ -4041,7 +5012,7 @@ async function zarrify(url2) {
   status.scrollIntoView({ block: "nearest", behavior: "smooth" });
   prefix ??= registerVzipWorker(new URL("vzip-sw.js", location.href));
   const p = await prefix;
-  const isArchive = /\.vzip(?:[?#]|$)/i.test(url2);
+  const isArchive = isArchiveUrl(url2);
   const zarrUrl = isArchive ? archiveZarrUrl(p, url2) : imageZarrUrl(p, url2);
   const opened = { url: url2, zarrUrl, isArchive };
   setStatus(isArchive ? "Opening the archive\u2026" : "Reading the file's structure\u2026");
@@ -4054,11 +5025,11 @@ async function zarrify(url2) {
   map.hidden = true;
   $("view-row").hidden = true;
   if (attrs.refkv_zarrified?.profile === "safe") {
-    const safe2 = attrs.refkv_zarrified.safe ?? {};
+    const safe3 = attrs.refkv_zarrified.safe ?? {};
     views = [];
-    $("name").textContent = `${safe2.PRODUCT_URI ?? url2.split("/").pop()} (${safe2.PROCESSING_LEVEL ?? "Sentinel-2"})`;
+    $("name").textContent = `${safe3.PRODUCT_URI ?? url2.split("/").pop()} (${safe3.PROCESSING_LEVEL ?? "Sentinel-2"})`;
     $("zarr-url").textContent = neuroglancerSource(opened, zarrUrl);
-    $("view-note").textContent = `${safe2.SENSING_TIME ?? ""} ${attrs["proj:code"] ?? ""}`;
+    $("view-note").textContent = `${safe3.SENSING_TIME ?? ""} ${attrs["proj:code"] ?? ""}`;
     showLevels(await listArrays(zarrUrl));
     $("open-ng").hidden = true;
     $("share-local").hidden = true;
@@ -4093,6 +5064,9 @@ async function zarrify(url2) {
       found = [await omeView(zarrUrl, ms0, ms0.name ?? "image", attrs.refkv_zarrified?.profile === "ome-zarr")];
     } else if (attrs.ome?.["bioformats2raw.layout"] !== void 0) {
       found = await seriesViews(zarrUrl);
+    } else if (attrs.refkv_zarrified?.profile === "h5j") {
+      found = await h5jViews(zarrUrl, attrs.refkv_zarrified.h5j ?? {});
+      if (found.length === 0) throw new Error("no H5J channel to show");
     } else if (attrs.refkv_zarrified?.profile === "grib") {
       found = await gribViews(zarrUrl);
       if (found.length === 0) throw new Error("no GRIB variable to show");
@@ -4119,10 +5093,10 @@ async function zarrify(url2) {
     }
     await showView(views[0]);
   }
-  $("download").href = archiveDownloadUrl(zarrUrl);
+  $("download").href = archiveDownloadUrl(zarrUrl, "vzip");
   showPython(opened, attrs.refkv_zarrified?.profile);
   $("result").hidden = false;
-  $("python").hidden = false;
+  $("python").hidden = isArchive && !isVzipUrl(url2);
   setStatus(`Ready in ${ms} ms.`);
 }
 $("python-copy").addEventListener("click", () => {
@@ -4141,8 +5115,8 @@ $("form").addEventListener("submit", (event) => {
   zarrify(url2).catch((e) => {
     showError(e);
     if (e instanceof WorkerError && e.reason === "cors") {
-      showPython({ url: url2, zarrUrl: "", isArchive: /\.vzip(?:[?#]|$)/i.test(url2) }, mediaProfile(url2));
-      $("python").hidden = false;
+      showPython({ url: url2, zarrUrl: "", isArchive: isArchiveUrl(url2) }, mediaProfile(url2));
+      $("python").hidden = isArchiveUrl(url2) && !isVzipUrl(url2);
     }
   });
 });

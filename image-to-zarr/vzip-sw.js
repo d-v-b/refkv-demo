@@ -1,7 +1,7 @@
 "use strict";
 (() => {
   // <define:__REFKV_PROFILES__>
-  var define_REFKV_PROFILES_default = [{ name: "czi", title: "CZI", uuid: "7a0733c7-d4be-4482-a64f-6904d9354ea5", version: 0, kind: "file", sniff: 50, chosen_by: null, suffixes: [".czi"], reference: 20, source: "Zeiss CZI", inputs: "Zeiss CZI files (ZISRAW, file version 1), with uncompressed, JPEG, JPEG XR and Zstd subblocks, mosaics and pyramids", for: "Zeiss CZI files" }, { name: "dicom", title: "DICOM", uuid: "acf17198-e5a5-48d3-8187-22ec4bb40ea5", version: 0, kind: "file", sniff: 10, chosen_by: null, suffixes: [".dcm"], reference: 25, source: "DICOM", inputs: "DICOM Part 10 files with native, JPEG, lossless JPEG or JPEG 2000 pixel data, including whole-slide images", for: "DICOM files, including whole-slide images" }, { name: "fits", title: "FITS", uuid: "4b0d3a7e-1c52-4f6a-9b8e-2d7f0c6a1e93", version: 0, kind: "file", sniff: 110, chosen_by: null, suffixes: [".fits", ".fz"], reference: null, source: "FITS", inputs: "FITS files: images, multi-extension files, binary and ASCII tables", for: "FITS images and tables (`.fits`, `.fz`)" }, { name: "flac", title: "FLAC", uuid: "e9108d07-b24b-432f-a8ce-09d80c8073b4", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".flac"], reference: null, source: "FLAC (Free Lossless Audio Codec)", inputs: "FLAC files (`.flac`) of a fixed block size, with their metadata blocks and ID3v2 and ID3v1 tags; one sharded array of integer samples, not an image", for: "FLAC audio files, as a sharded array of samples (`.flac`)" }, { name: "grib", title: "GRIB", uuid: "c9bbe039-8dfa-49f9-a655-756f822a42d6", version: 0, kind: "file", sniff: 65, chosen_by: null, suffixes: [".grib2", ".grb2"], reference: null, source: "WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2)", inputs: "GRIB edition 2 files of gridded fields, such as NOAA's and ECMWF's forecasts, whose regular latitude/longitude and Lambert conformal fields it presents", for: "GRIB2 files of gridded weather and climate fields (`.grib2`), as labeled arrays with CF coordinates" }, { name: "hdf5", title: "HDF5", uuid: "6c006834-424b-451b-b786-f8c502ec32af", version: 0, kind: "file", sniff: 70, chosen_by: null, suffixes: [".h5", ".nwb"], reference: null, source: "HDF5, NWB", inputs: "HDF5 files, NWB files first among them: every group, dataset, attribute, link and object reference the profile can present, in hdmf-zarr's Zarr v3 form", for: "HDF5 files (`.h5`, `.hdf5`), and NWB files (`.nwb`), which pynwb's `NWBZarrIO` opens" }, { name: "ims", title: "IMS", uuid: "5067a535-8261-4b25-a93c-1985ed333bde", version: 0, kind: "file", sniff: null, chosen_by: "hdf5", suffixes: [".ims"], reference: 25, source: "Imaris IMS", inputs: "Imaris IMS files (HDF5)", for: "Imaris `.ims` files" }, { name: "lif", title: "LIF", uuid: "b099ab1f-f9d4-4276-9006-9ff1193a34b2", version: 0, kind: "file", sniff: 55, chosen_by: null, suffixes: [".lif"], reference: null, source: "Leica LIF", inputs: "Leica LIF files (LAS X and LAS AF, versions 1 and 2): every image of the file's element tree, with interleaved or planar channels, z-stacks, time series and mosaics, uncompressed", for: "Leica LIF files (`.lif`)" }, { name: "mp3", title: "MP3", uuid: "b6cb0047-9448-4fdc-b03e-10dd3d6aa829", version: 0, kind: "file", sniff: 100, chosen_by: null, suffixes: [".mp3"], reference: null, source: "MP3 (MPEG Layer III audio)", inputs: "MPEG-1, MPEG-2 and MPEG-2.5 Layer III audio files (`.mp3`), with their ID3v2, ID3v1 and APE tags; one array of samples, not an image", for: "MP3 audio files, as an array of samples (`.mp3`)" }, { name: "mp4", title: "MP4", uuid: "bbe3f6b9-488d-4d8d-85ce-60a1649dd27e", version: 0, kind: "file", sniff: 85, chosen_by: null, suffixes: [".mp4", ".mov"], reference: null, source: "MP4 and QuickTime (H.264 and HEVC video, AAC and MP3 audio)", inputs: "MP4 and QuickTime files (`.mp4`, `.m4a`, `.mov`) with H.264 or HEVC video and AAC or MP3 audio tracks; a group per track, not an image", for: "MP4 and QuickTime video and audio, as arrays of planes and samples (`.mp4`, `.mov`)" }, { name: "mrc", title: "MRC", uuid: "2aacd010-2ed1-4748-bc3c-5dd5e840bbce", version: 0, kind: "file", sniff: 90, chosen_by: null, suffixes: [".mrc"], reference: null, source: "MRC2014", inputs: "MRC2014 files (CCP4 maps, image stacks, volumes and volume stacks)", for: "MRC2014 maps, image stacks, volumes and volume stacks (`.mrc`, `.map`)" }, { name: "mrc-dataset", title: "MRC dataset", uuid: "f139bf4e-7bab-4c3c-9b2d-66ba747f9b93", version: 0, kind: "layout", sniff: null, chosen_by: null, suffixes: [], reference: null, source: "MRC2014, as a dataset", inputs: "", for: "" }, { name: "n5", title: "N5", uuid: "ad5d4c39-c69e-48f7-a3ef-4cc8c607d416", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "N5", inputs: "N5 containers, default-mode blocks", for: "N5 containers on S3" }, { name: "nd2", title: "ND2", uuid: "59612f14-e314-4207-ba00-8f422ba71490", version: 0, kind: "file", sniff: 20, chosen_by: null, suffixes: [".nd2"], reference: 20, source: "Nikon ND2", inputs: "Nikon ND2, format version 3 and later", for: "Nikon NIS-Elements ND2 files" }, { name: "ndpi", title: "NDPI", uuid: "6cac71ef-dbb2-4acd-b60c-00389aa4238a", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".ndpi"], reference: 25, source: "Hamamatsu NDPI", inputs: "Hamamatsu NDPI slides, a TIFF variant with 64-bit offsets", for: "Hamamatsu NDPI whole-slide images" }, { name: "nifti", title: "NIfTI", uuid: "06e5809d-4d54-4b72-afd0-6bf61a7b4c85", version: 0, kind: "file", sniff: 60, chosen_by: null, suffixes: [".nii"], reference: 25, source: "NIfTI-1 and NIfTI-2", inputs: "NIfTI-1 and NIfTI-2 single files (`.nii`)", for: "NIfTI-1 and NIfTI-2 volumes (`.nii`)" }, { name: "npy", title: "NumPy", uuid: "62b1d1ba-8eb3-465c-a333-75e096fce519", version: 0, kind: "file", sniff: 75, chosen_by: null, suffixes: [".npy", ".npz"], reference: null, source: "NumPy NPY and NPZ (NEP 1)", inputs: "NumPy `.npy` files, and `.npz` archives of them (`np.savez`, `np.savez_compressed`), whose stored and deflated members it presents", for: "NumPy arrays: `.npy` files, and the arrays of `.npz` archives, stored or deflated" }, { name: "nrrd", title: "NRRD", uuid: "23e0c600-8da6-40f1-81e7-ab246e948e88", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".nhdr", ".nrrd"], reference: null, source: "NRRD (Teem)", inputs: "NRRD files (`.nrrd`) and detached headers with one data file (`.nhdr`), raw or gzip-encoded", for: "NRRD volumes, attached or detached, raw or gzip (`.nrrd`, `.nhdr`)" }, { name: "ome-zarr", title: "OME-Zarr", uuid: "b74ea302-65bb-49ae-b81f-f9bb52cd4eed", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "OME-Zarr 0.4", inputs: "OME-Zarr 0.4 hierarchies on Zarr v2, migrated to OME-Zarr 0.5", for: "OME-Zarr 0.4 hierarchies, migrated to OME-Zarr 0.5 in place" }, { name: "qptiff", title: "QPTIFF", uuid: "329ea136-2f55-4c27-b6f4-8e60ca2109b8", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".qptiff"], reference: null, source: "Akoya QPTIFF", inputs: "Akoya (PerkinElmer) Vectra QPTIFF slides and inForm component data, a TIFF with an XML description per image, in LZW, JPEG or uncompressed tiles or strips", for: "Akoya (PerkinElmer) Vectra multiplex scans and inForm component data" }, { name: "safe", title: "Sentinel-2 SAFE", uuid: "ef81346c-19e8-42ad-93b0-a279ccaf44c1", version: 0, kind: "both", sniff: 80, chosen_by: null, suffixes: [".zip"], reference: 25, source: "Sentinel-2 SAFE (Level-1C, Level-2A)", inputs: "Sentinel-2 Level-1C and Level-2A products: a `.SAFE` directory (a store) or a `.SAFE.zip` file", for: "Sentinel-2 Level-1C and Level-2A products, as a `.SAFE` directory or a `.SAFE.zip`" }, { name: "tiff", title: "TIFF", uuid: "48e9ac4e-1156-4a62-955e-20467d9c2700", version: 0, kind: "file", sniff: 40, chosen_by: null, suffixes: [".tif"], reference: 20, source: "TIFF, OME-TIFF, Aperio SVS", inputs: "TIFF and BigTIFF, including OME-TIFF and JPEG-tiled slides such as Aperio SVS", for: "OME-TIFF, plain TIFF (tiled or in strips), and JPEG-tiled slides such as Aperio SVS" }, { name: "vsi", title: "VSI", uuid: "c0a1d4e6-5b7f-4f3a-9c2d-8e1f6a7b3c45", version: 0, kind: "file", sniff: 30, chosen_by: null, suffixes: [".vsi"], reference: null, source: "Olympus VSI", inputs: "Olympus cellSens VSI slides: a `.vsi` file and the tile files beside it, probed by key (uncompressed, JPEG, JPEG 2000 and lossless JPEG tiles)", for: "Olympus cellSens whole-slide images (`.vsi` with its tile files)" }, { name: "zarr2", title: "Zarr v2", uuid: "8e792619-d671-4687-ab51-752885dd3ee6", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "Zarr v2", inputs: "Zarr v2 hierarchies", for: "Zarr v2 hierarchies on S3" }];
+  var define_REFKV_PROFILES_default = [{ name: "czi", title: "CZI", uuid: "7a0733c7-d4be-4482-a64f-6904d9354ea5", version: 0, kind: "file", store_run: { form: "on_demand", named: "CZI file", section: "79-several-files" }, sniff: 50, chosen_by: null, suffixes: [".czi"], reference: 20, source: "Zeiss CZI", inputs: "Zeiss CZI files (ZISRAW, file version 1), with uncompressed, JPEG, JPEG XR and Zstd subblocks, mosaics and pyramids, in one file or across numbered files", for: "Zeiss CZI files" }, { name: "dicom", title: "DICOM", uuid: "acf17198-e5a5-48d3-8187-22ec4bb40ea5", version: 0, kind: "file", store_run: null, sniff: 10, chosen_by: null, suffixes: [".dcm"], reference: 25, source: "DICOM", inputs: "DICOM Part 10 files with native, JPEG, lossless JPEG, JPEG-LS, RLE, JPEG 2000 or HTJ2K pixel data, including whole-slide images", for: "DICOM files, including whole-slide images" }, { name: "fits", title: "FITS", uuid: "4b0d3a7e-1c52-4f6a-9b8e-2d7f0c6a1e93", version: 0, kind: "file", store_run: null, sniff: 110, chosen_by: null, suffixes: [".fits", ".fz"], reference: null, source: "FITS", inputs: "FITS files: images, multi-extension files, binary and ASCII tables", for: "FITS images and tables (`.fits`, `.fz`)" }, { name: "flac", title: "FLAC", uuid: "e9108d07-b24b-432f-a8ce-09d80c8073b4", version: 0, kind: "file", store_run: null, sniff: 95, chosen_by: null, suffixes: [".flac"], reference: null, source: "FLAC (Free Lossless Audio Codec)", inputs: "FLAC files (`.flac`) of a fixed block size, with their metadata blocks and ID3v2 and ID3v1 tags; one sharded array of integer samples, not an image", for: "FLAC audio files, as a sharded array of samples (`.flac`)" }, { name: "grib", title: "GRIB", uuid: "c9bbe039-8dfa-49f9-a655-756f822a42d6", version: 0, kind: "file", store_run: { form: "always", named: "GRIB file", section: "8-grib-profile" }, sniff: 65, chosen_by: null, suffixes: [".grib2", ".grb2"], reference: null, source: "WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2)", inputs: "GRIB edition 2 files of gridded fields, such as NOAA's and ECMWF's forecasts, whose fields on latitude/longitude, Gaussian, rotated, Lambert conformal, polar stereographic, Mercator, reduced and unstructured grids it presents", for: "GRIB2 files of gridded weather and climate fields (`.grib2`), as labeled arrays with CF coordinates" }, { name: "h5j", title: "H5J", uuid: "5bd31fac-d92d-452b-bcb6-15ca89c0f931", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "hdf5", suffixes: [".h5j"], reference: null, source: "Janelia H5J", inputs: "Janelia H5J files (HDF5 whose channels are MP4 files of monochrome HEVC): a confocal stack an image a channel", for: "Janelia's H5J confocal stacks (`.h5j`), as FlyLight and the Janelia Workstation publish them" }, { name: "hdf4", title: "HDF4", uuid: "af66c29e-fc1a-44a4-bb71-1055ad5fdb0a", version: 0, kind: "file", store_run: null, sniff: 68, chosen_by: null, suffixes: [".hdf", ".hdf4", ".h4"], reference: null, source: "HDF4 (the HDF Group's Hierarchical Data Format 4)", inputs: "HDF4 files, HDF-EOS2 ones among them: the scientific datasets of numbers and text the SD interface wrote, plain, linked, deflated or chunked, the writer's Vdata tables, their attributes, and the writer's Vgroups", for: "HDF4 and HDF-EOS2 files (`.hdf`) of NASA's EOS-era archives, such as MODIS, SeaWiFS and AIRS products, as labeled arrays" }, { name: "hdf5", title: "HDF5", uuid: "6c006834-424b-451b-b786-f8c502ec32af", version: 0, kind: "file", store_run: { form: "on_demand", named: "HDF5 file", section: "86-external-files" }, sniff: 70, chosen_by: null, suffixes: [".h5", ".nwb"], reference: null, source: "HDF5, NWB", inputs: "HDF5 files, NWB files first among them: every group, dataset, attribute, link and object reference the profile can present, in hdmf-zarr's Zarr v3 form", for: "HDF5 files (`.h5`, `.hdf5`), and NWB files (`.nwb`), which pynwb's `NWBZarrIO` opens" }, { name: "ims", title: "IMS", uuid: "5067a535-8261-4b25-a93c-1985ed333bde", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "hdf5", suffixes: [".ims"], reference: 25, source: "Imaris IMS", inputs: "Imaris IMS files (HDF5)", for: "Imaris `.ims` files" }, { name: "lif", title: "LIF", uuid: "b099ab1f-f9d4-4276-9006-9ff1193a34b2", version: 0, kind: "file", store_run: { form: "on_demand", named: "named document", section: "8-las-x-documents", case: true }, sniff: 55, chosen_by: null, suffixes: [".lif", ".lifext", ".lof", ".xlcf", ".xlef", ".xlif", ".xllf"], reference: null, source: "Leica LIF", inputs: "Leica LIF files (LAS X and LAS AF, versions 1 and 2), its object files (LOF) and extension files (LIFEXT), and LAS X projects of XLEF, XLCF, XLIF and XLLF documents and LOFs: every image of the element tree, with interleaved or planar channels, z-stacks, time series and mosaics, uncompressed", for: "Leica LIF, LOF and LIFEXT files, and LAS X projects (`.lif`, `.lof`, `.lifext`, `.xlef`, `.xlcf`, `.xlif`, `.xllf`)" }, { name: "mp3", title: "MP3", uuid: "b6cb0047-9448-4fdc-b03e-10dd3d6aa829", version: 0, kind: "file", store_run: null, sniff: 100, chosen_by: null, suffixes: [".mp3"], reference: null, source: "MP3 (MPEG Layer III audio)", inputs: "MPEG-1, MPEG-2 and MPEG-2.5 Layer III audio files (`.mp3`), with their ID3v2, ID3v1 and APE tags; one array of samples, not an image", for: "MP3 audio files, as an array of samples (`.mp3`)" }, { name: "mp4", title: "MP4", uuid: "bbe3f6b9-488d-4d8d-85ce-60a1649dd27e", version: 0, kind: "file", store_run: null, sniff: 85, chosen_by: null, suffixes: [".mp4", ".mov"], reference: null, source: "MP4 and QuickTime (H.264, HEVC, AV1, VP9 and Motion JPEG video, AAC, HE-AAC, MP3 and PCM audio)", inputs: "MP4 and QuickTime files (`.mp4`, `.m4a`, `.m4v`, `.mov`) with H.264, HEVC, AV1, VP9 or Motion JPEG video and AAC, HE-AAC, MP3 or PCM audio tracks; a group per track, not an image", for: "MP4 and QuickTime video and audio, as arrays of planes and samples (`.mp4`, `.m4a`, `.m4v`, `.mov`)" }, { name: "mrc", title: "MRC", uuid: "2aacd010-2ed1-4748-bc3c-5dd5e840bbce", version: 0, kind: "file", store_run: null, sniff: 90, chosen_by: null, suffixes: [".mrc", ".map.gz", ".mrc.gz"], reference: null, source: "MRC2014", inputs: "MRC2014 files (CCP4 maps, image stacks, volumes and volume stacks), gzipped or not", for: "MRC2014 maps, image stacks, volumes and volume stacks (`.mrc`, `.map`, gzipped or not)" }, { name: "mrc-dataset", title: "MRC dataset", uuid: "f139bf4e-7bab-4c3c-9b2d-66ba747f9b93", version: 0, kind: "layout", store_run: null, sniff: null, chosen_by: null, suffixes: [], reference: null, source: "MRC2014, as a dataset", inputs: "", for: "" }, { name: "n5", title: "N5", uuid: "ad5d4c39-c69e-48f7-a3ef-4cc8c607d416", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "N5", inputs: "N5 containers, default-mode blocks", for: "N5 containers on S3" }, { name: "nd2", title: "ND2", uuid: "59612f14-e314-4207-ba00-8f422ba71490", version: 0, kind: "file", store_run: null, sniff: 20, chosen_by: null, suffixes: [".nd2"], reference: 20, source: "Nikon ND2", inputs: "Nikon ND2, format version 3 and later", for: "Nikon NIS-Elements ND2 files" }, { name: "ndpi", title: "NDPI", uuid: "6cac71ef-dbb2-4acd-b60c-00389aa4238a", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "tiff", suffixes: [".ndpi"], reference: 25, source: "Hamamatsu NDPI", inputs: "Hamamatsu NDPI slides, a TIFF variant with 64-bit offsets", for: "Hamamatsu NDPI whole-slide images" }, { name: "nifti", title: "NIfTI", uuid: "06e5809d-4d54-4b72-afd0-6bf61a7b4c85", version: 0, kind: "file", store_run: { form: "on_demand", named: "header file", section: "75-header-and-image-pairs" }, sniff: 60, chosen_by: null, suffixes: [".nii", ".nii.gz", ".hdr", ".HDR"], reference: 25, source: "NIfTI-1 and NIfTI-2", inputs: "NIfTI-1 and NIfTI-2 single files (`.nii`, `.nii.gz`) and header-and-image pairs (`.hdr`, `.img`)", for: "NIfTI-1 and NIfTI-2 volumes (`.nii`, `.nii.gz`, `.hdr` and `.img`)" }, { name: "npy", title: "NumPy", uuid: "62b1d1ba-8eb3-465c-a333-75e096fce519", version: 0, kind: "file", store_run: null, sniff: 75, chosen_by: null, suffixes: [".npy", ".npz"], reference: null, source: "NumPy NPY and NPZ (NEP 1)", inputs: "NumPy `.npy` files, and `.npz` archives of them (`np.savez`, `np.savez_compressed`), whose stored and deflated members it presents", for: "NumPy arrays: `.npy` files, and the arrays of `.npz` archives, stored or deflated" }, { name: "nrrd", title: "NRRD", uuid: "23e0c600-8da6-40f1-81e7-ab246e948e88", version: 0, kind: "file", store_run: { form: "always", named: "header file", section: "8-nrrd-profile" }, sniff: 95, chosen_by: null, suffixes: [".nhdr", ".nrrd"], reference: null, source: "NRRD (Teem)", inputs: "NRRD files (`.nrrd`) and detached headers with one data file (`.nhdr`), raw or gzip-encoded", for: "NRRD volumes, attached or detached, raw or gzip (`.nrrd`, `.nhdr`)" }, { name: "ome-zarr", title: "OME-Zarr", uuid: "b74ea302-65bb-49ae-b81f-f9bb52cd4eed", version: 0, kind: "store", store_run: null, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "OME-Zarr 0.4", inputs: "OME-Zarr 0.4 hierarchies on Zarr v2, migrated to OME-Zarr 0.5", for: "OME-Zarr 0.4 hierarchies, migrated to OME-Zarr 0.5 in place" }, { name: "precomputed", title: "Neuroglancer precomputed", uuid: "c499987a-9518-4b2b-a804-a70a8de1a911", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: null, source: "Neuroglancer precomputed", inputs: "Neuroglancer precomputed volumes, unsharded or with identity-hashed shards", for: "connectomics volumes in Neuroglancer's precomputed format, including shards too many to scan" }, { name: "qptiff", title: "QPTIFF", uuid: "329ea136-2f55-4c27-b6f4-8e60ca2109b8", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "tiff", suffixes: [".qptiff"], reference: null, source: "Akoya QPTIFF", inputs: "Akoya (PerkinElmer) Vectra QPTIFF slides and inForm component data, a TIFF with an XML description per image, in LZW, JPEG or uncompressed tiles or strips", for: "Akoya (PerkinElmer) Vectra multiplex scans and inForm component data" }, { name: "safe", title: "Sentinel-2 SAFE", uuid: "ef81346c-19e8-42ad-93b0-a279ccaf44c1", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 80, chosen_by: null, suffixes: [".zip"], reference: 25, source: "Sentinel-2 SAFE (Level-1C, Level-2A)", inputs: "Sentinel-2 Level-1C and Level-2A products: a `.SAFE` directory (a store) or a `.SAFE.zip` file", for: "Sentinel-2 Level-1C and Level-2A products, as a `.SAFE` directory or a `.SAFE.zip`" }, { name: "safetensors", title: "safetensors", uuid: "15e7ce39-d4ca-4514-8144-6e19d2a0341b", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 35, chosen_by: null, suffixes: [".safetensors"], reference: null, source: "safetensors (Hugging Face)", inputs: "safetensors files of a model's tensors (`model.safetensors`), in every data type the library defines, `BF16`, `F8_*`, `F4` and `F6_*` included; and stores of them, such as a model's repository of shards with its index", for: "machine learning model weights in safetensors files (`.safetensors`), each tensor an array, and a model's shards as one group" }, { name: "tiff", title: "TIFF", uuid: "48e9ac4e-1156-4a62-955e-20467d9c2700", version: 0, kind: "file", store_run: { form: "on_demand", named: "TIFF file", section: "74-several-files" }, sniff: 40, chosen_by: null, suffixes: [".tif"], reference: 20, source: "TIFF, OME-TIFF, Aperio SVS", inputs: "TIFF and BigTIFF, including OME-TIFF across files, Micro-Manager stacks and JPEG-tiled slides such as Aperio SVS", for: "OME-TIFF, plain TIFF (tiled or in strips), and JPEG-tiled slides such as Aperio SVS" }, { name: "vsi", title: "VSI", uuid: "c0a1d4e6-5b7f-4f3a-9c2d-8e1f6a7b3c45", version: 0, kind: "file", store_run: { form: "always", named: ".vsi file", section: "9-vsi-profile" }, sniff: 30, chosen_by: null, suffixes: [".vsi"], reference: null, source: "Olympus VSI", inputs: "Olympus cellSens VSI slides: a `.vsi` file and the tile files beside it, probed by key (uncompressed, JPEG, JPEG 2000, lossless JPEG, PNG and BMP tiles)", for: "Olympus cellSens whole-slide images (`.vsi` with its tile files)" }, { name: "zarr2", title: "Zarr v2", uuid: "8e792619-d671-4687-ab51-752885dd3ee6", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "Zarr v2", inputs: "Zarr v2 hierarchies", for: "Zarr v2 hierarchies on S3" }, { name: "zarr3", title: "Zarr v3", uuid: "95203d0a-6586-426a-b920-3db2f4f1e97e", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 78, chosen_by: null, suffixes: [".zip"], reference: null, source: "Zarr v3", inputs: "Zarr v3 hierarchies: a store (a URL or a directory) or a zipped store (`.zip`)", for: "Zarr v3 hierarchies, listed or zipped, as references to their own chunks" }];
 
   // src/deflate.ts
   var CRC_TABLE = (() => {
@@ -251,7 +251,10 @@
   var HttpResolutionError = class extends Error {
     /** Whether the object is not the one the pins name: it changed since they were taken. */
     sourceChanged;
-    /** Why the request got no response, where a browser could tell. */
+    /**
+     * Why the request got no response, where a browser could tell (`noResponse`): undefined for a
+     * response that failed, or a request outside a browser.
+     */
     noResponse;
     constructor(message, sourceChanged = false, noResponse2) {
       super(message);
@@ -308,7 +311,7 @@
     }
     const headers = {
       Range: `bytes=${start}-${end - 1}`,
-      // Ignored by browsers (forbidden header); honoured elsewhere.
+      // Ignored by browsers (forbidden header); honored elsewhere.
       "Accept-Encoding": "identity"
     };
     if (pins.etag !== void 0) headers["If-Match"] = pins.etag;
@@ -321,12 +324,18 @@
     }
     let response2;
     try {
-      response2 = options.fetch ? await options.fetch(url2, { headers, signal }, options.allow) : await fetch(url2, { headers, signal, redirect: "follow", cache: "no-store" });
+      response2 = options.fetch ? await options.fetch(url2, { headers, signal }, options.allow) : await fetch(url2, {
+        headers,
+        signal,
+        redirect: "follow",
+        cache: "no-store",
+        credentials: options.sendCredentials ? "same-origin" : "omit"
+      });
     } catch (e) {
       signal?.throwIfAborted();
       throw await noResponse(url2, e);
     }
-    const fail = (message, sourceChanged = false) => {
+    const fail2 = (message, sourceChanged = false) => {
       throw new HttpResolutionError(`${url2}: ${message}`, sourceChanged);
     };
     if (response2.redirected) {
@@ -335,31 +344,31 @@
         options.allow?.(response2.url);
       } catch (e) {
         await response2.body?.cancel();
-        fail(e.message);
+        fail2(e.message);
       }
     }
-    if (response2.status === 412) fail("a pin failed (412)", true);
+    if (response2.status === 412) fail2("a pin failed (412)", true);
     if (response2.status === 416)
-      fail("the object is shorter than the range (416)", true);
+      fail2("the object is shorter than the range (416)", true);
     if (response2.status !== 200 && response2.status !== 206) {
-      fail(`HTTP ${response2.status}`);
+      fail2(`HTTP ${response2.status}`);
     }
     const encoding = response2.headers.get("Content-Encoding");
     if (encoding !== null) {
       const values = encoding.split(",").map((v) => v.trim().toLowerCase());
       if (values.length !== 1 || values[0] !== "identity") {
-        fail(`response has Content-Encoding ${JSON.stringify(encoding)}`);
+        fail2(`response has Content-Encoding ${JSON.stringify(encoding)}`);
       }
     }
     const etag = single(response2.headers, "ETag");
-    if (etag !== null && etag.includes(",")) fail("more than one ETag field");
+    if (etag !== null && etag.includes(",")) fail2("more than one ETag field");
     const lastModified = single(response2.headers, "Last-Modified");
     if (lastModified !== null && lastModified.split(",").length > 2) {
-      fail("more than one Last-Modified field");
+      fail2("more than one Last-Modified field");
     }
     const skip = (header) => header === null && response2.type === "cors" && options.unverifiablePins === true;
     if (pins.etag !== void 0 && etag !== pins.etag && !skip(etag)) {
-      fail(
+      fail2(
         `the ETag is ${JSON.stringify(etag)}, but the archive pins ${pins.etag}: the source changed since the archive was written, or its server does not send the ETag`,
         true
       );
@@ -367,33 +376,33 @@
     if (pins.modifiedNotAfter !== void 0 && !skip(lastModified)) {
       const t = parseImfFixdate(lastModified);
       if (t === void 0) {
-        fail(
+        fail2(
           `Last-Modified ${JSON.stringify(lastModified)} is not an IMF-fixdate`
         );
       }
       if (BigInt(t) > pins.modifiedNotAfter)
-        fail("Last-Modified is after the pin", true);
+        fail2("Last-Modified is after the pin", true);
     }
     const body = new Uint8Array(await response2.arrayBuffer());
     if (response2.status === 200) {
-      if (body.length < end) fail(`object is shorter than ${end} bytes`);
+      if (body.length < end) fail2(`object is shorter than ${end} bytes`);
       return { data: body.slice(start, end), size: body.length, ...etag !== null ? { etag } : {} };
     }
     const contentRange = single(response2.headers, "Content-Range");
     if (contentRange === null && response2.type === "cors") {
       if (body.length !== end - start) {
-        fail(`206 of ${body.length} bytes for [${start}, ${end})`);
+        fail2(`206 of ${body.length} bytes for [${start}, ${end})`);
       }
       return { data: body, size: void 0, hidden: true, ...etag !== null ? { etag } : {} };
     }
-    if (contentRange === null) fail("206 without Content-Range");
+    if (contentRange === null) fail2("206 without Content-Range");
     const m = contentRange.trim().match(/^bytes (\d+)-(\d+)\/(\d+|\*)$/i);
-    if (m === null) fail(`invalid Content-Range ${JSON.stringify(contentRange)}`);
+    if (m === null) fail2(`invalid Content-Range ${JSON.stringify(contentRange)}`);
     const a = Number(m[1]);
     const z = Number(m[2]);
     const total = m[3] === "*" ? void 0 : Number(m[3]);
     if (a !== start || z !== end - 1 || body.length !== z - a + 1 || total !== void 0 && z >= total) {
-      fail(
+      fail2(
         `server returned ${JSON.stringify(contentRange)} (${body.length} bytes) for [${start}, ${end})`
       );
     }
@@ -485,7 +494,7 @@
   var strictUtf8 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
   function* fields(buf) {
     let pos = 0;
-    const varint = () => {
+    const varint2 = () => {
       let v = 0n;
       for (let i = 0; i < 10; i++) {
         if (pos >= buf.length) throw new MalformedError("truncated varint");
@@ -499,7 +508,7 @@
       throw new MalformedError("varint longer than 10 bytes");
     };
     while (pos < buf.length) {
-      const key = varint();
+      const key = varint2();
       const field = Number(key >> 3n);
       const wireType = Number(key & 7n);
       if (key >> 3n === 0n || key >> 3n > (1n << 29n) - 1n) {
@@ -508,7 +517,7 @@
       let value;
       switch (wireType) {
         case 0:
-          value = varint();
+          value = varint2();
           break;
         case 1:
         case 5: {
@@ -519,7 +528,7 @@
           break;
         }
         case 2: {
-          const n = varint();
+          const n = varint2();
           if (BigInt(pos) + n > BigInt(buf.length)) {
             throw new MalformedError("LEN field extends past the message");
           }
@@ -592,9 +601,9 @@
   function rangeSize(r) {
     return "data" in r ? BigInt(r.data.length) : r.length;
   }
-  function decodeReference(headerId, payload, numSources) {
-    if (payload.length > 65519) {
-      throw new MalformedError("reference payload exceeds 65519 bytes");
+  function decodeReference(headerId, payload, numSources, maxPayload = 65519) {
+    if (payload.length > maxPayload) {
+      throw new MalformedError(`reference payload exceeds ${maxPayload} bytes`);
     }
     let parts;
     if (headerId === 31350) {
@@ -773,7 +782,7 @@
   function referenceBlock(ranges) {
     return ranges.length === 1 ? { id: RANGE_ID, payload: encodeRange(ranges[0]) } : { id: CONCAT_ID, payload: encodeConcat(ranges) };
   }
-  function validate(desc) {
+  function validate(desc, maxPayload = MAX_PAYLOAD) {
     const n = desc.sources.length;
     const byKey = /* @__PURE__ */ new Map();
     for (const e of desc.entries) {
@@ -841,8 +850,8 @@
         total += r.length;
       }
       if (total > U64_MAX2) reject(`${e.key}: value size exceeds 2^64 - 1`);
-      if (referenceBlock(e.ranges).payload.length > MAX_PAYLOAD) {
-        reject(`${e.key}: reference payload exceeds ${MAX_PAYLOAD} bytes`);
+      if (referenceBlock(e.ranges).payload.length > maxPayload) {
+        reject(`${e.key}: reference payload exceeds ${maxPayload} bytes`);
       }
     }
   }
@@ -953,6 +962,7 @@
 
   // src/archive.ts
   var RefkvError = class extends Error {
+    /** The error's class, as spec §6.5 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#65-error-reporting> has readers report it. */
     errorClass;
     /**
      * Whether a source is not the one the archive pins (spec §5.1
@@ -968,13 +978,16 @@
   };
   var DEFAULT_POLICY = {
     schemes: [],
-    allowFilesFromRemoteArchives: false,
     allowPrivateHosts: false,
     allowUncheckedProxy: false,
     maxSources: 1 << 22,
     maxReads: 1024,
+    maxGetBytes: 2 ** 31,
+    maxReadAmplification: 4,
+    maxCoalesceGap: 1 << 16,
     maxFormatEntry: 256 << 20,
-    unverifiablePins: false
+    unverifiablePins: false,
+    allowSourceCredentials: false
   };
   function schemeOf(url2) {
     const i = url2.indexOf(":");
@@ -1087,22 +1100,29 @@
   function validatePolicy(policy) {
     if ((policy.schemes ?? []).some((s) => s.toLowerCase() === "file")) {
       throw new TypeError(
-        "Policy.schemes may not name 'file': a local archive reads files already, and a remote one needs the unsafe allowFilesFromRemoteArchives: true"
+        "Policy.schemes may not name 'file': this reader reads only http(s) sources"
       );
     }
+    for (const name of ["maxSources", "maxReads", "maxGetBytes", "maxCoalesceGap", "maxFormatEntry"]) {
+      const v = policy[name];
+      if (name in policy && !(Number.isSafeInteger(v) && v >= 0)) {
+        throw new TypeError(`Policy.${name} is a natural number, not ${String(v)}`);
+      }
+    }
+    const a = policy.maxReadAmplification;
+    if ("maxReadAmplification" in policy && !(typeof a === "number" && Number.isFinite(a) && a >= 0)) {
+      throw new TypeError(`Policy.maxReadAmplification is a finite number of at least 0, not ${String(a)}`);
+    }
   }
-  function checkPolicy(policy, base, url2) {
+  function checkPolicy(policy, _base, url2) {
     validatePolicy(policy);
-    const local = schemeOf(base) === "file";
     const scheme = schemeOf(url2);
     if (policy.prefixes !== void 0) {
       if (!policy.prefixes.some((p) => matchesPrefix(url2, p))) {
         throw new RefkvError("resolution", `${url2}: not under an allowed URL prefix (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
       }
     } else if (scheme === "file") {
-      if (!local && !policy.allowFilesFromRemoteArchives) {
-        throw new RefkvError("resolution", `${url2}: an archive opened from a URL may not read local files (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
-      }
+      throw new RefkvError("resolution", `${url2}: this reader reads no local file (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
     } else if (scheme !== "http" && !(policy.schemes ?? []).some((s) => schemeOf(`${s}:`) === scheme)) {
       throw new RefkvError("resolution", `${url2}: the scheme '${scheme}' is not allowed (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
     }
@@ -1124,6 +1144,70 @@
     checkClass(policy, url2, c, address);
   }
   var MERGE_GAP = 1 << 16;
+  var MERGE_CONNECTIONS = 8;
+  var MERGE_MIN_RUN = 1 << 20;
+  var MERGE_MAX_RUN = 32 << 20;
+  var MERGE_WINDOW = 2;
+  var MERGE_MAX_WAIT = 1e3;
+  var MERGE_BUSY = 16;
+  function coalescedRuns(reads, gap, budget) {
+    const sorted = [...reads].sort((x, y) => x.source - y.source || (x.offset < y.offset ? -1 : x.offset > y.offset ? 1 : 0));
+    const runs = [];
+    for (const r of sorted) {
+      const last = runs[runs.length - 1];
+      if (last && last.source === r.source && r.offset <= last.end) {
+        if (r.end > last.end) last.end = r.end;
+      } else {
+        runs.push({ ...r });
+      }
+    }
+    let fetched = runs.reduce((n, run) => n + Number(run.end - run.offset), 0);
+    const gaps = [];
+    for (let i = 0; i + 1 < runs.length; i++) {
+      const width = Number(runs[i + 1].offset - runs[i].end);
+      if (runs[i].source === runs[i + 1].source && width <= gap) gaps.push([width, i]);
+    }
+    gaps.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
+    const closed = /* @__PURE__ */ new Set();
+    for (const [width, i] of gaps) {
+      if (fetched + width > budget) break;
+      fetched += width;
+      closed.add(i);
+    }
+    const out2 = [];
+    runs.forEach((run, i) => {
+      if (closed.has(i - 1)) out2[out2.length - 1].end = run.end;
+      else out2.push({ ...run });
+    });
+    return out2;
+  }
+  function mergedRuns(reads, longest, amplification = DEFAULT_POLICY.maxReadAmplification, gap = DEFAULT_POLICY.maxCoalesceGap) {
+    const big = (v, w) => v > w ? v : w;
+    const sorted = [...reads].sort((x, y) => x.offset < y.offset ? -1 : x.offset > y.offset ? 1 : x.end < y.end ? -1 : x.end > y.end ? 1 : 0);
+    const runs = [];
+    let start = 0n;
+    let end = 0n;
+    let asked = 0n;
+    let owners = /* @__PURE__ */ new Map();
+    for (const read of sorted) {
+      const fresh = big(read.end - big(read.offset, end), 0n);
+      const span = big(end, read.end) - start;
+      const own = read.owner === void 0 ? void 0 : owners.get(read.owner);
+      if (runs.length > 0 && (own === void 0 || read.offset <= end || read.offset - own > BigInt(gap)) && read.offset - end <= BigInt(gap) && span <= longest && Number(span - BigInt(gap)) <= amplification * Number(asked + fresh)) {
+        runs[runs.length - 1].push(read);
+        asked += fresh;
+        end = big(end, read.end);
+      } else {
+        runs.push([read]);
+        owners = /* @__PURE__ */ new Map();
+        start = read.offset;
+        end = read.end;
+        asked = read.end - read.offset;
+      }
+      if (read.owner !== void 0) owners.set(read.owner, big(owners.get(read.owner) ?? 0n, read.end));
+    }
+    return runs;
+  }
   var U32_ALL2 = 4294967295;
   var strictUtf82 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
   function safe(v, what) {
@@ -1156,9 +1240,18 @@
      */
     revision;
     policy;
+    /** The largest reference payload the binding allows (a ZIP extra field's, here). */
+    maxPayload = 65519;
     fetchRange;
     /** Sends this archive's requests, checking addresses (rule 3), where the platform allows. */
     netFetch;
+    /** The reads of url sources waiting to merge, by source. */
+    waiting = /* @__PURE__ */ new Map();
+    /** The requests in flight, by source. */
+    serving = /* @__PURE__ */ new Map();
+    flushPending = false;
+    /** Set while some reads whose window has ended wait for a request to end. */
+    release;
     constructor(bytes, baseUrl, sources, entries, fetchRange, policy, revision) {
       this.bytes = bytes;
       this.baseUrl = baseUrl;
@@ -1175,8 +1268,10 @@
      * relative `url` sources.
      * `policy` (spec §6.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)
      * defaults to `DEFAULT_POLICY`, which allows http(s)
-     * sources on public hosts, and for a local archive also `file` sources and
-     * loopback and private hosts.
+     * sources on public hosts, and for a local archive (a `file:` `baseUrl`) also `file`
+     * sources. Loopback and private hosts are refused for every archive, local or not,
+     * unless the policy has `allowPrivateHosts: true`. Throws a `RefkvError` of class
+     * "archive" for an archive opening refuses.
      */
     static async open(bytes, baseUrl, fetchRange = (url2, start, end, pins, options) => readHttpRange(url2, start, end, pins, void 0, options), policy = {}) {
       validatePolicy(policy);
@@ -1308,11 +1403,19 @@
      */
     lookup(key) {
       if (key.startsWith("__vz__/")) return void 0;
-      const entry = this.entries.get(key);
+      const entry = this.entryFor(key);
       if (entry?.error !== void 0) {
         throw new RefkvError("entry", `${JSON.stringify(key)}: ${entry.error}`);
       }
       return entry;
+    }
+    /** Whether `key` names a format entry, which no `key` source may name: vzip's (spec/bindings/vzip.md). */
+    namesFormatEntry(key) {
+      return key === SOURCES_KEY || key === INDEX_KEY;
+    }
+    /** The entry of `key` as the container has it, hidden or not: a binding finds keys here. */
+    entryFor(key) {
+      return this.entries.get(key);
     }
     /** Visible keys, in UTF-8 order. */
     keys() {
@@ -1323,7 +1426,8 @@
         return decodeReference(
           entry.reference.headerId,
           entry.reference.payload,
-          this.sources.length
+          this.sources.length,
+          this.maxPayload
         );
       } catch (e) {
         if (!(e instanceof MalformedError)) throw e;
@@ -1358,37 +1462,55 @@
       if (body.length !== entry.size) {
         throw new RefkvError("body", `${entry.key}: inflates to ${body.length} bytes`);
       }
+      if (entry.crc32c !== void 0 && crc32c(body) !== entry.crc32c) {
+        throw new RefkvError("body", `${entry.key}: the value does not match its crc32c`);
+      }
       return body;
     }
-    async source(r) {
+    /**
+     * The bytes of `r`. A `key` source's value is read whole, once a read: `keyValues` holds the
+     * values one read has read (spec §5 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#5-source-table>).
+     */
+    async source(r, keyValues = /* @__PURE__ */ new Map()) {
       const s = this.sources[r.source];
       const start = r.offset;
       const end = r.offset + r.length;
-      const fail = (m, sourceChanged = false) => {
+      const fail2 = (m, sourceChanged = false) => {
         throw new RefkvError("resolution", `source ${r.source}: ${m}`, sourceChanged);
       };
       if (s.data !== void 0) {
-        if (end > BigInt(s.data.length)) fail("range past the end of the data");
+        if (end > BigInt(s.data.length)) fail2("range past the end of the data");
         return s.data.subarray(Number(start), Number(end));
       }
       if (s.key !== void 0) {
-        const target = this.entries.get(s.key);
+        if (this.namesFormatEntry(s.key)) fail2(`key ${JSON.stringify(s.key)} names a format entry`);
+        const target = this.entryFor(s.key);
         if (target === void 0 || target.reference !== void 0 || target.error) {
-          fail(`key ${JSON.stringify(s.key)} is not a bytes entry`);
+          fail2(`key ${JSON.stringify(s.key)} is not a bytes entry`);
         }
-        const value = await this.body(target);
-        if (end > BigInt(value.length)) fail("range past the end of the key's value");
+        let pending = keyValues.get(s.key);
+        if (pending === void 0) {
+          pending = this.body(target);
+          keyValues.set(s.key, pending);
+        }
+        let value;
+        try {
+          value = await pending;
+        } catch (e) {
+          return fail2(`key ${JSON.stringify(s.key)}: ${e.message}`);
+        }
+        if (end > BigInt(value.length)) fail2("range past the end of the key's value");
         return value.subarray(Number(start), Number(end));
       }
       let url2;
       try {
         url2 = resolveReference(this.baseUrl, s.url);
       } catch (e) {
-        return fail(e.message);
+        return fail2(e.message);
       }
       checkPolicy(this.policy, this.baseUrl, url2);
       const scheme = getScheme(url2);
-      if (scheme !== "http" && scheme !== "https") fail(`unsupported scheme in ${url2}`);
+      if (scheme !== "http" && scheme !== "https") fail2(`unsupported scheme in ${url2}`);
       try {
         const { data, size, hidden } = await this.fetchRange(
           url2,
@@ -1398,20 +1520,122 @@
           {
             allow: (u) => checkPolicy(this.policy, this.baseUrl, u),
             unverifiablePins: this.policy.unverifiablePins,
+            sendCredentials: this.policy.allowSourceCredentials,
             ...this.netFetch ? { fetch: this.netFetch } : {}
           }
         );
         const unseen = size === void 0 && hidden === true && this.policy.unverifiablePins;
         if (s.size !== void 0 && !unseen && BigInt(size ?? -1) !== s.size) {
-          fail(
+          fail2(
             size === void 0 ? `${url2}: the archive pins the size ${s.size}, which the response does not give` : `${url2}: the source is ${size} bytes, but the archive pins ${s.size}: the source changed since the archive was written`,
             size !== void 0
           );
         }
         return data;
       } catch (e) {
-        if (e instanceof HttpResolutionError) fail(e.message, e.sourceChanged);
+        if (e instanceof HttpResolutionError) fail2(e.message, e.sourceChanged);
         throw e;
+      }
+    }
+    /**
+     * Bytes of a url source, read with the reads of other values waiting at the same time (spec §6.3
+     * <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#63-resolving-a-reference>).
+     */
+    sharedRead(source, offset, end, owner) {
+      return new Promise((resolve, reject3) => {
+        if (!this.flushPending) {
+          this.flushPending = true;
+          setTimeout(() => {
+            this.flushPending = false;
+            this.flush();
+          }, MERGE_WINDOW);
+        }
+        const reads = this.waiting.get(source);
+        const read = { offset, end, resolve, reject: reject3, since: Date.now(), owner };
+        if (reads) reads.push(read);
+        else this.waiting.set(source, [read]);
+      });
+    }
+    /**
+     * Starts the requests that serve the reads waiting. While its source is busy (`MERGE_BUSY`), a
+     * read near a request in flight waits for a request to end, up to `MERGE_MAX_WAIT`, and merges
+     * with the reads that come meanwhile: a client that starts its next chunks as the last ones
+     * finish starts them a few at a time, and those are the chunks beside them. Reads far from any
+     * request do not wait, so reads that cannot merge are as concurrent as they were. A read inside a
+     * request in flight joins it, since its bytes are on their way.
+     */
+    flush() {
+      const now = Date.now();
+      clearTimeout(this.release);
+      this.release = void 0;
+      let oldest = Infinity;
+      for (const [source, waiting] of [...this.waiting]) {
+        const serving = [...this.serving.get(source) ?? []];
+        const reads = waiting.filter((r) => !_Archive.join(r, serving));
+        const bytes = reads.reduce((n, r) => n + (r.end - r.offset), 0n);
+        const share = bytes / BigInt(MERGE_CONNECTIONS);
+        const floor = BigInt(MERGE_MIN_RUN);
+        const ceiling = BigInt(MERGE_MAX_RUN);
+        const clamped = share < floor ? floor : share > ceiling ? ceiling : share;
+        const budget = BigInt(this.policy.maxGetBytes);
+        const longest = clamped < budget ? clamped : budget;
+        const gap = BigInt(this.policy.maxCoalesceGap);
+        const held = [];
+        for (const run of mergedRuns(reads, longest, this.policy.maxReadAmplification, this.policy.maxCoalesceGap)) {
+          const offset = run[0].offset;
+          const end = run.reduce((e, r) => r.end > e ? r.end : e, offset);
+          const near = serving.some((s) => s.offset - end <= gap && offset - s.end <= gap);
+          const since = run.reduce((t, r) => Math.min(t, r.since), now);
+          if (near && serving.length >= MERGE_BUSY && now - since < MERGE_MAX_WAIT) {
+            held.push(...run);
+            oldest = Math.min(oldest, since);
+          } else {
+            void this.serve(source, run);
+          }
+        }
+        if (held.length > 0) this.waiting.set(source, held);
+        else this.waiting.delete(source);
+      }
+      if (oldest < Infinity) {
+        this.release = setTimeout(() => this.flush(), oldest + MERGE_MAX_WAIT - now);
+      }
+    }
+    /** Adds `read` to a request in flight that covers it, if there is one. */
+    static join(read, serving) {
+      const request = serving.find((s) => s.offset <= read.offset && read.end <= s.end);
+      request?.reads.push(read);
+      return request !== void 0;
+    }
+    /**
+     * Reads `run` in one request, and gives each read its bytes. A run ends where its last read
+     * ends, so it may fail where that read alone would; the others must not fail with it, so each
+     * read of a run that fails is read on its own, and gets its own result.
+     */
+    async serve(source, run) {
+      const offset = run[0].offset;
+      const end = run.reduce((e, r) => r.end > e ? r.end : e, offset);
+      const serving = this.serving.get(source) ?? /* @__PURE__ */ new Set();
+      this.serving.set(source, serving);
+      const request = { offset, end, reads: run };
+      serving.add(request);
+      const finished = () => {
+        serving.delete(request);
+        if (serving.size === 0) this.serving.delete(source);
+        if (this.release !== void 0) this.flush();
+      };
+      let data;
+      try {
+        data = await this.source({ source, offset, length: end - offset });
+      } catch (e) {
+        finished();
+        if (run.length > 1) await Promise.all(run.map((r) => this.serve(source, [r])));
+        else run[0].reject(e);
+        return;
+      }
+      finished();
+      for (const r of run) {
+        const from = Number(r.offset - offset);
+        r.resolve(data.subarray(from, from + Number(r.end - r.offset)));
       }
     }
     /** Bytes `[start, end)` of a visible key's value, or undefined if absent. */
@@ -1429,7 +1653,10 @@
       const parts = [];
       const cuts = [];
       let at = 0;
+      let taken = 0;
+      const held = /* @__PURE__ */ new Map();
       for (const r of this.ranges(entry)) {
+        if (taken > this.policy.maxGetBytes) break;
         const n = Number(rangeSize(r));
         const a = Math.max(start, at);
         const b = Math.min(end, at + n);
@@ -1437,6 +1664,7 @@
           if ("data" in r) {
             parts.push(Promise.resolve(r.data.subarray(a - at, b - at)));
             cuts.push({ lo: 0, hi: b - a });
+            taken += b - a;
           } else {
             let read;
             if (r.crc32c === void 0) {
@@ -1446,46 +1674,68 @@
               read = { source: r.source, offset: r.offset, length: r.length };
               cuts.push({ lo: a - at, hi: b - at, crc: r.crc32c });
             }
-            parts.push(this.sources[r.source].url !== void 0 ? read : this.source(read));
+            taken += Number(read.length);
+            const key2 = this.sources[r.source].key;
+            if (key2 !== void 0 && !held.has(key2)) {
+              let target;
+              try {
+                target = this.entryFor(key2);
+              } catch (e) {
+                throw new RefkvError("resolution", `key ${JSON.stringify(key2)}: ${e.message}`);
+              }
+              const whole3 = target !== void 0 && target.reference === void 0 && !target.error && !this.namesFormatEntry(key2);
+              held.set(key2, whole3 ? Math.max(target.size, target.csize) : 0);
+            }
+            if (taken > this.policy.maxGetBytes) break;
+            parts.push(this.sources[r.source].url !== void 0 ? read : { local: read });
           }
         }
         at += n;
       }
-      const reads = parts.filter((p) => !(p instanceof Promise));
-      const sorted = [...reads].sort((x, y) => x.source - y.source || (x.offset < y.offset ? -1 : x.offset > y.offset ? 1 : 0));
-      const runs = [];
+      const reads = parts.filter((p) => !(p instanceof Promise) && !("local" in p));
+      let heldBytes = 0;
+      for (const n of held.values()) heldBytes += n;
+      const runs = coalescedRuns(
+        reads.map((r) => ({ source: r.source, offset: r.offset, end: r.offset + r.length })),
+        this.policy.maxCoalesceGap,
+        Math.max(this.policy.maxGetBytes - heldBytes, 0)
+      );
       const runOf = /* @__PURE__ */ new Map();
-      for (const read of sorted) {
-        const last = runs[runs.length - 1];
-        const readEnd = read.offset + read.length;
-        if (last && last.source === read.source && read.offset - last.end <= BigInt(MERGE_GAP)) {
-          if (readEnd > last.end) last.end = readEnd;
-        } else {
-          runs.push({ source: read.source, offset: read.offset, end: readEnd });
-        }
-        runOf.set(read, runs[runs.length - 1]);
+      const ordered = [...reads].sort((x, y) => x.source - y.source || (x.offset < y.offset ? -1 : x.offset > y.offset ? 1 : 0));
+      let k = 0;
+      for (const read of ordered) {
+        while (runs[k].source !== read.source || runs[k].end < read.offset + read.length) k++;
+        runOf.set(read, runs[k]);
+      }
+      const fetched = runs.reduce((n, run) => n + Number(run.end - run.offset), heldBytes);
+      if (Math.max(taken, fetched) > this.policy.maxGetBytes) {
+        throw new RefkvError(
+          "request",
+          `the value needs more than ${this.policy.maxGetBytes} bytes; this reader allows ${this.policy.maxGetBytes} (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`
+        );
       }
       if (runs.length > this.policy.maxReads) {
-        for (const p of parts) if (p instanceof Promise) p.catch(() => {
-        });
         throw new RefkvError(
           "request",
           `the value needs ${runs.length} reads; this reader allows ${this.policy.maxReads} (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`
         );
       }
+      const owner = {};
+      const keyValues = /* @__PURE__ */ new Map();
       for (const run of runs) {
-        run.data = this.source({ source: run.source, offset: run.offset, length: run.end - run.offset });
+        run.data = this.sharedRead(run.source, run.offset, run.end, owner);
       }
       const whole2 = await Promise.all(
         parts.map(async (p) => {
           if (p instanceof Promise) return p;
+          if ("local" in p) return this.source(p.local, keyValues);
           const run = runOf.get(p);
           const from = Number(p.offset - run.offset);
           return (await run.data).subarray(from, from + Number(p.length));
         })
       );
       const chunks = whole2.map((data, i) => {
-        const { lo, hi, crc } = cuts[i];
+        const { lo: lo2, hi: hi2, crc } = cuts[i];
         if (crc !== void 0 && crc32c(data) !== crc) {
           throw new RefkvError(
             "resolution",
@@ -1493,7 +1743,7 @@
             true
           );
         }
-        return data.subarray(lo, hi);
+        return data.subarray(lo2, hi2);
       });
       const out2 = new Uint8Array(end - start);
       let o = 0;
@@ -1606,6 +1856,16 @@
   function rejection(w, r) {
     return new ImageError(text(out(w, -r)));
   }
+  function refusal(w, r, reject3) {
+    return w.vz_failed() !== 0 ? new Error(text(out(w, -r))) : reject3(w, r);
+  }
+  var NamesSiblings = class extends Error {
+    format;
+    constructor(format) {
+      super(`a ${format} file that names siblings is read as a store`);
+      this.format = format;
+    }
+  };
   async function zarrifyIr(format, url2, source, options = {}) {
     const w = await ir();
     const f = utf83.encode(format);
@@ -1629,11 +1889,12 @@
         if (r === 0) break;
         await perform(w, p, source, decodeRequests(out(w, r - 1)), options.signal);
       }
+      if (w.vz_run_beside(p) !== 0) throw new NamesSiblings(format);
       live = false;
       const u = utf83.encode(url2);
       const flags = (options.mirror === false ? 0 : 1) | (options.checksums ? 2 : 0);
       const n = Number(w.vz_run_output(p, put(w, u), u.length, flags));
-      if (n < 0) throw rejection(w, n);
+      if (n < 0) throw refusal(w, n, rejection);
       const o = decodeOutput(out(w, n));
       return { format: o.summary.format ?? format, ...o };
     } finally {
@@ -1752,6 +2013,759 @@
     }
     return { sources, entries, summary: raw.summary };
   }
+
+  // src/zarrify/store.ts
+  var StoreError = class extends Error {
+    /** The store format that refused the input, once one was chosen (the Rust core's store run:
+     * `zarr2`, or `ome-zarr` once its 0.4 test passed); none for a rejection before that. */
+    format;
+    constructor(message, format) {
+      super(message);
+      if (format !== void 0) this.format = format;
+    }
+  };
+  var StoreLimitError = class extends Error {
+  };
+  var StoreReadError = class extends Error {
+  };
+  var reject2 = (message) => {
+    throw new StoreError(message);
+  };
+  var MAX_SAFE = Number.MAX_SAFE_INTEGER;
+  var MAX_DOCUMENT = 1 << 24;
+  var MAX_DEPTH = 256;
+  var MAX_OBJECTS = 1e5;
+  var SPLIT2 = /^(?:([^:/?#]+):)?(?:\/\/([^/?#]*))?([^?#]*)(?:\?([^#]*))?(?:#(.*))?$/;
+  var UNRESERVED2 = /[A-Za-z0-9\-._~]/;
+  var PATH_SAFE = /[A-Za-z0-9\-._~!$&'()*+,;=:@/]/;
+  var utf84 = new TextEncoder();
+  function pct(s, safe3) {
+    let out2 = "";
+    for (const b of utf84.encode(s)) {
+      const c = String.fromCharCode(b);
+      out2 += b < 128 && safe3.test(c) ? c : `%${b.toString(16).toUpperCase().padStart(2, "0")}`;
+    }
+    return out2;
+  }
+  function objectUrl(storeUrl, key) {
+    return storeUrl + pct(key, PATH_SAFE);
+  }
+  function queryEncode(s) {
+    return pct(s, UNRESERVED2);
+  }
+  function checkStoreUrl(url2) {
+    const m = url2.match(SPLIT2);
+    if (!isUriReference(url2) || m === null) reject2(`${JSON.stringify(url2)} is not a valid URI`);
+    const [, scheme, authority, path, query, fragment] = m;
+    if (scheme === void 0 || !["http", "https"].includes(scheme.toLowerCase())) {
+      reject2(`store URL ${url2} is not http or https`);
+    }
+    if (authority === void 0 || authority.includes("@")) reject2(`store URL ${url2} has no authority, or has userinfo`);
+    if (query !== void 0 || fragment !== void 0) reject2(`store URL ${url2} has a query or a fragment`);
+    if (!path.endsWith("/")) reject2(`store URL ${url2} does not end in /`);
+    return [scheme, authority, path];
+  }
+  function percentDecode(s) {
+    const out2 = [];
+    for (let i = 0; i < s.length; ) {
+      if (s[i] === "%") {
+        out2.push(parseInt(s.slice(i + 1, i + 3), 16));
+        i += 3;
+      } else {
+        out2.push(s.charCodeAt(i));
+        i += 1;
+      }
+    }
+    return Uint8Array.from(out2);
+  }
+  function listingEndpoint(url2) {
+    const [scheme, authority, path] = checkStoreUrl(url2);
+    let host = authority;
+    if (host.startsWith("[")) host = host.slice(0, host.indexOf("]") + 1);
+    else if (host.includes(":")) host = host.slice(0, host.lastIndexOf(":"));
+    host = host.toLowerCase();
+    const labels = host.split(".");
+    const virtual = host.endsWith(".amazonaws.com") && labels.slice(1).some((l) => l === "s3" || l.startsWith("s3-"));
+    let endpoint;
+    let prefixPath;
+    if (virtual) {
+      endpoint = `${scheme}://${authority}/`;
+      prefixPath = path.slice(1);
+    } else {
+      if (path === "/") reject2(`path-style store URL ${url2} names no bucket`);
+      const rest = path.slice(1);
+      const i = rest.indexOf("/");
+      const bucket2 = rest.slice(0, i);
+      if (bucket2 === "") reject2(`path-style store URL ${url2} has an empty bucket`);
+      endpoint = `${scheme}://${authority}/${bucket2}/`;
+      prefixPath = rest.slice(i + 1);
+    }
+    let prefix2 = "";
+    try {
+      prefix2 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(percentDecode(prefixPath));
+    } catch {
+      reject2(`the key prefix of ${url2} is not UTF-8`);
+    }
+    return [endpoint, prefix2];
+  }
+  var HUB = "https://huggingface.co";
+  var HUB_NAME = /^[A-Za-z0-9._-]+$/;
+  function hubEndpoint(endpoint) {
+    const e = (endpoint || HUB).replace(/\/+$/, "");
+    const m = e.match(SPLIT2);
+    if (m === null || !isUriReference(e)) throw new TypeError(`the Hub endpoint ${JSON.stringify(e)} is not a valid URI`);
+    const [, scheme, authority, , query, fragment] = m;
+    if (scheme === void 0 || !["http", "https"].includes(scheme.toLowerCase()) || !authority || authority.includes("@") || query !== void 0 || fragment !== void 0) {
+      throw new TypeError(`the Hub endpoint ${JSON.stringify(e)} is not an http(s) URL without userinfo, query or fragment`);
+    }
+    return e;
+  }
+  function hubApi(repo) {
+    return `${repo.endpoint}/api/${repo.kind}/${repo.owner}/${repo.name}`;
+  }
+  function hubRevisionUrl(repo) {
+    return `${hubApi(repo)}/revision/${queryEncode(repo.revision)}?expand%5B%5D=sha&expand%5B%5D=gated`;
+  }
+  function hubTreeUrl(repo, commit) {
+    const d = repo.directory ? "/" + pct(repo.directory.slice(0, -1), PATH_SAFE) : "";
+    return `${hubApi(repo)}/tree/${commit}${d}?recursive=true`;
+  }
+  function hubBase(repo, commit) {
+    const kind = repo.kind === "datasets" ? "/datasets/" : "/";
+    return `${repo.endpoint}${kind}${repo.owner}/${repo.name}/resolve/${commit}/${objectUrl("", repo.directory)}`;
+  }
+  function under(url2, endpoint) {
+    const m = url2.match(SPLIT2);
+    const e = endpoint.match(SPLIT2);
+    if (m === null || m[1] === void 0 || m[2] === void 0) return void 0;
+    if (m[1].toLowerCase() !== e[1].toLowerCase() || m[2].toLowerCase() !== e[2].toLowerCase()) return void 0;
+    const base = e[3] + "/";
+    return m[3].startsWith(base) ? m[3].slice(base.length) : void 0;
+  }
+  var utf8Fatal = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
+  function hubRepo(url2, endpoint) {
+    const rest = under(url2, endpoint);
+    if (rest === void 0) return void 0;
+    checkStoreUrl(url2);
+    let segments = rest.split("/");
+    let kind = "models";
+    if (segments[0] === "datasets") {
+      kind = "datasets";
+      segments = segments.slice(1);
+    }
+    if (segments.length < 5 || segments[2] !== "tree" || segments[segments.length - 1] !== "" || !segments.slice(0, 2).every((n) => HUB_NAME.test(n) && n !== "." && n !== "..") || segments.slice(3, -1).some((x) => !x)) {
+      reject2(`Hub store URL ${JSON.stringify(url2)} is not <owner>/<repo>/tree/<rev>/[<dir>/] (or that after datasets/)`);
+    }
+    let revision = "";
+    let directory = "";
+    try {
+      revision = utf8Fatal.decode(percentDecode(segments[3]));
+      directory = segments.slice(4, -1).map((x) => utf8Fatal.decode(percentDecode(x)) + "/").join("");
+    } catch {
+      reject2(`the revision or directory of ${JSON.stringify(url2)} is not UTF-8`);
+    }
+    if (directory.split("/").slice(0, -1).some((x) => x === "." || x === "..")) {
+      reject2(`the directory of ${JSON.stringify(url2)} has a segment . or ..`);
+    }
+    return { endpoint, kind, owner: segments[0], name: segments[1], revision, directory };
+  }
+  function hubPage(url2, endpoint) {
+    const m = url2.match(SPLIT2);
+    if (m === null || m[4] !== void 0 || m[5] !== void 0 || url2.endsWith("/")) return false;
+    try {
+      return hubRepo(url2 + "/", endpoint) !== void 0;
+    } catch (e) {
+      if (e instanceof StoreError) return false;
+      throw e;
+    }
+  }
+  function isChar(c) {
+    return c === 9 || c === 10 || c === 13 || c >= 32 && c <= 55295 || c >= 57344 && c <= 65533 || c >= 65536 && c <= 1114111;
+  }
+  var NAME_START = /[A-Za-z_:]/;
+  var NAME_CHAR = /[A-Za-z0-9_:.-]/;
+  var WS = /* @__PURE__ */ new Set([" ", "	", "\r", "\n"]);
+  var ENTITIES = { lt: "<", gt: ">", amp: "&", quot: '"', apos: "'" };
+  var Xml = class {
+    pos = 0;
+    depth = 0;
+    // of the element being read
+    s;
+    what;
+    error;
+    constructor(s, what = "listing", error = (m) => new StoreError(m)) {
+      this.s = s;
+      this.what = what;
+      this.error = error;
+    }
+    fail(why) {
+      throw this.error(`${this.what} is not well formed: ${why} at ${this.pos}`);
+    }
+    ws() {
+      while (this.pos < this.s.length && WS.has(this.s[this.pos])) this.pos++;
+    }
+    at(t) {
+      return this.s.startsWith(t, this.pos);
+    }
+    chars(t) {
+      for (const ch of t) {
+        const c = ch.codePointAt(0);
+        if (!isChar(c)) this.fail(`character U+${c.toString(16).toUpperCase().padStart(4, "0")}`);
+      }
+    }
+    comment() {
+      const end = this.s.indexOf("--", this.pos + 4);
+      if (end < 0 || !this.s.startsWith("-->", end)) this.fail("bad comment");
+      this.chars(this.s.slice(this.pos + 4, end));
+      this.pos = end + 3;
+    }
+    misc() {
+      for (; ; ) {
+        this.ws();
+        if (this.at("<!--")) this.comment();
+        else return;
+      }
+    }
+    name() {
+      const start = this.pos;
+      if (start >= this.s.length || !NAME_START.test(this.s[start])) this.fail("expected a name");
+      this.pos++;
+      while (this.pos < this.s.length && NAME_CHAR.test(this.s[this.pos])) this.pos++;
+      return this.s.slice(start, this.pos);
+    }
+    reference() {
+      const end = this.s.indexOf(";", this.pos);
+      if (end < 0) this.fail("unterminated reference");
+      const body = this.s.slice(this.pos + 1, end);
+      this.pos = end + 1;
+      if (Object.hasOwn(ENTITIES, body)) return ENTITIES[body];
+      let v;
+      if (/^#x[0-9a-fA-F]+$/.test(body)) v = body.length < 12 ? parseInt(body.slice(2), 16) : -1;
+      else if (/^#[0-9]+$/.test(body)) v = body.length < 12 ? parseInt(body.slice(1), 10) : -1;
+      else this.fail(`unknown reference &${body};`);
+      if (!isChar(v)) this.fail(`reference &${body}; is not a character`);
+      return String.fromCodePoint(v);
+    }
+    chardata(stop) {
+      const start = this.pos;
+      while (this.pos < this.s.length && this.s[this.pos] !== "<" && this.s[this.pos] !== "&" && this.s[this.pos] !== stop) this.pos++;
+      const t = this.s.slice(start, this.pos);
+      this.chars(t);
+      return t;
+    }
+    element() {
+      if (!this.at("<")) this.fail("expected an element");
+      if (++this.depth > MAX_DEPTH) this.fail(`elements nest more than ${MAX_DEPTH} deep`);
+      const el = this.elementBody();
+      this.depth--;
+      return el;
+    }
+    elementBody() {
+      this.pos++;
+      const el = { name: this.name(), children: [], text: [], attributes: [] };
+      const s = this.s;
+      for (; ; ) {
+        if (this.pos < s.length && WS.has(s[this.pos])) {
+          this.ws();
+          if (this.pos < s.length && NAME_START.test(s[this.pos])) {
+            const name = this.name();
+            this.ws();
+            if (!this.at("=")) this.fail("expected =");
+            this.pos++;
+            this.ws();
+            const q = this.pos < s.length ? s[this.pos] : "";
+            if (q !== "'" && q !== '"') this.fail("expected a quoted value");
+            this.pos++;
+            const value = [];
+            for (; ; ) {
+              value.push(this.chardata(q));
+              if (this.at("&")) value.push(this.reference());
+              else if (this.at(q)) {
+                this.pos++;
+                break;
+              } else this.fail("bad attribute value");
+            }
+            el.attributes.push([name, value.join("")]);
+            continue;
+          }
+        }
+        break;
+      }
+      if (this.at("/>")) {
+        this.pos += 2;
+        return el;
+      }
+      if (!this.at(">")) this.fail("expected >");
+      this.pos++;
+      for (; ; ) {
+        if (this.pos >= s.length) this.fail("unterminated element");
+        if (this.at("</")) {
+          this.pos += 2;
+          if (this.name() !== el.name) this.fail("mismatched end tag");
+          this.ws();
+          if (!this.at(">")) this.fail("expected >");
+          this.pos++;
+          return el;
+        }
+        if (this.at("<!--")) this.comment();
+        else if (this.at("<!") || this.at("<?")) this.fail("unsupported markup");
+        else if (this.at("<")) el.children.push(this.element());
+        else if (this.at("&")) el.text.push(this.reference());
+        else {
+          const t = this.chardata("<");
+          if (t.includes("]]>")) this.fail("]]> in character data");
+          el.text.push(t);
+        }
+      }
+    }
+    document() {
+      this.ws();
+      if (this.at("<?xml") && this.pos + 5 < this.s.length && WS.has(this.s[this.pos + 5])) {
+        const end = this.s.indexOf("?>", this.pos + 5);
+        if (end < 0) this.fail("unterminated XML declaration");
+        this.chars(this.s.slice(this.pos, end));
+        this.pos = end + 2;
+      }
+      this.misc();
+      const root = this.element();
+      this.misc();
+      if (this.pos !== this.s.length) this.fail("content after the root element");
+      return root;
+    }
+  };
+  function text2(el) {
+    if (el.children.length) reject2(`listing: <${el.name}> has a child element`);
+    return el.text.join("");
+  }
+  function parseListing(body, prefix2) {
+    let s = "";
+    try {
+      s = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(body);
+    } catch {
+      reject2("listing is not UTF-8");
+    }
+    const root = new Xml(s).document();
+    if (root.name !== "ListBucketResult") reject2(`listing root element is <${root.name}>, not <ListBucketResult>`);
+    const truncated = root.children.filter((c) => c.name === "IsTruncated");
+    if (truncated.length !== 1 || !["true", "false"].includes(text2(truncated[0]))) {
+      reject2("listing needs exactly one IsTruncated of true or false");
+    }
+    const tokens = root.children.filter((c) => c.name === "NextContinuationToken");
+    if (tokens.length > 1) reject2("listing has more than one NextContinuationToken");
+    const token = tokens.length ? text2(tokens[0]) : void 0;
+    const objects = [];
+    for (const c of root.children) {
+      if (c.name !== "Contents") continue;
+      const keys = c.children.filter((x) => x.name === "Key");
+      const sizes = c.children.filter((x) => x.name === "Size");
+      if (keys.length !== 1 || sizes.length !== 1) reject2("listing Contents needs exactly one Key and one Size");
+      const key = text2(keys[0]);
+      const size = text2(sizes[0]);
+      if (!/^[0-9]+$/.test(size) || size.replace(/^0+/, "").length > 16 || Number(size) > MAX_SAFE) {
+        reject2(`listing Size ${JSON.stringify(size.slice(0, 40))} is not a size`);
+      }
+      if (!key.startsWith(prefix2)) reject2(`listed key ${JSON.stringify(key)} is outside the prefix ${JSON.stringify(prefix2)}`);
+      objects.push([key, Number(size)]);
+    }
+    if (text2(truncated[0]) === "true") {
+      if (!token) reject2("truncated listing without a NextContinuationToken");
+      if (objects.length === 0) reject2("truncated listing without a Contents");
+      return { objects, token };
+    }
+    return { objects };
+  }
+  function checkNumbers(v) {
+    if (typeof v === "number") {
+      if (!Number.isFinite(v)) reject2("JSON number is not finite in binary64");
+    } else if (Array.isArray(v)) {
+      for (const x of v) checkNumbers(x);
+    } else if (v !== null && typeof v === "object") {
+      for (const x of Object.values(v)) checkNumbers(x);
+    }
+  }
+  var RawJSON = JSON;
+  var INTEGER = /^-?(?:0|[1-9][0-9]*)$/;
+  var NoSourceText = class extends Error {
+    constructor() {
+      super("JSON.parse gives the reviver no source text (needs JSON.parse source text access, as in Node 21+)");
+    }
+  };
+  function keepIntegers(_key, value, context) {
+    if (typeof value !== "number") return value;
+    if (context?.source === void 0) throw new NoSourceText();
+    if (!INTEGER.test(context.source)) return Object.is(value, -0) ? RawJSON.rawJSON("-0.0") : value;
+    if (Object.is(value, -0)) return 0;
+    if (Math.abs(value) <= MAX_SAFE || !Number.isFinite(value)) return value;
+    return RawJSON.rawJSON(context.source);
+  }
+  function isRawInteger(v) {
+    return v !== null && typeof v === "object" && RawJSON.isRawJSON(v);
+  }
+  function parseJson(data) {
+    if (data.length > MAX_DOCUMENT) reject2(`JSON document of ${data.length} bytes exceeds ${MAX_DOCUMENT}`);
+    if (data[0] === 239 && data[1] === 187 && data[2] === 191) reject2("JSON document starts with a byte order mark");
+    let s = "";
+    try {
+      s = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(data);
+    } catch {
+      reject2("JSON document is not UTF-8");
+    }
+    if (nesting(s) > MAX_DEPTH) reject2(`JSON nests more than ${MAX_DEPTH} deep`);
+    let v = null;
+    try {
+      v = JSON.parse(s, keepIntegers);
+    } catch (e) {
+      if (e instanceof NoSourceText) throw e;
+      reject2(`invalid JSON: ${e.message}`);
+    }
+    checkNumbers(v);
+    return v;
+  }
+  function nesting(s) {
+    let depth = 0, deepest = 0, open = true;
+    for (let i = 0; i < s.length; i++) {
+      const c = s.charCodeAt(i);
+      if (c === 34 && open) {
+        let j = i + 1;
+        while (j < s.length && s.charCodeAt(j) !== 34) j += s.charCodeAt(j) === 92 ? 2 : 1;
+        if (j >= s.length) open = false;
+        else i = j;
+      } else if (c === 91 || c === 123) {
+        deepest = Math.max(deepest, ++depth);
+      } else if (c === 93 || c === 125) {
+        depth--;
+      }
+    }
+    return deepest;
+  }
+  var COMMIT = /^[0-9a-f]{40}$/;
+  var LONE_SURROGATE = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/;
+  function parseHubRevision(body) {
+    const doc = parseJson(body);
+    if (!isObject(doc)) return reject2("the Hub revision is not a JSON object");
+    const sha = has(doc, "sha") ? doc.sha : void 0;
+    if (typeof sha !== "string" || !COMMIT.test(sha)) {
+      reject2(`the Hub revision's sha ${show(sha).slice(0, 80)} is not 40 lowercase hex digits`);
+    }
+    if (has(doc, "gated") && doc.gated !== false) {
+      reject2(`the Hub repository is gated (${show(doc.gated).slice(0, 40)}): its files are not read anonymously`);
+    }
+    return sha;
+  }
+  function parseHubTree(body, prefix2) {
+    const doc = parseJson(body);
+    if (!Array.isArray(doc)) return reject2("the Hub tree listing is not a JSON array");
+    const objects = [];
+    for (const entry of doc) {
+      if (!isObject(entry)) reject2("a Hub tree entry is not a JSON object");
+      const e = entry;
+      const kind = has(e, "type") ? e.type : void 0;
+      const path = has(e, "path") ? e.path : void 0;
+      if (kind !== "file" && kind !== "directory") {
+        reject2(`a Hub tree entry's type ${show(kind).slice(0, 40)} is neither file nor directory`);
+      }
+      if (typeof path !== "string" || !path.startsWith(prefix2) || path.length === prefix2.length) {
+        reject2(`the Hub tree entry ${show(path).slice(0, 200)} is not under ${JSON.stringify(prefix2)}`);
+      }
+      if (LONE_SURROGATE.test(path)) reject2(`the Hub tree entry ${show(path).slice(0, 200)} is not Unicode`);
+      if (kind === "file") {
+        const size = asInt(has(e, "size") ? e.size : void 0, 0, MAX_SAFE);
+        if (size === void 0) reject2(`the Hub tree file ${show(path).slice(0, 200)} has no size from 0 to 2^53 - 1`);
+        objects.push([path, size]);
+      }
+    }
+    return { objects, entries: doc.length };
+  }
+  var LINK_WS = /* @__PURE__ */ new Set([" ", "	", "\r", "\n"]);
+  var PARAM_NAME = /[A-Za-z0-9-]+/y;
+  var TOKEN = /[^ \t\r\n;,"]+/y;
+  function links(value) {
+    const out2 = [];
+    const bad = (why) => reject2(`the Link header ${JSON.stringify(value.slice(0, 200))} ${why}`);
+    const n = value.length;
+    let i = 0;
+    const ws = () => {
+      while (i < n && LINK_WS.has(value[i])) i++;
+    };
+    const match = (re) => {
+      re.lastIndex = i;
+      const m = re.exec(value);
+      if (m === null) return void 0;
+      i = re.lastIndex;
+      return m[0];
+    };
+    for (; ; ) {
+      ws();
+      if (i >= n || value[i] !== "<") bad("is not a list of links");
+      const end = value.indexOf(">", i);
+      if (end < 0) bad("has an unterminated <");
+      const target = value.slice(i + 1, end);
+      if (!isUriReference(target)) reject2(`the Link header's target ${JSON.stringify(target.slice(0, 200))} is not a URI reference`);
+      i = end + 1;
+      const params = [];
+      for (; ; ) {
+        ws();
+        if (i >= n || value[i] !== ";") break;
+        i++;
+        ws();
+        const name = match(PARAM_NAME);
+        if (name === void 0) bad("has a bad parameter");
+        ws();
+        if (i >= n || value[i] !== "=") bad("has a parameter without =");
+        i++;
+        ws();
+        let param;
+        if (i < n && value[i] === '"') {
+          const close = value.indexOf('"', i + 1);
+          if (close < 0) bad("has an unterminated quote");
+          param = value.slice(i + 1, close);
+          i = close + 1;
+        } else {
+          param = match(TOKEN);
+          if (param === void 0) bad("has a parameter without a value");
+        }
+        params.push([name, param]);
+      }
+      out2.push([target, params]);
+      if (i >= n) return out2;
+      if (value[i] !== ",") bad("is not a list of links");
+      i++;
+    }
+  }
+  function nextLink(field, url2, endpoint) {
+    if (field === null) return void 0;
+    const found = links(field).filter(([, params]) => params.some(([k, v]) => k.toLowerCase() === "rel" && v.toLowerCase().split(/[ \t\r\n]+/).includes("next"))).map(([t]) => t);
+    if (found.length > 1) reject2("the Hub tree response has more than one next link");
+    if (found.length === 0) return void 0;
+    const next = resolveReference(url2, found[0]);
+    const a = next.match(SPLIT2);
+    const b = endpoint.match(SPLIT2);
+    if (a[1]?.toLowerCase() !== b[1].toLowerCase() || a[2]?.toLowerCase() !== b[2].toLowerCase()) {
+      reject2(`the Hub tree's next link ${JSON.stringify(next.slice(0, 200))} is not on ${JSON.stringify(endpoint)}`);
+    }
+    return next;
+  }
+  function show(v) {
+    return String(JSON.stringify(v));
+  }
+  function num(v) {
+    return isRawInteger(v) ? Number(v.rawJSON) : v;
+  }
+  function asInt(v, lo2 = -MAX_SAFE, hi2 = MAX_SAFE) {
+    if (isRawInteger(v)) v = num(v) + 0;
+    if (typeof v !== "number" || !Number.isInteger(v) || Math.abs(v) > MAX_SAFE) return void 0;
+    return v >= lo2 && v <= hi2 ? v : void 0;
+  }
+  function isObject(v) {
+    return v !== null && typeof v === "object" && !Array.isArray(v) && !RawJSON.isRawJSON(v);
+  }
+  function has(o, k) {
+    return Object.hasOwn(o, k);
+  }
+  function compareKeys(a, b) {
+    const n = Math.min(a.length, b.length);
+    for (let i = 0; i < n; i++) {
+      const x = a.codePointAt(i);
+      const y = b.codePointAt(i);
+      if (x !== y) return x < y ? -1 : 1;
+      if (x > 65535) i++;
+    }
+    return a.length - b.length;
+  }
+  function ignored(rel) {
+    return rel === "" || rel.endsWith("/") || rel.split("/").some((s) => s === "" || s === "." || s === "..");
+  }
+  function folderMarker(rel, size) {
+    return size === 0 && (rel === "" || rel.endsWith("/"));
+  }
+  var CONCURRENCY = 16;
+  var PREFETCH_BYTES = 64 << 20;
+  function closeStore(store) {
+    store.prefetch?.close();
+  }
+  function addListed(store, listed, prefix2, seen) {
+    store.ignored ??= [];
+    store.folders ??= [];
+    for (const [key, size] of listed) {
+      if (seen.has(key)) reject2(`key ${JSON.stringify(key)} is listed twice`);
+      seen.add(key);
+      const rel = key.slice(prefix2.length);
+      if (!ignored(rel)) store.objects.set(rel, size);
+      else if (!folderMarker(rel, size)) store.ignored.push(rel);
+      else if (rel && !ignored(rel.slice(0, -1))) store.folders.push(rel);
+    }
+    store.listed = seen.size;
+  }
+  function allowStoreUrl(policy, base, url2) {
+    try {
+      checkHttpUrl(url2);
+    } catch (e) {
+      throw new RefkvError("resolution", e.message);
+    }
+    checkPolicy(policy, base, url2);
+  }
+  function storeFetch(base, policy = {}, headers = {}, check = (u, address) => checkAddress(policy, u, address)) {
+    const allow = (u) => allowStoreUrl(policy, base, u);
+    const refusals = /* @__PURE__ */ new Set();
+    const checked = policy.allowPrivateHosts ? void 0 : checkedFetch((u, address) => {
+      try {
+        check(u, address);
+      } catch (e) {
+        refusals.add(e.message);
+        throw e;
+      }
+    }, policy);
+    return async (u, init = {}) => {
+      allow(u);
+      const h = { ...headers, ...init.headers };
+      let r;
+      try {
+        r = checked ? await checked(u, { headers: h, ...init.signal ? { signal: init.signal } : {} }, allow) : await fetch(u, { cache: h.Range === void 0 ? "default" : "no-store", ...init, headers: h, redirect: "follow" });
+      } catch (e) {
+        if (e instanceof RefkvError || e.name === "AbortError") throw e;
+        const message = e.message;
+        if (refusals.has(message)) throw new RefkvError("resolution", message);
+        if (!checked || e instanceof TypeError || typeof e.code === "string") throw e;
+        throw new RefkvError("resolution", `${u}: ${message}`);
+      }
+      if (r.redirected) {
+        try {
+          allow(r.url);
+        } catch (e) {
+          await r.body?.cancel();
+          throw e;
+        }
+      }
+      return r;
+    };
+  }
+  async function openHttpStore(url2, { fetch: given2, policy = {}, headers = {}, maxObjects = MAX_OBJECTS, concurrency = CONCURRENCY, hubEndpoint: hub } = {}) {
+    const repo = hubRepo(url2, hubEndpoint(hub));
+    const allow = (u) => allowStoreUrl(policy, url2, u);
+    const send = given2 ?? storeFetch(url2, policy, headers);
+    const f = async (u, init) => {
+      allow(u);
+      const r = await send(u, init);
+      if (r.redirected) {
+        try {
+          allow(r.url);
+        } catch (e) {
+          await r.body?.cancel();
+          throw e;
+        }
+      }
+      return r;
+    };
+    let base = url2;
+    const store = {
+      url: url2,
+      objects: /* @__PURE__ */ new Map(),
+      listed: 0,
+      requests: 0,
+      concurrency,
+      async read(key) {
+        const size = this.objects.get(key);
+        if (size === 0) return new Uint8Array(0);
+        const u = objectUrl(base, key);
+        let r;
+        try {
+          r = await f(u, { headers: { Range: `bytes=0-${size - 1}` } });
+        } catch (e) {
+          if (e instanceof RefkvError) throw e;
+          throw new StoreReadError(`${u}: ${e.message}`);
+        }
+        if (r.status !== 200 && r.status !== 206) throw new StoreReadError(`${u}: HTTP ${r.status}`);
+        const data = new Uint8Array(await r.arrayBuffer());
+        if (data.length !== size) throw new StoreReadError(`${u}: read ${data.length} bytes, the listing says ${size}`);
+        return data;
+      },
+      async readRange(key, offset, length) {
+        if (length === 0) return new Uint8Array(0);
+        const u = objectUrl(base, key);
+        let r;
+        try {
+          r = await f(u, { headers: { Range: `bytes=${offset}-${offset + length - 1}` } });
+        } catch (e) {
+          if (e instanceof RefkvError) throw e;
+          throw new StoreReadError(`${u}: ${e.message}`);
+        }
+        if (r.status !== 206 && !(r.status === 200 && offset === 0)) throw new StoreReadError(`${u}: HTTP ${r.status}`);
+        const data = new Uint8Array(await r.arrayBuffer());
+        if (data.length !== length) throw new StoreReadError(`${u}: read ${data.length} bytes at ${offset}, not ${length}`);
+        return data;
+      }
+    };
+    const list = async (u) => {
+      store.requests++;
+      let r;
+      try {
+        r = await f(u);
+      } catch (e) {
+        if (e instanceof RefkvError) throw e;
+        throw new StoreReadError(`${u}: ${e.message}`);
+      }
+      if (r.status === 408 || r.status === 429 || r.status >= 500) {
+        await r.body?.cancel();
+        throw new StoreReadError(`${u}: HTTP ${r.status}`);
+      }
+      if (r.status !== 200) {
+        await r.body?.cancel();
+        if (repo === void 0) reject2(`the store has no listing: ${u} answered HTTP ${r.status}`);
+        const why = r.status === 401 ? " (a repository that does not exist, or a private one)" : r.status === 404 ? " (a revision or a directory the repository does not have)" : "";
+        reject2(`the Hub answered HTTP ${r.status} for ${u}${why}`);
+      }
+      return r;
+    };
+    const seen = /* @__PURE__ */ new Set();
+    if (repo !== void 0) {
+      const commit = parseHubRevision(new Uint8Array(await (await list(hubRevisionUrl(repo))).arrayBuffer()));
+      base = store.url = hubBase(repo, commit);
+      const requested = /* @__PURE__ */ new Set();
+      let link = hubTreeUrl(repo, commit);
+      while (link !== void 0) {
+        requested.add(link);
+        const r = await list(link);
+        const answered = r.url || link;
+        const page = parseHubTree(new Uint8Array(await r.arrayBuffer()), repo.directory);
+        addListed(store, page.objects, repo.directory, seen);
+        if (store.listed > maxObjects) throw new StoreLimitError(`the store lists more than ${maxObjects} objects`);
+        link = nextLink(r.headers.get("Link"), answered, repo.endpoint);
+        if (link !== void 0 && page.entries === 0) reject2("a Hub tree page with a next link lists nothing");
+        if (link !== void 0 && requested.has(link)) {
+          reject2(`the Hub tree's next link ${JSON.stringify(link.slice(0, 200))} was requested already`);
+        }
+      }
+      return store;
+    }
+    const [endpoint, prefix2] = listingEndpoint(url2);
+    const tokens = /* @__PURE__ */ new Set();
+    let token;
+    for (; ; ) {
+      let q = `?list-type=2&prefix=${queryEncode(prefix2)}`;
+      if (token !== void 0) q += `&continuation-token=${queryEncode(token)}`;
+      const r = await list(endpoint + q);
+      const listing = parseListing(new Uint8Array(await r.arrayBuffer()), prefix2);
+      addListed(store, listing.objects, prefix2, seen);
+      if (store.listed > maxObjects) throw new StoreLimitError(`the store lists more than ${maxObjects} objects`);
+      token = listing.token;
+      if (token === void 0) break;
+      if (tokens.has(token)) reject2(`the listing gives the continuation token ${JSON.stringify(token.slice(0, 80))} again`);
+      tokens.add(token);
+    }
+    return store;
+  }
+  function chooseProfile(store) {
+    if (store.objects.has(".zarray") || store.objects.has(".zgroup")) return "zarr2";
+    if (store.objects.has("attributes.json")) return "n5";
+    if (store.objects.has("manifest.safe")) return "safe";
+    if (store.objects.has("info")) return "precomputed";
+    if (store.objects.has("zarr.json")) return "zarr3";
+    for (const k of store.objects.keys()) if (k.endsWith(".safetensors")) return "safetensors";
+    return reject2(
+      "not a Zarr v3, Zarr v2, N5, SAFE, Neuroglancer precomputed or safetensors store: the root has no zarr.json, .zarray, .zgroup, attributes.json, manifest.safe or info, and no key ends in .safetensors"
+    );
+  }
+  var MAX_BLOCK = 2 ** 31 - 1;
 
   // src/zarrify/ir/source.ts
   function readerSource(read, size, options = {}) {
@@ -2022,6 +3036,13 @@
     }
     if (!/^https?:/i.test(url2)) return Promise.reject(new RefkvError("resolution", `${url2}: not an http(s) URL`));
     try {
+      if (hubPage(url2, hubEndpoint(options.hubEndpoint))) {
+        return Promise.reject(new ImageError(`${url2} is a Hub repository's page, not a file: end it in / to zarrify the repository`));
+      }
+    } catch (e) {
+      return Promise.reject(e);
+    }
+    try {
       checkPolicy(options.policy ?? {}, url2, url2);
     } catch (e) {
       return Promise.reject(e);
@@ -2064,465 +3085,6 @@
     }
   }
 
-  // src/zarrify/store.ts
-  var StoreError = class extends Error {
-    /** The store format that refused the input, once one was chosen (the Rust core's store run:
-     * `zarr2`, or `ome-zarr` once its 0.4 test passed); none for a rejection before that. */
-    format;
-    constructor(message, format) {
-      super(message);
-      if (format !== void 0) this.format = format;
-    }
-  };
-  var StoreLimitError = class extends Error {
-  };
-  var StoreReadError = class extends Error {
-  };
-  var reject2 = (message) => {
-    throw new StoreError(message);
-  };
-  var MAX_SAFE = Number.MAX_SAFE_INTEGER;
-  var MAX_DOCUMENT = 1 << 24;
-  var MAX_DEPTH = 256;
-  var MAX_OBJECTS = 1e5;
-  var SPLIT2 = /^(?:([^:/?#]+):)?(?:\/\/([^/?#]*))?([^?#]*)(?:\?([^#]*))?(?:#(.*))?$/;
-  var UNRESERVED2 = /[A-Za-z0-9\-._~]/;
-  var PATH_SAFE = /[A-Za-z0-9\-._~!$&'()*+,;=:@/]/;
-  var utf84 = new TextEncoder();
-  function pct(s, safe2) {
-    let out2 = "";
-    for (const b of utf84.encode(s)) {
-      const c = String.fromCharCode(b);
-      out2 += b < 128 && safe2.test(c) ? c : `%${b.toString(16).toUpperCase().padStart(2, "0")}`;
-    }
-    return out2;
-  }
-  function objectUrl(storeUrl, key) {
-    return storeUrl + pct(key, PATH_SAFE);
-  }
-  function queryEncode(s) {
-    return pct(s, UNRESERVED2);
-  }
-  function checkStoreUrl(url2) {
-    const m = url2.match(SPLIT2);
-    if (!isUriReference(url2) || m === null) reject2(`${JSON.stringify(url2)} is not a valid URI`);
-    const [, scheme, authority, path, query, fragment] = m;
-    if (scheme === void 0 || !["http", "https"].includes(scheme.toLowerCase())) {
-      reject2(`store URL ${url2} is not http or https`);
-    }
-    if (authority === void 0 || authority.includes("@")) reject2(`store URL ${url2} has no authority, or has userinfo`);
-    if (query !== void 0 || fragment !== void 0) reject2(`store URL ${url2} has a query or a fragment`);
-    if (!path.endsWith("/")) reject2(`store URL ${url2} does not end in /`);
-    return [scheme, authority, path];
-  }
-  function percentDecode(s) {
-    const out2 = [];
-    for (let i = 0; i < s.length; ) {
-      if (s[i] === "%") {
-        out2.push(parseInt(s.slice(i + 1, i + 3), 16));
-        i += 3;
-      } else {
-        out2.push(s.charCodeAt(i));
-        i += 1;
-      }
-    }
-    return Uint8Array.from(out2);
-  }
-  function listingEndpoint(url2) {
-    const [scheme, authority, path] = checkStoreUrl(url2);
-    let host = authority;
-    if (host.startsWith("[")) host = host.slice(0, host.indexOf("]") + 1);
-    else if (host.includes(":")) host = host.slice(0, host.lastIndexOf(":"));
-    host = host.toLowerCase();
-    const labels = host.split(".");
-    const virtual = host.endsWith(".amazonaws.com") && labels.slice(1).some((l) => l === "s3" || l.startsWith("s3-"));
-    let endpoint;
-    let prefixPath;
-    if (virtual) {
-      endpoint = `${scheme}://${authority}/`;
-      prefixPath = path.slice(1);
-    } else {
-      if (path === "/") reject2(`path-style store URL ${url2} names no bucket`);
-      const rest = path.slice(1);
-      const i = rest.indexOf("/");
-      const bucket = rest.slice(0, i);
-      if (bucket === "") reject2(`path-style store URL ${url2} has an empty bucket`);
-      endpoint = `${scheme}://${authority}/${bucket}/`;
-      prefixPath = rest.slice(i + 1);
-    }
-    let prefix2 = "";
-    try {
-      prefix2 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(percentDecode(prefixPath));
-    } catch {
-      reject2(`the key prefix of ${url2} is not UTF-8`);
-    }
-    return [endpoint, prefix2];
-  }
-  function isChar(c) {
-    return c === 9 || c === 10 || c === 13 || c >= 32 && c <= 55295 || c >= 57344 && c <= 65533 || c >= 65536 && c <= 1114111;
-  }
-  var NAME_START = /[A-Za-z_:]/;
-  var NAME_CHAR = /[A-Za-z0-9_:.-]/;
-  var WS = /* @__PURE__ */ new Set([" ", "	", "\r", "\n"]);
-  var ENTITIES = { lt: "<", gt: ">", amp: "&", quot: '"', apos: "'" };
-  var Xml = class {
-    pos = 0;
-    depth = 0;
-    // of the element being read
-    s;
-    what;
-    error;
-    constructor(s, what = "listing", error = (m) => new StoreError(m)) {
-      this.s = s;
-      this.what = what;
-      this.error = error;
-    }
-    fail(why) {
-      throw this.error(`${this.what} is not well formed: ${why} at ${this.pos}`);
-    }
-    ws() {
-      while (this.pos < this.s.length && WS.has(this.s[this.pos])) this.pos++;
-    }
-    at(t) {
-      return this.s.startsWith(t, this.pos);
-    }
-    chars(t) {
-      for (const ch of t) {
-        const c = ch.codePointAt(0);
-        if (!isChar(c)) this.fail(`character U+${c.toString(16).toUpperCase().padStart(4, "0")}`);
-      }
-    }
-    comment() {
-      const end = this.s.indexOf("--", this.pos + 4);
-      if (end < 0 || !this.s.startsWith("-->", end)) this.fail("bad comment");
-      this.chars(this.s.slice(this.pos + 4, end));
-      this.pos = end + 3;
-    }
-    misc() {
-      for (; ; ) {
-        this.ws();
-        if (this.at("<!--")) this.comment();
-        else return;
-      }
-    }
-    name() {
-      const start = this.pos;
-      if (start >= this.s.length || !NAME_START.test(this.s[start])) this.fail("expected a name");
-      this.pos++;
-      while (this.pos < this.s.length && NAME_CHAR.test(this.s[this.pos])) this.pos++;
-      return this.s.slice(start, this.pos);
-    }
-    reference() {
-      const end = this.s.indexOf(";", this.pos);
-      if (end < 0) this.fail("unterminated reference");
-      const body = this.s.slice(this.pos + 1, end);
-      this.pos = end + 1;
-      if (Object.hasOwn(ENTITIES, body)) return ENTITIES[body];
-      let v;
-      if (/^#x[0-9a-fA-F]+$/.test(body)) v = body.length < 12 ? parseInt(body.slice(2), 16) : -1;
-      else if (/^#[0-9]+$/.test(body)) v = body.length < 12 ? parseInt(body.slice(1), 10) : -1;
-      else this.fail(`unknown reference &${body};`);
-      if (!isChar(v)) this.fail(`reference &${body}; is not a character`);
-      return String.fromCodePoint(v);
-    }
-    chardata(stop) {
-      const start = this.pos;
-      while (this.pos < this.s.length && this.s[this.pos] !== "<" && this.s[this.pos] !== "&" && this.s[this.pos] !== stop) this.pos++;
-      const t = this.s.slice(start, this.pos);
-      this.chars(t);
-      return t;
-    }
-    element() {
-      if (!this.at("<")) this.fail("expected an element");
-      if (++this.depth > MAX_DEPTH) this.fail(`elements nest more than ${MAX_DEPTH} deep`);
-      const el = this.elementBody();
-      this.depth--;
-      return el;
-    }
-    elementBody() {
-      this.pos++;
-      const el = { name: this.name(), children: [], text: [], attributes: [] };
-      const s = this.s;
-      for (; ; ) {
-        if (this.pos < s.length && WS.has(s[this.pos])) {
-          this.ws();
-          if (this.pos < s.length && NAME_START.test(s[this.pos])) {
-            const name = this.name();
-            this.ws();
-            if (!this.at("=")) this.fail("expected =");
-            this.pos++;
-            this.ws();
-            const q = this.pos < s.length ? s[this.pos] : "";
-            if (q !== "'" && q !== '"') this.fail("expected a quoted value");
-            this.pos++;
-            const value = [];
-            for (; ; ) {
-              value.push(this.chardata(q));
-              if (this.at("&")) value.push(this.reference());
-              else if (this.at(q)) {
-                this.pos++;
-                break;
-              } else this.fail("bad attribute value");
-            }
-            el.attributes.push([name, value.join("")]);
-            continue;
-          }
-        }
-        break;
-      }
-      if (this.at("/>")) {
-        this.pos += 2;
-        return el;
-      }
-      if (!this.at(">")) this.fail("expected >");
-      this.pos++;
-      for (; ; ) {
-        if (this.pos >= s.length) this.fail("unterminated element");
-        if (this.at("</")) {
-          this.pos += 2;
-          if (this.name() !== el.name) this.fail("mismatched end tag");
-          this.ws();
-          if (!this.at(">")) this.fail("expected >");
-          this.pos++;
-          return el;
-        }
-        if (this.at("<!--")) this.comment();
-        else if (this.at("<!") || this.at("<?")) this.fail("unsupported markup");
-        else if (this.at("<")) el.children.push(this.element());
-        else if (this.at("&")) el.text.push(this.reference());
-        else {
-          const t = this.chardata("<");
-          if (t.includes("]]>")) this.fail("]]> in character data");
-          el.text.push(t);
-        }
-      }
-    }
-    document() {
-      this.ws();
-      if (this.at("<?xml") && this.pos + 5 < this.s.length && WS.has(this.s[this.pos + 5])) {
-        const end = this.s.indexOf("?>", this.pos + 5);
-        if (end < 0) this.fail("unterminated XML declaration");
-        this.chars(this.s.slice(this.pos, end));
-        this.pos = end + 2;
-      }
-      this.misc();
-      const root = this.element();
-      this.misc();
-      if (this.pos !== this.s.length) this.fail("content after the root element");
-      return root;
-    }
-  };
-  function text2(el) {
-    if (el.children.length) reject2(`listing: <${el.name}> has a child element`);
-    return el.text.join("");
-  }
-  function parseListing(body, prefix2) {
-    let s = "";
-    try {
-      s = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(body);
-    } catch {
-      reject2("listing is not UTF-8");
-    }
-    const root = new Xml(s).document();
-    if (root.name !== "ListBucketResult") reject2(`listing root element is <${root.name}>, not <ListBucketResult>`);
-    const truncated = root.children.filter((c) => c.name === "IsTruncated");
-    if (truncated.length !== 1 || !["true", "false"].includes(text2(truncated[0]))) {
-      reject2("listing needs exactly one IsTruncated of true or false");
-    }
-    const tokens = root.children.filter((c) => c.name === "NextContinuationToken");
-    if (tokens.length > 1) reject2("listing has more than one NextContinuationToken");
-    const token = tokens.length ? text2(tokens[0]) : void 0;
-    const objects = [];
-    for (const c of root.children) {
-      if (c.name !== "Contents") continue;
-      const keys = c.children.filter((x) => x.name === "Key");
-      const sizes = c.children.filter((x) => x.name === "Size");
-      if (keys.length !== 1 || sizes.length !== 1) reject2("listing Contents needs exactly one Key and one Size");
-      const key = text2(keys[0]);
-      const size = text2(sizes[0]);
-      if (!/^[0-9]+$/.test(size) || size.replace(/^0+/, "").length > 16 || Number(size) > MAX_SAFE) {
-        reject2(`listing Size ${JSON.stringify(size.slice(0, 40))} is not a size`);
-      }
-      if (!key.startsWith(prefix2)) reject2(`listed key ${JSON.stringify(key)} is outside the prefix ${JSON.stringify(prefix2)}`);
-      objects.push([key, Number(size)]);
-    }
-    if (text2(truncated[0]) === "true") {
-      if (!token) reject2("truncated listing without a NextContinuationToken");
-      if (objects.length === 0) reject2("truncated listing without a Contents");
-      return { objects, token };
-    }
-    return { objects };
-  }
-  function compareKeys(a, b) {
-    const n = Math.min(a.length, b.length);
-    for (let i = 0; i < n; i++) {
-      const x = a.codePointAt(i);
-      const y = b.codePointAt(i);
-      if (x !== y) return x < y ? -1 : 1;
-      if (x > 65535) i++;
-    }
-    return a.length - b.length;
-  }
-  function ignored(rel) {
-    return rel === "" || rel.endsWith("/") || rel.split("/").some((s) => s === "" || s === "." || s === "..");
-  }
-  function folderMarker(rel, size) {
-    return size === 0 && (rel === "" || rel.endsWith("/"));
-  }
-  var CONCURRENCY = 16;
-  var PREFETCH_BYTES = 64 << 20;
-  function closeStore(store) {
-    store.prefetch?.close();
-  }
-  function addListed(store, listed, prefix2, seen) {
-    store.ignored ??= [];
-    store.folders ??= [];
-    for (const [key, size] of listed) {
-      if (seen.has(key)) reject2(`key ${JSON.stringify(key)} is listed twice`);
-      seen.add(key);
-      const rel = key.slice(prefix2.length);
-      if (!ignored(rel)) store.objects.set(rel, size);
-      else if (!folderMarker(rel, size)) store.ignored.push(rel);
-      else if (rel && !ignored(rel.slice(0, -1))) store.folders.push(rel);
-    }
-    store.listed = seen.size;
-  }
-  function allowStoreUrl(policy, base, url2) {
-    try {
-      checkHttpUrl(url2);
-    } catch (e) {
-      throw new RefkvError("resolution", e.message);
-    }
-    checkPolicy(policy, base, url2);
-  }
-  function storeFetch(base, policy = {}, headers = {}, check = (u, address) => checkAddress(policy, u, address)) {
-    const allow = (u) => allowStoreUrl(policy, base, u);
-    const refusals = /* @__PURE__ */ new Set();
-    const checked = policy.allowPrivateHosts ? void 0 : checkedFetch((u, address) => {
-      try {
-        check(u, address);
-      } catch (e) {
-        refusals.add(e.message);
-        throw e;
-      }
-    }, policy);
-    return async (u, init = {}) => {
-      allow(u);
-      const h = { ...headers, ...init.headers };
-      let r;
-      try {
-        r = checked ? await checked(u, { headers: h, ...init.signal ? { signal: init.signal } : {} }, allow) : await fetch(u, { cache: h.Range === void 0 ? "default" : "no-store", ...init, headers: h, redirect: "follow" });
-      } catch (e) {
-        if (e instanceof RefkvError || e.name === "AbortError") throw e;
-        const message = e.message;
-        if (refusals.has(message)) throw new RefkvError("resolution", message);
-        if (!checked || e instanceof TypeError || typeof e.code === "string") throw e;
-        throw new RefkvError("resolution", `${u}: ${message}`);
-      }
-      if (r.redirected) {
-        try {
-          allow(r.url);
-        } catch (e) {
-          await r.body?.cancel();
-          throw e;
-        }
-      }
-      return r;
-    };
-  }
-  async function openHttpStore(url2, { fetch: given2, policy = {}, headers = {}, maxObjects = MAX_OBJECTS, concurrency = CONCURRENCY } = {}) {
-    const allow = (u) => allowStoreUrl(policy, url2, u);
-    const send = given2 ?? storeFetch(url2, policy, headers);
-    const f = async (u, init) => {
-      allow(u);
-      const r = await send(u, init);
-      if (r.redirected) {
-        try {
-          allow(r.url);
-        } catch (e) {
-          await r.body?.cancel();
-          throw e;
-        }
-      }
-      return r;
-    };
-    const [endpoint, prefix2] = listingEndpoint(url2);
-    const store = {
-      url: url2,
-      objects: /* @__PURE__ */ new Map(),
-      listed: 0,
-      requests: 0,
-      concurrency,
-      async read(key) {
-        const size = this.objects.get(key);
-        if (size === 0) return new Uint8Array(0);
-        const u = objectUrl(url2, key);
-        let r;
-        try {
-          r = await f(u, { headers: { Range: `bytes=0-${size - 1}` } });
-        } catch (e) {
-          if (e instanceof RefkvError) throw e;
-          throw new StoreReadError(`${u}: ${e.message}`);
-        }
-        if (r.status !== 200 && r.status !== 206) throw new StoreReadError(`${u}: HTTP ${r.status}`);
-        const data = new Uint8Array(await r.arrayBuffer());
-        if (data.length !== size) throw new StoreReadError(`${u}: read ${data.length} bytes, the listing says ${size}`);
-        return data;
-      },
-      async readRange(key, offset, length) {
-        if (length === 0) return new Uint8Array(0);
-        const u = objectUrl(url2, key);
-        let r;
-        try {
-          r = await f(u, { headers: { Range: `bytes=${offset}-${offset + length - 1}` } });
-        } catch (e) {
-          if (e instanceof RefkvError) throw e;
-          throw new StoreReadError(`${u}: ${e.message}`);
-        }
-        if (r.status !== 206 && !(r.status === 200 && offset === 0)) throw new StoreReadError(`${u}: HTTP ${r.status}`);
-        const data = new Uint8Array(await r.arrayBuffer());
-        if (data.length !== length) throw new StoreReadError(`${u}: read ${data.length} bytes at ${offset}, not ${length}`);
-        return data;
-      }
-    };
-    const seen = /* @__PURE__ */ new Set();
-    const tokens = /* @__PURE__ */ new Set();
-    let token;
-    for (; ; ) {
-      let q = `?list-type=2&prefix=${queryEncode(prefix2)}`;
-      if (token !== void 0) q += `&continuation-token=${queryEncode(token)}`;
-      store.requests++;
-      let r;
-      try {
-        r = await f(endpoint + q);
-      } catch (e) {
-        if (e instanceof RefkvError) throw e;
-        throw new StoreReadError(`${endpoint + q}: ${e.message}`);
-      }
-      if (r.status === 408 || r.status === 429 || r.status >= 500) {
-        throw new StoreReadError(`${endpoint + q}: HTTP ${r.status}`);
-      }
-      if (r.status !== 200) reject2(`the store has no listing: ${endpoint + q} answered HTTP ${r.status}`);
-      const listing = parseListing(new Uint8Array(await r.arrayBuffer()), prefix2);
-      addListed(store, listing.objects, prefix2, seen);
-      if (store.listed > maxObjects) throw new StoreLimitError(`the store lists more than ${maxObjects} objects`);
-      token = listing.token;
-      if (token === void 0) break;
-      if (tokens.has(token)) reject2(`the listing gives the continuation token ${JSON.stringify(token.slice(0, 80))} again`);
-      tokens.add(token);
-    }
-    return store;
-  }
-  function chooseProfile(store) {
-    if (store.objects.has(".zarray") || store.objects.has(".zgroup")) return "zarr2";
-    if (store.objects.has("attributes.json")) return "n5";
-    if (store.objects.has("manifest.safe")) return "safe";
-    return reject2(
-      "not an N5, Zarr v2 or SAFE store: the root has no .zarray, .zgroup, attributes.json or manifest.safe"
-    );
-  }
-  var MAX_BLOCK = 2 ** 31 - 1;
-
   // src/zarrify/ir/store.ts
   var utf85 = new TextEncoder();
   var text3 = (b) => new TextDecoder().decode(b);
@@ -2544,6 +3106,11 @@
       const ig = utf85.encode(JSON.stringify([store.ignored ?? [], store.folders ?? []]));
       const g = Number(w.vz_store_ignore(p, put(w, ig), ig.length));
       if (g < 0) throw rejection2(w, g, format);
+      if (options.scope !== void 0) {
+        const sc = utf85.encode(JSON.stringify(options.scope));
+        const s = Number(w.vz_store_scope(p, put(w, sc), sc.length));
+        if (s < 0) throw rejection2(w, s, format);
+      }
       for (; ; ) {
         const n2 = Number(w.vz_store_poll(p));
         if (n2 < 0) throw rejection2(w, n2, format);
@@ -2568,8 +3135,9 @@
       const decided = said === "ome-zarr" || said === format ? said : format;
       live = false;
       const u = utf85.encode(store.url);
-      const n = Number(w.vz_store_output(p, put(w, u), u.length, options.mirror === false ? 0 : 1));
-      if (n < 0) throw rejection2(w, n, decided);
+      const flags = (options.mirror === false ? 0 : 1) | (options.checksums ? 2 : 0);
+      const n = Number(w.vz_store_output(p, put(w, u), u.length, flags));
+      if (n < 0) throw refusal(w, n, (w2, r) => rejection2(w2, r, decided));
       const raw = decodeRaw(out(w, n));
       return { ...storeDesc(raw, new Map(listing)), summary: { ...raw.summary, listingRequests: store.requests } };
     } finally {
@@ -2662,7 +3230,12 @@
   }
 
   // src/zarrify/ir/vsi.ts
-  var BESIDE = { vsi: "VSI", nrrd: "NRRD", grib: "GRIB" };
+  var BESIDE = Object.fromEntries(
+    REGISTRY2.filter((e) => e.store_run !== null && e.store_run.form !== "listed").map((e) => [e.name, e.title])
+  );
+  var ON_DEMAND = new Set(
+    REGISTRY2.filter((e) => e.store_run?.form === "on_demand").map((e) => e.name)
+  );
   function splitVsiUrl(url2, title = "VSI") {
     const base = url2.split(/[?#]/, 1)[0];
     if (base !== url2) throw new ImageError(`${title} input ${JSON.stringify(url2)} has a query or a fragment`);
@@ -2685,12 +3258,29 @@
       throw e;
     }
   }
+  function scopeKeys(url2, scope) {
+    const [dir, named] = splitVsiUrl(url2, "the");
+    const keys = [];
+    for (const e of scope) {
+      if (!e.startsWith(dir)) throw new RangeError(`scope "${e}" is not the input's directory "${dir}" or below it`);
+      let key;
+      try {
+        key = decodeURIComponent(e.slice(dir.length));
+      } catch {
+        throw new RangeError(`scope "${e}" is not percent-encoded UTF-8`);
+      }
+      if (key === "") return void 0;
+      if (key !== named) keys.push(key);
+    }
+    return keys;
+  }
   function vsiFiles(url2, source, options = {}, format = "vsi") {
     const title = BESIDE[format];
     const [dir, key] = splitVsiUrl(url2, title);
     const sources = /* @__PURE__ */ new Map([[key, source]]);
     const open = options.open ?? ((k) => {
       if (!/^https?:\/\//.test(dir)) {
+        if (format === "hdf5") return Promise.resolve(void 0);
         return Promise.reject(new ImageError(`${title} input ${JSON.stringify(url2)}: the files beside it can only be opened at an http(s) URL`));
       }
       return probeHttp(objectUrl(dir, k), options.http ?? (source instanceof HttpSource ? source.options : {}));
@@ -2725,7 +3315,12 @@
   }
   async function zarrifyVsi(url2, source, options = {}, format = "vsi") {
     const store = vsiFiles(url2, source, options, format);
-    const desc = await zarrifyStoreIr(format, store, { mirror: options.mirror ?? true, concurrency: source.concurrency });
+    const desc = await zarrifyStoreIr(format, store, {
+      mirror: options.mirror ?? true,
+      concurrency: source.concurrency,
+      checksums: options.checksums === true,
+      ...options.scope !== void 0 ? { scope: options.scope } : {}
+    });
     return { ...desc, store };
   }
 
@@ -2748,18 +3343,30 @@
     return zarrifyWith(url2, { read, size: source.size, exact, source }, { ...pins, ...etag ? { etag } : {} });
   }
   async function zarrifyWith(url2, input, pins) {
-    const format = await irFormat(await input.read(0, Math.min(552, input.size)));
+    const within3 = pins.scope === void 0 ? void 0 : scopeKeys(url2, pins.scope);
+    const format = await irFormat(await input.read(0, Math.min(552, input.size))) ?? (input.size > 552 ? await irFormat(await input.read(0, Math.min(65600, input.size))) : void 0);
     if (format === void 0) throw new ImageError(NOT_SUPPORTED);
-    if (format in BESIDE) {
-      const beside = format;
-      const { store, ...desc2 } = await zarrifyVsi(url2, input.source, pins.open ? { open: pins.open } : {}, beside);
+    const asStore = async (beside) => {
+      const options = {
+        ...pins.open ? { open: pins.open } : {},
+        ...within3 !== void 0 ? { scope: within3 } : {},
+        checksums: pins.checksums === true
+      };
+      const { store, ...desc2 } = await zarrifyVsi(url2, input.source, options, beside);
       if (pins.checksums) {
         const keys = new Map([...store.objects.keys()].map((k) => [objectUrl(store.url, k), k]));
         await addChecksums(desc2, (u, o, n) => store.readRange(keys.get(u), o, n));
       }
       return { format: beside, ...desc2 };
+    };
+    if (format in BESIDE && !ON_DEMAND.has(format)) return asStore(format);
+    let desc;
+    try {
+      desc = await zarrifyIr(format, url2, input.source, { checksums: pins.checksums === true });
+    } catch (e) {
+      if (e instanceof NamesSiblings && e.format in BESIDE) return asStore(e.format);
+      throw e;
     }
-    const desc = await zarrifyIr(format, url2, input.source, { checksums: pins.checksums === true });
     const etag = pins.etag?.();
     desc.sources[0] = { ...desc.sources[0], size: BigInt(input.size), ...etag !== void 0 ? { etag } : {} };
     if (pins.checksums) await addChecksums(desc, (_u, o, n) => (input.exact ?? input.read)(o, n));
@@ -2779,7 +3386,7 @@
     }
     const store = typeof input === "string" ? await openHttpStore(input, { policy: options.policy ?? {}, headers: options.headers ?? {} }) : input;
     const pins = options;
-    const desc = await zarrifyStoreProfile(store);
+    const desc = await zarrifyStoreProfile(store, pins.checksums === true);
     if (pins.checksums) {
       const keys = new Map([...store.objects.keys()].map((k) => [objectUrl(store.url, k), k]));
       await addChecksums(desc, async (u, o, n) => {
@@ -2789,29 +3396,817 @@
     }
     return desc;
   }
-  async function zarrifyStoreProfile(store) {
+  async function zarrifyStoreProfile(store, checksums = false) {
+    const options = { checksums };
     try {
       const chosen = chooseProfile(store);
-      if (chosen === "safe") return { format: "safe", ...await zarrifyStoreIr("safe", store) };
-      if (chosen === "n5") return { format: "n5", ...await zarrifyStoreIr("n5", store) };
-      const desc = await zarrifyStoreIr("zarr2", store);
+      if (chosen === "safe") return { format: "safe", ...await zarrifyStoreIr("safe", store, options) };
+      if (chosen === "safetensors") return { format: "safetensors", ...await zarrifyStoreIr("safetensors", store, options) };
+      if (chosen === "zarr3") return { format: "zarr3", ...await zarrifyStoreIr("zarr3", store, options) };
+      if (chosen === "n5") return { format: "n5", ...await zarrifyStoreIr("n5", store, options) };
+      if (chosen === "precomputed") return { format: "precomputed", ...await zarrifyStoreIr("precomputed", store, options) };
+      const desc = await zarrifyStoreIr("zarr2", store, options);
       return { format: desc.summary.format === "ome-zarr" ? "ome-zarr" : "zarr2", ...desc };
     } finally {
       closeStore(store);
     }
   }
 
-  // src/server.ts
-  var STORE_FORMATS = {
-    zarr2: "Zarr v2",
-    n5: "N5",
-    "ome-zarr": "OME-Zarr",
-    safe: void 0,
-    vsi: "VSI",
-    nrrd: "NRRD",
-    grib: "GRIB"
+  // src/xxh64.ts
+  var MASK = (1n << 64n) - 1n;
+  var P1 = 0x9e3779b185ebca87n;
+  var P2 = 0xc2b2ae3d27d4eb4fn;
+  var P3 = 0x165667b19e3779f9n;
+  var P4 = 0x85ebca77c2b2ae63n;
+  var P5 = 0x27d4eb2f165667c5n;
+  var rotl = (x, r) => (x << r | x >> 64n - r) & MASK;
+  var round = (acc, input) => rotl(acc + input * P2 & MASK, 31n) * P1 & MASK;
+  var merge = (h, v) => ((h ^ round(0n, v)) * P1 & MASK) + P4 & MASK;
+  function xxh64(data, seed = 0n) {
+    const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
+    const n = data.length;
+    let at = 0;
+    let h;
+    if (n >= 32) {
+      let v1 = seed + P1 + P2 & MASK;
+      let v2 = seed + P2 & MASK;
+      let v3 = seed & MASK;
+      let v4 = seed - P1 & MASK;
+      for (; at + 32 <= n; at += 32) {
+        v1 = round(v1, view.getBigUint64(at, true));
+        v2 = round(v2, view.getBigUint64(at + 8, true));
+        v3 = round(v3, view.getBigUint64(at + 16, true));
+        v4 = round(v4, view.getBigUint64(at + 24, true));
+      }
+      h = rotl(v1, 1n) + rotl(v2, 7n) + rotl(v3, 12n) + rotl(v4, 18n) & MASK;
+      h = merge(h, v1);
+      h = merge(h, v2);
+      h = merge(h, v3);
+      h = merge(h, v4);
+    } else {
+      h = seed + P5 & MASK;
+    }
+    h = h + BigInt(n) & MASK;
+    for (; at + 8 <= n; at += 8) {
+      h ^= round(0n, view.getBigUint64(at, true));
+      h = (rotl(h, 27n) * P1 & MASK) + P4 & MASK;
+    }
+    if (at + 4 <= n) {
+      h ^= BigInt(view.getUint32(at, true)) * P1 & MASK;
+      h = (rotl(h, 23n) * P2 & MASK) + P3 & MASK;
+      at += 4;
+    }
+    for (; at < n; at++) {
+      h ^= BigInt(data[at]) * P5 & MASK;
+      h = rotl(h, 11n) * P1 & MASK;
+    }
+    h ^= h >> 33n;
+    h = h * P2 & MASK;
+    h ^= h >> 29n;
+    h = h * P3 & MASK;
+    h ^= h >> 32n;
+    return h;
+  }
+
+  // src/ptrhash.ts
+  var ALPHA = 0.98;
+  var LAMBDA = 3;
+  var PART_KEYS = 1 << 16;
+  var MAX_SEEDS = 64;
+  var RECENT = 16;
+  var TWO32 = 4294967296;
+  var PILOT_HI = 1367130551;
+  var PILOT_LO = 656542357;
+  var C1_HI = 4283543511;
+  var C1_LO = 3981806797;
+  var C2_HI = 3301882366;
+  var C2_LO = 444984403;
+  var H = 0;
+  var OH = 0;
+  var OL = 0;
+  function mul32(a, b) {
+    const a0 = a & 65535;
+    const a1 = a >>> 16;
+    const b0 = b & 65535;
+    const b1 = b >>> 16;
+    const mid = a0 * b1 + a1 * b0;
+    const lo2 = a0 * b0 + mid % 65536 * 65536;
+    H = a1 * b1 + Math.floor(mid / 65536) + Math.floor(lo2 / TWO32);
+    return lo2 >>> 0;
+  }
+  function mulWrap(xh, xl, ch, cl) {
+    const lo2 = mul32(xl, cl);
+    OL = lo2;
+    OH = H + Math.imul(xh, cl) + Math.imul(xl, ch) >>> 0;
+  }
+  function fmix(xh, xl) {
+    xl = (xl ^ xh >>> 1) >>> 0;
+    mulWrap(xh, xl, C1_HI, C1_LO);
+    xh = OH;
+    xl = (OL ^ xh >>> 1) >>> 0;
+    mulWrap(xh, xl, C2_HI, C2_LO);
+    xh = OH;
+    OL = (OL ^ xh >>> 1) >>> 0;
+  }
+  function mulhi(xh, xl, m) {
+    mul32(xl, m);
+    const p1h = H;
+    const p2l = mul32(xh, m);
+    return H + (p2l + p1h >= TWO32 ? 1 : 0);
+  }
+  function mulSmallWrap(xh, xl, m) {
+    const lo2 = mul32(xl, m);
+    const p1h = H;
+    const p2l = mul32(xh, m);
+    OL = lo2;
+    OH = p1h + p2l >>> 0;
+  }
+  var PILOT_HIS = new Uint32Array(256);
+  var PILOT_LOS = new Uint32Array(256);
+  for (let p = 0; p < 256; p++) {
+    mulWrap(0, p, PILOT_HI, PILOT_LO);
+    PILOT_HIS[p] = OH;
+    PILOT_LOS[p] = OL;
+  }
+  var hi = (h) => Number(h >> 32n);
+  var lo = (h) => Number(h & 0xffffffffn);
+  function bucket(params, hh, hl) {
+    const p = mulhi(hh, hl, params.parts);
+    mulSmallWrap(hh, hl, params.parts);
+    return p * params.buckets + mulhi(OH, OL, params.buckets);
+  }
+  function slotInPart(params, hh, hl, pilot) {
+    fmix((hh ^ PILOT_HIS[pilot]) >>> 0, (hl ^ PILOT_LOS[pilot]) >>> 0);
+    return mulhi(OH, OL, params.slots);
+  }
+  function slot(params, pilots, h) {
+    const hh = hi(h);
+    const hl = lo(h);
+    const p = mulhi(hh, hl, params.parts);
+    const b = bucket(params, hh, hl);
+    return p * params.slots + slotInPart(params, hh, hl, pilots[b]);
+  }
+  var hash = (key, seed) => xxh64(key, seed);
+  function build(keys) {
+    if (keys.length === 0) throw new Error("a store with no keys has no perfect hash");
+    for (let seed = 0n; seed < BigInt(MAX_SEEDS); seed++) {
+      const built = buildSeed(keys, seed);
+      if (built !== void 0) return built;
+    }
+    return void 0;
+  }
+  function buildSeed(keys, seed) {
+    const n = keys.length;
+    const parts = Math.max(1, Math.ceil(n / PART_KEYS));
+    const hs = new Uint32Array(n);
+    const ls = new Uint32Array(n);
+    const partOf = new Uint32Array(n);
+    const counts = new Uint32Array(parts);
+    for (let i = 0; i < n; i++) {
+      const h = hash(keys[i], seed);
+      hs[i] = hi(h);
+      ls[i] = lo(h);
+      partOf[i] = mulhi(hs[i], ls[i], parts);
+      counts[partOf[i]]++;
+    }
+    let max = 0;
+    for (const c of counts) max = Math.max(max, c);
+    const params = {
+      seed,
+      parts,
+      slots: Math.max(1, Math.ceil(max / ALPHA)),
+      buckets: Math.max(1, Math.ceil(max / LAMBDA))
+    };
+    const members = Array.from({ length: parts }, () => []);
+    for (let i = 0; i < n; i++) members[partOf[i]].push(i);
+    const pilots = new Uint8Array(parts * params.buckets);
+    const slots = new Int32Array(parts * params.slots).fill(-1);
+    for (let p = 0; p < parts; p++) {
+      const placed = buildPart(params, hs, ls, members[p], p * params.buckets);
+      if (placed === void 0) return void 0;
+      pilots.set(placed.pilots, p * params.buckets);
+      slots.set(placed.slots, p * params.slots);
+    }
+    return { params, pilots, slots };
+  }
+  var Queue = class _Queue {
+    a = [];
+    static key(size, index) {
+      return size * 2 ** 24 + (2 ** 24 - 1 - index);
+    }
+    push(size, index) {
+      const a = this.a;
+      let i = a.length;
+      a.push(_Queue.key(size, index));
+      while (i > 0) {
+        const parent = i - 1 >> 1;
+        if (a[parent] >= a[i]) break;
+        [a[parent], a[i]] = [a[i], a[parent]];
+        i = parent;
+      }
+    }
+    pop() {
+      const a = this.a;
+      if (a.length === 0) return void 0;
+      const top = a[0];
+      const last = a.pop();
+      if (a.length > 0) {
+        a[0] = last;
+        let i = 0;
+        for (; ; ) {
+          const l = 2 * i + 1;
+          const r = l + 1;
+          let m = i;
+          if (l < a.length && a[l] > a[m]) m = l;
+          if (r < a.length && a[r] > a[m]) m = r;
+          if (m === i) break;
+          [a[m], a[i]] = [a[i], a[m]];
+          i = m;
+        }
+      }
+      return 2 ** 24 - 1 - top % 2 ** 24;
+    }
   };
+  function buildPart(params, hs, ls, members, baseBucket) {
+    const nb = params.buckets;
+    const ns = params.slots;
+    if (nb >= 2 ** 24) throw new Error("a part has more buckets than the queue holds");
+    const owners = Array.from({ length: nb }, () => []);
+    for (const i of members) owners[bucket(params, hs[i], ls[i]) - baseBucket].push(i);
+    const queue = new Queue();
+    for (let b = 0; b < nb; b++) if (owners[b].length > 0) queue.push(owners[b].length, b);
+    const taken = new Int32Array(ns).fill(-1);
+    const pilots = new Uint8Array(nb);
+    const recent = new Int32Array(RECENT).fill(-1);
+    let recentAt = 0;
+    let evictions = 0;
+    const limit = 64 * members.length + 4096;
+    const cand = [];
+    const candidates = (b, pilot) => {
+      cand.length = 0;
+      for (const i of owners[b]) cand.push(slotInPart(params, hs[i], ls[i], pilot));
+    };
+    const hasDuplicate = () => {
+      for (let x = 1; x < cand.length; x++) for (let y = 0; y < x; y++) if (cand[x] === cand[y]) return true;
+      return false;
+    };
+    const collisions = () => [...new Set(cand.filter((s) => taken[s] !== -1).map((s) => taken[s]))];
+    for (let b = queue.pop(); b !== void 0; b = queue.pop()) {
+      let best;
+      let placed = false;
+      for (let pilot = 0; pilot < 256; pilot++) {
+        candidates(b, pilot);
+        if (hasDuplicate()) continue;
+        const hit = collisions();
+        if (hit.length === 0) {
+          for (const s of cand) taken[s] = b;
+          pilots[b] = pilot;
+          placed = true;
+          break;
+        }
+        if (hit.some((o) => recent.includes(o))) continue;
+        const cost = hit.reduce((c, o) => c + owners[o].length ** 2, 0);
+        if (best === void 0 || cost < best.cost) best = { cost, pilot };
+      }
+      if (!placed) {
+        if (best === void 0) return void 0;
+        candidates(b, best.pilot);
+        for (const o of collisions()) {
+          for (const i of owners[o]) taken[slotInPart(params, hs[i], ls[i], pilots[o])] = -1;
+          queue.push(owners[o].length, o);
+          evictions++;
+        }
+        if (evictions > limit) return void 0;
+        for (const s of cand) taken[s] = b;
+        pilots[b] = best.pilot;
+      }
+      recent[recentAt] = b;
+      recentAt = (recentAt + 1) % RECENT;
+    }
+    const slots = new Int32Array(ns).fill(-1);
+    for (let b = 0; b < nb; b++) {
+      for (const i of owners[b]) slots[slotInPart(params, hs[i], ls[i], pilots[b])] = i;
+    }
+    return { pilots, slots };
+  }
+
+  // src/phkv.ts
+  var MAGIC = "PHKV";
+  var SUPERBLOCK_SIZE = 64;
+  var DIR_ENTRY_SIZE = 40;
+  var SLOT_SIZE = 12;
+  var SLOT_LENGTH_MAX = 4294967295;
+  var MAX_PAYLOAD2 = 1 << 24;
+  var INLINE_MAX = 4096;
+  var PAGE_SIZE = 4096;
+  var SECTION = { SOURCES: 1, RECORDS: 2, PAGES: 3, PTRHASH: 4, SLOTS: 5, PROPERTY: 6, METADATA: 7 };
+  var KIND_BYTES = 0;
+  var KIND_RANGE = 1;
+  var KIND_CONCAT = 2;
+  var REC_INLINE = 1;
+  var REC_CRC32C = 2;
+  var REC_HIDDEN = 4;
+  var utf86 = new TextEncoder();
+  var strictUtf83 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
+  var probeDistances = () => [0, ...Array.from({ length: 21 }, (_, k) => 2 ** (10 + k))];
+  var Bytes = class {
+    chunks = [];
+    length = 0;
+    push(b) {
+      this.chunks.push(b);
+      this.length += b.length;
+    }
+    /** The bytes of `values` as a varint each, which is how a record's fields come. */
+    varint(v) {
+      const out2 = [];
+      do {
+        let b = v % 128;
+        v = Math.floor(v / 128);
+        if (v !== 0) b |= 128;
+        out2.push(b);
+      } while (v !== 0);
+      this.push(Uint8Array.from(out2));
+    }
+    u8(v) {
+      this.push(Uint8Array.of(v));
+    }
+    u32(v) {
+      const b = new Uint8Array(4);
+      new DataView(b.buffer).setUint32(0, v, true);
+      this.push(b);
+    }
+    u64(v) {
+      const b = new Uint8Array(8);
+      new DataView(b.buffer).setBigUint64(0, BigInt(v), true);
+      this.push(b);
+    }
+    align8() {
+      const pad = (8 - this.length % 8) % 8;
+      if (pad) this.push(new Uint8Array(pad));
+    }
+    concat() {
+      const out2 = new Uint8Array(this.length);
+      let at = 0;
+      for (const c of this.chunks) {
+        out2.set(c, at);
+        at += c.length;
+      }
+      return out2;
+    }
+  };
+  var compareBytes = (a, b) => {
+    const n = Math.min(a.length, b.length);
+    for (let i = 0; i < n; i++) if (a[i] !== b[i]) return a[i] - b[i];
+    return a.length - b.length;
+  };
+  function writePhkv(desc) {
+    validate(desc, MAX_PAYLOAD2);
+    const entries = desc.entries.map((e) => ({ e, key: utf86.encode(e.key) })).sort((a, b) => compareBytes(a.key, b.key));
+    const out2 = new Bytes();
+    const stored = /* @__PURE__ */ new Map();
+    entries.forEach(({ e }, rank) => {
+      if ("bytes" in e && e.bytes.length > INLINE_MAX) {
+        stored.set(rank, out2.length);
+        out2.push(e.bytes);
+      }
+    });
+    const recordsStart = out2.length;
+    const offsets = [];
+    const lengths = [];
+    const pages = [];
+    let pageStart = 0;
+    entries.forEach(({ e, key }, rank) => {
+      const at = out2.length;
+      if (rank === 0 || at - pageStart >= PAGE_SIZE) {
+        if (pages.length > 0) pages[pages.length - 1].length = at - pages[pages.length - 1].offset;
+        pages.push({ firstKey: key, offset: at, length: 0 });
+        pageStart = at;
+      }
+      offsets.push(at - recordsStart);
+      const rec = new Bytes();
+      rec.varint(key.length);
+      if ("bytes" in e) {
+        const offset = stored.get(rank);
+        rec.u8(KIND_BYTES);
+        rec.u8((offset === void 0 ? REC_INLINE : 0) | REC_CRC32C);
+        rec.varint(rank);
+        rec.u8(0);
+        if (offset !== void 0) rec.varint(offset);
+        rec.varint(e.bytes.length);
+        rec.varint(e.bytes.length);
+        rec.u32(crc32c(e.bytes));
+        rec.push(key);
+        if (offset === void 0) rec.push(e.bytes);
+      } else {
+        const { id, payload } = referenceBlock(e.ranges);
+        rec.u8(id === RANGE_ID ? KIND_RANGE : KIND_CONCAT);
+        rec.u8(0);
+        rec.varint(rank);
+        rec.varint(payload.length);
+        rec.push(key);
+        rec.push(payload);
+      }
+      lengths.push(rec.length);
+      out2.push(rec.concat());
+    });
+    if (pages.length > 0) pages[pages.length - 1].length = out2.length - pages[pages.length - 1].offset;
+    const sections = [];
+    const add = (type, body) => {
+      sections.push({ type, offset: out2.length, length: body.length, crc: crc32c(body) });
+      out2.push(body);
+    };
+    const records = out2.concat().subarray(recordsStart);
+    if (entries.length > 0) {
+      sections.push({ type: SECTION.RECORDS, offset: recordsStart, length: records.length, crc: crc32c(records) });
+      const built = build(entries.map(({ key }) => key));
+      if (built === void 0) throw new Error("no seed places every key (duplicate keys?)");
+      out2.align8();
+      const slots = new Uint8Array(built.slots.length * SLOT_SIZE);
+      const view = new DataView(slots.buffer);
+      built.slots.forEach((i, s) => {
+        if (i < 0) return;
+        view.setBigUint64(s * SLOT_SIZE, BigInt(offsets[i]), true);
+        view.setUint32(s * SLOT_SIZE + 8, lengths[i] < SLOT_LENGTH_MAX ? lengths[i] : SLOT_LENGTH_MAX, true);
+      });
+      add(SECTION.SLOTS, slots);
+      const pageIndex = new Bytes();
+      for (const p of pages) {
+        pageIndex.varint(p.firstKey.length);
+        pageIndex.push(p.firstKey);
+        pageIndex.varint(p.offset);
+        pageIndex.varint(p.length);
+      }
+      add(SECTION.PAGES, pageIndex.concat());
+      const ptrhash = new Bytes();
+      ptrhash.u8(1);
+      ptrhash.push(new Uint8Array(7));
+      ptrhash.u64(built.params.seed);
+      ptrhash.u64(built.params.parts);
+      ptrhash.u64(built.params.slots);
+      ptrhash.u64(built.params.buckets);
+      ptrhash.push(built.pilots);
+      add(SECTION.PTRHASH, ptrhash.concat());
+    }
+    add(SECTION.SOURCES, encodeSourceTable(desc.sources, SPEC_REVISION));
+    const dir = new Bytes();
+    for (const s of sections) {
+      dir.u32(s.type);
+      dir.u8(0);
+      dir.u8(0);
+      dir.push(new Uint8Array(2));
+      dir.u64(s.offset);
+      dir.u64(s.length);
+      dir.u64(s.length);
+      dir.u32(s.crc);
+      dir.push(new Uint8Array(4));
+    }
+    const directory = dir.concat();
+    const directoryOffset = out2.length;
+    out2.push(directory);
+    const sb = new Bytes();
+    sb.push(utf86.encode(MAGIC));
+    sb.push(new Uint8Array(4));
+    sb.u64(0);
+    sb.u64(entries.length);
+    sb.u64(directoryOffset);
+    sb.u64(directory.length);
+    sb.u64(0);
+    sb.u64(directoryOffset + directory.length + SUPERBLOCK_SIZE);
+    sb.u32(crc32c(directory));
+    const head = sb.concat();
+    out2.push(head);
+    out2.u32(crc32c(head));
+    return out2.concat();
+  }
+  var fail = (errorClass, message) => {
+    throw new RefkvError(errorClass, message);
+  };
+  var safe2 = (v, what) => v > BigInt(Number.MAX_SAFE_INTEGER) ? fail("archive", `${what} is too large for this reader`) : Number(v);
+  var hasMagic = (bytes, at) => [...MAGIC].every((c, i) => bytes[at + i] === c.charCodeAt(0));
+  function findSuperblock(bytes) {
+    const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+    for (const d of probeDistances()) {
+      const at = bytes.length - d - SUPERBLOCK_SIZE;
+      if (at < 0) break;
+      if (!hasMagic(bytes, at) || view.getUint32(at + 60, true) !== crc32c(bytes.subarray(at, at + 60)) || view.getBigUint64(at + 8, true) !== BigInt(d)) {
+        continue;
+      }
+      return {
+        version: view.getUint16(at + 4, true),
+        flags: view.getUint16(at + 6, true),
+        distance: d,
+        keyCount: safe2(view.getBigUint64(at + 16, true), "the key count"),
+        directoryOffset: safe2(view.getBigUint64(at + 24, true), "the directory offset"),
+        directoryLength: safe2(view.getBigUint64(at + 32, true), "the directory length"),
+        directoryCrc: view.getUint32(at + 56, true)
+      };
+    }
+    return void 0;
+  }
+  function isPhkv(bytes) {
+    try {
+      return findSuperblock(bytes) !== void 0;
+    } catch {
+      return false;
+    }
+  }
+  function varint(b, at) {
+    let v = 0;
+    let scale = 1;
+    for (let i = 0; i < 10; i++) {
+      if (at >= b.length) return fail("entry", "a truncated varint");
+      const byte = b[at++];
+      v += (byte & 127) * scale;
+      if (v > Number.MAX_SAFE_INTEGER) return fail("entry", "a varint too large for this reader");
+      if (!(byte & 128)) return [v, at];
+      scale *= 128;
+    }
+    return fail("entry", "an overlong varint");
+  }
+  var PhkvArchive = class _PhkvArchive extends Archive {
+    maxPayload = MAX_PAYLOAD2;
+    params;
+    pilots;
+    slots;
+    records;
+    recordsStart;
+    keyCount;
+    pages = [];
+    listed;
+    /**
+     * Opens a standalone phkv store held in memory (spec §22.1
+     * <https://github.com/d-v-b/refkv/blob/main/spec/bindings/phkv.md#221-opening>): `baseUrl`
+     * resolves relative `url` sources, as `Archive.open`'s does, and `policy` is the reader policy.
+     * Throws a `RefkvError` of class "archive" for a store that opening refuses.
+     */
+    static async openStore(bytes, baseUrl, fetchRange, policy = {}) {
+      validatePolicy(policy);
+      const rules = { ...DEFAULT_POLICY, ...policy };
+      const sb = findSuperblock(bytes);
+      if (sb === void 0) return fail("archive", "not a phkv store");
+      if (sb.version !== 0) return fail("archive", `unsupported phkv version ${sb.version}`);
+      if (sb.flags & 1) return fail("archive", "a hybrid phkv store: this reader opens standalone stores only");
+      if (sb.flags !== 0) return fail("archive", `unsupported phkv flags ${sb.flags}`);
+      const n = bytes.length;
+      if (sb.directoryLength % DIR_ENTRY_SIZE !== 0 || sb.directoryOffset + sb.directoryLength > n) {
+        return fail("archive", "the section directory lies outside the file or has a partial entry");
+      }
+      const directory = bytes.subarray(sb.directoryOffset, sb.directoryOffset + sb.directoryLength);
+      if (crc32c(directory) !== sb.directoryCrc) return fail("archive", "the section directory does not match its crc32c");
+      const dir = [];
+      for (let at = 0; at < directory.length; at += DIR_ENTRY_SIZE) {
+        const d = new DataView(directory.buffer, directory.byteOffset + at, DIR_ENTRY_SIZE);
+        if (d.getUint16(6, true) !== 0 || d.getUint32(36, true) !== 0) {
+          return fail("archive", "a directory entry's reserved fields are not 0");
+        }
+        const flags = directory[at + 5];
+        if (flags & ~1) return fail("archive", `a directory entry has unknown flags ${flags}`);
+        const entry = {
+          type: d.getUint32(0, true),
+          codec: directory[at + 4],
+          flags,
+          offset: safe2(d.getBigUint64(8, true), "a section offset"),
+          length: safe2(d.getBigUint64(16, true), "a section length"),
+          size: safe2(d.getBigUint64(24, true), "a section size"),
+          crc: d.getUint32(32, true)
+        };
+        if (entry.offset + entry.length > n) return fail("archive", `section ${entry.type} lies outside the file`);
+        const known = Object.values(SECTION).includes(entry.type);
+        if (!known && entry.flags & 1) return fail("archive", `unknown section ${entry.type} must be understood`);
+        if (known) dir.push(entry);
+      }
+      const one = (type, required) => {
+        const found = dir.filter((d) => d.type === type);
+        if (found.length > 1) return fail("archive", `more than one section of type ${type}`);
+        if (found.length === 0 && required) return fail("archive", `no section of type ${type}`);
+        return found[0];
+      };
+      const sourcesDir = one(SECTION.SOURCES, true);
+      const records = one(SECTION.RECORDS, sb.keyCount > 0);
+      const pagesDir = one(SECTION.PAGES, sb.keyCount > 0);
+      const ptrhashDir = one(SECTION.PTRHASH, sb.keyCount > 0);
+      const slotsDir = one(SECTION.SLOTS, sb.keyCount > 0);
+      const metadata = one(SECTION.METADATA, false);
+      if (sb.keyCount === 0 && (records || pagesDir || ptrhashDir || slotsDir)) {
+        return fail("archive", "a store with no keys has sections that need keys");
+      }
+      for (const d of [records, slotsDir]) if (d !== void 0 && d.codec !== 0) fail("archive", `section ${d.type} has codec ${d.codec}`);
+      const whole2 = async (d) => {
+        const stored = bytes.subarray(d.offset, d.offset + d.length);
+        if (crc32c(stored) !== d.crc) return fail("archive", `section ${d.type} does not match its crc32c`);
+        let body;
+        if (d.codec === 0) body = stored;
+        else if (d.codec === 1) {
+          try {
+            body = await inflateRaw(stored, Math.min(d.size, rules.maxFormatEntry));
+          } catch (e) {
+            return fail("archive", `section ${d.type}: ${e.message}`);
+          }
+        } else if (d.codec === 2) {
+          return fail(
+            "archive",
+            `section ${d.type} is compressed with Zstandard, which this reader does not decode yet (it reads codecs 0 and 1)`
+          );
+        } else return fail("archive", `section ${d.type} has codec ${d.codec}, which the format does not define`);
+        if (body.length !== d.size) return fail("archive", `section ${d.type} decodes to ${body.length} bytes, not ${d.size}`);
+        if (d.size > rules.maxFormatEntry) return fail("archive", `section ${d.type} is larger than this reader allows`);
+        return body;
+      };
+      let table;
+      try {
+        table = decodeTable(await whole2(sourcesDir));
+      } catch (e) {
+        throw e instanceof RefkvError ? e : new RefkvError("archive", `source table: ${e.message}`);
+      }
+      if (table.sources.length > rules.maxSources) {
+        return fail("archive", `the source table has ${table.sources.length} sources; this reader allows ${rules.maxSources}`);
+      }
+      if (metadata !== void 0) await whole2(metadata);
+      const store = new _PhkvArchive(bytes, baseUrl, table.sources, /* @__PURE__ */ new Map(), fetchRange ?? defaultFetch, rules, table.revision);
+      store.keyCount = sb.keyCount;
+      if (sb.keyCount > 0) {
+        store.recordsStart = records.offset;
+        store.records = bytes.subarray(records.offset, records.offset + records.length);
+        const ph = await whole2(ptrhashDir);
+        if (ph.length < 40 || ph[0] !== 1 || ph.subarray(1, 8).some((b) => b !== 0)) {
+          return fail("archive", "the PTRHASH section is malformed");
+        }
+        const pv = new DataView(ph.buffer, ph.byteOffset, ph.byteLength);
+        const params = {
+          seed: pv.getBigUint64(8, true),
+          parts: safe2(pv.getBigUint64(16, true), "the part count"),
+          slots: safe2(pv.getBigUint64(24, true), "the slots per part"),
+          buckets: safe2(pv.getBigUint64(32, true), "the buckets per part")
+        };
+        if (params.parts === 0 || params.slots === 0 || params.buckets === 0 || params.parts * params.slots < sb.keyCount || params.parts * params.slots >= 2 ** 32 || params.slots >= 2 ** 32 || params.buckets >= 2 ** 32 || params.parts >= 2 ** 32 || ph.length !== 40 + params.parts * params.buckets) {
+          return fail("archive", "the PTRHASH section is malformed");
+        }
+        store.params = params;
+        store.pilots = ph.subarray(40);
+        if (slotsDir.length !== SLOT_SIZE * params.parts * params.slots) {
+          return fail("archive", "the SLOTS section is not 12 bytes per slot");
+        }
+        store.slots = bytes.subarray(slotsDir.offset, slotsDir.offset + slotsDir.length);
+        const pagesBytes = await whole2(pagesDir);
+        let at = 0;
+        let next = 0;
+        let previous;
+        try {
+          while (at < pagesBytes.length) {
+            let len;
+            [len, at] = varint(pagesBytes, at);
+            if (len === 0 || at + len > pagesBytes.length) throw new Error("a page with a bad first_key");
+            const first = pagesBytes.subarray(at, at + len);
+            at += len;
+            let offset;
+            let length;
+            [offset, at] = varint(pagesBytes, at);
+            [length, at] = varint(pagesBytes, at);
+            if (length === 0 || offset !== records.offset + next) throw new Error("the pages are not contiguous over RECORDS");
+            if (previous !== void 0 && compareBytes(previous, first) >= 0) throw new Error("page keys are not increasing");
+            previous = first;
+            next += length;
+            store.pages.push({ key: strictUtf83.decode(first), offset: offset - records.offset, length });
+          }
+          if (next !== records.length) throw new Error("the pages do not fill RECORDS");
+        } catch (e) {
+          return fail("archive", `the page index: ${e.message}`);
+        }
+      }
+      return store;
+    }
+    /** A standalone phkv store reserves no names (spec/bindings/phkv.md). */
+    namesFormatEntry() {
+      return false;
+    }
+    /** The record of `key`, found through the perfect hash (spec §19.5 <https://github.com/d-v-b/refkv/blob/main/spec/bindings/phkv.md#195-lookup>), as an entry. */
+    entryFor(key) {
+      const known = this.entries.get(key);
+      if (known !== void 0 || this.keyCount === 0) return known;
+      const want = utf86.encode(key);
+      if (want.length === 0) return void 0;
+      const s = slot(this.params, this.pilots, hash(want, this.params.seed));
+      const view = new DataView(this.slots.buffer, this.slots.byteOffset + s * SLOT_SIZE, SLOT_SIZE);
+      const length = view.getUint32(8, true);
+      if (length === 0) return void 0;
+      const at = safe2(view.getBigUint64(0, true), "a record offset");
+      const entry = this.record(at, length === SLOT_LENGTH_MAX ? void 0 : length, key);
+      if (entry !== void 0) this.entries.set(key, entry);
+      return entry;
+    }
+    /**
+     * The record at `at` of RECORDS, as an entry, or undefined if its key is not `key`. A malformed
+     * record is an entry error (spec §19.5 <https://github.com/d-v-b/refkv/blob/main/spec/bindings/phkv.md#195-lookup> step 3). `length` is the slot's, if it gave one.
+     */
+    record(at, length, key) {
+      const bad = (m) => fail("entry", `${JSON.stringify(key)}: ${m}`);
+      const b = this.records;
+      if (at >= b.length || length !== void 0 && (length < 6 || at + length > b.length)) bad("its slot is outside RECORDS");
+      const end = length === void 0 ? b.length : at + length;
+      const body = b.subarray(0, end);
+      let p = at;
+      let keyLength;
+      [keyLength, p] = varint(body, p);
+      if (keyLength === 0 || p + 2 > end) bad("a malformed record");
+      const kind = body[p++];
+      const flags = body[p++];
+      if (kind > KIND_CONCAT || flags & ~(REC_INLINE | REC_CRC32C | REC_HIDDEN)) bad("a malformed record");
+      let rank;
+      [rank, p] = varint(body, p);
+      void rank;
+      const entry = { key, method: 0, csize: 0, size: 0, bodyOffset: 0 };
+      let dataLength = 0;
+      let offset = 0;
+      if (kind === KIND_BYTES) {
+        if (p >= end) bad("a malformed record");
+        const codec = body[p++];
+        if (codec > 2) bad("a malformed record");
+        if (!(flags & REC_INLINE)) [offset, p] = varint(body, p);
+        [entry.csize, p] = varint(body, p);
+        [entry.size, p] = varint(body, p);
+        if (flags & REC_CRC32C) {
+          if (p + 4 > end) bad("a malformed record");
+          entry.crc32c = new DataView(body.buffer, body.byteOffset + p, 4).getUint32(0, true);
+          p += 4;
+        }
+        entry.method = codec === 0 ? 0 : codec === 1 ? 8 : -1;
+        if (codec === 2) entry.error = "Zstandard values are not supported by this reader";
+        dataLength = flags & REC_INLINE ? entry.csize : 0;
+      } else {
+        if (flags & (REC_INLINE | REC_CRC32C)) bad("a malformed reference record");
+        [dataLength, p] = varint(body, p);
+        if (dataLength > MAX_PAYLOAD2) bad("a reference payload over 2^24 bytes");
+      }
+      if (p + keyLength + dataLength > end) bad("a record that extends past its end");
+      let name;
+      try {
+        name = strictUtf83.decode(body.subarray(p, p + keyLength));
+      } catch {
+        return bad("a key that is not UTF-8");
+      }
+      if (name !== key) return void 0;
+      p += keyLength;
+      if (kind === KIND_BYTES) {
+        entry.bodyOffset = flags & REC_INLINE ? this.recordsStart + p : offset;
+      } else {
+        entry.reference = { headerId: kind === KIND_RANGE ? RANGE_ID : CONCAT_ID, payload: body.slice(p, p + dataLength) };
+      }
+      return entry;
+    }
+    /** A phkv store reserves no names (spec §16 <https://github.com/d-v-b/refkv/blob/main/spec/bindings/phkv.md#16-what-the-phkv-binding-defines>): every key is visible. */
+    lookup(key) {
+      const entry = this.entryFor(key);
+      if (entry?.error !== void 0) throw new RefkvError("entry", `${JSON.stringify(key)}: ${entry.error}`);
+      return entry;
+    }
+    /** The keys, in UTF-8 order, from the page index. */
+    keys() {
+      if (this.listed === void 0) {
+        const keys = [];
+        for (const page of this.pages) {
+          let p = page.offset;
+          const end = page.offset + page.length;
+          while (p < end) {
+            let keyLength;
+            const start = p;
+            [keyLength, p] = varint(this.records, p);
+            const kind = this.records[p];
+            const flags = this.records[p + 1];
+            p += 2;
+            [, p] = varint(this.records, p);
+            let dataLength;
+            if (kind === KIND_BYTES) {
+              p++;
+              if (!(flags & REC_INLINE)) [, p] = varint(this.records, p);
+              let stored;
+              [stored, p] = varint(this.records, p);
+              [, p] = varint(this.records, p);
+              if (flags & REC_CRC32C) p += 4;
+              dataLength = flags & REC_INLINE ? stored : 0;
+            } else {
+              [dataLength, p] = varint(this.records, p);
+            }
+            if (p + keyLength + dataLength > end) fail("entry", `a page that cannot be parsed, at ${start}`);
+            if (!(flags & REC_HIDDEN)) keys.push(strictUtf83.decode(this.records.subarray(p, p + keyLength)));
+            p += keyLength + dataLength;
+          }
+        }
+        this.listed = keys;
+      }
+      return this.listed;
+    }
+  };
+  var defaultFetch = (url2, start, end, pins, options) => readHttpRange(url2, start, end, pins, void 0, options);
+  function openArchive(bytes, baseUrl, fetchRange, policy = {}) {
+    return isPhkv(bytes) ? PhkvArchive.openStore(bytes, baseUrl, fetchRange, policy) : Archive.open(bytes, baseUrl, fetchRange, policy);
+  }
+
+  // src/server.ts
+  function storeTitle(format) {
+    return format === "safe" ? void 0 : REGISTRY2.find((e) => e.name === format)?.title;
+  }
   var ARCHIVE_KEY = "__vz__/archive.vzip";
+  var PHKV_ARCHIVE_KEY = "__vz__/archive.phkv";
   var WORKER_HEADER = "X-Vzip-Worker";
   var ERROR_HEADER = "X-Vzip-Error";
   var PENDING_HEADER = "X-Vzip-Pending";
@@ -2877,6 +4272,7 @@
       policy = {},
       pendingAfter,
       saved: saved2,
+      format = "vzip",
       openSource = options.openFile ? async (url2) => {
         const file = await options.openFile(url2);
         return readerSource(file.read, file.size, file.etag ? { etag: file.etag } : {});
@@ -2898,10 +4294,10 @@
           const trimmed = base.endsWith("/") ? base.slice(0, -1) : base;
           const stem = decodeURIComponent(trimmed.slice(trimmed.lastIndexOf("/") + 1)) || "archive";
           if (kind === "archive") {
-            return { archive: await Archive.open(await fetchArchive(url2), url2, fetchRange, policy), filename: stem };
+            return { archive: await openArchive(await fetchArchive(url2), url2, fetchRange, policy), filename: stem };
           }
-          const filename = `${stem.replace(/\.(ome\.tiff?|tiff?|nd2|n5|zarr)$/i, "")}.vzip`;
-          const read = (bytes2) => Archive.open(bytes2, url2, fetchRange, { ...policy, unverifiablePins: true });
+          const filename = `${stem.replace(/\.(ome\.tiff?|tiff?|nd2|n5|zarr)$/i, "")}.${format}`;
+          const read = (bytes2) => openArchive(bytes2, url2, fetchRange, { ...policy, unverifiablePins: true });
           const kept = saved2 && await attempt(() => saved2.get(name));
           if (kept !== void 0) {
             const archive2 = await attempt(() => read(kept));
@@ -2921,7 +4317,7 @@
               virtual = await zarrifySource(url2, source);
             }
           }
-          const bytes = await writeVzip(virtual);
+          const bytes = format === "phkv" ? writePhkv(virtual) : await writeVzip(virtual);
           const archive = await read(bytes);
           if (saved2) await attempt(() => saved2.put(name, bytes));
           return { archive, filename };
@@ -2961,9 +4357,9 @@
           return response(503, "still zarrifying; ask again", { "Retry-After": "0", [PENDING_HEADER]: "1" });
         }
         const { archive, filename } = built;
-        if (key === ARCHIVE_KEY) {
+        if (key === ARCHIVE_KEY || key === PHKV_ARCHIVE_KEY) {
           return response(200, head ? null : archive.bytes, {
-            "Content-Type": "application/zip",
+            "Content-Type": key === ARCHIVE_KEY ? "application/zip" : "application/octet-stream",
             "Content-Length": String(archive.bytes.length),
             "Content-Disposition": `attachment; filename="${filename.replaceAll('"', "")}"`
           });
@@ -2998,7 +4394,7 @@
           return response(status, message);
         }
         if (e instanceof StoreError && e.format !== void 0) {
-          const title = STORE_FORMATS[e.format];
+          const title = storeTitle(e.format);
           return response(422, title === void 0 ? message : `${title}: ${message}`);
         }
         if (e instanceof StoreError) return response(422, `store: ${message}`);
@@ -3014,8 +4410,8 @@
   }
 
   // src/sw.ts
-  var CACHE_PREFIX = "refkv-archives-";
-  var CACHE = CACHE_PREFIX + "20f46c9580c7515f5a81899f1b4c06855b5a27fc-t1793470964899";
+  var CACHE_PREFIX = false ? "refkv-phkv-archives-" : "refkv-archives-";
+  var CACHE = CACHE_PREFIX + "38bc6c41432e0ac5ed6a29badff985c7c6d1c67e";
   var MAX_ARCHIVES = 16;
   var MAX_BYTES = 2 ** 30;
   var savedUrl = (name) => new URL(`refkv-archives/${encodeId(name)}`, self.registration.scope).href;
@@ -3042,7 +4438,7 @@
     }
   };
   var prefix = new URL("vz/", self.registration.scope).href;
-  var handle = makeHandler({ prefix, saved, pendingAfter: 6e4 });
+  var handle = makeHandler({ prefix, saved, pendingAfter: 6e4, format: "vzip" });
   async function dropOlderBuilds() {
     for (const name of await caches.keys()) {
       if (name.startsWith(CACHE_PREFIX) && name !== CACHE) await caches.delete(name);

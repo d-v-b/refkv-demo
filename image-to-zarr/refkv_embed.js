@@ -1,5 +1,5 @@
 // <define:__REFKV_PROFILES__>
-var define_REFKV_PROFILES_default = [{ name: "czi", title: "CZI", uuid: "7a0733c7-d4be-4482-a64f-6904d9354ea5", version: 0, kind: "file", sniff: 50, chosen_by: null, suffixes: [".czi"], reference: 20, source: "Zeiss CZI", inputs: "Zeiss CZI files (ZISRAW, file version 1), with uncompressed, JPEG, JPEG XR and Zstd subblocks, mosaics and pyramids", for: "Zeiss CZI files" }, { name: "dicom", title: "DICOM", uuid: "acf17198-e5a5-48d3-8187-22ec4bb40ea5", version: 0, kind: "file", sniff: 10, chosen_by: null, suffixes: [".dcm"], reference: 25, source: "DICOM", inputs: "DICOM Part 10 files with native, JPEG, lossless JPEG or JPEG 2000 pixel data, including whole-slide images", for: "DICOM files, including whole-slide images" }, { name: "fits", title: "FITS", uuid: "4b0d3a7e-1c52-4f6a-9b8e-2d7f0c6a1e93", version: 0, kind: "file", sniff: 110, chosen_by: null, suffixes: [".fits", ".fz"], reference: null, source: "FITS", inputs: "FITS files: images, multi-extension files, binary and ASCII tables", for: "FITS images and tables (`.fits`, `.fz`)" }, { name: "flac", title: "FLAC", uuid: "e9108d07-b24b-432f-a8ce-09d80c8073b4", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".flac"], reference: null, source: "FLAC (Free Lossless Audio Codec)", inputs: "FLAC files (`.flac`) of a fixed block size, with their metadata blocks and ID3v2 and ID3v1 tags; one sharded array of integer samples, not an image", for: "FLAC audio files, as a sharded array of samples (`.flac`)" }, { name: "grib", title: "GRIB", uuid: "c9bbe039-8dfa-49f9-a655-756f822a42d6", version: 0, kind: "file", sniff: 65, chosen_by: null, suffixes: [".grib2", ".grb2"], reference: null, source: "WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2)", inputs: "GRIB edition 2 files of gridded fields, such as NOAA's and ECMWF's forecasts, whose regular latitude/longitude and Lambert conformal fields it presents", for: "GRIB2 files of gridded weather and climate fields (`.grib2`), as labeled arrays with CF coordinates" }, { name: "hdf5", title: "HDF5", uuid: "6c006834-424b-451b-b786-f8c502ec32af", version: 0, kind: "file", sniff: 70, chosen_by: null, suffixes: [".h5", ".nwb"], reference: null, source: "HDF5, NWB", inputs: "HDF5 files, NWB files first among them: every group, dataset, attribute, link and object reference the profile can present, in hdmf-zarr's Zarr v3 form", for: "HDF5 files (`.h5`, `.hdf5`), and NWB files (`.nwb`), which pynwb's `NWBZarrIO` opens" }, { name: "ims", title: "IMS", uuid: "5067a535-8261-4b25-a93c-1985ed333bde", version: 0, kind: "file", sniff: null, chosen_by: "hdf5", suffixes: [".ims"], reference: 25, source: "Imaris IMS", inputs: "Imaris IMS files (HDF5)", for: "Imaris `.ims` files" }, { name: "lif", title: "LIF", uuid: "b099ab1f-f9d4-4276-9006-9ff1193a34b2", version: 0, kind: "file", sniff: 55, chosen_by: null, suffixes: [".lif"], reference: null, source: "Leica LIF", inputs: "Leica LIF files (LAS X and LAS AF, versions 1 and 2): every image of the file's element tree, with interleaved or planar channels, z-stacks, time series and mosaics, uncompressed", for: "Leica LIF files (`.lif`)" }, { name: "mp3", title: "MP3", uuid: "b6cb0047-9448-4fdc-b03e-10dd3d6aa829", version: 0, kind: "file", sniff: 100, chosen_by: null, suffixes: [".mp3"], reference: null, source: "MP3 (MPEG Layer III audio)", inputs: "MPEG-1, MPEG-2 and MPEG-2.5 Layer III audio files (`.mp3`), with their ID3v2, ID3v1 and APE tags; one array of samples, not an image", for: "MP3 audio files, as an array of samples (`.mp3`)" }, { name: "mp4", title: "MP4", uuid: "bbe3f6b9-488d-4d8d-85ce-60a1649dd27e", version: 0, kind: "file", sniff: 85, chosen_by: null, suffixes: [".mp4", ".mov"], reference: null, source: "MP4 and QuickTime (H.264 and HEVC video, AAC and MP3 audio)", inputs: "MP4 and QuickTime files (`.mp4`, `.m4a`, `.mov`) with H.264 or HEVC video and AAC or MP3 audio tracks; a group per track, not an image", for: "MP4 and QuickTime video and audio, as arrays of planes and samples (`.mp4`, `.mov`)" }, { name: "mrc", title: "MRC", uuid: "2aacd010-2ed1-4748-bc3c-5dd5e840bbce", version: 0, kind: "file", sniff: 90, chosen_by: null, suffixes: [".mrc"], reference: null, source: "MRC2014", inputs: "MRC2014 files (CCP4 maps, image stacks, volumes and volume stacks)", for: "MRC2014 maps, image stacks, volumes and volume stacks (`.mrc`, `.map`)" }, { name: "mrc-dataset", title: "MRC dataset", uuid: "f139bf4e-7bab-4c3c-9b2d-66ba747f9b93", version: 0, kind: "layout", sniff: null, chosen_by: null, suffixes: [], reference: null, source: "MRC2014, as a dataset", inputs: "", for: "" }, { name: "n5", title: "N5", uuid: "ad5d4c39-c69e-48f7-a3ef-4cc8c607d416", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "N5", inputs: "N5 containers, default-mode blocks", for: "N5 containers on S3" }, { name: "nd2", title: "ND2", uuid: "59612f14-e314-4207-ba00-8f422ba71490", version: 0, kind: "file", sniff: 20, chosen_by: null, suffixes: [".nd2"], reference: 20, source: "Nikon ND2", inputs: "Nikon ND2, format version 3 and later", for: "Nikon NIS-Elements ND2 files" }, { name: "ndpi", title: "NDPI", uuid: "6cac71ef-dbb2-4acd-b60c-00389aa4238a", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".ndpi"], reference: 25, source: "Hamamatsu NDPI", inputs: "Hamamatsu NDPI slides, a TIFF variant with 64-bit offsets", for: "Hamamatsu NDPI whole-slide images" }, { name: "nifti", title: "NIfTI", uuid: "06e5809d-4d54-4b72-afd0-6bf61a7b4c85", version: 0, kind: "file", sniff: 60, chosen_by: null, suffixes: [".nii"], reference: 25, source: "NIfTI-1 and NIfTI-2", inputs: "NIfTI-1 and NIfTI-2 single files (`.nii`)", for: "NIfTI-1 and NIfTI-2 volumes (`.nii`)" }, { name: "npy", title: "NumPy", uuid: "62b1d1ba-8eb3-465c-a333-75e096fce519", version: 0, kind: "file", sniff: 75, chosen_by: null, suffixes: [".npy", ".npz"], reference: null, source: "NumPy NPY and NPZ (NEP 1)", inputs: "NumPy `.npy` files, and `.npz` archives of them (`np.savez`, `np.savez_compressed`), whose stored and deflated members it presents", for: "NumPy arrays: `.npy` files, and the arrays of `.npz` archives, stored or deflated" }, { name: "nrrd", title: "NRRD", uuid: "23e0c600-8da6-40f1-81e7-ab246e948e88", version: 0, kind: "file", sniff: 95, chosen_by: null, suffixes: [".nhdr", ".nrrd"], reference: null, source: "NRRD (Teem)", inputs: "NRRD files (`.nrrd`) and detached headers with one data file (`.nhdr`), raw or gzip-encoded", for: "NRRD volumes, attached or detached, raw or gzip (`.nrrd`, `.nhdr`)" }, { name: "ome-zarr", title: "OME-Zarr", uuid: "b74ea302-65bb-49ae-b81f-f9bb52cd4eed", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "OME-Zarr 0.4", inputs: "OME-Zarr 0.4 hierarchies on Zarr v2, migrated to OME-Zarr 0.5", for: "OME-Zarr 0.4 hierarchies, migrated to OME-Zarr 0.5 in place" }, { name: "qptiff", title: "QPTIFF", uuid: "329ea136-2f55-4c27-b6f4-8e60ca2109b8", version: 0, kind: "file", sniff: null, chosen_by: "tiff", suffixes: [".qptiff"], reference: null, source: "Akoya QPTIFF", inputs: "Akoya (PerkinElmer) Vectra QPTIFF slides and inForm component data, a TIFF with an XML description per image, in LZW, JPEG or uncompressed tiles or strips", for: "Akoya (PerkinElmer) Vectra multiplex scans and inForm component data" }, { name: "safe", title: "Sentinel-2 SAFE", uuid: "ef81346c-19e8-42ad-93b0-a279ccaf44c1", version: 0, kind: "both", sniff: 80, chosen_by: null, suffixes: [".zip"], reference: 25, source: "Sentinel-2 SAFE (Level-1C, Level-2A)", inputs: "Sentinel-2 Level-1C and Level-2A products: a `.SAFE` directory (a store) or a `.SAFE.zip` file", for: "Sentinel-2 Level-1C and Level-2A products, as a `.SAFE` directory or a `.SAFE.zip`" }, { name: "tiff", title: "TIFF", uuid: "48e9ac4e-1156-4a62-955e-20467d9c2700", version: 0, kind: "file", sniff: 40, chosen_by: null, suffixes: [".tif"], reference: 20, source: "TIFF, OME-TIFF, Aperio SVS", inputs: "TIFF and BigTIFF, including OME-TIFF and JPEG-tiled slides such as Aperio SVS", for: "OME-TIFF, plain TIFF (tiled or in strips), and JPEG-tiled slides such as Aperio SVS" }, { name: "vsi", title: "VSI", uuid: "c0a1d4e6-5b7f-4f3a-9c2d-8e1f6a7b3c45", version: 0, kind: "file", sniff: 30, chosen_by: null, suffixes: [".vsi"], reference: null, source: "Olympus VSI", inputs: "Olympus cellSens VSI slides: a `.vsi` file and the tile files beside it, probed by key (uncompressed, JPEG, JPEG 2000 and lossless JPEG tiles)", for: "Olympus cellSens whole-slide images (`.vsi` with its tile files)" }, { name: "zarr2", title: "Zarr v2", uuid: "8e792619-d671-4687-ab51-752885dd3ee6", version: 0, kind: "store", sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "Zarr v2", inputs: "Zarr v2 hierarchies", for: "Zarr v2 hierarchies on S3" }];
+var define_REFKV_PROFILES_default = [{ name: "czi", title: "CZI", uuid: "7a0733c7-d4be-4482-a64f-6904d9354ea5", version: 0, kind: "file", store_run: { form: "on_demand", named: "CZI file", section: "79-several-files" }, sniff: 50, chosen_by: null, suffixes: [".czi"], reference: 20, source: "Zeiss CZI", inputs: "Zeiss CZI files (ZISRAW, file version 1), with uncompressed, JPEG, JPEG XR and Zstd subblocks, mosaics and pyramids, in one file or across numbered files", for: "Zeiss CZI files" }, { name: "dicom", title: "DICOM", uuid: "acf17198-e5a5-48d3-8187-22ec4bb40ea5", version: 0, kind: "file", store_run: null, sniff: 10, chosen_by: null, suffixes: [".dcm"], reference: 25, source: "DICOM", inputs: "DICOM Part 10 files with native, JPEG, lossless JPEG, JPEG-LS, RLE, JPEG 2000 or HTJ2K pixel data, including whole-slide images", for: "DICOM files, including whole-slide images" }, { name: "fits", title: "FITS", uuid: "4b0d3a7e-1c52-4f6a-9b8e-2d7f0c6a1e93", version: 0, kind: "file", store_run: null, sniff: 110, chosen_by: null, suffixes: [".fits", ".fz"], reference: null, source: "FITS", inputs: "FITS files: images, multi-extension files, binary and ASCII tables", for: "FITS images and tables (`.fits`, `.fz`)" }, { name: "flac", title: "FLAC", uuid: "e9108d07-b24b-432f-a8ce-09d80c8073b4", version: 0, kind: "file", store_run: null, sniff: 95, chosen_by: null, suffixes: [".flac"], reference: null, source: "FLAC (Free Lossless Audio Codec)", inputs: "FLAC files (`.flac`) of a fixed block size, with their metadata blocks and ID3v2 and ID3v1 tags; one sharded array of integer samples, not an image", for: "FLAC audio files, as a sharded array of samples (`.flac`)" }, { name: "grib", title: "GRIB", uuid: "c9bbe039-8dfa-49f9-a655-756f822a42d6", version: 0, kind: "file", store_run: { form: "always", named: "GRIB file", section: "8-grib-profile" }, sniff: 65, chosen_by: null, suffixes: [".grib2", ".grb2"], reference: null, source: "WMO FM 92 GRIB edition 2 (WMO-No. 306, Manual on Codes, Volume I.2)", inputs: "GRIB edition 2 files of gridded fields, such as NOAA's and ECMWF's forecasts, whose fields on latitude/longitude, Gaussian, rotated, Lambert conformal, polar stereographic, Mercator, reduced and unstructured grids it presents", for: "GRIB2 files of gridded weather and climate fields (`.grib2`), as labeled arrays with CF coordinates" }, { name: "h5j", title: "H5J", uuid: "5bd31fac-d92d-452b-bcb6-15ca89c0f931", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "hdf5", suffixes: [".h5j"], reference: null, source: "Janelia H5J", inputs: "Janelia H5J files (HDF5 whose channels are MP4 files of monochrome HEVC): a confocal stack an image a channel", for: "Janelia's H5J confocal stacks (`.h5j`), as FlyLight and the Janelia Workstation publish them" }, { name: "hdf4", title: "HDF4", uuid: "af66c29e-fc1a-44a4-bb71-1055ad5fdb0a", version: 0, kind: "file", store_run: null, sniff: 68, chosen_by: null, suffixes: [".hdf", ".hdf4", ".h4"], reference: null, source: "HDF4 (the HDF Group's Hierarchical Data Format 4)", inputs: "HDF4 files, HDF-EOS2 ones among them: the scientific datasets of numbers and text the SD interface wrote, plain, linked, deflated or chunked, the writer's Vdata tables, their attributes, and the writer's Vgroups", for: "HDF4 and HDF-EOS2 files (`.hdf`) of NASA's EOS-era archives, such as MODIS, SeaWiFS and AIRS products, as labeled arrays" }, { name: "hdf5", title: "HDF5", uuid: "6c006834-424b-451b-b786-f8c502ec32af", version: 0, kind: "file", store_run: { form: "on_demand", named: "HDF5 file", section: "86-external-files" }, sniff: 70, chosen_by: null, suffixes: [".h5", ".nwb"], reference: null, source: "HDF5, NWB", inputs: "HDF5 files, NWB files first among them: every group, dataset, attribute, link and object reference the profile can present, in hdmf-zarr's Zarr v3 form", for: "HDF5 files (`.h5`, `.hdf5`), and NWB files (`.nwb`), which pynwb's `NWBZarrIO` opens" }, { name: "ims", title: "IMS", uuid: "5067a535-8261-4b25-a93c-1985ed333bde", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "hdf5", suffixes: [".ims"], reference: 25, source: "Imaris IMS", inputs: "Imaris IMS files (HDF5)", for: "Imaris `.ims` files" }, { name: "lif", title: "LIF", uuid: "b099ab1f-f9d4-4276-9006-9ff1193a34b2", version: 0, kind: "file", store_run: { form: "on_demand", named: "named document", section: "8-las-x-documents", case: true }, sniff: 55, chosen_by: null, suffixes: [".lif", ".lifext", ".lof", ".xlcf", ".xlef", ".xlif", ".xllf"], reference: null, source: "Leica LIF", inputs: "Leica LIF files (LAS X and LAS AF, versions 1 and 2), its object files (LOF) and extension files (LIFEXT), and LAS X projects of XLEF, XLCF, XLIF and XLLF documents and LOFs: every image of the element tree, with interleaved or planar channels, z-stacks, time series and mosaics, uncompressed", for: "Leica LIF, LOF and LIFEXT files, and LAS X projects (`.lif`, `.lof`, `.lifext`, `.xlef`, `.xlcf`, `.xlif`, `.xllf`)" }, { name: "mp3", title: "MP3", uuid: "b6cb0047-9448-4fdc-b03e-10dd3d6aa829", version: 0, kind: "file", store_run: null, sniff: 100, chosen_by: null, suffixes: [".mp3"], reference: null, source: "MP3 (MPEG Layer III audio)", inputs: "MPEG-1, MPEG-2 and MPEG-2.5 Layer III audio files (`.mp3`), with their ID3v2, ID3v1 and APE tags; one array of samples, not an image", for: "MP3 audio files, as an array of samples (`.mp3`)" }, { name: "mp4", title: "MP4", uuid: "bbe3f6b9-488d-4d8d-85ce-60a1649dd27e", version: 0, kind: "file", store_run: null, sniff: 85, chosen_by: null, suffixes: [".mp4", ".mov"], reference: null, source: "MP4 and QuickTime (H.264, HEVC, AV1, VP9 and Motion JPEG video, AAC, HE-AAC, MP3 and PCM audio)", inputs: "MP4 and QuickTime files (`.mp4`, `.m4a`, `.m4v`, `.mov`) with H.264, HEVC, AV1, VP9 or Motion JPEG video and AAC, HE-AAC, MP3 or PCM audio tracks; a group per track, not an image", for: "MP4 and QuickTime video and audio, as arrays of planes and samples (`.mp4`, `.m4a`, `.m4v`, `.mov`)" }, { name: "mrc", title: "MRC", uuid: "2aacd010-2ed1-4748-bc3c-5dd5e840bbce", version: 0, kind: "file", store_run: null, sniff: 90, chosen_by: null, suffixes: [".mrc", ".map.gz", ".mrc.gz"], reference: null, source: "MRC2014", inputs: "MRC2014 files (CCP4 maps, image stacks, volumes and volume stacks), gzipped or not", for: "MRC2014 maps, image stacks, volumes and volume stacks (`.mrc`, `.map`, gzipped or not)" }, { name: "mrc-dataset", title: "MRC dataset", uuid: "f139bf4e-7bab-4c3c-9b2d-66ba747f9b93", version: 0, kind: "layout", store_run: null, sniff: null, chosen_by: null, suffixes: [], reference: null, source: "MRC2014, as a dataset", inputs: "", for: "" }, { name: "n5", title: "N5", uuid: "ad5d4c39-c69e-48f7-a3ef-4cc8c607d416", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "N5", inputs: "N5 containers, default-mode blocks", for: "N5 containers on S3" }, { name: "nd2", title: "ND2", uuid: "59612f14-e314-4207-ba00-8f422ba71490", version: 0, kind: "file", store_run: null, sniff: 20, chosen_by: null, suffixes: [".nd2"], reference: 20, source: "Nikon ND2", inputs: "Nikon ND2, format version 3 and later", for: "Nikon NIS-Elements ND2 files" }, { name: "ndpi", title: "NDPI", uuid: "6cac71ef-dbb2-4acd-b60c-00389aa4238a", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "tiff", suffixes: [".ndpi"], reference: 25, source: "Hamamatsu NDPI", inputs: "Hamamatsu NDPI slides, a TIFF variant with 64-bit offsets", for: "Hamamatsu NDPI whole-slide images" }, { name: "nifti", title: "NIfTI", uuid: "06e5809d-4d54-4b72-afd0-6bf61a7b4c85", version: 0, kind: "file", store_run: { form: "on_demand", named: "header file", section: "75-header-and-image-pairs" }, sniff: 60, chosen_by: null, suffixes: [".nii", ".nii.gz", ".hdr", ".HDR"], reference: 25, source: "NIfTI-1 and NIfTI-2", inputs: "NIfTI-1 and NIfTI-2 single files (`.nii`, `.nii.gz`) and header-and-image pairs (`.hdr`, `.img`)", for: "NIfTI-1 and NIfTI-2 volumes (`.nii`, `.nii.gz`, `.hdr` and `.img`)" }, { name: "npy", title: "NumPy", uuid: "62b1d1ba-8eb3-465c-a333-75e096fce519", version: 0, kind: "file", store_run: null, sniff: 75, chosen_by: null, suffixes: [".npy", ".npz"], reference: null, source: "NumPy NPY and NPZ (NEP 1)", inputs: "NumPy `.npy` files, and `.npz` archives of them (`np.savez`, `np.savez_compressed`), whose stored and deflated members it presents", for: "NumPy arrays: `.npy` files, and the arrays of `.npz` archives, stored or deflated" }, { name: "nrrd", title: "NRRD", uuid: "23e0c600-8da6-40f1-81e7-ab246e948e88", version: 0, kind: "file", store_run: { form: "always", named: "header file", section: "8-nrrd-profile" }, sniff: 95, chosen_by: null, suffixes: [".nhdr", ".nrrd"], reference: null, source: "NRRD (Teem)", inputs: "NRRD files (`.nrrd`) and detached headers with one data file (`.nhdr`), raw or gzip-encoded", for: "NRRD volumes, attached or detached, raw or gzip (`.nrrd`, `.nhdr`)" }, { name: "ome-zarr", title: "OME-Zarr", uuid: "b74ea302-65bb-49ae-b81f-f9bb52cd4eed", version: 0, kind: "store", store_run: null, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "OME-Zarr 0.4", inputs: "OME-Zarr 0.4 hierarchies on Zarr v2, migrated to OME-Zarr 0.5", for: "OME-Zarr 0.4 hierarchies, migrated to OME-Zarr 0.5 in place" }, { name: "precomputed", title: "Neuroglancer precomputed", uuid: "c499987a-9518-4b2b-a804-a70a8de1a911", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: null, source: "Neuroglancer precomputed", inputs: "Neuroglancer precomputed volumes, unsharded or with identity-hashed shards", for: "connectomics volumes in Neuroglancer's precomputed format, including shards too many to scan" }, { name: "qptiff", title: "QPTIFF", uuid: "329ea136-2f55-4c27-b6f4-8e60ca2109b8", version: 0, kind: "file", store_run: null, sniff: null, chosen_by: "tiff", suffixes: [".qptiff"], reference: null, source: "Akoya QPTIFF", inputs: "Akoya (PerkinElmer) Vectra QPTIFF slides and inForm component data, a TIFF with an XML description per image, in LZW, JPEG or uncompressed tiles or strips", for: "Akoya (PerkinElmer) Vectra multiplex scans and inForm component data" }, { name: "safe", title: "Sentinel-2 SAFE", uuid: "ef81346c-19e8-42ad-93b0-a279ccaf44c1", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 80, chosen_by: null, suffixes: [".zip"], reference: 25, source: "Sentinel-2 SAFE (Level-1C, Level-2A)", inputs: "Sentinel-2 Level-1C and Level-2A products: a `.SAFE` directory (a store) or a `.SAFE.zip` file", for: "Sentinel-2 Level-1C and Level-2A products, as a `.SAFE` directory or a `.SAFE.zip`" }, { name: "safetensors", title: "safetensors", uuid: "15e7ce39-d4ca-4514-8144-6e19d2a0341b", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 35, chosen_by: null, suffixes: [".safetensors"], reference: null, source: "safetensors (Hugging Face)", inputs: "safetensors files of a model's tensors (`model.safetensors`), in every data type the library defines, `BF16`, `F8_*`, `F4` and `F6_*` included; and stores of them, such as a model's repository of shards with its index", for: "machine learning model weights in safetensors files (`.safetensors`), each tensor an array, and a model's shards as one group" }, { name: "tiff", title: "TIFF", uuid: "48e9ac4e-1156-4a62-955e-20467d9c2700", version: 0, kind: "file", store_run: { form: "on_demand", named: "TIFF file", section: "74-several-files" }, sniff: 40, chosen_by: null, suffixes: [".tif"], reference: 20, source: "TIFF, OME-TIFF, Aperio SVS", inputs: "TIFF and BigTIFF, including OME-TIFF across files, Micro-Manager stacks and JPEG-tiled slides such as Aperio SVS", for: "OME-TIFF, plain TIFF (tiled or in strips), and JPEG-tiled slides such as Aperio SVS" }, { name: "vsi", title: "VSI", uuid: "c0a1d4e6-5b7f-4f3a-9c2d-8e1f6a7b3c45", version: 0, kind: "file", store_run: { form: "always", named: ".vsi file", section: "9-vsi-profile" }, sniff: 30, chosen_by: null, suffixes: [".vsi"], reference: null, source: "Olympus VSI", inputs: "Olympus cellSens VSI slides: a `.vsi` file and the tile files beside it, probed by key (uncompressed, JPEG, JPEG 2000, lossless JPEG, PNG and BMP tiles)", for: "Olympus cellSens whole-slide images (`.vsi` with its tile files)" }, { name: "zarr2", title: "Zarr v2", uuid: "8e792619-d671-4687-ab51-752885dd3ee6", version: 0, kind: "store", store_run: { form: "listed" }, sniff: null, chosen_by: null, suffixes: [], reference: 25, source: "Zarr v2", inputs: "Zarr v2 hierarchies", for: "Zarr v2 hierarchies on S3" }, { name: "zarr3", title: "Zarr v3", uuid: "95203d0a-6586-426a-b920-3db2f4f1e97e", version: 0, kind: "both", store_run: { form: "listed" }, sniff: 78, chosen_by: null, suffixes: [".zip"], reference: null, source: "Zarr v3", inputs: "Zarr v3 hierarchies: a store (a URL or a directory) or a zipped store (`.zip`)", for: "Zarr v3 hierarchies, listed or zipped, as references to their own chunks" }];
 
 // src/zarrify/profiles_bundled.ts
 var REGISTRY = define_REFKV_PROFILES_default;
@@ -99,6 +99,16 @@ var text = (b) => new TextDecoder().decode(b);
 function rejection(w, r) {
   return new ImageError(text(out(w, -r)));
 }
+function refusal(w, r, reject3) {
+  return w.vz_failed() !== 0 ? new Error(text(out(w, -r))) : reject3(w, r);
+}
+var NamesSiblings = class extends Error {
+  format;
+  constructor(format) {
+    super(`a ${format} file that names siblings is read as a store`);
+    this.format = format;
+  }
+};
 async function zarrifyIr(format, url2, source, options = {}) {
   const w = await ir();
   const f = utf8.encode(format);
@@ -122,11 +132,12 @@ async function zarrifyIr(format, url2, source, options = {}) {
       if (r === 0) break;
       await perform(w, p, source, decodeRequests(out(w, r - 1)), options.signal);
     }
+    if (w.vz_run_beside(p) !== 0) throw new NamesSiblings(format);
     live = false;
     const u = utf8.encode(url2);
     const flags = (options.mirror === false ? 0 : 1) | (options.checksums ? 2 : 0);
     const n = Number(w.vz_run_output(p, put(w, u), u.length, flags));
-    if (n < 0) throw rejection(w, n);
+    if (n < 0) throw refusal(w, n, rejection);
     const o = decodeOutput(out(w, n));
     return { format: o.summary.format ?? format, ...o };
   } finally {
@@ -329,6 +340,76 @@ function isUriReference(ref) {
   }
   return true;
 }
+function removeDotSegments(input) {
+  const out2 = [];
+  let path = input;
+  while (path !== "") {
+    if (path.startsWith("../")) path = path.slice(3);
+    else if (path.startsWith("./")) path = path.slice(2);
+    else if (path.startsWith("/./")) path = path.slice(2);
+    else if (path === "/.") path = "/";
+    else if (path.startsWith("/../")) {
+      path = path.slice(3);
+      out2.pop();
+    } else if (path === "/..") {
+      path = "/";
+      out2.pop();
+    } else if (path === "." || path === "..") path = "";
+    else {
+      const i = path.indexOf("/", 1);
+      const segment = i === -1 ? path : path.slice(0, i);
+      path = i === -1 ? "" : path.slice(i);
+      out2.push(segment);
+    }
+  }
+  return out2.join("");
+}
+function compose(p) {
+  let s = p.scheme !== void 0 ? `${p.scheme}:` : "";
+  if (p.authority !== void 0) s += `//${p.authority}`;
+  s += p.path;
+  if (p.query !== void 0) s += `?${p.query}`;
+  if (p.fragment !== void 0) s += `#${p.fragment}`;
+  return s;
+}
+function resolveReference(base, ref) {
+  if (!isUriReference(ref)) {
+    throw new Error(`not a valid URI reference: ${JSON.stringify(ref)}`);
+  }
+  const b = split(base);
+  const r = split(ref);
+  if (r.scheme !== void 0) {
+    return compose({ ...r, path: removeDotSegments(r.path) });
+  }
+  if (r.authority !== void 0) {
+    return compose({ ...r, scheme: b.scheme, path: removeDotSegments(r.path) });
+  }
+  if (r.path === "") {
+    return compose({
+      scheme: b.scheme,
+      authority: b.authority,
+      path: b.path,
+      query: r.query ?? b.query,
+      fragment: r.fragment
+    });
+  }
+  let path;
+  if (r.path.startsWith("/")) path = removeDotSegments(r.path);
+  else if (b.authority !== void 0 && b.path === "") {
+    path = removeDotSegments("/" + r.path);
+  } else {
+    path = removeDotSegments(
+      b.path.slice(0, b.path.lastIndexOf("/") + 1) + r.path
+    );
+  }
+  return compose({
+    scheme: b.scheme,
+    authority: b.authority,
+    path,
+    query: r.query,
+    fragment: r.fragment
+  });
+}
 function checkHttpUrl(url2) {
   const { authority } = split(url2);
   if (authority === void 0 || authority === "") {
@@ -349,7 +430,10 @@ function checkHttpUrl(url2) {
 var HttpResolutionError = class extends Error {
   /** Whether the object is not the one the pins name: it changed since they were taken. */
   sourceChanged;
-  /** Why the request got no response, where a browser could tell. */
+  /**
+   * Why the request got no response, where a browser could tell (`noResponse`): undefined for a
+   * response that failed, or a request outside a browser.
+   */
   noResponse;
   constructor(message, sourceChanged = false, noResponse2) {
     super(message);
@@ -580,7 +664,7 @@ function endRecords(at, count, cdOffset, cdSize, comment) {
 function referenceBlock(ranges) {
   return ranges.length === 1 ? { id: RANGE_ID, payload: encodeRange(ranges[0]) } : { id: CONCAT_ID, payload: encodeConcat(ranges) };
 }
-function validate(desc) {
+function validate(desc, maxPayload = MAX_PAYLOAD) {
   const n = desc.sources.length;
   const byKey = /* @__PURE__ */ new Map();
   for (const e of desc.entries) {
@@ -648,8 +732,8 @@ function validate(desc) {
       total += r.length;
     }
     if (total > U64_MAX2) reject(`${e.key}: value size exceeds 2^64 - 1`);
-    if (referenceBlock(e.ranges).payload.length > MAX_PAYLOAD) {
-      reject(`${e.key}: reference payload exceeds ${MAX_PAYLOAD} bytes`);
+    if (referenceBlock(e.ranges).payload.length > maxPayload) {
+      reject(`${e.key}: reference payload exceeds ${maxPayload} bytes`);
     }
   }
 }
@@ -760,6 +844,7 @@ async function writeVzip(desc) {
 
 // src/archive.ts
 var RefkvError = class extends Error {
+  /** The error's class, as spec §6.5 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#65-error-reporting> has readers report it. */
   errorClass;
   /**
    * Whether a source is not the one the archive pins (spec §5.1
@@ -775,13 +860,16 @@ var RefkvError = class extends Error {
 };
 var DEFAULT_POLICY = {
   schemes: [],
-  allowFilesFromRemoteArchives: false,
   allowPrivateHosts: false,
   allowUncheckedProxy: false,
   maxSources: 1 << 22,
   maxReads: 1024,
+  maxGetBytes: 2 ** 31,
+  maxReadAmplification: 4,
+  maxCoalesceGap: 1 << 16,
   maxFormatEntry: 256 << 20,
-  unverifiablePins: false
+  unverifiablePins: false,
+  allowSourceCredentials: false
 };
 function schemeOf(url2) {
   const i = url2.indexOf(":");
@@ -894,22 +982,29 @@ function hostClass(url2) {
 function validatePolicy(policy) {
   if ((policy.schemes ?? []).some((s) => s.toLowerCase() === "file")) {
     throw new TypeError(
-      "Policy.schemes may not name 'file': a local archive reads files already, and a remote one needs the unsafe allowFilesFromRemoteArchives: true"
+      "Policy.schemes may not name 'file': this reader reads only http(s) sources"
     );
   }
+  for (const name of ["maxSources", "maxReads", "maxGetBytes", "maxCoalesceGap", "maxFormatEntry"]) {
+    const v = policy[name];
+    if (name in policy && !(Number.isSafeInteger(v) && v >= 0)) {
+      throw new TypeError(`Policy.${name} is a natural number, not ${String(v)}`);
+    }
+  }
+  const a = policy.maxReadAmplification;
+  if ("maxReadAmplification" in policy && !(typeof a === "number" && Number.isFinite(a) && a >= 0)) {
+    throw new TypeError(`Policy.maxReadAmplification is a finite number of at least 0, not ${String(a)}`);
+  }
 }
-function checkPolicy(policy, base, url2) {
+function checkPolicy(policy, _base, url2) {
   validatePolicy(policy);
-  const local = schemeOf(base) === "file";
   const scheme = schemeOf(url2);
   if (policy.prefixes !== void 0) {
     if (!policy.prefixes.some((p) => matchesPrefix(url2, p))) {
       throw new RefkvError("resolution", `${url2}: not under an allowed URL prefix (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
     }
   } else if (scheme === "file") {
-    if (!local && !policy.allowFilesFromRemoteArchives) {
-      throw new RefkvError("resolution", `${url2}: an archive opened from a URL may not read local files (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
-    }
+    throw new RefkvError("resolution", `${url2}: this reader reads no local file (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
   } else if (scheme !== "http" && !(policy.schemes ?? []).some((s) => schemeOf(`${s}:`) === scheme)) {
     throw new RefkvError("resolution", `${url2}: the scheme '${scheme}' is not allowed (spec \xA76.7 <https://github.com/d-v-b/refkv/blob/main/spec/refkv.md#67-reader-policy>)`);
   }
@@ -931,7 +1026,752 @@ function checkAddress(policy, url2, address) {
   checkClass(policy, url2, c, address);
 }
 var MERGE_GAP = 1 << 16;
+var MERGE_MIN_RUN = 1 << 20;
+var MERGE_MAX_RUN = 32 << 20;
 var strictUtf82 = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
+
+// src/zarrify/store.ts
+var StoreError = class extends Error {
+  /** The store format that refused the input, once one was chosen (the Rust core's store run:
+   * `zarr2`, or `ome-zarr` once its 0.4 test passed); none for a rejection before that. */
+  format;
+  constructor(message, format) {
+    super(message);
+    if (format !== void 0) this.format = format;
+  }
+};
+var StoreLimitError = class extends Error {
+};
+var StoreReadError = class extends Error {
+};
+var reject2 = (message) => {
+  throw new StoreError(message);
+};
+var MAX_SAFE = Number.MAX_SAFE_INTEGER;
+var MAX_DOCUMENT = 1 << 24;
+var MAX_DEPTH = 256;
+var MAX_OBJECTS = 1e5;
+var SPLIT2 = /^(?:([^:/?#]+):)?(?:\/\/([^/?#]*))?([^?#]*)(?:\?([^#]*))?(?:#(.*))?$/;
+var UNRESERVED2 = /[A-Za-z0-9\-._~]/;
+var PATH_SAFE = /[A-Za-z0-9\-._~!$&'()*+,;=:@/]/;
+var utf84 = new TextEncoder();
+function pct(s, safe) {
+  let out2 = "";
+  for (const b of utf84.encode(s)) {
+    const c = String.fromCharCode(b);
+    out2 += b < 128 && safe.test(c) ? c : `%${b.toString(16).toUpperCase().padStart(2, "0")}`;
+  }
+  return out2;
+}
+function objectUrl(storeUrl, key) {
+  return storeUrl + pct(key, PATH_SAFE);
+}
+function queryEncode(s) {
+  return pct(s, UNRESERVED2);
+}
+function checkStoreUrl(url2) {
+  const m = url2.match(SPLIT2);
+  if (!isUriReference(url2) || m === null) reject2(`${JSON.stringify(url2)} is not a valid URI`);
+  const [, scheme, authority, path, query, fragment] = m;
+  if (scheme === void 0 || !["http", "https"].includes(scheme.toLowerCase())) {
+    reject2(`store URL ${url2} is not http or https`);
+  }
+  if (authority === void 0 || authority.includes("@")) reject2(`store URL ${url2} has no authority, or has userinfo`);
+  if (query !== void 0 || fragment !== void 0) reject2(`store URL ${url2} has a query or a fragment`);
+  if (!path.endsWith("/")) reject2(`store URL ${url2} does not end in /`);
+  return [scheme, authority, path];
+}
+function percentDecode(s) {
+  const out2 = [];
+  for (let i = 0; i < s.length; ) {
+    if (s[i] === "%") {
+      out2.push(parseInt(s.slice(i + 1, i + 3), 16));
+      i += 3;
+    } else {
+      out2.push(s.charCodeAt(i));
+      i += 1;
+    }
+  }
+  return Uint8Array.from(out2);
+}
+function listingEndpoint(url2) {
+  const [scheme, authority, path] = checkStoreUrl(url2);
+  let host = authority;
+  if (host.startsWith("[")) host = host.slice(0, host.indexOf("]") + 1);
+  else if (host.includes(":")) host = host.slice(0, host.lastIndexOf(":"));
+  host = host.toLowerCase();
+  const labels = host.split(".");
+  const virtual = host.endsWith(".amazonaws.com") && labels.slice(1).some((l) => l === "s3" || l.startsWith("s3-"));
+  let endpoint;
+  let prefixPath;
+  if (virtual) {
+    endpoint = `${scheme}://${authority}/`;
+    prefixPath = path.slice(1);
+  } else {
+    if (path === "/") reject2(`path-style store URL ${url2} names no bucket`);
+    const rest = path.slice(1);
+    const i = rest.indexOf("/");
+    const bucket = rest.slice(0, i);
+    if (bucket === "") reject2(`path-style store URL ${url2} has an empty bucket`);
+    endpoint = `${scheme}://${authority}/${bucket}/`;
+    prefixPath = rest.slice(i + 1);
+  }
+  let prefix = "";
+  try {
+    prefix = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(percentDecode(prefixPath));
+  } catch {
+    reject2(`the key prefix of ${url2} is not UTF-8`);
+  }
+  return [endpoint, prefix];
+}
+var HUB = "https://huggingface.co";
+var HUB_NAME = /^[A-Za-z0-9._-]+$/;
+function hubEndpoint(endpoint) {
+  const e = (endpoint || HUB).replace(/\/+$/, "");
+  const m = e.match(SPLIT2);
+  if (m === null || !isUriReference(e)) throw new TypeError(`the Hub endpoint ${JSON.stringify(e)} is not a valid URI`);
+  const [, scheme, authority, , query, fragment] = m;
+  if (scheme === void 0 || !["http", "https"].includes(scheme.toLowerCase()) || !authority || authority.includes("@") || query !== void 0 || fragment !== void 0) {
+    throw new TypeError(`the Hub endpoint ${JSON.stringify(e)} is not an http(s) URL without userinfo, query or fragment`);
+  }
+  return e;
+}
+function hubApi(repo) {
+  return `${repo.endpoint}/api/${repo.kind}/${repo.owner}/${repo.name}`;
+}
+function hubRevisionUrl(repo) {
+  return `${hubApi(repo)}/revision/${queryEncode(repo.revision)}?expand%5B%5D=sha&expand%5B%5D=gated`;
+}
+function hubTreeUrl(repo, commit) {
+  const d = repo.directory ? "/" + pct(repo.directory.slice(0, -1), PATH_SAFE) : "";
+  return `${hubApi(repo)}/tree/${commit}${d}?recursive=true`;
+}
+function hubBase(repo, commit) {
+  const kind = repo.kind === "datasets" ? "/datasets/" : "/";
+  return `${repo.endpoint}${kind}${repo.owner}/${repo.name}/resolve/${commit}/${objectUrl("", repo.directory)}`;
+}
+function under(url2, endpoint) {
+  const m = url2.match(SPLIT2);
+  const e = endpoint.match(SPLIT2);
+  if (m === null || m[1] === void 0 || m[2] === void 0) return void 0;
+  if (m[1].toLowerCase() !== e[1].toLowerCase() || m[2].toLowerCase() !== e[2].toLowerCase()) return void 0;
+  const base = e[3] + "/";
+  return m[3].startsWith(base) ? m[3].slice(base.length) : void 0;
+}
+var utf8Fatal = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
+function hubRepo(url2, endpoint) {
+  const rest = under(url2, endpoint);
+  if (rest === void 0) return void 0;
+  checkStoreUrl(url2);
+  let segments = rest.split("/");
+  let kind = "models";
+  if (segments[0] === "datasets") {
+    kind = "datasets";
+    segments = segments.slice(1);
+  }
+  if (segments.length < 5 || segments[2] !== "tree" || segments[segments.length - 1] !== "" || !segments.slice(0, 2).every((n) => HUB_NAME.test(n) && n !== "." && n !== "..") || segments.slice(3, -1).some((x) => !x)) {
+    reject2(`Hub store URL ${JSON.stringify(url2)} is not <owner>/<repo>/tree/<rev>/[<dir>/] (or that after datasets/)`);
+  }
+  let revision = "";
+  let directory = "";
+  try {
+    revision = utf8Fatal.decode(percentDecode(segments[3]));
+    directory = segments.slice(4, -1).map((x) => utf8Fatal.decode(percentDecode(x)) + "/").join("");
+  } catch {
+    reject2(`the revision or directory of ${JSON.stringify(url2)} is not UTF-8`);
+  }
+  if (directory.split("/").slice(0, -1).some((x) => x === "." || x === "..")) {
+    reject2(`the directory of ${JSON.stringify(url2)} has a segment . or ..`);
+  }
+  return { endpoint, kind, owner: segments[0], name: segments[1], revision, directory };
+}
+function isChar(c) {
+  return c === 9 || c === 10 || c === 13 || c >= 32 && c <= 55295 || c >= 57344 && c <= 65533 || c >= 65536 && c <= 1114111;
+}
+var NAME_START = /[A-Za-z_:]/;
+var NAME_CHAR = /[A-Za-z0-9_:.-]/;
+var WS = /* @__PURE__ */ new Set([" ", "	", "\r", "\n"]);
+var ENTITIES = { lt: "<", gt: ">", amp: "&", quot: '"', apos: "'" };
+var Xml = class {
+  pos = 0;
+  depth = 0;
+  // of the element being read
+  s;
+  what;
+  error;
+  constructor(s, what = "listing", error = (m) => new StoreError(m)) {
+    this.s = s;
+    this.what = what;
+    this.error = error;
+  }
+  fail(why) {
+    throw this.error(`${this.what} is not well formed: ${why} at ${this.pos}`);
+  }
+  ws() {
+    while (this.pos < this.s.length && WS.has(this.s[this.pos])) this.pos++;
+  }
+  at(t) {
+    return this.s.startsWith(t, this.pos);
+  }
+  chars(t) {
+    for (const ch of t) {
+      const c = ch.codePointAt(0);
+      if (!isChar(c)) this.fail(`character U+${c.toString(16).toUpperCase().padStart(4, "0")}`);
+    }
+  }
+  comment() {
+    const end = this.s.indexOf("--", this.pos + 4);
+    if (end < 0 || !this.s.startsWith("-->", end)) this.fail("bad comment");
+    this.chars(this.s.slice(this.pos + 4, end));
+    this.pos = end + 3;
+  }
+  misc() {
+    for (; ; ) {
+      this.ws();
+      if (this.at("<!--")) this.comment();
+      else return;
+    }
+  }
+  name() {
+    const start = this.pos;
+    if (start >= this.s.length || !NAME_START.test(this.s[start])) this.fail("expected a name");
+    this.pos++;
+    while (this.pos < this.s.length && NAME_CHAR.test(this.s[this.pos])) this.pos++;
+    return this.s.slice(start, this.pos);
+  }
+  reference() {
+    const end = this.s.indexOf(";", this.pos);
+    if (end < 0) this.fail("unterminated reference");
+    const body = this.s.slice(this.pos + 1, end);
+    this.pos = end + 1;
+    if (Object.hasOwn(ENTITIES, body)) return ENTITIES[body];
+    let v;
+    if (/^#x[0-9a-fA-F]+$/.test(body)) v = body.length < 12 ? parseInt(body.slice(2), 16) : -1;
+    else if (/^#[0-9]+$/.test(body)) v = body.length < 12 ? parseInt(body.slice(1), 10) : -1;
+    else this.fail(`unknown reference &${body};`);
+    if (!isChar(v)) this.fail(`reference &${body}; is not a character`);
+    return String.fromCodePoint(v);
+  }
+  chardata(stop) {
+    const start = this.pos;
+    while (this.pos < this.s.length && this.s[this.pos] !== "<" && this.s[this.pos] !== "&" && this.s[this.pos] !== stop) this.pos++;
+    const t = this.s.slice(start, this.pos);
+    this.chars(t);
+    return t;
+  }
+  element() {
+    if (!this.at("<")) this.fail("expected an element");
+    if (++this.depth > MAX_DEPTH) this.fail(`elements nest more than ${MAX_DEPTH} deep`);
+    const el = this.elementBody();
+    this.depth--;
+    return el;
+  }
+  elementBody() {
+    this.pos++;
+    const el = { name: this.name(), children: [], text: [], attributes: [] };
+    const s = this.s;
+    for (; ; ) {
+      if (this.pos < s.length && WS.has(s[this.pos])) {
+        this.ws();
+        if (this.pos < s.length && NAME_START.test(s[this.pos])) {
+          const name = this.name();
+          this.ws();
+          if (!this.at("=")) this.fail("expected =");
+          this.pos++;
+          this.ws();
+          const q = this.pos < s.length ? s[this.pos] : "";
+          if (q !== "'" && q !== '"') this.fail("expected a quoted value");
+          this.pos++;
+          const value = [];
+          for (; ; ) {
+            value.push(this.chardata(q));
+            if (this.at("&")) value.push(this.reference());
+            else if (this.at(q)) {
+              this.pos++;
+              break;
+            } else this.fail("bad attribute value");
+          }
+          el.attributes.push([name, value.join("")]);
+          continue;
+        }
+      }
+      break;
+    }
+    if (this.at("/>")) {
+      this.pos += 2;
+      return el;
+    }
+    if (!this.at(">")) this.fail("expected >");
+    this.pos++;
+    for (; ; ) {
+      if (this.pos >= s.length) this.fail("unterminated element");
+      if (this.at("</")) {
+        this.pos += 2;
+        if (this.name() !== el.name) this.fail("mismatched end tag");
+        this.ws();
+        if (!this.at(">")) this.fail("expected >");
+        this.pos++;
+        return el;
+      }
+      if (this.at("<!--")) this.comment();
+      else if (this.at("<!") || this.at("<?")) this.fail("unsupported markup");
+      else if (this.at("<")) el.children.push(this.element());
+      else if (this.at("&")) el.text.push(this.reference());
+      else {
+        const t = this.chardata("<");
+        if (t.includes("]]>")) this.fail("]]> in character data");
+        el.text.push(t);
+      }
+    }
+  }
+  document() {
+    this.ws();
+    if (this.at("<?xml") && this.pos + 5 < this.s.length && WS.has(this.s[this.pos + 5])) {
+      const end = this.s.indexOf("?>", this.pos + 5);
+      if (end < 0) this.fail("unterminated XML declaration");
+      this.chars(this.s.slice(this.pos, end));
+      this.pos = end + 2;
+    }
+    this.misc();
+    const root = this.element();
+    this.misc();
+    if (this.pos !== this.s.length) this.fail("content after the root element");
+    return root;
+  }
+};
+function text2(el) {
+  if (el.children.length) reject2(`listing: <${el.name}> has a child element`);
+  return el.text.join("");
+}
+function parseListing(body, prefix) {
+  let s = "";
+  try {
+    s = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(body);
+  } catch {
+    reject2("listing is not UTF-8");
+  }
+  const root = new Xml(s).document();
+  if (root.name !== "ListBucketResult") reject2(`listing root element is <${root.name}>, not <ListBucketResult>`);
+  const truncated = root.children.filter((c) => c.name === "IsTruncated");
+  if (truncated.length !== 1 || !["true", "false"].includes(text2(truncated[0]))) {
+    reject2("listing needs exactly one IsTruncated of true or false");
+  }
+  const tokens = root.children.filter((c) => c.name === "NextContinuationToken");
+  if (tokens.length > 1) reject2("listing has more than one NextContinuationToken");
+  const token = tokens.length ? text2(tokens[0]) : void 0;
+  const objects = [];
+  for (const c of root.children) {
+    if (c.name !== "Contents") continue;
+    const keys = c.children.filter((x) => x.name === "Key");
+    const sizes = c.children.filter((x) => x.name === "Size");
+    if (keys.length !== 1 || sizes.length !== 1) reject2("listing Contents needs exactly one Key and one Size");
+    const key = text2(keys[0]);
+    const size = text2(sizes[0]);
+    if (!/^[0-9]+$/.test(size) || size.replace(/^0+/, "").length > 16 || Number(size) > MAX_SAFE) {
+      reject2(`listing Size ${JSON.stringify(size.slice(0, 40))} is not a size`);
+    }
+    if (!key.startsWith(prefix)) reject2(`listed key ${JSON.stringify(key)} is outside the prefix ${JSON.stringify(prefix)}`);
+    objects.push([key, Number(size)]);
+  }
+  if (text2(truncated[0]) === "true") {
+    if (!token) reject2("truncated listing without a NextContinuationToken");
+    if (objects.length === 0) reject2("truncated listing without a Contents");
+    return { objects, token };
+  }
+  return { objects };
+}
+function checkNumbers(v) {
+  if (typeof v === "number") {
+    if (!Number.isFinite(v)) reject2("JSON number is not finite in binary64");
+  } else if (Array.isArray(v)) {
+    for (const x of v) checkNumbers(x);
+  } else if (v !== null && typeof v === "object") {
+    for (const x of Object.values(v)) checkNumbers(x);
+  }
+}
+var RawJSON = JSON;
+var INTEGER = /^-?(?:0|[1-9][0-9]*)$/;
+var NoSourceText = class extends Error {
+  constructor() {
+    super("JSON.parse gives the reviver no source text (needs JSON.parse source text access, as in Node 21+)");
+  }
+};
+function keepIntegers(_key, value, context) {
+  if (typeof value !== "number") return value;
+  if (context?.source === void 0) throw new NoSourceText();
+  if (!INTEGER.test(context.source)) return Object.is(value, -0) ? RawJSON.rawJSON("-0.0") : value;
+  if (Object.is(value, -0)) return 0;
+  if (Math.abs(value) <= MAX_SAFE || !Number.isFinite(value)) return value;
+  return RawJSON.rawJSON(context.source);
+}
+function isRawInteger(v) {
+  return v !== null && typeof v === "object" && RawJSON.isRawJSON(v);
+}
+function parseJson(data) {
+  if (data.length > MAX_DOCUMENT) reject2(`JSON document of ${data.length} bytes exceeds ${MAX_DOCUMENT}`);
+  if (data[0] === 239 && data[1] === 187 && data[2] === 191) reject2("JSON document starts with a byte order mark");
+  let s = "";
+  try {
+    s = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(data);
+  } catch {
+    reject2("JSON document is not UTF-8");
+  }
+  if (nesting(s) > MAX_DEPTH) reject2(`JSON nests more than ${MAX_DEPTH} deep`);
+  let v = null;
+  try {
+    v = JSON.parse(s, keepIntegers);
+  } catch (e) {
+    if (e instanceof NoSourceText) throw e;
+    reject2(`invalid JSON: ${e.message}`);
+  }
+  checkNumbers(v);
+  return v;
+}
+function nesting(s) {
+  let depth = 0, deepest = 0, open = true;
+  for (let i = 0; i < s.length; i++) {
+    const c = s.charCodeAt(i);
+    if (c === 34 && open) {
+      let j = i + 1;
+      while (j < s.length && s.charCodeAt(j) !== 34) j += s.charCodeAt(j) === 92 ? 2 : 1;
+      if (j >= s.length) open = false;
+      else i = j;
+    } else if (c === 91 || c === 123) {
+      deepest = Math.max(deepest, ++depth);
+    } else if (c === 93 || c === 125) {
+      depth--;
+    }
+  }
+  return deepest;
+}
+var COMMIT = /^[0-9a-f]{40}$/;
+var LONE_SURROGATE = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/;
+function parseHubRevision(body) {
+  const doc = parseJson(body);
+  if (!isObject(doc)) return reject2("the Hub revision is not a JSON object");
+  const sha = has(doc, "sha") ? doc.sha : void 0;
+  if (typeof sha !== "string" || !COMMIT.test(sha)) {
+    reject2(`the Hub revision's sha ${show(sha).slice(0, 80)} is not 40 lowercase hex digits`);
+  }
+  if (has(doc, "gated") && doc.gated !== false) {
+    reject2(`the Hub repository is gated (${show(doc.gated).slice(0, 40)}): its files are not read anonymously`);
+  }
+  return sha;
+}
+function parseHubTree(body, prefix) {
+  const doc = parseJson(body);
+  if (!Array.isArray(doc)) return reject2("the Hub tree listing is not a JSON array");
+  const objects = [];
+  for (const entry of doc) {
+    if (!isObject(entry)) reject2("a Hub tree entry is not a JSON object");
+    const e = entry;
+    const kind = has(e, "type") ? e.type : void 0;
+    const path = has(e, "path") ? e.path : void 0;
+    if (kind !== "file" && kind !== "directory") {
+      reject2(`a Hub tree entry's type ${show(kind).slice(0, 40)} is neither file nor directory`);
+    }
+    if (typeof path !== "string" || !path.startsWith(prefix) || path.length === prefix.length) {
+      reject2(`the Hub tree entry ${show(path).slice(0, 200)} is not under ${JSON.stringify(prefix)}`);
+    }
+    if (LONE_SURROGATE.test(path)) reject2(`the Hub tree entry ${show(path).slice(0, 200)} is not Unicode`);
+    if (kind === "file") {
+      const size = asInt(has(e, "size") ? e.size : void 0, 0, MAX_SAFE);
+      if (size === void 0) reject2(`the Hub tree file ${show(path).slice(0, 200)} has no size from 0 to 2^53 - 1`);
+      objects.push([path, size]);
+    }
+  }
+  return { objects, entries: doc.length };
+}
+var LINK_WS = /* @__PURE__ */ new Set([" ", "	", "\r", "\n"]);
+var PARAM_NAME = /[A-Za-z0-9-]+/y;
+var TOKEN = /[^ \t\r\n;,"]+/y;
+function links(value) {
+  const out2 = [];
+  const bad = (why) => reject2(`the Link header ${JSON.stringify(value.slice(0, 200))} ${why}`);
+  const n = value.length;
+  let i = 0;
+  const ws = () => {
+    while (i < n && LINK_WS.has(value[i])) i++;
+  };
+  const match = (re) => {
+    re.lastIndex = i;
+    const m = re.exec(value);
+    if (m === null) return void 0;
+    i = re.lastIndex;
+    return m[0];
+  };
+  for (; ; ) {
+    ws();
+    if (i >= n || value[i] !== "<") bad("is not a list of links");
+    const end = value.indexOf(">", i);
+    if (end < 0) bad("has an unterminated <");
+    const target = value.slice(i + 1, end);
+    if (!isUriReference(target)) reject2(`the Link header's target ${JSON.stringify(target.slice(0, 200))} is not a URI reference`);
+    i = end + 1;
+    const params = [];
+    for (; ; ) {
+      ws();
+      if (i >= n || value[i] !== ";") break;
+      i++;
+      ws();
+      const name = match(PARAM_NAME);
+      if (name === void 0) bad("has a bad parameter");
+      ws();
+      if (i >= n || value[i] !== "=") bad("has a parameter without =");
+      i++;
+      ws();
+      let param;
+      if (i < n && value[i] === '"') {
+        const close = value.indexOf('"', i + 1);
+        if (close < 0) bad("has an unterminated quote");
+        param = value.slice(i + 1, close);
+        i = close + 1;
+      } else {
+        param = match(TOKEN);
+        if (param === void 0) bad("has a parameter without a value");
+      }
+      params.push([name, param]);
+    }
+    out2.push([target, params]);
+    if (i >= n) return out2;
+    if (value[i] !== ",") bad("is not a list of links");
+    i++;
+  }
+}
+function nextLink(field, url2, endpoint) {
+  if (field === null) return void 0;
+  const found = links(field).filter(([, params]) => params.some(([k, v]) => k.toLowerCase() === "rel" && v.toLowerCase().split(/[ \t\r\n]+/).includes("next"))).map(([t]) => t);
+  if (found.length > 1) reject2("the Hub tree response has more than one next link");
+  if (found.length === 0) return void 0;
+  const next = resolveReference(url2, found[0]);
+  const a = next.match(SPLIT2);
+  const b = endpoint.match(SPLIT2);
+  if (a[1]?.toLowerCase() !== b[1].toLowerCase() || a[2]?.toLowerCase() !== b[2].toLowerCase()) {
+    reject2(`the Hub tree's next link ${JSON.stringify(next.slice(0, 200))} is not on ${JSON.stringify(endpoint)}`);
+  }
+  return next;
+}
+function show(v) {
+  return String(JSON.stringify(v));
+}
+function num(v) {
+  return isRawInteger(v) ? Number(v.rawJSON) : v;
+}
+function asInt(v, lo = -MAX_SAFE, hi = MAX_SAFE) {
+  if (isRawInteger(v)) v = num(v) + 0;
+  if (typeof v !== "number" || !Number.isInteger(v) || Math.abs(v) > MAX_SAFE) return void 0;
+  return v >= lo && v <= hi ? v : void 0;
+}
+function isObject(v) {
+  return v !== null && typeof v === "object" && !Array.isArray(v) && !RawJSON.isRawJSON(v);
+}
+function has(o, k) {
+  return Object.hasOwn(o, k);
+}
+function compareKeys(a, b) {
+  const n = Math.min(a.length, b.length);
+  for (let i = 0; i < n; i++) {
+    const x = a.codePointAt(i);
+    const y = b.codePointAt(i);
+    if (x !== y) return x < y ? -1 : 1;
+    if (x > 65535) i++;
+  }
+  return a.length - b.length;
+}
+function ignored(rel) {
+  return rel === "" || rel.endsWith("/") || rel.split("/").some((s) => s === "" || s === "." || s === "..");
+}
+function folderMarker(rel, size) {
+  return size === 0 && (rel === "" || rel.endsWith("/"));
+}
+var CONCURRENCY = 16;
+var PREFETCH_BYTES = 64 << 20;
+function closeStore(store) {
+  store.prefetch?.close();
+}
+function addListed(store, listed, prefix, seen) {
+  store.ignored ??= [];
+  store.folders ??= [];
+  for (const [key, size] of listed) {
+    if (seen.has(key)) reject2(`key ${JSON.stringify(key)} is listed twice`);
+    seen.add(key);
+    const rel = key.slice(prefix.length);
+    if (!ignored(rel)) store.objects.set(rel, size);
+    else if (!folderMarker(rel, size)) store.ignored.push(rel);
+    else if (rel && !ignored(rel.slice(0, -1))) store.folders.push(rel);
+  }
+  store.listed = seen.size;
+}
+function allowStoreUrl(policy, base, url2) {
+  try {
+    checkHttpUrl(url2);
+  } catch (e) {
+    throw new RefkvError("resolution", e.message);
+  }
+  checkPolicy(policy, base, url2);
+}
+function storeFetch(base, policy = {}, headers = {}, check = (u, address) => checkAddress(policy, u, address)) {
+  const allow = (u) => allowStoreUrl(policy, base, u);
+  const refusals = /* @__PURE__ */ new Set();
+  const checked = policy.allowPrivateHosts ? void 0 : checkedFetch((u, address) => {
+    try {
+      check(u, address);
+    } catch (e) {
+      refusals.add(e.message);
+      throw e;
+    }
+  }, policy);
+  return async (u, init = {}) => {
+    allow(u);
+    const h = { ...headers, ...init.headers };
+    let r;
+    try {
+      r = checked ? await checked(u, { headers: h, ...init.signal ? { signal: init.signal } : {} }, allow) : await fetch(u, { cache: h.Range === void 0 ? "default" : "no-store", ...init, headers: h, redirect: "follow" });
+    } catch (e) {
+      if (e instanceof RefkvError || e.name === "AbortError") throw e;
+      const message = e.message;
+      if (refusals.has(message)) throw new RefkvError("resolution", message);
+      if (!checked || e instanceof TypeError || typeof e.code === "string") throw e;
+      throw new RefkvError("resolution", `${u}: ${message}`);
+    }
+    if (r.redirected) {
+      try {
+        allow(r.url);
+      } catch (e) {
+        await r.body?.cancel();
+        throw e;
+      }
+    }
+    return r;
+  };
+}
+async function openHttpStore(url2, { fetch: given2, policy = {}, headers = {}, maxObjects = MAX_OBJECTS, concurrency = CONCURRENCY, hubEndpoint: hub } = {}) {
+  const repo = hubRepo(url2, hubEndpoint(hub));
+  const allow = (u) => allowStoreUrl(policy, url2, u);
+  const send = given2 ?? storeFetch(url2, policy, headers);
+  const f = async (u, init) => {
+    allow(u);
+    const r = await send(u, init);
+    if (r.redirected) {
+      try {
+        allow(r.url);
+      } catch (e) {
+        await r.body?.cancel();
+        throw e;
+      }
+    }
+    return r;
+  };
+  let base = url2;
+  const store = {
+    url: url2,
+    objects: /* @__PURE__ */ new Map(),
+    listed: 0,
+    requests: 0,
+    concurrency,
+    async read(key) {
+      const size = this.objects.get(key);
+      if (size === 0) return new Uint8Array(0);
+      const u = objectUrl(base, key);
+      let r;
+      try {
+        r = await f(u, { headers: { Range: `bytes=0-${size - 1}` } });
+      } catch (e) {
+        if (e instanceof RefkvError) throw e;
+        throw new StoreReadError(`${u}: ${e.message}`);
+      }
+      if (r.status !== 200 && r.status !== 206) throw new StoreReadError(`${u}: HTTP ${r.status}`);
+      const data = new Uint8Array(await r.arrayBuffer());
+      if (data.length !== size) throw new StoreReadError(`${u}: read ${data.length} bytes, the listing says ${size}`);
+      return data;
+    },
+    async readRange(key, offset, length) {
+      if (length === 0) return new Uint8Array(0);
+      const u = objectUrl(base, key);
+      let r;
+      try {
+        r = await f(u, { headers: { Range: `bytes=${offset}-${offset + length - 1}` } });
+      } catch (e) {
+        if (e instanceof RefkvError) throw e;
+        throw new StoreReadError(`${u}: ${e.message}`);
+      }
+      if (r.status !== 206 && !(r.status === 200 && offset === 0)) throw new StoreReadError(`${u}: HTTP ${r.status}`);
+      const data = new Uint8Array(await r.arrayBuffer());
+      if (data.length !== length) throw new StoreReadError(`${u}: read ${data.length} bytes at ${offset}, not ${length}`);
+      return data;
+    }
+  };
+  const list = async (u) => {
+    store.requests++;
+    let r;
+    try {
+      r = await f(u);
+    } catch (e) {
+      if (e instanceof RefkvError) throw e;
+      throw new StoreReadError(`${u}: ${e.message}`);
+    }
+    if (r.status === 408 || r.status === 429 || r.status >= 500) {
+      await r.body?.cancel();
+      throw new StoreReadError(`${u}: HTTP ${r.status}`);
+    }
+    if (r.status !== 200) {
+      await r.body?.cancel();
+      if (repo === void 0) reject2(`the store has no listing: ${u} answered HTTP ${r.status}`);
+      const why = r.status === 401 ? " (a repository that does not exist, or a private one)" : r.status === 404 ? " (a revision or a directory the repository does not have)" : "";
+      reject2(`the Hub answered HTTP ${r.status} for ${u}${why}`);
+    }
+    return r;
+  };
+  const seen = /* @__PURE__ */ new Set();
+  if (repo !== void 0) {
+    const commit = parseHubRevision(new Uint8Array(await (await list(hubRevisionUrl(repo))).arrayBuffer()));
+    base = store.url = hubBase(repo, commit);
+    const requested = /* @__PURE__ */ new Set();
+    let link = hubTreeUrl(repo, commit);
+    while (link !== void 0) {
+      requested.add(link);
+      const r = await list(link);
+      const answered = r.url || link;
+      const page = parseHubTree(new Uint8Array(await r.arrayBuffer()), repo.directory);
+      addListed(store, page.objects, repo.directory, seen);
+      if (store.listed > maxObjects) throw new StoreLimitError(`the store lists more than ${maxObjects} objects`);
+      link = nextLink(r.headers.get("Link"), answered, repo.endpoint);
+      if (link !== void 0 && page.entries === 0) reject2("a Hub tree page with a next link lists nothing");
+      if (link !== void 0 && requested.has(link)) {
+        reject2(`the Hub tree's next link ${JSON.stringify(link.slice(0, 200))} was requested already`);
+      }
+    }
+    return store;
+  }
+  const [endpoint, prefix] = listingEndpoint(url2);
+  const tokens = /* @__PURE__ */ new Set();
+  let token;
+  for (; ; ) {
+    let q = `?list-type=2&prefix=${queryEncode(prefix)}`;
+    if (token !== void 0) q += `&continuation-token=${queryEncode(token)}`;
+    const r = await list(endpoint + q);
+    const listing = parseListing(new Uint8Array(await r.arrayBuffer()), prefix);
+    addListed(store, listing.objects, prefix, seen);
+    if (store.listed > maxObjects) throw new StoreLimitError(`the store lists more than ${maxObjects} objects`);
+    token = listing.token;
+    if (token === void 0) break;
+    if (tokens.has(token)) reject2(`the listing gives the continuation token ${JSON.stringify(token.slice(0, 80))} again`);
+    tokens.add(token);
+  }
+  return store;
+}
+function chooseProfile(store) {
+  if (store.objects.has(".zarray") || store.objects.has(".zgroup")) return "zarr2";
+  if (store.objects.has("attributes.json")) return "n5";
+  if (store.objects.has("manifest.safe")) return "safe";
+  if (store.objects.has("info")) return "precomputed";
+  if (store.objects.has("zarr.json")) return "zarr3";
+  for (const k of store.objects.keys()) if (k.endsWith(".safetensors")) return "safetensors";
+  return reject2(
+    "not a Zarr v3, Zarr v2, N5, SAFE, Neuroglancer precomputed or safetensors store: the root has no zarr.json, .zarray, .zgroup, attributes.json, manifest.safe or info, and no key ends in .safetensors"
+  );
+}
+var MAX_BLOCK = 2 ** 31 - 1;
 
 // src/zarrify/ir/source.ts
 function readerSource(read, size, options = {}) {
@@ -1230,465 +2070,6 @@ function multipartParts(body, ctype) {
   }
 }
 
-// src/zarrify/store.ts
-var StoreError = class extends Error {
-  /** The store format that refused the input, once one was chosen (the Rust core's store run:
-   * `zarr2`, or `ome-zarr` once its 0.4 test passed); none for a rejection before that. */
-  format;
-  constructor(message, format) {
-    super(message);
-    if (format !== void 0) this.format = format;
-  }
-};
-var StoreLimitError = class extends Error {
-};
-var StoreReadError = class extends Error {
-};
-var reject2 = (message) => {
-  throw new StoreError(message);
-};
-var MAX_SAFE = Number.MAX_SAFE_INTEGER;
-var MAX_DOCUMENT = 1 << 24;
-var MAX_DEPTH = 256;
-var MAX_OBJECTS = 1e5;
-var SPLIT2 = /^(?:([^:/?#]+):)?(?:\/\/([^/?#]*))?([^?#]*)(?:\?([^#]*))?(?:#(.*))?$/;
-var UNRESERVED2 = /[A-Za-z0-9\-._~]/;
-var PATH_SAFE = /[A-Za-z0-9\-._~!$&'()*+,;=:@/]/;
-var utf84 = new TextEncoder();
-function pct(s, safe) {
-  let out2 = "";
-  for (const b of utf84.encode(s)) {
-    const c = String.fromCharCode(b);
-    out2 += b < 128 && safe.test(c) ? c : `%${b.toString(16).toUpperCase().padStart(2, "0")}`;
-  }
-  return out2;
-}
-function objectUrl(storeUrl, key) {
-  return storeUrl + pct(key, PATH_SAFE);
-}
-function queryEncode(s) {
-  return pct(s, UNRESERVED2);
-}
-function checkStoreUrl(url2) {
-  const m = url2.match(SPLIT2);
-  if (!isUriReference(url2) || m === null) reject2(`${JSON.stringify(url2)} is not a valid URI`);
-  const [, scheme, authority, path, query, fragment] = m;
-  if (scheme === void 0 || !["http", "https"].includes(scheme.toLowerCase())) {
-    reject2(`store URL ${url2} is not http or https`);
-  }
-  if (authority === void 0 || authority.includes("@")) reject2(`store URL ${url2} has no authority, or has userinfo`);
-  if (query !== void 0 || fragment !== void 0) reject2(`store URL ${url2} has a query or a fragment`);
-  if (!path.endsWith("/")) reject2(`store URL ${url2} does not end in /`);
-  return [scheme, authority, path];
-}
-function percentDecode(s) {
-  const out2 = [];
-  for (let i = 0; i < s.length; ) {
-    if (s[i] === "%") {
-      out2.push(parseInt(s.slice(i + 1, i + 3), 16));
-      i += 3;
-    } else {
-      out2.push(s.charCodeAt(i));
-      i += 1;
-    }
-  }
-  return Uint8Array.from(out2);
-}
-function listingEndpoint(url2) {
-  const [scheme, authority, path] = checkStoreUrl(url2);
-  let host = authority;
-  if (host.startsWith("[")) host = host.slice(0, host.indexOf("]") + 1);
-  else if (host.includes(":")) host = host.slice(0, host.lastIndexOf(":"));
-  host = host.toLowerCase();
-  const labels = host.split(".");
-  const virtual = host.endsWith(".amazonaws.com") && labels.slice(1).some((l) => l === "s3" || l.startsWith("s3-"));
-  let endpoint;
-  let prefixPath;
-  if (virtual) {
-    endpoint = `${scheme}://${authority}/`;
-    prefixPath = path.slice(1);
-  } else {
-    if (path === "/") reject2(`path-style store URL ${url2} names no bucket`);
-    const rest = path.slice(1);
-    const i = rest.indexOf("/");
-    const bucket = rest.slice(0, i);
-    if (bucket === "") reject2(`path-style store URL ${url2} has an empty bucket`);
-    endpoint = `${scheme}://${authority}/${bucket}/`;
-    prefixPath = rest.slice(i + 1);
-  }
-  let prefix = "";
-  try {
-    prefix = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(percentDecode(prefixPath));
-  } catch {
-    reject2(`the key prefix of ${url2} is not UTF-8`);
-  }
-  return [endpoint, prefix];
-}
-function isChar(c) {
-  return c === 9 || c === 10 || c === 13 || c >= 32 && c <= 55295 || c >= 57344 && c <= 65533 || c >= 65536 && c <= 1114111;
-}
-var NAME_START = /[A-Za-z_:]/;
-var NAME_CHAR = /[A-Za-z0-9_:.-]/;
-var WS = /* @__PURE__ */ new Set([" ", "	", "\r", "\n"]);
-var ENTITIES = { lt: "<", gt: ">", amp: "&", quot: '"', apos: "'" };
-var Xml = class {
-  pos = 0;
-  depth = 0;
-  // of the element being read
-  s;
-  what;
-  error;
-  constructor(s, what = "listing", error = (m) => new StoreError(m)) {
-    this.s = s;
-    this.what = what;
-    this.error = error;
-  }
-  fail(why) {
-    throw this.error(`${this.what} is not well formed: ${why} at ${this.pos}`);
-  }
-  ws() {
-    while (this.pos < this.s.length && WS.has(this.s[this.pos])) this.pos++;
-  }
-  at(t) {
-    return this.s.startsWith(t, this.pos);
-  }
-  chars(t) {
-    for (const ch of t) {
-      const c = ch.codePointAt(0);
-      if (!isChar(c)) this.fail(`character U+${c.toString(16).toUpperCase().padStart(4, "0")}`);
-    }
-  }
-  comment() {
-    const end = this.s.indexOf("--", this.pos + 4);
-    if (end < 0 || !this.s.startsWith("-->", end)) this.fail("bad comment");
-    this.chars(this.s.slice(this.pos + 4, end));
-    this.pos = end + 3;
-  }
-  misc() {
-    for (; ; ) {
-      this.ws();
-      if (this.at("<!--")) this.comment();
-      else return;
-    }
-  }
-  name() {
-    const start = this.pos;
-    if (start >= this.s.length || !NAME_START.test(this.s[start])) this.fail("expected a name");
-    this.pos++;
-    while (this.pos < this.s.length && NAME_CHAR.test(this.s[this.pos])) this.pos++;
-    return this.s.slice(start, this.pos);
-  }
-  reference() {
-    const end = this.s.indexOf(";", this.pos);
-    if (end < 0) this.fail("unterminated reference");
-    const body = this.s.slice(this.pos + 1, end);
-    this.pos = end + 1;
-    if (Object.hasOwn(ENTITIES, body)) return ENTITIES[body];
-    let v;
-    if (/^#x[0-9a-fA-F]+$/.test(body)) v = body.length < 12 ? parseInt(body.slice(2), 16) : -1;
-    else if (/^#[0-9]+$/.test(body)) v = body.length < 12 ? parseInt(body.slice(1), 10) : -1;
-    else this.fail(`unknown reference &${body};`);
-    if (!isChar(v)) this.fail(`reference &${body}; is not a character`);
-    return String.fromCodePoint(v);
-  }
-  chardata(stop) {
-    const start = this.pos;
-    while (this.pos < this.s.length && this.s[this.pos] !== "<" && this.s[this.pos] !== "&" && this.s[this.pos] !== stop) this.pos++;
-    const t = this.s.slice(start, this.pos);
-    this.chars(t);
-    return t;
-  }
-  element() {
-    if (!this.at("<")) this.fail("expected an element");
-    if (++this.depth > MAX_DEPTH) this.fail(`elements nest more than ${MAX_DEPTH} deep`);
-    const el = this.elementBody();
-    this.depth--;
-    return el;
-  }
-  elementBody() {
-    this.pos++;
-    const el = { name: this.name(), children: [], text: [], attributes: [] };
-    const s = this.s;
-    for (; ; ) {
-      if (this.pos < s.length && WS.has(s[this.pos])) {
-        this.ws();
-        if (this.pos < s.length && NAME_START.test(s[this.pos])) {
-          const name = this.name();
-          this.ws();
-          if (!this.at("=")) this.fail("expected =");
-          this.pos++;
-          this.ws();
-          const q = this.pos < s.length ? s[this.pos] : "";
-          if (q !== "'" && q !== '"') this.fail("expected a quoted value");
-          this.pos++;
-          const value = [];
-          for (; ; ) {
-            value.push(this.chardata(q));
-            if (this.at("&")) value.push(this.reference());
-            else if (this.at(q)) {
-              this.pos++;
-              break;
-            } else this.fail("bad attribute value");
-          }
-          el.attributes.push([name, value.join("")]);
-          continue;
-        }
-      }
-      break;
-    }
-    if (this.at("/>")) {
-      this.pos += 2;
-      return el;
-    }
-    if (!this.at(">")) this.fail("expected >");
-    this.pos++;
-    for (; ; ) {
-      if (this.pos >= s.length) this.fail("unterminated element");
-      if (this.at("</")) {
-        this.pos += 2;
-        if (this.name() !== el.name) this.fail("mismatched end tag");
-        this.ws();
-        if (!this.at(">")) this.fail("expected >");
-        this.pos++;
-        return el;
-      }
-      if (this.at("<!--")) this.comment();
-      else if (this.at("<!") || this.at("<?")) this.fail("unsupported markup");
-      else if (this.at("<")) el.children.push(this.element());
-      else if (this.at("&")) el.text.push(this.reference());
-      else {
-        const t = this.chardata("<");
-        if (t.includes("]]>")) this.fail("]]> in character data");
-        el.text.push(t);
-      }
-    }
-  }
-  document() {
-    this.ws();
-    if (this.at("<?xml") && this.pos + 5 < this.s.length && WS.has(this.s[this.pos + 5])) {
-      const end = this.s.indexOf("?>", this.pos + 5);
-      if (end < 0) this.fail("unterminated XML declaration");
-      this.chars(this.s.slice(this.pos, end));
-      this.pos = end + 2;
-    }
-    this.misc();
-    const root = this.element();
-    this.misc();
-    if (this.pos !== this.s.length) this.fail("content after the root element");
-    return root;
-  }
-};
-function text2(el) {
-  if (el.children.length) reject2(`listing: <${el.name}> has a child element`);
-  return el.text.join("");
-}
-function parseListing(body, prefix) {
-  let s = "";
-  try {
-    s = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(body);
-  } catch {
-    reject2("listing is not UTF-8");
-  }
-  const root = new Xml(s).document();
-  if (root.name !== "ListBucketResult") reject2(`listing root element is <${root.name}>, not <ListBucketResult>`);
-  const truncated = root.children.filter((c) => c.name === "IsTruncated");
-  if (truncated.length !== 1 || !["true", "false"].includes(text2(truncated[0]))) {
-    reject2("listing needs exactly one IsTruncated of true or false");
-  }
-  const tokens = root.children.filter((c) => c.name === "NextContinuationToken");
-  if (tokens.length > 1) reject2("listing has more than one NextContinuationToken");
-  const token = tokens.length ? text2(tokens[0]) : void 0;
-  const objects = [];
-  for (const c of root.children) {
-    if (c.name !== "Contents") continue;
-    const keys = c.children.filter((x) => x.name === "Key");
-    const sizes = c.children.filter((x) => x.name === "Size");
-    if (keys.length !== 1 || sizes.length !== 1) reject2("listing Contents needs exactly one Key and one Size");
-    const key = text2(keys[0]);
-    const size = text2(sizes[0]);
-    if (!/^[0-9]+$/.test(size) || size.replace(/^0+/, "").length > 16 || Number(size) > MAX_SAFE) {
-      reject2(`listing Size ${JSON.stringify(size.slice(0, 40))} is not a size`);
-    }
-    if (!key.startsWith(prefix)) reject2(`listed key ${JSON.stringify(key)} is outside the prefix ${JSON.stringify(prefix)}`);
-    objects.push([key, Number(size)]);
-  }
-  if (text2(truncated[0]) === "true") {
-    if (!token) reject2("truncated listing without a NextContinuationToken");
-    if (objects.length === 0) reject2("truncated listing without a Contents");
-    return { objects, token };
-  }
-  return { objects };
-}
-function compareKeys(a, b) {
-  const n = Math.min(a.length, b.length);
-  for (let i = 0; i < n; i++) {
-    const x = a.codePointAt(i);
-    const y = b.codePointAt(i);
-    if (x !== y) return x < y ? -1 : 1;
-    if (x > 65535) i++;
-  }
-  return a.length - b.length;
-}
-function ignored(rel) {
-  return rel === "" || rel.endsWith("/") || rel.split("/").some((s) => s === "" || s === "." || s === "..");
-}
-function folderMarker(rel, size) {
-  return size === 0 && (rel === "" || rel.endsWith("/"));
-}
-var CONCURRENCY = 16;
-var PREFETCH_BYTES = 64 << 20;
-function closeStore(store) {
-  store.prefetch?.close();
-}
-function addListed(store, listed, prefix, seen) {
-  store.ignored ??= [];
-  store.folders ??= [];
-  for (const [key, size] of listed) {
-    if (seen.has(key)) reject2(`key ${JSON.stringify(key)} is listed twice`);
-    seen.add(key);
-    const rel = key.slice(prefix.length);
-    if (!ignored(rel)) store.objects.set(rel, size);
-    else if (!folderMarker(rel, size)) store.ignored.push(rel);
-    else if (rel && !ignored(rel.slice(0, -1))) store.folders.push(rel);
-  }
-  store.listed = seen.size;
-}
-function allowStoreUrl(policy, base, url2) {
-  try {
-    checkHttpUrl(url2);
-  } catch (e) {
-    throw new RefkvError("resolution", e.message);
-  }
-  checkPolicy(policy, base, url2);
-}
-function storeFetch(base, policy = {}, headers = {}, check = (u, address) => checkAddress(policy, u, address)) {
-  const allow = (u) => allowStoreUrl(policy, base, u);
-  const refusals = /* @__PURE__ */ new Set();
-  const checked = policy.allowPrivateHosts ? void 0 : checkedFetch((u, address) => {
-    try {
-      check(u, address);
-    } catch (e) {
-      refusals.add(e.message);
-      throw e;
-    }
-  }, policy);
-  return async (u, init = {}) => {
-    allow(u);
-    const h = { ...headers, ...init.headers };
-    let r;
-    try {
-      r = checked ? await checked(u, { headers: h, ...init.signal ? { signal: init.signal } : {} }, allow) : await fetch(u, { cache: h.Range === void 0 ? "default" : "no-store", ...init, headers: h, redirect: "follow" });
-    } catch (e) {
-      if (e instanceof RefkvError || e.name === "AbortError") throw e;
-      const message = e.message;
-      if (refusals.has(message)) throw new RefkvError("resolution", message);
-      if (!checked || e instanceof TypeError || typeof e.code === "string") throw e;
-      throw new RefkvError("resolution", `${u}: ${message}`);
-    }
-    if (r.redirected) {
-      try {
-        allow(r.url);
-      } catch (e) {
-        await r.body?.cancel();
-        throw e;
-      }
-    }
-    return r;
-  };
-}
-async function openHttpStore(url2, { fetch: given2, policy = {}, headers = {}, maxObjects = MAX_OBJECTS, concurrency = CONCURRENCY } = {}) {
-  const allow = (u) => allowStoreUrl(policy, url2, u);
-  const send = given2 ?? storeFetch(url2, policy, headers);
-  const f = async (u, init) => {
-    allow(u);
-    const r = await send(u, init);
-    if (r.redirected) {
-      try {
-        allow(r.url);
-      } catch (e) {
-        await r.body?.cancel();
-        throw e;
-      }
-    }
-    return r;
-  };
-  const [endpoint, prefix] = listingEndpoint(url2);
-  const store = {
-    url: url2,
-    objects: /* @__PURE__ */ new Map(),
-    listed: 0,
-    requests: 0,
-    concurrency,
-    async read(key) {
-      const size = this.objects.get(key);
-      if (size === 0) return new Uint8Array(0);
-      const u = objectUrl(url2, key);
-      let r;
-      try {
-        r = await f(u, { headers: { Range: `bytes=0-${size - 1}` } });
-      } catch (e) {
-        if (e instanceof RefkvError) throw e;
-        throw new StoreReadError(`${u}: ${e.message}`);
-      }
-      if (r.status !== 200 && r.status !== 206) throw new StoreReadError(`${u}: HTTP ${r.status}`);
-      const data = new Uint8Array(await r.arrayBuffer());
-      if (data.length !== size) throw new StoreReadError(`${u}: read ${data.length} bytes, the listing says ${size}`);
-      return data;
-    },
-    async readRange(key, offset, length) {
-      if (length === 0) return new Uint8Array(0);
-      const u = objectUrl(url2, key);
-      let r;
-      try {
-        r = await f(u, { headers: { Range: `bytes=${offset}-${offset + length - 1}` } });
-      } catch (e) {
-        if (e instanceof RefkvError) throw e;
-        throw new StoreReadError(`${u}: ${e.message}`);
-      }
-      if (r.status !== 206 && !(r.status === 200 && offset === 0)) throw new StoreReadError(`${u}: HTTP ${r.status}`);
-      const data = new Uint8Array(await r.arrayBuffer());
-      if (data.length !== length) throw new StoreReadError(`${u}: read ${data.length} bytes at ${offset}, not ${length}`);
-      return data;
-    }
-  };
-  const seen = /* @__PURE__ */ new Set();
-  const tokens = /* @__PURE__ */ new Set();
-  let token;
-  for (; ; ) {
-    let q = `?list-type=2&prefix=${queryEncode(prefix)}`;
-    if (token !== void 0) q += `&continuation-token=${queryEncode(token)}`;
-    store.requests++;
-    let r;
-    try {
-      r = await f(endpoint + q);
-    } catch (e) {
-      if (e instanceof RefkvError) throw e;
-      throw new StoreReadError(`${endpoint + q}: ${e.message}`);
-    }
-    if (r.status === 408 || r.status === 429 || r.status >= 500) {
-      throw new StoreReadError(`${endpoint + q}: HTTP ${r.status}`);
-    }
-    if (r.status !== 200) reject2(`the store has no listing: ${endpoint + q} answered HTTP ${r.status}`);
-    const listing = parseListing(new Uint8Array(await r.arrayBuffer()), prefix);
-    addListed(store, listing.objects, prefix, seen);
-    if (store.listed > maxObjects) throw new StoreLimitError(`the store lists more than ${maxObjects} objects`);
-    token = listing.token;
-    if (token === void 0) break;
-    if (tokens.has(token)) reject2(`the listing gives the continuation token ${JSON.stringify(token.slice(0, 80))} again`);
-    tokens.add(token);
-  }
-  return store;
-}
-function chooseProfile(store) {
-  if (store.objects.has(".zarray") || store.objects.has(".zgroup")) return "zarr2";
-  if (store.objects.has("attributes.json")) return "n5";
-  if (store.objects.has("manifest.safe")) return "safe";
-  return reject2(
-    "not an N5, Zarr v2 or SAFE store: the root has no .zarray, .zgroup, attributes.json or manifest.safe"
-  );
-}
-var MAX_BLOCK = 2 ** 31 - 1;
-
 // src/zarrify/ir/store.ts
 var utf85 = new TextEncoder();
 var text3 = (b) => new TextDecoder().decode(b);
@@ -1710,6 +2091,11 @@ async function zarrifyStoreIr(format, store, options = {}) {
     const ig = utf85.encode(JSON.stringify([store.ignored ?? [], store.folders ?? []]));
     const g = Number(w.vz_store_ignore(p, put(w, ig), ig.length));
     if (g < 0) throw rejection2(w, g, format);
+    if (options.scope !== void 0) {
+      const sc = utf85.encode(JSON.stringify(options.scope));
+      const s = Number(w.vz_store_scope(p, put(w, sc), sc.length));
+      if (s < 0) throw rejection2(w, s, format);
+    }
     for (; ; ) {
       const n2 = Number(w.vz_store_poll(p));
       if (n2 < 0) throw rejection2(w, n2, format);
@@ -1734,8 +2120,9 @@ async function zarrifyStoreIr(format, store, options = {}) {
     const decided = said === "ome-zarr" || said === format ? said : format;
     live = false;
     const u = utf85.encode(store.url);
-    const n = Number(w.vz_store_output(p, put(w, u), u.length, options.mirror === false ? 0 : 1));
-    if (n < 0) throw rejection2(w, n, decided);
+    const flags = (options.mirror === false ? 0 : 1) | (options.checksums ? 2 : 0);
+    const n = Number(w.vz_store_output(p, put(w, u), u.length, flags));
+    if (n < 0) throw refusal(w, n, (w2, r) => rejection2(w2, r, decided));
     const raw = decodeRaw(out(w, n));
     return { ...storeDesc(raw, new Map(listing)), summary: { ...raw.summary, listingRequests: store.requests } };
   } finally {
@@ -1828,7 +2215,12 @@ function storeDesc(raw, sizes) {
 }
 
 // src/zarrify/ir/vsi.ts
-var BESIDE = { vsi: "VSI", nrrd: "NRRD", grib: "GRIB" };
+var BESIDE = Object.fromEntries(
+  REGISTRY2.filter((e) => e.store_run !== null && e.store_run.form !== "listed").map((e) => [e.name, e.title])
+);
+var ON_DEMAND = new Set(
+  REGISTRY2.filter((e) => e.store_run?.form === "on_demand").map((e) => e.name)
+);
 function splitVsiUrl(url2, title = "VSI") {
   const base = url2.split(/[?#]/, 1)[0];
   if (base !== url2) throw new ImageError(`${title} input ${JSON.stringify(url2)} has a query or a fragment`);
@@ -1851,12 +2243,29 @@ async function probeHttp(url2, options) {
     throw e;
   }
 }
+function scopeKeys(url2, scope) {
+  const [dir, named] = splitVsiUrl(url2, "the");
+  const keys = [];
+  for (const e of scope) {
+    if (!e.startsWith(dir)) throw new RangeError(`scope "${e}" is not the input's directory "${dir}" or below it`);
+    let key;
+    try {
+      key = decodeURIComponent(e.slice(dir.length));
+    } catch {
+      throw new RangeError(`scope "${e}" is not percent-encoded UTF-8`);
+    }
+    if (key === "") return void 0;
+    if (key !== named) keys.push(key);
+  }
+  return keys;
+}
 function vsiFiles(url2, source, options = {}, format = "vsi") {
   const title = BESIDE[format];
   const [dir, key] = splitVsiUrl(url2, title);
   const sources = /* @__PURE__ */ new Map([[key, source]]);
   const open = options.open ?? ((k) => {
     if (!/^https?:\/\//.test(dir)) {
+      if (format === "hdf5") return Promise.resolve(void 0);
       return Promise.reject(new ImageError(`${title} input ${JSON.stringify(url2)}: the files beside it can only be opened at an http(s) URL`));
     }
     return probeHttp(objectUrl(dir, k), options.http ?? (source instanceof HttpSource ? source.options : {}));
@@ -1891,7 +2300,12 @@ function vsiFiles(url2, source, options = {}, format = "vsi") {
 }
 async function zarrifyVsi(url2, source, options = {}, format = "vsi") {
   const store = vsiFiles(url2, source, options, format);
-  const desc = await zarrifyStoreIr(format, store, { mirror: options.mirror ?? true, concurrency: source.concurrency });
+  const desc = await zarrifyStoreIr(format, store, {
+    mirror: options.mirror ?? true,
+    concurrency: source.concurrency,
+    checksums: options.checksums === true,
+    ...options.scope !== void 0 ? { scope: options.scope } : {}
+  });
   return { ...desc, store };
 }
 
@@ -1914,18 +2328,30 @@ async function zarrifySource(url2, source, pins = {}) {
   return zarrifyWith(url2, { read, size: source.size, exact, source }, { ...pins, ...etag ? { etag } : {} });
 }
 async function zarrifyWith(url2, input, pins) {
-  const format = await irFormat(await input.read(0, Math.min(552, input.size)));
+  const within2 = pins.scope === void 0 ? void 0 : scopeKeys(url2, pins.scope);
+  const format = await irFormat(await input.read(0, Math.min(552, input.size))) ?? (input.size > 552 ? await irFormat(await input.read(0, Math.min(65600, input.size))) : void 0);
   if (format === void 0) throw new ImageError(NOT_SUPPORTED);
-  if (format in BESIDE) {
-    const beside = format;
-    const { store, ...desc2 } = await zarrifyVsi(url2, input.source, pins.open ? { open: pins.open } : {}, beside);
+  const asStore = async (beside) => {
+    const options = {
+      ...pins.open ? { open: pins.open } : {},
+      ...within2 !== void 0 ? { scope: within2 } : {},
+      checksums: pins.checksums === true
+    };
+    const { store, ...desc2 } = await zarrifyVsi(url2, input.source, options, beside);
     if (pins.checksums) {
       const keys = new Map([...store.objects.keys()].map((k) => [objectUrl(store.url, k), k]));
       await addChecksums(desc2, (u, o, n) => store.readRange(keys.get(u), o, n));
     }
     return { format: beside, ...desc2 };
+  };
+  if (format in BESIDE && !ON_DEMAND.has(format)) return asStore(format);
+  let desc;
+  try {
+    desc = await zarrifyIr(format, url2, input.source, { checksums: pins.checksums === true });
+  } catch (e) {
+    if (e instanceof NamesSiblings && e.format in BESIDE) return asStore(e.format);
+    throw e;
   }
-  const desc = await zarrifyIr(format, url2, input.source, { checksums: pins.checksums === true });
   const etag = pins.etag?.();
   desc.sources[0] = { ...desc.sources[0], size: BigInt(input.size), ...etag !== void 0 ? { etag } : {} };
   if (pins.checksums) await addChecksums(desc, (_u, o, n) => (input.exact ?? input.read)(o, n));
@@ -1942,7 +2368,7 @@ async function zarrifyStore(input, options = {}) {
   }
   const store = typeof input === "string" ? await openHttpStore(input, { policy: options.policy ?? {}, headers: options.headers ?? {} }) : input;
   const pins = options;
-  const desc = await zarrifyStoreProfile(store);
+  const desc = await zarrifyStoreProfile(store, pins.checksums === true);
   if (pins.checksums) {
     const keys = new Map([...store.objects.keys()].map((k) => [objectUrl(store.url, k), k]));
     await addChecksums(desc, async (u, o, n) => {
@@ -1952,12 +2378,16 @@ async function zarrifyStore(input, options = {}) {
   }
   return desc;
 }
-async function zarrifyStoreProfile(store) {
+async function zarrifyStoreProfile(store, checksums = false) {
+  const options = { checksums };
   try {
     const chosen = chooseProfile(store);
-    if (chosen === "safe") return { format: "safe", ...await zarrifyStoreIr("safe", store) };
-    if (chosen === "n5") return { format: "n5", ...await zarrifyStoreIr("n5", store) };
-    const desc = await zarrifyStoreIr("zarr2", store);
+    if (chosen === "safe") return { format: "safe", ...await zarrifyStoreIr("safe", store, options) };
+    if (chosen === "safetensors") return { format: "safetensors", ...await zarrifyStoreIr("safetensors", store, options) };
+    if (chosen === "zarr3") return { format: "zarr3", ...await zarrifyStoreIr("zarr3", store, options) };
+    if (chosen === "n5") return { format: "n5", ...await zarrifyStoreIr("n5", store, options) };
+    if (chosen === "precomputed") return { format: "precomputed", ...await zarrifyStoreIr("precomputed", store, options) };
+    const desc = await zarrifyStoreIr("zarr2", store, options);
     return { format: desc.summary.format === "ome-zarr" ? "ome-zarr" : "zarr2", ...desc };
   } finally {
     closeStore(store);
@@ -1976,12 +2406,15 @@ async function zarrifyToArchive(input, options = {}) {
   } else {
     const source = readerSource((o, n) => input.read(o, n), input.size, { concurrency: READS_AT_ONCE });
     const open = input.open;
-    desc = await zarrifySource(input.url, source, open ? {
-      open: async (key) => {
-        const file = await open(key);
-        return file && readerSource((o, n) => file.read(o, n), file.size, { concurrency: READS_AT_ONCE });
-      }
-    } : {});
+    desc = await zarrifySource(input.url, source, {
+      ...options.scope !== void 0 ? { scope: options.scope } : {},
+      ...open ? {
+        open: async (key) => {
+          const file = await open(key);
+          return file && readerSource((o, n) => file.read(o, n), file.size, { concurrency: READS_AT_ONCE });
+        }
+      } : {}
+    });
   }
   if (options.pins === false) unpinned(desc);
   const { format, summary } = desc;
